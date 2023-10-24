@@ -1,4 +1,3 @@
-
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
@@ -9,34 +8,23 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Users", {
+    return queryInterface.createTable("ProductImages", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING(30),
+      productId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Products',
+        },
         allowNull: false,
-        unique: true
       },
-      // firstName: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      // },
-      // lastName: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      // },
-      email: {
-        type: Sequelize.STRING(256),
+      image: {
+        type: Sequelize.STRING,
         allowNull: false,
-        unique: true
-      },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
-        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -51,7 +39,7 @@ module.exports = {
     }, options);
   },
   down: async (queryInterface, Sequelize) => {
-    options.tableName = "Users";
+    options.tableName = "ProductImages";
     return queryInterface.dropTable(options);
   }
 };

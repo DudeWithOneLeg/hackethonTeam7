@@ -1,4 +1,3 @@
-
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
@@ -9,34 +8,29 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Users", {
+    return queryInterface.createTable("Discounts", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING(30),
+      codeName: {
+        type: Sequelize.STRING,
         allowNull: false,
-        unique: true
       },
-      // firstName: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      // },
-      // lastName: {
-      //   type: Sequelize.STRING,
-      //   allowNull: false,
-      // },
-      email: {
-        type: Sequelize.STRING(256),
-        allowNull: false,
-        unique: true
-      },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
+      applicableCategory: {
+        type: Sequelize.STRING,
+        defaultValue: "all",
         allowNull: false
+      },
+      discountValue: {
+        type: Sequelize.DECIMAL,
+        allowNull: false,
+      },
+      expirationDate: {
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -51,7 +45,7 @@ module.exports = {
     }, options);
   },
   down: async (queryInterface, Sequelize) => {
-    options.tableName = "Users";
+    options.tableName = "Discounts";
     return queryInterface.dropTable(options);
   }
 };
