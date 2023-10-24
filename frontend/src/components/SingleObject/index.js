@@ -1,4 +1,5 @@
 import { Chair } from "./Chair";
+import { ChairSet } from "./Chair-set-1";
 import { OrbitControls } from "@react-three/drei";
 import { useState, useEffect } from "react";
 
@@ -37,7 +38,7 @@ export default function SingleObject() {
     <>
 
       <Chair position={[x + 5, y + 0, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 5, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />
+      <ChairSet position={[x + 5, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />
       <Chair position={[x + 5, y + 2.6, z + .5]} rotation={[0, -1.2, 0]} />
       <Chair position={[x + 4, y + 0, z + .5]} rotation={[0, -1.2, 0]} />
       <Chair position={[x + 4, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />

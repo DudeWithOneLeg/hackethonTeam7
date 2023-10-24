@@ -9,16 +9,16 @@ export default function Homespace() {
     const chairRef = useRef()
   return (
     <>
-    <PerspectiveCamera position={[-4,-1, 2]}>
-
+    <PerspectiveCamera position={[-4,-1, 2]} >
+    <OrbitControls />
         <Model />
       <SingleObject/>
-
+      
         <Stage environment="city" intensity={0.6} castShadow={false}>
 
         </Stage>
     </PerspectiveCamera>
-        
+
     </>
   );
 }

@@ -11,6 +11,7 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('../../../models/scene-transformed.glb')
   return (
     <group {...props} dispose={null}>
+     <pointLight position={[0, 20, 10]} intensity={1.5} />
       <mesh geometry={nodes.Plane.geometry} material={materials.PaletteMaterial009} position={[2.665, 0.05, 1.492]} rotation={[0, -0.959, 0]} scale={-11.933} />
       <group position={[3.529, 2.31, 1.754]} scale={[1.3, 3.18, 2.609]}>
         <mesh geometry={nodes.Plane021.geometry} material={materials.PaletteMaterial010} />
