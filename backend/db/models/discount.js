@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         applicableCategory: {
             type: DataTypes.STRING,
-            defaultValue: "all"
+            defaultValue: "All"
         },
         discountValue: {
             type: DataTypes.INTEGER

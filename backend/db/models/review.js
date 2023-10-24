@@ -21,9 +21,6 @@ module.exports = (sequelize, DataTypes) => {
     rating: {
       type: DataTypes.INTEGER
     },
-    date: {
-      type: DataTypes.DATE
-    }
   }, {
     sequelize,
     modelName: 'Review'
