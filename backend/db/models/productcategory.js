@@ -8,17 +8,13 @@ module.exports = (sequelize, DataTypes) => {
       ProductCategory.belongsTo(models.Product), {
         foreignKey: "productId"
       }
+      ProductCategory.belongsTo(models.Category), {
+        foreignKey: "categoryId"
+      }
     }
   };
 
-  ProductCategory.init({
-    name: {
-      type: DataTypes.STRING,
-    },
-    categoryId: {
-      type: DataTypes.INTEGER,
-    }
-  }, {
+  ProductCategory.init({}, {
     sequelize,
     modelName: 'ProductCategory'
   });

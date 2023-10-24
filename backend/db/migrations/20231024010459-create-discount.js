@@ -21,7 +21,7 @@ module.exports = {
       },
       applicableCategory: {
         type: Sequelize.STRING,
-        defaultValue: "all",
+        defaultValue: "All",
         allowNull: false
       },
       discountValue: {

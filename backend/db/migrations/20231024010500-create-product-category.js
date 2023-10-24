@@ -22,14 +22,12 @@ module.exports = {
         },
         allowNull: false,
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       categoryId: {
         type: Sequelize.INTEGER,
-        defaultValue: 1,
-        allowNull: false,
+        references: {
+          model: "Categories",
+        },
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
