@@ -9,6 +9,8 @@ const { User, BillingAddress } = require("../../db/models")
 
 // Get all billing addresses
 router.get("/all", async (req, res) => {
-    const BillingAddress = await BillingAddress.findAll()
-    res.json({ BillingAddress })
+    const billingAddress = await BillingAddress.findAll()
+    res.json(billingAddress)
 })
+
+module.exports = router
