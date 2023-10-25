@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             defaultValue: "All"
         },
+        discountType: {
+            type: DataTypes.STRING
+        },
         discountValue: {
             type: DataTypes.INTEGER
         },

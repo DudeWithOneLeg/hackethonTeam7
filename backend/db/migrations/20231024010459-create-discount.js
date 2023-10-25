@@ -24,6 +24,11 @@ module.exports = {
         defaultValue: "All",
         allowNull: false
       },
+      discountType: {
+        type: Sequelize.STRING,
+        defaultValue: "percent",
+        allowNull: false
+      },
       discountValue: {
         type: Sequelize.DECIMAL,
         allowNull: false,
