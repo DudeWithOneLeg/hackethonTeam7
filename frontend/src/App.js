@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
@@ -14,6 +14,7 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+  const dirLight = useRef(null)
 
   return (
     <>
@@ -22,12 +23,13 @@ function App() {
         <Switch>
           <Route path="/">
             <Suspense>
-
-            <Canvas dpr={[1, 2]} >
+{/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
+            <Canvas dpr={[1, 2]} shadows camera={ {position: [-2, 4, 10], fov: 40}} >
+            {/* <directionalLightHelper light={dirLight.current}/> */}
               {/* <axesHelper args={[2]}/>
               <gridHelper /> */}
-              {/* <color attach="background" args={["#213547"]} />
-              <fog attach="fog" args={["#213547", 10, 20]} /> */}
+              <color attach="background" args={["#213547"]} />
+              {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
               <Homespace />
             </Canvas>
             </Suspense>

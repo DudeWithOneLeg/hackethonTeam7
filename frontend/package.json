@@ -9,6 +9,7 @@
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
         "@types/three": "^0.157.2",
+        "drei": "^2.2.21",
         "js-cookie": "^3.0.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",

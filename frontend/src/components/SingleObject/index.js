@@ -1,13 +1,15 @@
 import { Chair } from "./Chair";
 import { ChairSet } from "./Chair-set-1";
-import { OrbitControls } from "@react-three/drei";
+import { ScrollControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import { useState, useEffect } from "react";
+import { Suspense } from "react";
 
 export default function SingleObject() {
 
     const [x, setX] = useState(0)
-    const [y, setY] = useState(0)
-    const [z, setZ] = useState(-1)
+    const [y, setY] = useState(1)
+    const [z, setZ] = useState(-3)
 
     useEffect(() => {
 
@@ -32,23 +34,24 @@ export default function SingleObject() {
         window.removeEventListener('keydown', handleKeyPress);
       };
     }, [x, y, z])
+    const size = .7
 
 
   return (
-    <>
+    <group>
 
-      <Chair position={[x + 5, y + 0, z + .5]} rotation={[0, -1.2, 0]} />
-      <ChairSet position={[x + 5, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 5, y + 2.6, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 4, y + 0, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 4, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 4, y + 2.6, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 3, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 3, y + 2.6, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 2, y + 1.3, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 2, y + 2.6, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 2, y + 0, z + .5]} rotation={[0, -1.2, 0]} />
-      <Chair position={[x + 3, y + 0, z + .5]} rotation={[0, -1.2, 0]} />
-    </>
+      <Chair position={[x + 5, y + 0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <ChairSet position={[x + 5, y + 1.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 5, y + 2.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 4, y + 0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 4, y + 1.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 4, y + 2.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 3, y + 1.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 3, y + 2.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 2, y + 1.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 2, y + 2.0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 2, y + 0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+      <Chair position={[x + 3, y + 0, z + .5]} rotation={[0, -1.2, 0]} scale={[size,size,size]}/>
+    </group>
   );
 }
