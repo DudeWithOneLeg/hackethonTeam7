@@ -34,11 +34,8 @@ router.use('/order', orderRouter);
 router.use('/payment', paymentRouter);
 
 
-router.get(
-  '/restore-user',
-  (req, res) => {
-    return res.json(req.user);
-  }
-);
+router.get('/restore-user', (req, res) => {
+  return res.json(req.user);
+});
 
 module.exports = router;
