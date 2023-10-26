@@ -31,6 +31,11 @@ module.exports = {
         productId: 1,
         categoryId: 18 // Living
       },
+      {
+        productId: 1,
+        categoryId: 21 // Indoor
+      },
+
       // Product 2: Zenith Dining Table
       {
         productId: 2,
@@ -52,6 +57,12 @@ module.exports = {
         productId: 2,
         categoryId: 17 // Dining
       },
+      {
+        productId: 2,
+        categoryId: 21 // Indoor
+      },
+
+
       // Product 3: Aura Coffee Table
       {
         productId: 3,
@@ -73,6 +84,12 @@ module.exports = {
         productId: 3,
         categoryId: 18 // Living
       },
+      {
+        productId: 3,
+        categoryId: 21 // Indoor
+      },
+
+
       // Product 4: Sleek Glass Desk
       {
         productId: 4,
@@ -98,6 +115,12 @@ module.exports = {
         productId: 4,
         categoryId: 18 // Living
       },
+      {
+        productId: 4,
+        categoryId: 21 // Indoor
+      },
+
+
       // Product 5: Minimalist Bookshelf
       {
         productId: 5,
@@ -127,6 +150,11 @@ module.exports = {
         productId: 5,
         categoryId: 18 // Living
       },
+      {
+        productId: 5,
+        categoryId: 21 // Indoor
+      },
+
       // Product 6: Contemporary Nightstand
       {
         productId: 6,
@@ -144,6 +172,12 @@ module.exports = {
         productId: 6,
         categoryId: 14 // Bedroom
       },
+      {
+        productId: 6,
+        categoryId: 21 // Indoor
+      },
+
+
       // Product 7: Scandi Rocking Chair
       {
         productId: 7,
@@ -169,6 +203,12 @@ module.exports = {
         productId: 7,
         categoryId: 20 // Outdoor
       },
+      {
+        productId: 7,
+        categoryId: 21 // Indoor
+      },
+
+
       // Product 8: Nuovo Ottoman
       {
         productId: 8,
@@ -194,6 +234,12 @@ module.exports = {
         productId: 8,
         categoryId: 18 // Living
       },
+      {
+        productId: 8,
+        categoryId: 21 // Indoor
+      },
+
+
       // Product 9: French Rococo Dresser
       {
         productId: 9,
@@ -215,6 +261,12 @@ module.exports = {
         productId: 9,
         categoryId: 14 // Bedroom
       },
+      {
+        productId: 9,
+        categoryId: 21 // Indoor
+      },
+
+
       // Produt 10: Art Deco Bar Stools
       {
         productId: 10,
@@ -243,6 +295,10 @@ module.exports = {
       {
         productId: 10,
         categoryId: 18 // Living
+      },
+      {
+        productId: 10,
+        categoryId: 21 // Indoor
       },
     ]
 

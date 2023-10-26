@@ -1,4 +1,3 @@
-
 'use strict';
 const { Model } = require('sequelize');
 
@@ -16,6 +15,12 @@ module.exports = (sequelize, DataTypes) => {
             })
             Product.hasMany(models.ProductCategory, {
                 foreignKey: "productId"
+            })
+
+            Product.belongsToMany(models.Category, {
+                through: models.ProductCategory,
+                foreignKey: "productId",
+                // as: "categoryName"
             })
         }
     };

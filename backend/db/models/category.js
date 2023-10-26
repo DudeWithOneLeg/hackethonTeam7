@@ -6,6 +6,12 @@ module.exports = (sequelize, DataTypes) => {
       Category.hasMany(models.ProductCategory, {
         foreignKey: "categoryId"
       })
+
+      Category.belongsToMany(models.Product, {
+        through: models.ProductCategory,
+        foreignKey: "categoryId",
+        // as: "productName"
+      })
     }
   }
   Category.init({

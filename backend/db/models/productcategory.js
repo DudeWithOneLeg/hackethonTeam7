@@ -3,17 +3,19 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class ProductCategory extends Model {
-    static associate(models) {
-      ProductCategory.belongsTo(models.Product, {
-        foreignKey: "productId",
-      });
-      ProductCategory.belongsTo(models.Category, {
-        foreignKey: "categoryId",
-      });
-    }
+    static associate(models) { }
   };
 
-  ProductCategory.init({}, {
+  ProductCategory.init({
+    productId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    categoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  }, {
     sequelize,
     modelName: 'ProductCategory'
   });

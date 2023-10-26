@@ -13,25 +13,26 @@ module.exports = {
     const validDiscounts = [
       {
         codeName: "WELCOME15",
-        applicableCategory: "all",
-        discountType: "percent",
+        applicableCategory: "All",
+        discountType: "Percent",
         discountValue: 15,
         expirationDate: new Date("9999-12-31T08:00:00Z")
       },
       {
         codeName: "CHAIR10",
-        applicableCategory: "chair",
-        discountType: "percent",
+        applicableCategory: "Chair",
+        discountType: "Percent",
         discountValue: 10,
         expirationDate: new Date("2023-12-31T12:00:00Z")
       },
       {
         codeName: "SUMMER30",
-        applicableCategory: "furniture",
-        discountType: "percent",
+        applicableCategory: "Furniture",
+        discountType: "Percent",
         discountValue: 30,
         expirationDate: new Date("2024-8-31T12:00:00Z")
       }
+      // another discount type could be a flat discount, like $100 dollars
     ]
 
     await queryInterface.bulkInsert(options, validDiscounts, {})

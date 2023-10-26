@@ -11,11 +11,13 @@ options.tableName = 'Categories'
 module.exports = {
   async up(queryInterface, Sequelize) {
     const validCategories = [
+      // All section
       {
         categoryName: "All",
         section: "All"
       },
 
+      // Color section
       {
         categoryName: "White",
         section: "Color"
@@ -29,6 +31,7 @@ module.exports = {
         section: "Color"
       },
 
+      // Availability section
       {
         categoryName: "Instock",
         section: "Availability"
@@ -38,6 +41,7 @@ module.exports = {
         section: "Availability"
       },
 
+      // Furniture section
       {
         categoryName: "Table",
         section: "Furniture"
@@ -67,6 +71,7 @@ module.exports = {
         section: "Furniture"
       },
 
+      // Location section
       {
         categoryName: "Bedroom",
         section: "Location"
@@ -95,6 +100,10 @@ module.exports = {
         categoryName: "Outdoor",
         section: "Location"
       },
+      {
+        categoryName: "Indoor",
+        section: "Location"
+      }
     ]
 
     await queryInterface.bulkInsert(options, validCategories, {})
