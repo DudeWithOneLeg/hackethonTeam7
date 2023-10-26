@@ -12,8 +12,15 @@
       "sequelize": "npm run --prefix backend sequelize",
       "sequelize-cli": "npm run --prefix backend sequelize-cli",
       "start": "npm start --prefix backend",
-      "build": "npm run build --prefix backend build"
+      "build": "npm run build --prefix backend build",
+      "client": "npm start --prefix frontend",
+      "together": "concurrently \"npm run start\" \"npm run client\""
+    },
+    "dependencies": {
+      "concurrently": "^8.0.1"
     },
     "author": "",
     "license": "ISC"
   }
+
+
