@@ -12,6 +12,7 @@ export default function SubScene({setCategory, setList}) {
 
         {
             models.map((model) => {
+                if (!model.category)
                 return <SubSceneSingleObject src={model.src} position={model.position} rotation={model.rotation} scale={model.scale || 1} name={model.name || ''} setCategory={setCategory} setList={setList}/>
             })
         }

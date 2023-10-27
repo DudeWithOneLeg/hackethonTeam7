@@ -5,6 +5,8 @@ import { useFrame } from "@react-three/fiber";
 import { Model } from "./Scene";
 import Navigation from "../Navigation"
 import SubScene from "../SubScene";
+import SignupFormPage from '../SignupFormPage'
+import ListScene from "../ListScene";
 
 
 export default function Homespace() {
@@ -130,6 +132,9 @@ export default function Homespace() {
       >Signup</h1>
       </>
       }
+      {
+        signup && <SignupFormPage />
+      }
     </Html>
     <PerspectiveCamera position={[1, -4, 2]} rotation={[.8, .5, 0]} camera={ { fov: 40}} ref={cameraRef}>
     <OrbitControls />
@@ -139,7 +144,8 @@ export default function Homespace() {
         <Model />
         {/* <ScrollControls> */}
       {/* <SingleObject/> */}
-      <SubScene hover={hover} setHover={setHover} setCategory={setCategory} setList={setList}/>
+      <SubScene setCategory={setCategory} setList={setList}/>
+      <ListScene category={category}/>
         {/* </ScrollControls> */}
 
 

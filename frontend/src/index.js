@@ -13,20 +13,20 @@
 
   if (process.env.NODE_ENV !== 'production') {
     restoreCSRF();
-
+console.log('yo')
     window.csrfFetch = csrfFetch;
     window.store = store;
   }
 
   function Root() {
     return (
-      <ModalProvider>
-        <Provider store={store}>
+      <Provider store={store}>
+          <ModalProvider>
           <BrowserRouter>
             <App />
           </BrowserRouter>
-        </Provider>
       </ModalProvider>
+        </Provider>
     );
   }
 
@@ -36,4 +36,3 @@
     </React.StrictMode>,
     document.getElementById('root')
   );
-                

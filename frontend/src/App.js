@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-  const dirLight = useRef(null)
 //home position [-2, 4, 10]
   return (
     <>

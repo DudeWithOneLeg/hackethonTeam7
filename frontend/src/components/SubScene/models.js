@@ -34,6 +34,12 @@ const models = [
         rotation: [0, 76.92, 0],
         name: 'Carpets'
     },
+    {
+        src: '../../../models/lamp-2.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Lamps'
+    },
 ]
 
 export default models
