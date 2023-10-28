@@ -5,11 +5,12 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, ShippingAddress } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
-const { notFoundError } = require('../../utils/notFoundError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { isAdmin, checkUser, authShipping } = require('../../utils/authorization');
+
 
 // Get all shipping addresses
-router.get("/all", async (req, res) => {
+router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const shippingAddresses = await ShippingAddress.findAll();
         res.json({ data: shippingAddresses });
@@ -19,8 +20,21 @@ router.get("/all", async (req, res) => {
 });
 
 
+// get a shipping address by id
+router.get("/id/:shippingAddressId", restoreUser, requireAuth, authShipping, async (req, res) => {
+    try {
+        const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
+        if (!shippingAddress) {
+            return notFoundError(res, "Shipping address")
+        }
+        res.json({ data: shippingAddress })
+    } catch (error) {
+        return internalServerError(res)
+    }
+})
+
 // Get a shipping address of a user
-router.get("/user/:userId", async (req, res) => {
+router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
     try {
         const shippingAddress = await ShippingAddress.findAll({
             where: {
@@ -40,7 +54,7 @@ router.get("/user/:userId", async (req, res) => {
 
 
 // Create a shipping address for a user
-router.post("/user/:userId", async (req, res) => {
+router.post("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
     const { shippingAddress, shippingState, shippingZipCode } = req.body;
 
     try {
@@ -59,7 +73,7 @@ router.post("/user/:userId", async (req, res) => {
 
 
 // Delete a shipping address for a user
-router.delete("/address/:shippingAddressId", async (req, res) => {
+router.delete("/address/:shippingAddressId", restoreUser, requireAuth, checkUser, async (req, res) => {
     try {
         const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
         if (!shippingAddress) {

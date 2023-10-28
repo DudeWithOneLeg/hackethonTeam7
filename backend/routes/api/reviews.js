@@ -5,8 +5,9 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, Review, Product } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
-const { notFoundError } = require('../../utils/notFoundError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { checkUser } = require('../../utils/authorization');
+
 
 // Get all reviews
 router.get("/all", async (req, res) => {
@@ -84,7 +85,7 @@ router.get('/user/:userId', async (req, res) => {
 
 
 // create new review for a product
-router.post('/product/:productId', async (req, res) => {
+router.post('/product/:productId', restoreUser, requireAuth, async (req, res) => {
     try {
         const { userId, review, rating } = req.body;
 
@@ -121,7 +122,7 @@ router.post('/product/:productId', async (req, res) => {
 
 
 // delete a review for a product
-router.delete("/:reviewId", async (req, res) => {
+router.delete("/:reviewId", restoreUser, requireAuth, checkUser, async (req, res) => {
     try {
         const review = await Review.findByPk(req.params.reviewId)
         if (!review) {

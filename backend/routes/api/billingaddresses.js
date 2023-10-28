@@ -5,11 +5,12 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { BillingAddress } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
-const { notFoundError } = require('../../utils/notFoundError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { isAdmin, authBilling, checkUser } = require('../../utils/authorization');
+
 
 // Get all billing addresses
-router.get("/all", async (req, res) => {
+router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const billingAddresses = await BillingAddress.findAll();
         res.json({ data: billingAddresses });
@@ -19,8 +20,22 @@ router.get("/all", async (req, res) => {
 });
 
 
+// get a billing address by id
+router.get("/id/:billingAddressId", restoreUser, requireAuth, authBilling, async (req, res) => {
+    try {
+        const billingAddress = await BillingAddress.findByPk(req.params.billingAddressId)
+        if (!billingAddress) {
+            return notFoundError(res, "Billing address")
+        }
+        res.json({ data: billingAddress })
+    } catch (error) {
+        return internalServerError(res)
+    }
+})
+
+
 // Get a billing address of a user
-router.get("/user/:userId", async (req, res) => {
+router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
     try {
         const billingAddress = await BillingAddress.findAll({
             where: {
@@ -40,7 +55,7 @@ router.get("/user/:userId", async (req, res) => {
 
 
 // Create a billing address for a user
-router.post("/user/:userId", async (req, res) => {
+router.post("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
     const { billingAddress, billingState, billingZipCode } = req.body;
 
     try {
@@ -59,7 +74,7 @@ router.post("/user/:userId", async (req, res) => {
 
 
 // Delete a billing address for a user
-router.delete("/address/:billingAddressId", async (req, res) => {
+router.delete("/address/:billingAddressId", restoreUser, requireAuth, checkUser, async (req, res) => {
     try {
         const billingAddress = await BillingAddress.findByPk(req.params.billingAddressId)
         if (!billingAddress) {

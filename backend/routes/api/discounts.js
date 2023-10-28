@@ -5,11 +5,12 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { Discount } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
-const { notFoundError } = require('../../utils/notFoundError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { isAdmin } = require('../../utils/authorization');
+
 
 // Get all discounts
-router.get("/all", async (req, res) => {
+router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const discounts = await Discount.findAll()
         res.json({ data: discounts })
@@ -19,7 +20,7 @@ router.get("/all", async (req, res) => {
 })
 
 // get a discount by id
-router.get("/:discountId", async (req, res, next) => {
+router.get("/:discountId", restoreUser, requireAuth, isAdmin, async (req, res, next) => {
     try {
         const discount = await Discount.findByPk(req.params.discountId)
         if (!discount) {
@@ -33,7 +34,7 @@ router.get("/:discountId", async (req, res, next) => {
 })
 
 // Create a new discount
-router.post("/new", async (req, res) => {
+router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const { codeName, applicableCategory, discountType, discountValue, expirationDate } = req.body
 
@@ -52,7 +53,7 @@ router.post("/new", async (req, res) => {
 })
 
 // Delete a discount
-router.delete('/:discountId', async (req, res) => {
+router.delete('/:discountId', restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const discount = await Discount.findByPk(req.params.discountId)
         if (!discount) {

@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, ProductImage } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
 
 // Get all productImage
 router.get("/all", async (req, res) => {

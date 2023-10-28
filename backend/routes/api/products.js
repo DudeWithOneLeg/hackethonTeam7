@@ -6,8 +6,9 @@ const { check } = require('express-validator');
 const { Op, Sequelize } = require('sequelize');
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, Product, Category, ProductCategory } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
-const { notFoundError } = require('../../utils/notFoundError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { isAdmin } = require('../../utils/authorization');
+
 
 // Get all products
 router.get("/all", async (req, res) => {
@@ -154,7 +155,7 @@ router.get("/filter", async (req, res) => {
 
 
 // create a new product to list
-router.post("/new", async (req, res) => {
+router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
     const { productName, productDescription, productPrice, quantity } = req.body
 
     try {
@@ -173,7 +174,7 @@ router.post("/new", async (req, res) => {
 
 
 // update a product's quantity
-router.post("/:productId/quantity", async (req, res) => {
+router.post("/:productId/quantity", restoreUser, requireAuth, async (req, res) => {
     try {
         const quantity = req.body.quantity
         const productId = req.params.productId
@@ -198,7 +199,7 @@ router.post("/:productId/quantity", async (req, res) => {
 
 
 // update a product's information
-router.post("/:productId/info", async (req, res) => {
+router.post("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, res) => {
     const productId = req.params.productId
     try {
         const { productName, productDescription, productPrice } = req.body;
@@ -222,7 +223,7 @@ router.post("/:productId/info", async (req, res) => {
 
 
 // delete a product by id
-router.delete("/:productId", async (req, res) => {
+router.delete("/:productId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const product = await Product.findByPk(req.params.productId)
         if (!product) {

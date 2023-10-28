@@ -5,8 +5,9 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, ProductCategory } = require("../../db/models");
-const { internalServerError } = require('../../utils/internalServerError');
-const { notFoundError } = require('../../utils/notFoundError');
+const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { isAdmin } = require('../../utils/authorization');
+
 
 // Get all productCategories
 router.get("/all", async (req, res) => {
@@ -51,7 +52,7 @@ router.get('/category/:categoryId', async (req, res) => {
 })
 
 // create a new productCategory
-router.post("/new", async (req, res) => {
+router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
     const { productId, categoryId } = req.body
 
     try {
@@ -67,7 +68,7 @@ router.post("/new", async (req, res) => {
 })
 
 // delete a productCategory
-router.delete("/delete/:productCategoryId", async (req, res) => {
+router.delete("/delete/:productCategoryId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const productCategory = await ProductCategory.findByPk(req.params.productCategoryId)
         if (!productCategory) {
