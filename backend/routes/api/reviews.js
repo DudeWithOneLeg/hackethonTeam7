@@ -86,7 +86,7 @@ router.get('/user/:userId', async (req, res) => {
 // create new review for a product
 router.post('/product/:productId', async (req, res) => {
     try {
-        const { review, rating } = req.body;
+        const { userId, review, rating } = req.body;
 
         // check if product exists
         const product = await Product.findByPk(req.params.productId)
@@ -98,7 +98,7 @@ router.post('/product/:productId', async (req, res) => {
         const checkForReview = await Review.findAll({
             where: {
                 productId: req.params.productId,
-                userId: 2
+                userId: userId
             }
         })
         if (checkForReview.length > 0) {
@@ -107,7 +107,7 @@ router.post('/product/:productId', async (req, res) => {
 
         // if there's no problem, create a new review for a product
         const newReview = await Review.create({
-            userId: 1,
+            userId: userId,
             productId: req.params.productId,
             review: review,
             rating: rating

@@ -18,6 +18,7 @@ router.get("/all", async (req, res) => {
     }
 });
 
+
 // Get a billing address of a user
 router.get("/user/:userId", async (req, res) => {
     try {
@@ -36,6 +37,7 @@ router.get("/user/:userId", async (req, res) => {
         return internalServerError(res);
     }
 });
+
 
 // Create a billing address for a user
 router.post("/user/:userId", async (req, res) => {

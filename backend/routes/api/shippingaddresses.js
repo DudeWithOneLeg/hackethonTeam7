@@ -4,7 +4,9 @@ const router = express.Router();
 const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, ShippingAddress } = require("../../db/models")
+const { User, ShippingAddress } = require("../../db/models");
+const { internalServerError } = require('../../utils/internalServerError');
+const { notFoundError } = require('../../utils/notFoundError');
 
 // Get all shipping addresses
 router.get("/all", async (req, res) => {
@@ -15,6 +17,7 @@ router.get("/all", async (req, res) => {
         return internalServerError(res);
     }
 });
+
 
 // Get a shipping address of a user
 router.get("/user/:userId", async (req, res) => {
@@ -34,6 +37,7 @@ router.get("/user/:userId", async (req, res) => {
         return internalServerError(res);
     }
 });
+
 
 // Create a shipping address for a user
 router.post("/user/:userId", async (req, res) => {

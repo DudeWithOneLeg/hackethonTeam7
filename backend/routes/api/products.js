@@ -14,28 +14,30 @@ router.get("/all", async (req, res) => {
     try {
         const products = await Product.findAll()
         res.json({ data: products })
-    } catch (error) {
+    } catch (err) {
         return internalServerError(res)
     }
 })
 
+
 // Get a product by id
-router.get("/id/:productId", async (req, res) => {
+router.get("/:productId", async (req, res) => {
     try {
         const product = await Product.findByPk(req.params.productId)
         if (!product) {
             return notFoundError(res, "Product")
         }
         res.json({ data: product })
-    } catch (error) {
+    } catch (err) {
         return internalServerError(res)
     }
 })
 
+
 // Get a product by category and by filter type
-    //'or' will, if given multiple categories, return all products of ANY of the categories
-    //'and' will, if given multiple categories, return all products of ALL of the categories
-    //'none' will, if given multiple categories, return all products of NON of the categories
+//'or' will, if given multiple categories, return all products of ANY of the categories
+//'and' will, if given multiple categories, return all products of ALL of the categories
+//'none' will, if given multiple categories, return all products of NON of the categories
 // example url for testing: http://localhost:8000/api/product/filter?categories=Black,Indoor&type=or
 router.get("/filter", async (req, res) => {
     try {
@@ -73,7 +75,7 @@ router.get("/filter", async (req, res) => {
 
             res.json({ data: products });
 
-        // filter for "none"
+            // filter for "none"
         } else if (type === "none") {
             // return res.json(products)
             const productIds = await Product.findAll({
@@ -105,7 +107,7 @@ router.get("/filter", async (req, res) => {
             });
             res.json({ data: products })
 
-        // return for "and"
+            // return for "and"
         } else if (type === "and") {
             // create an array that will have the categoryId number for each category condition passed in as a query
             const categoryQuery = await Category.findAll({
@@ -135,150 +137,103 @@ router.get("/filter", async (req, res) => {
                 const categoryIds = currPC.map((pc) => pc.categoryId);
 
                 // if every id of the conditions passed in as query is in the categoryIds array
-                    // push the current product into the return "andProducts" array
+                // push the current product into the return "andProducts" array
                 const result = categoryId.every((el) => categoryIds.includes(el));
                 if (result) {
                     andProducts.push(product)
                 }
             }
 
-            return res.json(andProducts);
+            return res.json({ data: andProducts });
         }
 
-    } catch (error) {
+    } catch (err) {
         return internalServerError(res);
     }
 })
 
-// figure out getting all products of "none"
-router.get("/test", async (req, res) => {
-    let categories = "All"
-    if (req.query.categories) {
-        categories = req.query.categories
-    }
-    let categoriesArr = categories.split(",")
 
-    // Find PK of the categories
-    let categoryId = []
-    for (let i = 0; i < categoriesArr.length; i++) {
-        let curr = categoriesArr[i]
-        let category = await Category.findAll({
-            where: {
-                categoryName: curr
-            },
-            attributes: ["id"]
-        })
-        categoryId.push(category[0].id)
-    }
+// create a new product to list
+router.post("/new", async (req, res) => {
+    const { productName, productDescription, productPrice, quantity } = req.body
 
-    let productId = {}
-    // Go through the categoryId array and find each entry in the ProductCategories that has that "categoryId"
-    for (let i = 0; i < categoryId.length; i++) {
-        let curr = categoryId[i]
-        let productCategoryId = await ProductCategory.findAll({
-            where: {
-                categoryId: curr
-            },
-            attributes: ["productId"]
-        })
-
-        // loop through all the entries from the ProductCategory table and insert into the productId object the primary key of that product
-        for (let j = 0; j < productCategoryId.length; j++) {
-            let curr = productCategoryId[j]
-            if (!productId[curr.productId]) {
-                productId[curr.productId] = true
-            }
-        }
-    }
-    // convert the object to an array of the keys
-    // at this point, this array will contain all the ids of products that has been categorized by one of the conditions passed in as a query
-    productId = Object.keys(productId)
-
-    // get all the products that are NOT in the productId array
-    // basically getting all of the products that doesn't have a category of one of the conditions passed in as a query
-    let products = await Product.findAll({
-        where: {
-            id: {
-                [Op.notIn]: productId,
-            },
-        },
-        attributes: { exclude: ["createdAt", "updatedAt"] },
-        include: {
-            model: Category,
-            through: { attributes: [] } // Removes ProductCategory as it is redundant information
-        },
-    });
-
-    return res.json(products)
     try {
+        const newProduct = await Product.create({
+            productName: productName,
+            productDescription: productDescription,
+            productPrice: productPrice,
+            quantity: quantity
+        })
 
-    } catch {
-        return internalServerError(res);
+        res.status(201).json({ datea: newProduct })
+    } catch (err) {
+        return internalServerError(res)
     }
 })
 
-// // Get a product by category by "except". If given multiple categories, it will return all products not of any of the categories
-// // example url: localhost:8000/api/product/category?or=Indoor,Black
-// router.get("/except", async (req, res) => {
-//     try {
-//         const { categories } = req.query
-//         const conditions = categories.split(','); // Split the category names by commas
-//         const products = await Product.findAll({
-//             include: [
-//                 {
-//                     model: Category,
-//                     required: true,
-//                     attributes: { exclude: ['createdAt', 'updatedAt'] },
-//                     through: { attributes: [] }, // Exclude the ProductCategory as it is redundant information
-//                 }
-//             ],
-//             attributes: { exclude: ['createdAt', 'updatedAt'] },
-//             where: {
-//                 [Op.and]: {
-//                     '$Categories.categoryName$': {
-//                         [Op.not]: conditions // Use Op.not to exclude products that match any of the conditions
-//                     }
-//                 }
-//             },
-//         });
 
-//         res.json({ data: products });
-//     } catch (error) {
-//         return internalServerError(res);
-//     }
-// })
+// update a product's quantity
+router.post("/:productId/quantity", async (req, res) => {
+    try {
+        const quantity = req.body.quantity
+        const productId = req.params.productId
 
-// // Get a product by category by "and". If given multiple categories, it will return all products part of every given category
-// // example url: localhost:8000/api/product/category?and=Indoor,Black
-// router.get("/and", async (req, res) => {
-//     try {
-//         const { categories } = req.query
-//         const categoryNames = categories.split(','); // Split the category names by commas
+        const product = await Product.findByPk(productId)
 
-//         console.log('booba', categoryNames)
+        if (!product) {
+            return notFoundError(res, "Product")
+        }
+        if (product.quantity < quantity) {
+            return res.status(400).json({ error: "Insufficient quantity of product." })
+        }
 
-//         const products = await Product.findAll({
-//             include: [
-//                 {
-//                     model: Category,
-//                     required: true,
-//                     attributes: { exclude: ['createdAt', 'updatedAt'] },
-//                     where: {
-//                         [Op.and]: categoryNames.map(name => ({
-//                             categoryName: name
-//                         }))
-//                     },
-//                     through: { attributes: [] } // Removes ProductCategory as it is redundant information
-//                 }
-//             ],
-//             attributes: { exclude: ['createdAt', 'updatedAt'] },
-//         });
+        product.quantity -= quantity;
+        await product.save()
 
-//         res.json({ data: products });
-//     } catch (error) {
-//         return internalServerError(res);
-//     }
-// })
+        return res.json({ message: "Purchase successful" })
+    } catch (err) {
+        return internalServerError(res)
+    }
+})
+
+
+// update a product's information
+router.post("/:productId/info", async (req, res) => {
+    const productId = req.params.productId
+    try {
+        const { productName, productDescription, productPrice } = req.body;
+
+        const product = await Product.findByPk(productId)
+
+        if (!product) {
+            return notFoundError(res, "Product")
+        }
+
+        product.productName = productName
+        product.productDescription = productDescription
+        product.productPrice = productPrice
+
+        await product.save()
+        return res.json({ message: "Successfully updated product information" })
+    } catch (err) {
+        return internalServerError(res)
+    }
+})
+
+
+// delete a product by id
+router.delete("/:productId", async (req, res) => {
+    try {
+        const product = await Product.findByPk(req.params.productId)
+        if (!product) {
+            return notFoundError(res, "Product")
+        }
+        await product.destory()
+        res.status(200).json({ message: "Product successfully deleted", statusCode: 200 })
+    } catch (err) {
+        return internalServerError(res)
+    }
+})
 
 
 

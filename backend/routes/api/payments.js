@@ -7,7 +7,7 @@ const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth')
 const { User, Payment } = require("../../db/models");
 const { internalServerError } = require('../../utils/internalServerError');
 
-// Get all orders made
+// Get all payments
 router.get("/all", async (req, res) => {
     try {
         const payments = await Payment.findAll()

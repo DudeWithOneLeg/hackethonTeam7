@@ -66,7 +66,7 @@ router.post("/new", async (req, res) => {
     }
 })
 
-// delete a producCategory
+// delete a productCategory
 router.delete("/delete/:productCategoryId", async (req, res) => {
     try {
         const productCategory = await ProductCategory.findByPk(req.params.productCategoryId)

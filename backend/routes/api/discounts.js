@@ -51,6 +51,7 @@ router.post("/new", async (req, res) => {
     }
 })
 
+// Delete a discount
 router.delete('/:discountId', async (req, res) => {
     try {
         const discount = await Discount.findByPk(req.params.discountId)
