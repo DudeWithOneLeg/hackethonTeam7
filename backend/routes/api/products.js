@@ -33,17 +33,19 @@ router.get("/id/:productId", async (req, res) => {
 })
 
 // Get a product by category and by filter type
-//'or' will, if given multiple categories, return all products of ANY of the categories
-//'and' will, if given multiple categories, return all products of ALL of the categories
-//'none' will, if given multiple categories, return all products of NON of the categories
+    //'or' will, if given multiple categories, return all products of ANY of the categories
+    //'and' will, if given multiple categories, return all products of ALL of the categories
+    //'none' will, if given multiple categories, return all products of NON of the categories
 // example url for testing: http://localhost:8000/api/product/filter?categories=Black,Indoor&type=or
-// TO DO, figure out how make "and" and "none" work correctly
 router.get("/filter", async (req, res) => {
     try {
+        // set default categories to "All" if none are passed in
         let categories = "All"
         if (req.query.categories) {
             categories = req.query.categories
         }
+
+        // set default type filter to "or" if none are passed in
         let type = "or"
         if (req.query.type) {
             type = req.query.type
@@ -71,59 +73,8 @@ router.get("/filter", async (req, res) => {
 
             res.json({ data: products });
 
-            // filter for "none"
+        // filter for "none"
         } else if (type === "none") {
-            // // Find PK of the categories
-            // let categoryId = []
-            // for (let i = 0; i < categoryNames.length; i++) {
-            //     let curr = categoryNames[i]
-            //     let category = await Category.findAll({
-            //         where: {
-            //             categoryName: curr
-            //         },
-            //         attributes: ["id"]
-            //     })
-            //     categoryId.push(category[0].id)
-            // }
-
-            // let productId = {}
-            // // Go through the categoryId array and find each entry in the ProductCategories that has that "categoryId"
-            // for (let i = 0; i < categoryId.length; i++) {
-            //     let curr = categoryId[i]
-            //     let productCategoryId = await ProductCategory.findAll({
-            //         where: {
-            //             categoryId: curr
-            //         },
-            //         attributes: ["productId"]
-            //     })
-
-            //     // loop through all the entries from the ProductCategory table and insert into the productId object the primary key of that product
-            //     for (let j = 0; j < productCategoryId.length; j++) {
-            //         let curr = productCategoryId[j]
-            //         if (!productId[curr.productId]) {
-            //             productId[curr.productId] = true
-            //         }
-            //     }
-            // }
-            // // convert the object to an array of the keys
-            // // at this point, this array will contain all the ids of products that has been categorized by one of the conditions passed in as a query
-            // productId = Object.keys(productId)
-
-            // // get all the products that are NOT in the productId array
-            // // basically getting all of the products that doesn't have a category of one of the conditions passed in as a query
-            // let products = await Product.findAll({
-            //     where: {
-            //         id: {
-            //             [Op.notIn]: productId,
-            //         },
-            //     },
-            //     attributes: { exclude: ["createdAt", "updatedAt"] },
-            //     include: {
-            //         model: Category,
-            //         through: { attributes: [] } // Removes ProductCategory as it is redundant information
-            //     },
-            // });
-
             // return res.json(products)
             const productIds = await Product.findAll({
                 attributes: ['id'],
@@ -153,54 +104,45 @@ router.get("/filter", async (req, res) => {
                 },
             });
             res.json({ data: products })
+
+        // return for "and"
         } else if (type === "and") {
-            // first get all the products
-            // for each product, go through ProductCategory and get all the Category IDs
-            // test this first
+            // create an array that will have the categoryId number for each category condition passed in as a query
+            const categoryQuery = await Category.findAll({
+                where: {
+                    categoryName: categoryNames,
+                },
+                attributes: ['id']
+            });
+            const categoryId = categoryQuery.map(category => category.id)
 
+            // create an array of all product ids
             const products = await Product.findAll()
-            let productId = []
-            for (let i = 0; i < products.length; i++) {
-                let curr = products[i]
-                productId.push(curr.id)
-            }
 
-            // let productCategory = {}
-            // for (let i = 0; i < productId.length; i++) {
-            //     let curr = productId[i]
-            //     const productCategoryId = await ProductCategory.findAll({
-            //         where: {
-            //             productId: curr
-            //         },
-            //         attributes: ["categoryId"],
-            //     })
+            const andProducts = [];
 
-            //     for(let j = 0; j < productCategoryId.length; j++) {
-            //         let curr = productCategoryId[j]
-            //         if(!productCategory[curr.categoryId]) {
-            //             productCategory[curr] =
-            //         }
-            //     }
-            // }
-
-            let productCategory = {}
-            for (let i = 1; i < productId.length; i++) {
-                let curr = productId[i]
-                const productCategories = await ProductCategory.findAll({
+            // go through all the products
+            for (const product of products) {
+                //get all the product categories of the current product
+                const currPC = await ProductCategory.findAll({
                     where: {
-                        productId: curr
+                        productId: product.id,
                     },
-                    attributes: ["categoryId"]
-                })
+                    attributes: { exclude: ["createdAt", "updatedAt"] },
+                });
 
-                for (let j = 0; j < productCategories.length; j++) {
-                    let curr = productCategories[j]
-                    console.log('booba', curr.categoryId)
+                // get only the category id's of all the PC of the current product
+                const categoryIds = currPC.map((pc) => pc.categoryId);
+
+                // if every id of the conditions passed in as query is in the categoryIds array
+                    // push the current product into the return "andProducts" array
+                const result = categoryId.every((el) => categoryIds.includes(el));
+                if (result) {
+                    andProducts.push(product)
                 }
-                res.json(productCategories)
             }
 
-            // res.json(products)
+            return res.json(andProducts);
         }
 
     } catch (error) {
