@@ -47,13 +47,13 @@ router.get("/filter", async (req, res) => {
         if (req.query.categories) {
             categories = req.query.categories
         }
+        const categoryNames = categories.split(','); // Split the category names by commas
 
         // set default type filter to "or" if none are passed in
         let type = "or"
         if (req.query.type) {
             type = req.query.type
         }
-        const categoryNames = categories.split(','); // Split the category names by commas
 
         // filter for "or"
         if (type === "or") {
@@ -153,6 +153,82 @@ router.get("/filter", async (req, res) => {
     }
 })
 
+
+router.get('/test/asdf', async (req, res) => {
+    try {
+        // set default categories to "All" if none are passed in
+        let categories = "All"
+        if (req.query.categories) {
+            categories = req.query.categories
+        }
+        const categoryNames = categories.split(','); // Split the category names by commas
+
+        // set default type filter to "or" if none are passed in
+        let type = "and"
+        if (req.query.type) {
+            type = req.query.type
+        }
+
+        const test = await ProductCategory.findAll({
+            include: [
+                {
+                    model: Category,
+                    where: {
+                        categoryName: {
+                            [Op.in]: categoryNames,
+                        },
+                    },
+                },
+                {
+                    model: Product,
+                },
+            ],
+        })
+
+        return res.json(test)
+
+        // create an array that will have the categoryId number for each category condition passed in as a query
+        const categoryQuery = await Category.findAll({
+            where: {
+                categoryName: categoryNames,
+            },
+            attributes: ['id']
+        });
+        const categoryId = categoryQuery.map(category => category.id)
+
+        // create an array of all product ids
+        const products = await Product.findAll()
+
+        const andProducts = [];
+
+        // go through all the products
+        for (const product of products) {
+            //get all the product categories of the current product
+            const currPC = await ProductCategory.findAll({
+                where: {
+                    productId: product.id,
+                },
+                attributes: { exclude: ["createdAt", "updatedAt"] },
+            });
+
+            // get only the category id's of all the PC of the current product
+            const categoryIds = currPC.map((pc) => pc.categoryId);
+
+            // if every id of the conditions passed in as query is in the categoryIds array
+            // push the current product into the return "andProducts" array
+            const result = categoryId.every((el) => categoryIds.includes(el));
+            if (result) {
+                andProducts.push(product)
+            }
+
+            return res.json({ data: andProducts });
+        }
+
+    } catch (err) {
+        return res.json(err)
+        return internalServerError(res);
+    }
+})
 
 // create a new product to list
 router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
