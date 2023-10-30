@@ -1,7 +1,7 @@
 
 const jwt = require('jsonwebtoken');
 const { jwtConfig } = require('../config');
-const { User } = require('../db/models');
+const { User, BillingAddress, ShippingAddress, Order, Payment, Product, Review, Category } = require('../db/models');
 
 const { secret, expiresIn } = jwtConfig;
 
@@ -58,6 +58,7 @@ const restoreUser = (req, res, next) => {
     return next();
   });
 };
+
 
 // If there is no current user, return an error
 const requireAuth = function (req, _res, next) {

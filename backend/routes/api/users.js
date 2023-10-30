@@ -30,45 +30,37 @@ const validateSignup = [
 const router = express.Router();
 
 // Restore session user
-router.get(
-  '/',
-  (req, res) => {
-    const { user } = req;
-    if (user) {
-      const safeUser = {
-        id: user.id,
-        email: user.email,
-        username: user.username,
-      };
-      return res.json({
-        user: safeUser
-      });
-    } else return res.json({ user: null });
-  }
-);
-
-// Sign up
-router.post(
-  '/',
-  validateSignup,
-  async (req, res) => {
-    const { email, password, username } = req.body;
-    const hashedPassword = bcrypt.hashSync(password);
-    const user = await User.create({ email, username, hashedPassword });
-
+router.get('/', (req, res) => {
+  const { user } = req;
+  if (user) {
     const safeUser = {
       id: user.id,
       email: user.email,
       username: user.username,
     };
-
-    await setTokenCookie(res, safeUser);
-
     return res.json({
       user: safeUser
     });
-  }
-);
+  } else return res.json({ user: null });
+});
+
+// Sign up
+router.post('/', validateSignup, async (req, res) => {
+  const { email, password, username } = req.body;
+  const hashedPassword = bcrypt.hashSync(password);
+  const user = await User.create({ email, username, hashedPassword });
+
+  const safeUser = {
+    id: user.id,
+    email: user.email,
+    username: user.username,
+  };
+
+  await setTokenCookie(res, safeUser);
+
+  return res.json({
+    user: safeUser
+  });
+});
 
 module.exports = router;
-        

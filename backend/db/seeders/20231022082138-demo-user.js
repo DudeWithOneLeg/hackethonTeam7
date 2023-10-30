@@ -14,38 +14,43 @@ options.tableName = 'Users'
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
     const validUsers = [
       {
-        email: 'demo@user.io',
-        username: 'Demo-lition',
+        email: 'admin@aa.io',
+        username: 'AdminUser',
+        role: "admin",
         hashedPassword: bcrypt.hashSync('password')
       },
-
+      {
+        email: 'demo@aa.io',
+        username: 'DemoUser',
+        role: "customer",
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'user1@aa.io',
+        username: 'UserOne',
+        role: "customer",
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'user2@aa.io',
+        username: 'UserTwo',
+        role: "customer",
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'user3@aa.io',
+        username: 'UserThree',
+        role: "customer",
+        hashedPassword: bcrypt.hashSync('password')
+      },
     ]
 
-   await queryInterface.bulkInsert(options, validUsers, {})
+    await queryInterface.bulkInsert(options, validUsers, {})
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-    await queryInterface.bulkDelete(options, {
-      id: [1]
-    }, {});
+    await queryInterface.bulkDelete(options, {}, {});
   }
 };
-
-      

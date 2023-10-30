@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 let options = {};
@@ -8,34 +8,20 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Discounts", {
+    return queryInterface.createTable("Categories", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      codeName: {
+      categoryName: {
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      applicableCategory: {
-        type: Sequelize.STRING,
-        defaultValue: "All",
         allowNull: false
       },
-      discountType: {
+      section: {
         type: Sequelize.STRING,
-        defaultValue: "percent",
         allowNull: false
-      },
-      discountValue: {
-        type: Sequelize.DECIMAL,
-        allowNull: false,
-      },
-      expirationDate: {
-        type: Sequelize.DATE,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -50,7 +36,7 @@ module.exports = {
     }, options);
   },
   down: async (queryInterface, Sequelize) => {
-    options.tableName = "Discounts";
+    options.tableName = "Categories";
     return queryInterface.dropTable(options);
   }
 };
