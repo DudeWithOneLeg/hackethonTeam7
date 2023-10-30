@@ -40,6 +40,24 @@ const models = [
         rotation: [0, 76.92, 0],
         category: 'Lamps'
     },
+    {
+        src: '../../../models/lamp-5.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Lamps'
+    },
+    {
+        src: '../../../models/lamp-6.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Lamps'
+    },
+    {
+        src: '../../../models/lamp-7.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Lamps'
+    },
 ]
 
 export default models

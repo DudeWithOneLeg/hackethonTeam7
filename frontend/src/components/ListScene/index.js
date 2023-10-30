@@ -5,7 +5,7 @@ import { Gltf } from "@react-three/drei";
 
 export default function ListScene({setCategory, setList, category}) {
 
-    const [position, setPosition] = useState([4.5, 1, -5])
+    const [position, setPosition] = useState([4.5, 1.3, -5])
 
 
     return (
@@ -14,7 +14,7 @@ export default function ListScene({setCategory, setList, category}) {
         {
             models.map((model) => {
                 if (model.category) {
-                    console.log('yoo')
+                    console.log(model)
                     return <Gltf
                     src={model.src}
                     position={position}

@@ -3,7 +3,11 @@
     import { useDispatch, useSelector } from "react-redux";
     import { Redirect } from "react-router-dom";
     import * as sessionActions from "../../store/session";
-    //import "./SignupForm.css";
+    import {Provider} from "react-redux";
+    import configureStore from "../../store";
+    import "./index.css";
+
+    const store = configureStore()
 
     function SignupFormPage() {
       const dispatch = useDispatch();
@@ -16,34 +20,34 @@
       const [confirmPassword, setConfirmPassword] = useState("");
       const [errors, setErrors] = useState({});
 
-      if (sessionUser) return <Redirect to="/" />;
+      // if (sessionUser) return <Redirect to="/" />;
 
       const handleSubmit = (e) => {
         e.preventDefault();
-        if (password === confirmPassword) {
-          setErrors({});
-          return dispatch(
-            sessionActions.signup({
-              email,
-              username,
-              firstName,
-              lastName,
-              password,
-            })
-          ).catch(async (res) => {
-            const data = await res.json();
-            if (data && data.errors) {
-              setErrors(data.errors);
-            }
-          });
-        }
-        return setErrors({
-          confirmPassword: "Confirm Password field must be the same as the Password field"
-        });
+        // if (password === confirmPassword) {
+        //   setErrors({});
+        //   return dispatch(
+        //     sessionActions.signup({
+        //       email,
+        //       username,
+        //       firstName,
+        //       lastName,
+        //       password,
+        //     })
+        //   ).catch(async (res) => {
+        //     const data = await res.json();
+        //     if (data && data.errors) {
+        //       setErrors(data.errors);
+        //     }
+        //   });
+        // }
+        // return setErrors({
+        //   confirmPassword: "Confirm Password field must be the same as the Password field"
+        // });
       };
 
       return (
-        <>
+        <Provider store={store}>
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
             <label>
@@ -108,9 +112,8 @@
             {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
             <button type="submit">Sign Up</button>
           </form>
-        </>
+        </Provider>
       );
     }
 
     export default SignupFormPage;
-                  
