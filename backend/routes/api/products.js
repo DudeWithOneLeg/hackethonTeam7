@@ -22,7 +22,7 @@ router.get("/all", async (req, res) => {
 
 
 // Get a product by id
-router.get("/:productId", async (req, res) => {
+router.get("/id/:productId", async (req, res) => {
     try {
         const product = await Product.findByPk(req.params.productId)
         if (!product) {
@@ -54,6 +54,7 @@ router.get("/filter", async (req, res) => {
         if (req.query.type) {
             type = req.query.type
         }
+
 
         // filter for "or"
         if (type === "or") {
@@ -110,40 +111,27 @@ router.get("/filter", async (req, res) => {
 
             // return for "and"
         } else if (type === "and") {
-            // create an array that will have the categoryId number for each category condition passed in as a query
-            const categoryQuery = await Category.findAll({
+            const categoryIds = await Category.findAll({
                 where: {
                     categoryName: categoryNames,
                 },
-                attributes: ['id']
+                attributes: ['id'],
             });
-            const categoryId = categoryQuery.map(category => category.id)
 
-            // create an array of all product ids
-            const products = await Product.findAll()
-
-            const andProducts = [];
-
-            // go through all the products
-            for (const product of products) {
-                //get all the product categories of the current product
-                const currPC = await ProductCategory.findAll({
+            const andProducts = await Product.findAll({
+                attributes: { exclude: ['createdAt', 'updatedAt'] },
+                include: {
+                    model: ProductCategory,
+                    attributes: { exclude: ['createdAt', 'updatedAt'] },
                     where: {
-                        productId: product.id,
+                        categoryId: {
+                            [Op.in]: categoryIds.map(category => category.id),
+                        },
                     },
-                    attributes: { exclude: ["createdAt", "updatedAt"] },
-                });
-
-                // get only the category id's of all the PC of the current product
-                const categoryIds = currPC.map((pc) => pc.categoryId);
-
-                // if every id of the conditions passed in as query is in the categoryIds array
-                // push the current product into the return "andProducts" array
-                const result = categoryId.every((el) => categoryIds.includes(el));
-                if (result) {
-                    andProducts.push(product)
-                }
-            }
+                },
+                group: ['Product.id'], // Group by product to ensure products are associated with all specified categories.
+                having: Sequelize.where(Sequelize.fn('count', Sequelize.col('ProductCategories.categoryId')), '=', categoryIds.length), // Ensure all specified categories are associated.
+            });
 
             return res.json({ data: andProducts });
         }
