@@ -40,7 +40,6 @@ export default function SubSceneSingleObject({src, position, rotation, name, set
     onClick={() => {
       setCategory(name)
       setList(true)
-      console.log('yo')
   }}
     />
     </>

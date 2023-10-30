@@ -47,7 +47,7 @@
       };
 
       return (
-        <Provider store={store}>
+        <div className="form">
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
             <label>
@@ -112,7 +112,7 @@
             {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
             <button type="submit">Sign Up</button>
           </form>
-        </Provider>
+        </div>
       );
     }
 

@@ -35,28 +35,76 @@ const models = [
         name: 'Carpets'
     },
     {
-        src: '../../../models/lamp-2.gltf',
+        src: '../../../models/lamps/lamp-2.gltf',
         position: [0, 0, 0],
         rotation: [0, 76.92, 0],
         category: 'Lamps'
     },
     {
-        src: '../../../models/lamp-5.gltf',
+        src: '../../../models/lamps/lamp-3.gltf',
         position: [0, 0, 0],
         rotation: [0, 76.92, 0],
         category: 'Lamps'
     },
     {
-        src: '../../../models/lamp-6.gltf',
+        src: '../../../models/lamps/lamp-4.gltf',
         position: [0, 0, 0],
         rotation: [0, 76.92, 0],
         category: 'Lamps'
     },
     {
-        src: '../../../models/lamp-7.gltf',
+        src: '../../../models/lamps/lamp-5.gltf',
         position: [0, 0, 0],
         rotation: [0, 76.92, 0],
         category: 'Lamps'
+    },
+    {
+        src: '../../../models/lamps/lamp-6.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Lamps'
+    },
+    {
+        src: '../../../models/lamps/lamp-7.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Lamps'
+    },
+    {
+        src: '../../../models/sofa-1.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 76.92, 0],
+        category: 'Sofas'
+    },
+    {
+        src: '../../../models/sofa-2.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 0, 0],
+        category: 'Sofas'
+    },
+    {
+        src: '../../../models/sofa-3.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 0, 0],
+        category: 'Sofas'
+    },
+    {
+        src: '../../../models/sofa-4.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 0, 0],
+        category: 'Sofas'
+    },
+    {
+        src: '../../../models/sofa-5.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 0, 0],
+        category: 'Sofas'
+    },
+    {
+        src: '../../../models/sofa-6.gltf',
+        position: [0, 0, 0],
+        rotation: [0, 0, 0],
+        category: 'Sofas'
     },
 ]
 
