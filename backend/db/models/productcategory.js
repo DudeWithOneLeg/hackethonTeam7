@@ -13,7 +13,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
 
-  ProductCategory.init({}, {
+  ProductCategory.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    }
+  }, {
     sequelize,
     modelName: 'ProductCategory'
   });

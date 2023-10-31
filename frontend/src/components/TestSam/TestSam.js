@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addProductThunk, loadAllProductsThunk, loadFilteredProductsThunk, loadOneProductThunk } from "../../store/product"
+import { addProductCategoryThunk, loadAllProductCategoriesThunk, loadProductCategoryByCategory } from "../../store/productcategory"
 
 function TestSam() {
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ function TestSam() {
 
     const [refresh, setRefresh] = useState(false)
 
-    const [newProductCategories, setNewProductCategories] = useState([])
+    const [newProductCategories, setNewProductCategories] = useState("")
 
 
     const categories = ["Black", "Outdoor"].join(",")
@@ -24,11 +25,12 @@ function TestSam() {
         // dispatch(loadOneProductThunk(1))
         // dispatch(loadAllProductsThunk())
         dispatch(loadFilteredProductsThunk(categories, filter))
+        dispatch(loadAllProductCategoriesThunk())
         setLoad(true)
     }, [dispatch, refresh])
 
     const products = Object.values(useSelector(state => state.product))
-
+    const productCategories = useSelector(state => state.productCategory)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -40,8 +42,8 @@ function TestSam() {
         }
 
         const createdProduct = await dispatch(addProductThunk(newProduct))
-
-
+        console.log('booba', createdProduct)
+        dispatch(addProductCategoryThunk(createdProduct.data.id, newProductCategories))
 
         setRefresh(prevState => !prevState)
     }

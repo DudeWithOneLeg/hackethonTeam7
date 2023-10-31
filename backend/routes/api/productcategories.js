@@ -12,7 +12,9 @@ const { isAdmin } = require('../../utils/authorization');
 // Get all productCategories
 router.get("/all", async (req, res) => {
     try {
-        const productCategory = await ProductCategory.findAll()
+        const productCategory = await ProductCategory.findAll({
+            attributes: { exclude: ["createdAt", "updatedAt"] }
+        })
         res.json({ data: productCategory })
     } catch (error) {
         return internalServerError(res)
@@ -53,11 +55,15 @@ router.get('/category/:categoryId', async (req, res) => {
 
 
 // create a new productCategory
-router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
-    const { productId } = req.body
-    let categories = "All"
-    if (req.query.categories) {
-        categories = req.query.categories
+// router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.post("/new", async (req, res) => {
+    let { productId, categories } = req.body
+
+    if(categories.trim().length === 0) {
+        categories = "All"
+        console.log('booba', categories)
+    } else {
+        categories += ",All"
     }
     const categoryNames = categories.split(',')
 
