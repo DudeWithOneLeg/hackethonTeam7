@@ -18,29 +18,34 @@ function App() {
   //home position [-2, 4, 10]
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
-        <Switch>
-          <Route path="/">
-            <Suspense>
-              {/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
-              <SignupFormPage />
-              <Canvas dpr={[1, 2]} shadows>
-                {/* <directionalLightHelper light={dirLight.current}/> */}
-                {/* <axesHelper args={[2]}/>
-              <gridHelper /> */}
-                <color attach="background" args={["#213547"]} />
-                {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
-                <Homespace />
-              </Canvas>
-            </Suspense>
-          </Route>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-        </Switch>
+        <TestSam />
       )}
     </>
+    // <>
+    //   <Navigation isLoaded={isLoaded} />
+    //   {isLoaded && (
+    //     <Switch>
+    //       <Route path="/">
+    //         <Suspense>
+    //           {/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
+    //           <SignupFormPage />
+    //           <Canvas dpr={[1, 2]} shadows>
+    //             {/* <directionalLightHelper light={dirLight.current}/> */}
+    //             {/* <axesHelper args={[2]}/>
+    //           <gridHelper /> */}
+    //             <color attach="background" args={["#213547"]} />
+    //             {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
+    //             <Homespace />
+    //           </Canvas>
+    //         </Suspense>
+    //       </Route>
+    //       <Route path="/login">
+    //         <LoginFormPage />
+    //       </Route>
+    //     </Switch>
+    //   )}
+    // </>
   );
 }
 

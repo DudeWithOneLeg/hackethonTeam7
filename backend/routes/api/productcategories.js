@@ -4,7 +4,7 @@ const router = express.Router();
 const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, ProductCategory } = require("../../db/models");
+const { User, Category, ProductCategory } = require("../../db/models");
 const { internalServerError, notFoundError } = require('../../utils/errorFunc');
 const { isAdmin } = require('../../utils/authorization');
 
@@ -51,17 +51,38 @@ router.get('/category/:categoryId', async (req, res) => {
     }
 })
 
+
 // create a new productCategory
 router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
-    const { productId, categoryId } = req.body
+    const { productId } = req.body
+    let categories = "All"
+    if (req.query.categories) {
+        categories = req.query.categories
+    }
+    const categoryNames = categories.split(',')
+
+    let newPCs = []
 
     try {
-        const newProductCategory = await ProductCategory.create({
-            productId: productId,
-            categoryId: categoryId
-        })
+        for (let i = 0; i < categoryNames.length; i++) {
+            let curr = categoryNames[i]
+            const categoryId = await Category.findOne({
+                where: {
+                    categoryName: curr
+                },
+                attributes: ["id"]
+            })
 
-        res.status(201).json({ data: newProductCategory })
+            const newProductCategory = await ProductCategory.create({
+                productId: productId,
+                categoryId: categoryId.id
+            })
+
+
+            newPCs.push(newProductCategory)
+        }
+
+        res.status(201).json({ data: newPCs })
     } catch (error) {
         return internalServerError(res)
     }

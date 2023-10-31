@@ -15,6 +15,7 @@ const isAdmin = function (req, res, next) {
     if (user.id !== 1) {
         return nextError(next, "Admin privileges required.", 403)
     }
+    return next()
 }
 
 const checkUser = function (req, res, next) {

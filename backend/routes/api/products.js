@@ -36,9 +36,9 @@ router.get("/id/:productId", async (req, res) => {
 
 
 // Get a product by category and by filter type
-    //'or' will, if given multiple categories, return all products of ANY of the categories
-    //'and' will, if given multiple categories, return all products of ALL of the categories
-    //'none' will, if given multiple categories, return all products of NON of the categories
+//'or' will, if given multiple categories, return all products of ANY of the categories
+//'and' will, if given multiple categories, return all products of ALL of the categories
+//'none' will, if given multiple categories, return all products of NON of the categories
 // example url for testing: http://localhost:8000/api/product/filter?categories=Black,Indoor&type=or
 router.get("/filter", async (req, res) => {
     try {
@@ -142,7 +142,8 @@ router.get("/filter", async (req, res) => {
 
 
 // create a new product to list
-router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
+// router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.post("/new", async (req, res) => {
     const { productName, productDescription, productPrice, quantity } = req.body
 
     try {
@@ -153,7 +154,7 @@ router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
             quantity: quantity
         })
 
-        res.status(201).json({ datea: newProduct })
+        res.status(201).json({ data: newProduct })
     } catch (err) {
         return internalServerError(res)
     }
