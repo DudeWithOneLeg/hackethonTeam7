@@ -13,13 +13,15 @@ import LoginFormPage from "../LoginFormPage";
 export default function Homespace() {
   const [position, setPosition] = useState([1, -4, 2])
   const [category, setCategory] = useState('')
-  const [rotation, setRotation] = useState([.8, .5, 0])
+  const [rotation, setRotation] = useState([.1, .1, 0])
   const [hover, setHover] = useState(false)
   const [list, setList] = useState(false)
   const [home, setHome] = useState(true)
   const [signup, setSignup] = useState(false)
   const [constant, setConstant] = useState(10)
   const cameraRef = useRef(null)
+  const [product, setProduct] = useState({})
+  const [showProduct, setShowProduct] = useState(false)
 
   const signupPos = (cameraRef, pX, pY, pZ, rX, rY, rZ) => {
     if (cameraRef.current.position.y < -3) cameraRef.current.position.y += (-3 - pY) / constant
@@ -60,30 +62,23 @@ export default function Homespace() {
       setPosition([8, -3, 16])
       setRotation([0, -.7, 0])
     }
-    if (!signup) {
-      setPosition([1, -4, 2])
-      setRotation([.8, .7, 0])
-
-    }
-  },[signup])
-
-  useEffect(() => {
     if (list) {
       setPosition([-7.5, -5, 11])
       setRotation([.1, .1, 0])
     }
-    if (!list) {
-      setPosition([1, -4, 2])
-      setRotation([.8, .5, 0])
-    }
-  }, [list])
-
-  useEffect(() => {
     if (home) {
       setPosition([1, -4, 2])
       setRotation([.8, .5, 0])
     }
-  }, [home])
+    if (showProduct) {
+      setPosition([-10, -5, 16])
+      setRotation([.1, .6, 0])
+    }
+    if (!signup || !list || !showProduct) {
+      setPosition([1, -4, 2])
+      setRotation([.8, .5, 0])
+    }
+  },[signup, list, home, showProduct])
 
   useFrame(() => {
 
@@ -100,10 +95,20 @@ export default function Homespace() {
 
     }
     if (home) {
+      setPosition([1, -4, 2])
+      setRotation([.8, .5, 0])
       defaultPos(cameraRef, pX, pY, pZ, rX, rY, rZ)
     }
 
     if (list) {
+      setPosition([-7.5, -5, 11])
+      setRotation([.1, .1, 0])
+      defaultPos(cameraRef, pX, pY, pZ, rX, rY, rZ)
+    }
+
+    if (showProduct) {
+      setPosition([-10, -5, 16])
+      setRotation([.1, .6, 0])
       defaultPos(cameraRef, pX, pY, pZ, rX, rY, rZ)
     }
 
@@ -116,11 +121,22 @@ export default function Homespace() {
   return (
     <>
     <Html>
-      {signup || list ? <h1
+      {signup || list || showProduct ? <h1
       onClick={() => {
-        setList(false)
+
+        if (signup || list) {
+          setHome(true)
+          setList(false)
         setSignup(false)
-        setHome(true)
+        setShowProduct(false)
+        }
+        if (showProduct) {
+          setList(true)
+        setSignup(false)
+        setShowProduct(false)
+          setHome(false)
+        }
+
       }}
       >Back</h1> : <>
       <h1
@@ -133,9 +149,7 @@ export default function Homespace() {
       >Signup</h1>
       </>
       }
-      {
-        signup && <SignupFormPage />
-      }
+
     </Html>
     <PerspectiveCamera position={[1, -4, 2]} rotation={[.8, .5, 0]} camera={ { fov: 40}} ref={cameraRef}>
     <OrbitControls />
@@ -146,7 +160,7 @@ export default function Homespace() {
         {/* <ScrollControls> */}
       {/* <SingleObject/> */}
       <SubScene setCategory={setCategory} setList={setList}/>
-      <ListScene category={category}/>
+      <ListScene category={category} setProduct={setProduct} setShowProduct={setShowProduct}/>
         {/* </ScrollControls> */}
 
 

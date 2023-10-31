@@ -36,9 +36,9 @@ router.get("/id/:productId", async (req, res) => {
 
 
 // Get a product by category and by filter type
-//'or' will, if given multiple categories, return all products of ANY of the categories
-//'and' will, if given multiple categories, return all products of ALL of the categories
-//'none' will, if given multiple categories, return all products of NON of the categories
+    //'or' will, if given multiple categories, return all products of ANY of the categories
+    //'and' will, if given multiple categories, return all products of ALL of the categories
+    //'none' will, if given multiple categories, return all products of NON of the categories
 // example url for testing: http://localhost:8000/api/product/filter?categories=Black,Indoor&type=or
 router.get("/filter", async (req, res) => {
     try {
@@ -54,7 +54,6 @@ router.get("/filter", async (req, res) => {
         if (req.query.type) {
             type = req.query.type
         }
-
 
         // filter for "or"
         if (type === "or") {
