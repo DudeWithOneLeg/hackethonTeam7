@@ -24,11 +24,7 @@ function App() {
           <Route path="/">
             <Suspense>
               {/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
-<<<<<<< HEAD
-
-=======
               <SignupFormPage />
->>>>>>> 1b117980eb8ee3c1fb55e4a235e56f65d8dd3047
               <Canvas dpr={[1, 2]} shadows>
                 {/* <directionalLightHelper light={dirLight.current}/> */}
                 {/* <axesHelper args={[2]}/>
