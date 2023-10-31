@@ -8,6 +8,8 @@ import SubScene from "../SubScene";
 import SignupFormPage from '../SignupFormPage'
 import ListScene from "../ListScene";
 import LoginFormPage from "../LoginFormPage";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "./Scene.css"
 
 
 export default function Homespace() {
@@ -22,6 +24,8 @@ export default function Homespace() {
   const cameraRef = useRef(null)
   const [product, setProduct] = useState({})
   const [showProduct, setShowProduct] = useState(false)
+
+  const history = useHistory(); // Initialize history
 
   const signupPos = (cameraRef, pX, pY, pZ, rX, rY, rZ) => {
     if (cameraRef.current.position.y < -3) cameraRef.current.position.y += (-3 - pY) / constant
@@ -122,6 +126,7 @@ export default function Homespace() {
     <>
     <Html>
       {signup || list || showProduct ? <h1
+      className="back-button"
       onClick={() => {
 
         if (signup || list) {
@@ -129,6 +134,7 @@ export default function Homespace() {
           setList(false)
         setSignup(false)
         setShowProduct(false)
+        history.push("/"); // Change the URL to "/"
         }
         if (showProduct) {
           setList(true)
@@ -145,6 +151,7 @@ export default function Homespace() {
         setSignup(true)
         setHome(false)
         setList(false)
+        history.push("/signup"); // Change the URL to "/signup"
       }}
       >Signup</h1>
       </>
