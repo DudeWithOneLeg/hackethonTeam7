@@ -49,7 +49,7 @@ function SignupFormPage() {
   const handleDemo = async (e) => {
     e.preventDefault();
 
-    const credential = "Demo-lition";
+    const credential = "AdminUser";
     const password = "password";
 
     const data = await dispatch(sessionActions.login({ credential, password }));
@@ -57,6 +57,10 @@ function SignupFormPage() {
       setErrors(data);
     }
   };
+
+  if (sessionUser) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="form-container signup">
