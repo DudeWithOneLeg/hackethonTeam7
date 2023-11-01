@@ -107,7 +107,7 @@ export const editProductCategory = (productCategory) => {
 }
 
 
-// thunk action
+// thunk action to edit productCategories
 export const editProductCategoryThunk = (productId, newCategories) => async (dispatch) => {
     try {
         const res = await csrfFetch(`/api/productcategory/update/${productId}`, {
@@ -152,7 +152,7 @@ export const deleteProductCategoryThunk = (productCategoryId) => async (dispatch
             console.error(`Failed to delete productCategory ${productCategoryId}:`, res.status, res.statusText);
         }
     } catch (err) {
-        console.error('An error occurred while deleting new productCategory:', err);
+        console.error(`An error occurred while deleting productCategory ${productCategoryId}:`, err);
     }
 }
 

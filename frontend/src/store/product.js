@@ -1,3 +1,4 @@
+import { Router } from "react-router-dom/cjs/react-router-dom.min";
 import { csrfFetch } from "./csrf";
 
 const LOAD_PRODUCT = "/product/setProduct"
@@ -91,6 +92,8 @@ export const addProductThunk = (newProduct) => async (dispatch) => {
             const product = await res.json()
             dispatch(addProduct(product))
             return product
+        } else {
+            console.error('Failed to create a new product:', res.status, res.statusText);
         }
 
     } catch (err) {
@@ -106,10 +109,75 @@ export const editProduct = (product) => {
     }
 }
 
+
+// thunk action for editing a product information
+export const editProductThunk = (productId, productInfo) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/product/${productId}/info`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ productInfo })
+        })
+
+        if (res.ok) {
+            const updatedProduct = await res.json()
+            dispatch(editProduct(updatedProduct))
+            return updatedProduct
+        } else {
+            console.error('Failed to update product information:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.log(`An error occurred while updating product ${productId} information:`, err)
+    }
+}
+
+
+// thunk action for updating product quantity
+export const editProductQuantityThunk = (productId, quantity) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/product/${productId}/quantity`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ quantity })
+        })
+
+        if (res.ok) {
+            const updatedProduct = await res.json()
+            dispatch(editProduct(updatedProduct))
+            return updatedProduct
+        } else {
+            console.error('Failed to update product quantity:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.log("An error occurred while calculating product's new category:", err)
+    }
+}
+
+
 export const deleteProduct = (product) => {
     return {
         type: DELETE_PRODUCT,
         payload: product
+    }
+}
+
+export const deleteProductThunk = (productId) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/product/${productId}`, {
+            method: "DELETE"
+        })
+
+        if (res.ok) {
+            dispatch(deleteProduct(productId))
+        } else {
+            console.error(`Failed to delete product ${productId}:`, res.status, res.statusText)
+        }
+    } catch (err) {
+        console.error(`An error occured while deleting product ${productId}:`, err)
     }
 }
 
@@ -127,7 +195,7 @@ const productReducer = (state = initialProduct, action) => {
     const newState = { ...state }
     switch (action.type) {
         case LOAD_PRODUCT:
-            return action.payload.data
+            return action.payload
         case LOAD_PRODUCTS:
             const product = {}
 

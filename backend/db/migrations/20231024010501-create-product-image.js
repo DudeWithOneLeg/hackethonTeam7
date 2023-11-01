@@ -21,6 +21,7 @@ module.exports = {
           model: 'Products',
         },
         allowNull: false,
+        onDelete: "CASCADE"
       },
       image: {
         type: Sequelize.STRING,

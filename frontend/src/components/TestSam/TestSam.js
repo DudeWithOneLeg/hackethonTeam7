@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addProductThunk, loadAllProductsThunk, loadFilteredProductsThunk, loadOneProductThunk } from "../../store/product"
+import { addProductThunk, deleteProduct, deleteProductThunk, editProductQuantityThunk, editProductThunk, loadAllProductsThunk, loadFilteredProductsThunk, loadOneProductThunk } from "../../store/product"
 import { addProductCategoryThunk, deleteProductCategoryThunk, editProductCategoryThunk, loadAllProductCategoriesThunk, loadProductCategoryByCategory } from "../../store/productcategory"
 
 function TestSam() {
@@ -16,22 +16,21 @@ function TestSam() {
     const [refresh, setRefresh] = useState(false)
 
     const [newProductCategories, setNewProductCategories] = useState("")
-    const [putProductCatgories, setPutProductCategories] = useState("")
 
+    const [putProductName, setPutProductName] = useState('')
+    const [putProductDescription, setPutProductDescription] = useState("")
+    const [putProductPrice, setPutProductPrice] = useState(0)
+    const [putQuantity, setPutQuantity] = useState(0)
 
     const categories = ["Black", "Outdoor"].join(",")
     const filter = 'or'
 
     useEffect(() => {
-        // dispatch(loadOneProductThunk(1))
-        // dispatch(loadAllProductsThunk())
-        dispatch(loadFilteredProductsThunk(categories, filter))
-        dispatch(loadAllProductCategoriesThunk())
+        dispatch(loadAllProductsThunk())
         setLoad(true)
     }, [dispatch, refresh])
 
-    const products = Object.values(useSelector(state => state.product))
-    const productCategories = useSelector(state => state.productCategory)
+    const products = useSelector(state => state.product)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -48,18 +47,37 @@ function TestSam() {
         setRefresh(prevState => !prevState)
     }
 
-    const testDelete = (e, el) => {
+    const handleEditingProduct = (e) => {
         e.preventDefault()
 
-        dispatch(deleteProductCategoryThunk(el.id))
-        setRefresh(prevState => !prevState)
+        const productInfo = {
+            productName: putProductName,
+            productDescription: putProductDescription,
+            productPrice: putProductPrice
+        }
+
+        const quantityInfo = {
+            quantity: putQuantity
+        }
+
+        // dispatch(editProductThunk(1, productInfo))
     }
 
-    const testPut = (e) => {
+    const handleQuantity = (e) => {
         e.preventDefault()
 
-        dispatch(editProductCategoryThunk(1, putProductCatgories))
-        setRefresh(prevState => !prevState)
+        const quantityInfo = {
+            quantity: putQuantity
+        }
+        dispatch(editProductQuantityThunk(1, quantityInfo))
+    }
+
+    const deleteProduct = (e, el) => {
+        e.preventDefault()
+
+        dispatch(deleteProductThunk(el.id)).then(() => {
+            setRefresh(prevState => !prevState)
+        })
     }
 
     return load ? (
@@ -87,17 +105,18 @@ function TestSam() {
                         onChange={(e) => setProductDescription(e.target.value.trim())}
                     />
                     <input
-                        type="text"
+                        type="number"
                         placeHolder="product price"
                         min="1"
                         value={productPrice}
                         onChange={(e) => setProductPrice(e.target.value)}
                     />
                     <input
-                        type="text"
+                        type="number"
                         placeHolder="product quantity"
                         value={quantity}
                         min="1"
+                        minVal
                         onChange={(e) => setQuantity(e.target.value)}
                     />
                     <button type="submit">
@@ -105,31 +124,63 @@ function TestSam() {
                     </button>
                 </form>
             </section>
-            <b>PUT PRODUCT CATEGORY TEST</b>
+            <b>EDIT PRODUCT 1</b>
+            <section>
+                <form onSubmit={(e) => handleEditingProduct(e)}>
+                    <input
+                        type="text"
+                        placeHolder="product name"
+                        value={putProductName}
+                        onChange={(e) => setPutProductName(e.target.value.trim())}
+                    />
+                    <input
+                        type="text"
+                        placeHolder="product description"
+                        value={putProductDescription}
+                        onChange={(e) => setPutProductDescription(e.target.value.trim())}
+                    />
+                    <input
+                        type="number"
+                        placeHolder="product price"
+                        min="1"
+                        value={putProductPrice}
+                        onChange={(e) => setPutProductPrice(e.target.value)}
+                    />
+                    <button type="submit">
+                        create product
+                    </button>
+                </form>
+            </section>
+            <b>EDIT PRODUCT QUANTITY</b>
             <section>
                 <input
-                    type="text"
-                    value={putProductCatgories}
-                    onChange={(e) => setPutProductCategories(e.target.value)}
+                    type="number"
+                    placeHolder="product quantity"
+                    value={putQuantity}
+                    min="1"
+                    minVal
+                    onChange={(e) => setPutQuantity(e.target.value)}
                 />
-                <button onClick={(e) => testPut(e)}>Put categories</button>
+                <button onClick={(e) => handleQuantity(e)}>
+                    quantity button
+                </button>
             </section>
             <section>
-                {Object.values(productCategories).map((el, index) => (
-                    <div key={index} onClick={(e) => testDelete(e, el)}>
-                        {/* <section>
+                {Object.values(products).map((el, index) => (
+                    <div key={index} onClick={(e) => deleteProduct(e, el)}>
+                        <section>
                             {el.productName}
                         </section>
                         <section>
                             {el.productDescription}
-                        </section> */}
-                        <b>{el.id}</b>
-                        <section>
+                        </section>
+                        {/* <b>{el.id}</b> */}
+                        {/* <section>
                             product id: {el.productId}
                         </section>
                         <section>
                             category id: {el.categoryId}
-                        </section>
+                        </section> */}
                     </div>
                 ))}`
             </section>

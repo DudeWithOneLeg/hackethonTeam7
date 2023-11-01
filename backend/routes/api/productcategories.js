@@ -111,7 +111,7 @@ router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
 
 
 // edit the product categories of a product
-router.put('/update/:productId', async (req, res) => {
+router.put('/update/:productId', restoreUser, requireAuth, isAdmin, async (req, res) => {
     const { categories } = req.body
     const productId = req.params.productId
 
@@ -152,7 +152,7 @@ router.put('/update/:productId', async (req, res) => {
 })
 
 // delete a productCategory
-router.delete("/delete/:productCategoryId", async (req, res) => {
+router.delete("/delete/:productCategoryId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const productCategory = await ProductCategory.findByPk(req.params.productCategoryId)
         if (!productCategory) {

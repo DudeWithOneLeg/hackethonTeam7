@@ -5,10 +5,12 @@ module.exports = (sequelize, DataTypes) => {
   class ProductCategory extends Model {
     static associate(models) {
       ProductCategory.belongsTo(models.Category, {
-        foreignKey: "categoryId"
+        foreignKey: "categoryId",
+        onDelete: "CASCADE",
       })
       ProductCategory.belongsTo(models.Product, {
-        foreignKey: "productId"
+        foreignKey: "productId",
+        onDelete: "CASCADE",
       })
     }
   };
