@@ -28,7 +28,7 @@ function LoginFormPage() {
   const handleDemo = async (e) => {
     e.preventDefault();
 
-    const credential = "Demo-lition";
+    const credential = "AdminUser";
     const password = "password";
 
     const data = await dispatch(sessionActions.login({ credential, password }));
