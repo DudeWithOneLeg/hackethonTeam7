@@ -18,7 +18,6 @@ function App() {
   //home position [-2, 4, 10]
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route path="/">

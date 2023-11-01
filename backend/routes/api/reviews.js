@@ -14,8 +14,8 @@ router.get("/all", async (req, res) => {
     try {
         const reviews = await Review.findAll()
         res.json({ data: reviews })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -27,8 +27,8 @@ router.get("/:reviewId", async (req, res) => {
             return notFoundError(res, "Review")
         }
         res.json({ data: review })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -47,8 +47,8 @@ router.get("/product/:productId/user/:userId", async (req, res) => {
         }
 
         res.json({ data: review })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -62,8 +62,8 @@ router.get("/product/:productId", async (req, res) => {
         })
 
         res.json({ data: reviews })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -78,8 +78,8 @@ router.get('/user/:userId', async (req, res) => {
         })
 
         res.json({ data: reviews })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -115,8 +115,8 @@ router.post('/product/:productId', restoreUser, requireAuth, async (req, res) =>
         })
 
         res.json({ data: newReview })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -131,8 +131,8 @@ router.delete("/:reviewId", restoreUser, requireAuth, checkUser, async (req, res
 
         await review.destroy()
         res.status(200).json({ message: "Review successfully deleted", statusCode: 200 })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 

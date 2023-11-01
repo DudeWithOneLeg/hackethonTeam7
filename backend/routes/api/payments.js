@@ -13,8 +13,8 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const payments = await Payment.findAll()
         return res.json({ data: payments })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -30,7 +30,7 @@ router.get("/id/:paymentId", restoreUser, requireAuth, authPayment, async (req, 
 
         return res.json({ data: payment })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -45,7 +45,7 @@ router.get("/id/:paymentId", restoreUser, requireAuth, authPayment, async (req, 
 //             attributes: { exclude: ["createdAt", "updatedAt"] }
 //         })
 //     } catch (err) {
-//         return internalServerError(res)
+//         return internalServerError(res, err)
 //     }
 // })
 
@@ -62,7 +62,7 @@ router.delete("/id/:paymentId", restoreUser, requireAuth, authPayment, async (re
         await payment.destroy()
         res.status(200).json({ message: "Payment information successfully deleted", statusCode: 200 })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
