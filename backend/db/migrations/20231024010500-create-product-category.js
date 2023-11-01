@@ -19,15 +19,19 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Products',
+          key: "id"
         },
         allowNull: false,
+        onDelete: "CASCADE"
       },
       categoryId: {
         type: Sequelize.INTEGER,
         references: {
           model: "Categories",
+          key: "id"
         },
-        allowNull: false
+        allowNull: false,
+        onDelete: "CASCADE"
       },
       createdAt: {
         allowNull: false,

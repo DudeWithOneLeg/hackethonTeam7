@@ -14,8 +14,8 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const billingAddresses = await BillingAddress.findAll();
         res.json({ data: billingAddresses });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 
@@ -28,8 +28,8 @@ router.get("/id/:billingAddressId", restoreUser, requireAuth, authBilling, async
             return notFoundError(res, "Billing address")
         }
         res.json({ data: billingAddress })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -48,8 +48,8 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
         }
 
         res.json({ data: billingAddress });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 
@@ -67,8 +67,8 @@ router.post("/user/:userId", restoreUser, requireAuth, checkUser, async (req, re
         });
 
         res.status(201).json({ data: newBillingAddress });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 
@@ -83,8 +83,8 @@ router.delete("/address/:billingAddressId", restoreUser, requireAuth, checkUser,
 
         await billingAddress.destroy()
         res.status(200).json({ message: "Billing address successfully deleted", statusCode: 200 });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 

@@ -16,7 +16,7 @@ router.get("/all", async (req, res) => {
         const products = await Product.findAll()
         res.json({ data: products })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -30,7 +30,7 @@ router.get("/id/:productId", async (req, res) => {
         }
         res.json({ data: product })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -136,86 +136,10 @@ router.get("/filter", async (req, res) => {
         }
 
     } catch (err) {
-        return internalServerError(res);
+        return internalServerError(res, err);
     }
 })
 
-
-router.get('/test/asdf', async (req, res) => {
-    try {
-        // set default categories to "All" if none are passed in
-        let categories = "All"
-        if (req.query.categories) {
-            categories = req.query.categories
-        }
-        const categoryNames = categories.split(','); // Split the category names by commas
-
-        // set default type filter to "or" if none are passed in
-        let type = "and"
-        if (req.query.type) {
-            type = req.query.type
-        }
-
-        const test = await ProductCategory.findAll({
-            include: [
-                {
-                    model: Category,
-                    where: {
-                        categoryName: {
-                            [Op.in]: categoryNames,
-                        },
-                    },
-                },
-                {
-                    model: Product,
-                },
-            ],
-        })
-
-        return res.json(test)
-
-        // create an array that will have the categoryId number for each category condition passed in as a query
-        const categoryQuery = await Category.findAll({
-            where: {
-                categoryName: categoryNames,
-            },
-            attributes: ['id']
-        });
-        const categoryId = categoryQuery.map(category => category.id)
-
-        // create an array of all product ids
-        const products = await Product.findAll()
-
-        const andProducts = [];
-
-        // go through all the products
-        for (const product of products) {
-            //get all the product categories of the current product
-            const currPC = await ProductCategory.findAll({
-                where: {
-                    productId: product.id,
-                },
-                attributes: { exclude: ["createdAt", "updatedAt"] },
-            });
-
-            // get only the category id's of all the PC of the current product
-            const categoryIds = currPC.map((pc) => pc.categoryId);
-
-            // if every id of the conditions passed in as query is in the categoryIds array
-            // push the current product into the return "andProducts" array
-            const result = categoryId.every((el) => categoryIds.includes(el));
-            if (result) {
-                andProducts.push(product)
-            }
-
-            return res.json({ data: andProducts });
-        }
-
-    } catch (err) {
-        return res.json(err)
-        return internalServerError(res);
-    }
-})
 
 // create a new product to list
 router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
@@ -229,18 +153,20 @@ router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
             quantity: quantity
         })
 
-        res.status(201).json({ datea: newProduct })
+        res.status(201).json({ data: newProduct })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
 
 // update a product's quantity
-router.post("/:productId/quantity", restoreUser, requireAuth, async (req, res) => {
+router.put("/:productId/quantity", restoreUser, requireAuth, async (req, res) => {
     try {
-        const quantity = req.body.quantity
         const productId = req.params.productId
+        const { quantity } = req.body.quantity
+
+        console.log('booba', quantity)
 
         const product = await Product.findByPk(productId)
 
@@ -256,14 +182,17 @@ router.post("/:productId/quantity", restoreUser, requireAuth, async (req, res) =
 
         return res.json({ message: "Purchase successful" })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
 
 // update a product's information
-router.post("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.put("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, res) => {
     const productId = req.params.productId
+    const { productName, productDescription, productPrice } = req.body.productInfo;
+
+
     try {
         const { productName, productDescription, productPrice } = req.body;
 
@@ -280,7 +209,7 @@ router.post("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, r
         await product.save()
         return res.json({ message: "Successfully updated product information" })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -289,13 +218,20 @@ router.post("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, r
 router.delete("/:productId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const product = await Product.findByPk(req.params.productId)
+
         if (!product) {
             return notFoundError(res, "Product")
         }
-        await product.destory()
+
+        try {
+            await product.destroy()
+        } catch (e) {
+            console.log('booba error', e)
+        }
+
         res.status(200).json({ message: "Product successfully deleted", statusCode: 200 })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 

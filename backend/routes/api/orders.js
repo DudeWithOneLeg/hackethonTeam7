@@ -14,8 +14,8 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const orders = await Order.findAll()
         res.json({ data: orders })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -33,8 +33,8 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
         }
 
         res.json({ data: orders })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -56,8 +56,8 @@ router.get("/date/:dateString", restoreUser, requireAuth, async (req, res, next)
         }
 
         return res.status(403).json({ message: "You are not authorized to see this information." })
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 

@@ -5,22 +5,25 @@ module.exports = (sequelize, DataTypes) => {
     class Product extends Model {
         static associate(models) {
             Product.hasMany(models.Review, {
-                foreignKey: "productId"
+                foreignKey: "productId",
+                onDelete: "CASCADE"
             })
             Product.hasMany(models.Cart, {
-                foreignKey: "productId"
+                foreignKey: "productId",
+                onDelete: "CASCADE"
             })
             Product.hasMany(models.ProductImage, {
-                foreignKey: "productId"
+                foreignKey: "productId",
+                onDelete: "CASCADE"
             })
             Product.hasMany(models.ProductCategory, {
-                foreignKey: "productId"
+                foreignKey: "productId",
+                onDelete: "CASCADE"
             })
 
             Product.belongsToMany(models.Category, {
                 through: models.ProductCategory,
                 foreignKey: "productId",
-                // as: "categoryName"
             })
         }
     };

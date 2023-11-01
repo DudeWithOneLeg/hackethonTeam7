@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class Category extends Model {
     static associate(models) {
       Category.hasMany(models.ProductCategory, {
-        foreignKey: "categoryId"
+        foreignKey: "categoryId",
+        onDelete: "CASCADE"
       })
 
       Category.belongsToMany(models.Product, {

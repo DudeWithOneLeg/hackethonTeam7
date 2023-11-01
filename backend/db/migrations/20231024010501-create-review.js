@@ -28,6 +28,7 @@ module.exports = {
           model: "Products"
         },
         allowNull: false,
+        onDelete: "CASCADE"
       },
       review: {
         type: Sequelize.STRING,
