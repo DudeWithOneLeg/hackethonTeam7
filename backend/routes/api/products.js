@@ -16,7 +16,7 @@ router.get("/all", async (req, res) => {
         const products = await Product.findAll()
         res.json({ data: products })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -30,7 +30,7 @@ router.get("/id/:productId", async (req, res) => {
         }
         res.json({ data: product })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -136,7 +136,7 @@ router.get("/filter", async (req, res) => {
         }
 
     } catch (err) {
-        return internalServerError(res);
+        return internalServerError(res, err);
     }
 })
 
@@ -156,7 +156,7 @@ router.post("/new", async (req, res) => {
 
         res.status(201).json({ data: newProduct })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -181,7 +181,7 @@ router.post("/:productId/quantity", restoreUser, requireAuth, async (req, res) =
 
         return res.json({ message: "Purchase successful" })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -205,7 +205,7 @@ router.post("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, r
         await product.save()
         return res.json({ message: "Successfully updated product information" })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 
@@ -220,7 +220,7 @@ router.delete("/:productId", restoreUser, requireAuth, isAdmin, async (req, res)
         await product.destory()
         res.status(200).json({ message: "Product successfully deleted", statusCode: 200 })
     } catch (err) {
-        return internalServerError(res)
+        return internalServerError(res, err)
     }
 })
 

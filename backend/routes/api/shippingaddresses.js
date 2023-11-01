@@ -14,8 +14,8 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const shippingAddresses = await ShippingAddress.findAll();
         res.json({ data: shippingAddresses });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 
@@ -28,8 +28,8 @@ router.get("/id/:shippingAddressId", restoreUser, requireAuth, authShipping, asy
             return notFoundError(res, "Shipping address")
         }
         res.json({ data: shippingAddress })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -47,8 +47,8 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
         }
 
         res.json({ data: shippingAddress });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 
@@ -66,8 +66,8 @@ router.post("/user/:userId", restoreUser, requireAuth, checkUser, async (req, re
         });
 
         res.status(201).json({ data: newShippingAddress });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 
@@ -82,8 +82,8 @@ router.delete("/address/:shippingAddressId", restoreUser, requireAuth, checkUser
 
         await shippingAddress.destroy()
         res.status(200).json({ message: "Shipping address successfully deleted", statusCode: 200 });
-    } catch (error) {
-        return internalServerError(res);
+    } catch (err) {
+        return internalServerError(res, err);
     }
 });
 

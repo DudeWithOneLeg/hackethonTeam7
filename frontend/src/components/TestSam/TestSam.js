@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addProductThunk, loadAllProductsThunk, loadFilteredProductsThunk, loadOneProductThunk } from "../../store/product"
-import { addProductCategoryThunk, loadAllProductCategoriesThunk, loadProductCategoryByCategory } from "../../store/productcategory"
+import { addProductCategoryThunk, deleteProductCategoryThunk, editProductCategoryThunk, loadAllProductCategoriesThunk, loadProductCategoryByCategory } from "../../store/productcategory"
 
 function TestSam() {
     const dispatch = useDispatch()
@@ -16,6 +16,7 @@ function TestSam() {
     const [refresh, setRefresh] = useState(false)
 
     const [newProductCategories, setNewProductCategories] = useState("")
+    const [putProductCatgories, setPutProductCategories] = useState("")
 
 
     const categories = ["Black", "Outdoor"].join(",")
@@ -42,26 +43,28 @@ function TestSam() {
         }
 
         const createdProduct = await dispatch(addProductThunk(newProduct))
-        console.log('booba', createdProduct)
         dispatch(addProductCategoryThunk(createdProduct.data.id, newProductCategories))
 
         setRefresh(prevState => !prevState)
     }
 
+    const testDelete = (e, el) => {
+        e.preventDefault()
+
+        dispatch(deleteProductCategoryThunk(el.id))
+        setRefresh(prevState => !prevState)
+    }
+
+    const testPut = (e) => {
+        e.preventDefault()
+
+        dispatch(editProductCategoryThunk(1, putProductCatgories))
+        setRefresh(prevState => !prevState)
+    }
+
     return load ? (
         <div>
-            <section>
-                {products.map((el, index) => (
-                    <div key={index}>
-                        <section>
-                            {el.productName}
-                        </section>
-                        <section>
-                            {el.productDescription}
-                        </section>
-                    </div>
-                ))}`
-            </section>
+            <b>CREATE NEW PRODUCT TEST</b>
             <section>
                 <input
                     type="text"
@@ -101,6 +104,34 @@ function TestSam() {
                         create product
                     </button>
                 </form>
+            </section>
+            <b>PUT PRODUCT CATEGORY TEST</b>
+            <section>
+                <input
+                    type="text"
+                    value={putProductCatgories}
+                    onChange={(e) => setPutProductCategories(e.target.value)}
+                />
+                <button onClick={(e) => testPut(e)}>Put categories</button>
+            </section>
+            <section>
+                {Object.values(productCategories).map((el, index) => (
+                    <div key={index} onClick={(e) => testDelete(e, el)}>
+                        {/* <section>
+                            {el.productName}
+                        </section>
+                        <section>
+                            {el.productDescription}
+                        </section> */}
+                        <b>{el.id}</b>
+                        <section>
+                            product id: {el.productId}
+                        </section>
+                        <section>
+                            category id: {el.categoryId}
+                        </section>
+                    </div>
+                ))}`
             </section>
         </div>
     ) : (

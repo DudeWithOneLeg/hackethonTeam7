@@ -12,8 +12,8 @@ router.get("/all", async (req, res) => {
     try {
         const productImage = await ProductImage.findAll()
         res.json({ data: productImage })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 

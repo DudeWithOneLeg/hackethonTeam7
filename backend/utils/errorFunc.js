@@ -1,5 +1,5 @@
-const internalServerError = (res) => {
-    res.status(500).json({ error: "Internal server error" });
+const internalServerError = (res, err) => {
+    res.status(500).json({ "Internal server error": err });
 }
 
 const notFoundError = (res, el) => {

@@ -60,7 +60,7 @@ export const loadProductCategoryByProduct = (productId) => async (dispatch) => {
             const productCategories = await res.json()
             dispatch(loadProductCategories(productCategories))
         } else {
-            console.error(`Failed to load productCategories of product {categoryId}:`, res.status, res.statusText);
+            console.error(`Failed to load productCategories of product ${productId}:`, res.status, res.statusText);
         }
     } catch (err) {
         console.error('An error occurred while loading productCategories of product {categoryId}:', err);
@@ -74,6 +74,7 @@ export const addProductCategory = (productCategory) => {
     }
 }
 
+// thunk action to create a new product category based on product Id and a list of categories
 export const addProductCategoryThunk = (productId, categories) => async (dispatch) => {
     try {
         const res = await csrfFetch(`/api/productcategory/new`, {
@@ -84,11 +85,14 @@ export const addProductCategoryThunk = (productId, categories) => async (dispatc
             body: JSON.stringify({ productId, categories })
         })
 
-        if(res.ok) {
+        if (res.ok) {
             const productCategory = await res.json()
             dispatch(addProductCategory(productCategory))
             return productCategory
+        } else {
+            console.error(`Failed to create a new productCatgory for product ${productId}:`, res.status, res.statusText);
         }
+
     } catch (err) {
         console.error('An error occurred while creating new productCategory:', err);
     }
@@ -102,10 +106,53 @@ export const editProductCategory = (productCategory) => {
     }
 }
 
+
+// thunk action
+export const editProductCategoryThunk = (productId, newCategories) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/productcategory/update/${productId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ categories: newCategories }),
+        });
+
+        if (res.ok) {
+            const newProductCateogry = await res.json()
+            dispatch(editProductCategory(newProductCateogry))
+            return newProductCateogry
+        } else {
+            console.error(`Failed to edit productCategories of product ${productId}:`, res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error('An error occurred while editing new productCategory:', err);
+    }
+}
+
+
 export const deleteProductCategory = (productCategory) => {
     return {
         type: DELETE_PRODUCTCATEGORY,
         payload: productCategory
+    }
+}
+
+// delete product category thunk
+export const deleteProductCategoryThunk = (productCategoryId) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/productcategory/delete/${productCategoryId}`, {
+            method: "DELETE"
+        })
+
+        if (res.ok) {
+            const productCategory = await res.json()
+            dispatch(deleteProductCategory(productCategory))
+        } else {
+            console.error(`Failed to delete productCategory ${productCategoryId}:`, res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error('An error occurred while deleting new productCategory:', err);
     }
 }
 
@@ -137,11 +184,10 @@ const productCategoryReducer = (state = initialProduct, action) => {
 
             return productCategories
         case ADD_PRODUCTCATEGORY:
-            console.log('booba reducer', action.payload)
             newState[action.payload.id] = action.payload.data
             return newState;
         case EDIT_PRODUCTCATEGORY:
-            newState[action.payload.id] = action.payload;
+            newState[action.payload.id] = action.payload.data;
             return newState;
         case DELETE_PRODUCTCATEGORY:
             delete newState[action.payload.id]
