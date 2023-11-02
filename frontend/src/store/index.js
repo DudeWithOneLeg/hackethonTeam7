@@ -6,6 +6,7 @@ import productReducer from "./product";
 import productCategoryReducer from "./productcategory";
 import orderReducer from "./order";
 import reviewReducer from "./review";
+import billingReducer from "./billingaddress";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   productCategory: productCategoryReducer,
   order: orderReducer,
   review: reviewReducer,
+  billingAddress: billingReducer
 });
 
 let enhancer;

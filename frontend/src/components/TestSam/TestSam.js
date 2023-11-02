@@ -1,189 +1,93 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addProductThunk, deleteProduct, deleteProductThunk, editProductQuantityThunk, editProductThunk, loadAllProductsThunk, loadFilteredProductsThunk, loadOneProductThunk } from "../../store/product"
-import { addProductCategoryThunk, deleteProductCategoryThunk, editProductCategoryThunk, loadAllProductCategoriesThunk, loadProductCategoryByCategory } from "../../store/productcategory"
+import { addBillingThunk, loadAllBillingsThunk, loadOneBillingThunk, loadUserBillingsThunk } from "../../store/billingaddress"
+import { login } from "../../store/session"
 
 function TestSam() {
     const dispatch = useDispatch()
+    const [refresh, setRefresh] = useState(false)
     const [load, setLoad] = useState(false)
 
-    // test creating new product
-    const [productName, setProductName] = useState('')
-    const [productDescription, setProductDescription] = useState("")
-    const [productPrice, setProductPrice] = useState(0)
-    const [quantity, setQuantity] = useState(0)
 
-    const [refresh, setRefresh] = useState(false)
-
-    const [newProductCategories, setNewProductCategories] = useState("")
-
-    const [putProductName, setPutProductName] = useState('')
-    const [putProductDescription, setPutProductDescription] = useState("")
-    const [putProductPrice, setPutProductPrice] = useState(0)
-    const [putQuantity, setPutQuantity] = useState(0)
-
-    const categories = ["Black", "Outdoor"].join(",")
-    const filter = 'or'
+    // creating a new billing address
+    const [billingAddress, setBillingAddress] = useState("")
+    const [billingState, setBillingState] = useState("")
+    const [billingZipCode, setBillingZipCode] = useState("")
 
     useEffect(() => {
-        dispatch(loadAllProductsThunk())
-        setLoad(true)
+        dispatch(loadAllBillingsThunk()).then(
+            setLoad(true)
+        )
     }, [dispatch, refresh])
 
-    const products = useSelector(state => state.product)
+    const billing = useSelector(state => state.billingAddress)
 
-    const handleSubmit = async (e) => {
+    const getBilling = async (e) => {
         e.preventDefault()
-        const newProduct = {
-            productName: productName,
-            productDescription: productDescription,
-            productPrice: productPrice,
-            quantity: quantity
-        }
-
-        const createdProduct = await dispatch(addProductThunk(newProduct))
-        dispatch(addProductCategoryThunk(createdProduct.data.id, newProductCategories))
-
         setRefresh(prevState => !prevState)
     }
 
-    const handleEditingProduct = (e) => {
+    const handleCreateNew = (e) => {
         e.preventDefault()
 
-        const productInfo = {
-            productName: putProductName,
-            productDescription: putProductDescription,
-            productPrice: putProductPrice
+        const newBilling = {
+            billingAddress,
+            billingState,
+            billingZipCode
         }
 
-        const quantityInfo = {
-            quantity: putQuantity
-        }
-
-        // dispatch(editProductThunk(1, productInfo))
+        dispatch(addBillingThunk(newBilling))
     }
 
-    const handleQuantity = (e) => {
+    const handleSignIn = (e) => {
         e.preventDefault()
 
-        const quantityInfo = {
-            quantity: putQuantity
+        const user = {
+            credential: "admin@aa.io",
+            password: "password"
         }
-        dispatch(editProductQuantityThunk(1, quantityInfo))
+
+        dispatch(login(user))
     }
 
-    const deleteProduct = (e, el) => {
-        e.preventDefault()
-
-        dispatch(deleteProductThunk(el.id)).then(() => {
-            setRefresh(prevState => !prevState)
-        })
-    }
 
     return load ? (
         <div>
-            <b>CREATE NEW PRODUCT TEST</b>
             <section>
-                <input
-                    type="text"
-                    value={newProductCategories}
-                    onChange={(e) => setNewProductCategories(e.target.value.trim())}
-                />
+                <button onClick={(e) => handleSignIn(e)}>Sign in</button>
             </section>
             <section>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeHolder="product name"
-                        value={productName}
-                        onChange={(e) => setProductName(e.target.value.trim())}
-                    />
-                    <input
-                        type="text"
-                        placeHolder="product description"
-                        value={productDescription}
-                        onChange={(e) => setProductDescription(e.target.value.trim())}
-                    />
-                    <input
-                        type="number"
-                        placeHolder="product price"
-                        min="1"
-                        value={productPrice}
-                        onChange={(e) => setProductPrice(e.target.value)}
-                    />
-                    <input
-                        type="number"
-                        placeHolder="product quantity"
-                        value={quantity}
-                        min="1"
-                        minVal
-                        onChange={(e) => setQuantity(e.target.value)}
-                    />
-                    <button type="submit">
-                        create product
-                    </button>
-                </form>
-            </section>
-            <b>EDIT PRODUCT 1</b>
-            <section>
-                <form onSubmit={(e) => handleEditingProduct(e)}>
-                    <input
-                        type="text"
-                        placeHolder="product name"
-                        value={putProductName}
-                        onChange={(e) => setPutProductName(e.target.value.trim())}
-                    />
-                    <input
-                        type="text"
-                        placeHolder="product description"
-                        value={putProductDescription}
-                        onChange={(e) => setPutProductDescription(e.target.value.trim())}
-                    />
-                    <input
-                        type="number"
-                        placeHolder="product price"
-                        min="1"
-                        value={putProductPrice}
-                        onChange={(e) => setPutProductPrice(e.target.value)}
-                    />
-                    <button type="submit">
-                        create product
-                    </button>
-                </form>
-            </section>
-            <b>EDIT PRODUCT QUANTITY</b>
-            <section>
-                <input
-                    type="number"
-                    placeHolder="product quantity"
-                    value={putQuantity}
-                    min="1"
-                    minVal
-                    onChange={(e) => setPutQuantity(e.target.value)}
-                />
-                <button onClick={(e) => handleQuantity(e)}>
-                    quantity button
+                <button onClick={(e) => getBilling(e)}>
+                    <b>GET A BILLING ADDRESS</b>
                 </button>
             </section>
             <section>
-                {Object.values(products).map((el, index) => (
-                    <div key={index} onClick={(e) => deleteProduct(e, el)}>
+                {Object.values(billing).map((el, i) => {
+                    return (
                         <section>
-                            {el.productName}
+                            {el.billingAddress}
                         </section>
-                        <section>
-                            {el.productDescription}
-                        </section>
-                        {/* <b>{el.id}</b> */}
-                        {/* <section>
-                            product id: {el.productId}
-                        </section>
-                        <section>
-                            category id: {el.categoryId}
-                        </section> */}
-                    </div>
-                ))}`
+                    )
+                })}
             </section>
+            <form onSubmit={handleCreateNew}>
+                <input
+                    type="text"
+                    value={billingAddress}
+                    onChange={(e) => setBillingAddress(e.target.value)}
+                />
+                <input
+                    type="text"
+                    value={billingState}
+                    onChange={(e) => setBillingState(e.target.value)}
+                />
+                <input
+                    type="text"
+                    value={billingZipCode}
+                    onChange={(e) => setBillingZipCode(e.target.value)}
+                />
+                <button type="submit">create a new billing</button>
+            </form>
         </div>
     ) : (
         <div></div>

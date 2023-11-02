@@ -1,4 +1,3 @@
-import { Router } from "react-router-dom/cjs/react-router-dom.min";
 import { csrfFetch } from "./csrf";
 
 const LOAD_PRODUCT = "/product/setProduct"
@@ -129,7 +128,7 @@ export const editProductThunk = (productId, productInfo) => async (dispatch) => 
             console.error('Failed to update product information:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log(`An error occurred while updating product ${productId} information:`, err)
+        console.error(`An error occurred while updating product ${productId} information:`, err)
     }
 }
 
@@ -153,7 +152,7 @@ export const editProductQuantityThunk = (productId, quantity) => async (dispatch
             console.error('Failed to update product quantity:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log("An error occurred while calculating product's new category:", err)
+        console.error("An error occurred while calculating product's new category:", err)
     }
 }
 
