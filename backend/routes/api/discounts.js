@@ -60,10 +60,6 @@ router.put('/:discountId', restoreUser, requireAuth, isAdmin, async (req, res) =
             return notFoundError(res, "Discount")
         }
 
-        if (req.user.id !== 1) {
-            return notAuthToEdit(res, "discount")
-        }
-
         discountToEdit.codeName = req.body.codeName || discountToEdit.codeName
         discountToEdit.applicableCategory = req.body.applicableCategory || discountToEdit.codeName
         discountToEdit.discountType = req.body.discountType || discountToEdit.discountType
