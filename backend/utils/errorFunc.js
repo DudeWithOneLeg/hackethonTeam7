@@ -6,6 +6,15 @@ const notFoundError = (res, el) => {
     res.status(404).json({ message: `${el} not found`, statusCode: 404 });
 }
 
+const notAuthToEdit = (res, prop) => {
+    res.status(401).json({ message: `You are not authorized to edit this ${prop}`, statusCode: 401 })
+}
+
+const notAuthToDelete = (res, prop) => {
+    res.status(401).json({ message: `You are not authorized to delete this ${prop}`, statusCode: 401 })
+}
+
+
 const nextError = (next, msg, status) => {
     const error = new Error(msg);
     error.status = status;
@@ -16,5 +25,7 @@ const nextError = (next, msg, status) => {
 module.exports = {
     internalServerError,
     notFoundError,
-    nextError
+    notAuthToEdit,
+    notAuthToDelete,
+    nextError,
 }
