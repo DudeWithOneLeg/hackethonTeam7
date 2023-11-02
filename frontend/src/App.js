@@ -7,7 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
 import { Canvas, axesHelper } from "@react-three/fiber";
-import TestSam from "./components/TestSam";
+import OrderPage from "./components/OrderPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +18,7 @@ function App() {
   //home position [-2, 4, 10]
   return (
     <>
+      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route path="/">
@@ -28,6 +29,9 @@ function App() {
               </Route>
               <Route path="/login">
                 <LoginFormPage />
+              </Route>
+              <Route path="/orders">
+                <OrderPage />
               </Route>
               <Canvas dpr={[1, 2]} shadows>
                 {/* <directionalLightHelper light={dirLight.current}/> */}

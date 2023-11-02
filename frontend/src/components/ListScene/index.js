@@ -6,7 +6,7 @@ import { Gltf, PresentationControls } from "@react-three/drei";
 export default function ListScene({ setProduct, category, setShowProduct }) {
 
     const [position, setPosition] = useState([4.5, 1.3, -5])
-    console.log(category)
+    // console.log(category)
 
     return (
         <group position={position}>

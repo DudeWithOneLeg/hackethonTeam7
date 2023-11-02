@@ -25,10 +25,22 @@ function LoginFormPage() {
     );
   };
 
-  const handleDemo = async (e) => {
+  const handleAdmin = async (e) => {
     e.preventDefault();
 
     const credential = "AdminUser";
+    const password = "password";
+
+    const data = await dispatch(sessionActions.login({ credential, password }));
+    if (data) {
+      setErrors(data);
+    }
+  };
+
+  const handleCustomer = async (e) => {
+    e.preventDefault();
+
+    const credential = "DemoUser";
     const password = "password";
 
     const data = await dispatch(sessionActions.login({ credential, password }));
@@ -76,13 +88,20 @@ function LoginFormPage() {
               </NavLink>
             </p>
             <p>
-              Not ready to commit?
+              Demo
               <button
                 type="button"
                 className="demo-button"
-                onClick={handleDemo}
+                onClick={handleAdmin}
               >
-                Demo
+                Admin
+              </button>
+              <button
+                type="button"
+                className="demo-button"
+                onClick={handleCustomer}
+              >
+                Customer
               </button>
             </p>
           </div>

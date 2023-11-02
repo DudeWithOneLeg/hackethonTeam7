@@ -2,7 +2,8 @@
     position: absolute;
     z-index: 1;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 20px;
     width: 90%;
 }
 
@@ -12,21 +13,21 @@ li {
 
 .home-btn {
     border: none;
-    padding: 10px 20px;
+    padding: 9px 11px;
     color: black;
     background-color: transparent;
-    font-size: 17px;
-    margin: 0 10px;
+    font-size: 27px;
     cursor: pointer;
     text-decoration: none;
+    margin-left: 25px;
 }
 
-.home-btn.active {
+/* .home-btn.active {
     border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 50px;
     background-color: black;
     color: white;
-}
+} */
 
 .auth-btn {
     border: none;
@@ -59,23 +60,7 @@ li {
   }
 
 
-.nav-btn {
-    border: none;
-    padding: 10px 20px;
-    color: black;
-    background-color: transparent;
-    font-size: 17px;
-    margin: 0 10px;
-    cursor: pointer;
-}
 
-.nav-btn.active {
-    border: 1px solid black;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    cursor: initial;
-}
 
 .bx-cart {
     margin-right: 5px;
@@ -86,11 +71,12 @@ li {
     border: none;
     font-size: 35px;
     cursor: pointer;
+    color: black;
 }
 
 .profile-dropdown {
     position: absolute;
-    right: 11%;
+    right: 1%;
     backdrop-filter: blur(10px); /* Apply a blur effect to the background */
     background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background for the blur effect */
 }
@@ -117,4 +103,17 @@ li {
 
 .user-btn:hover {
     background-color: rgba(240, 240, 240, 0.974);
+}
+
+.bx-menu {
+    margin-top: 2px;
+}
+
+.toggle {
+    margin-left: 75px;
+    cursor: pointer;
+    font-size: 30px;
+    background-color: transparent;
+    color: black;
+    border: none;
 }
