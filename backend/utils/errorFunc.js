@@ -1,9 +1,13 @@
 const internalServerError = (res, err) => {
-    res.status(500).json({ "Internal server error": err });
+    res.status(500).json({ "Internal server error": err.message });
 }
 
 const notFoundError = (res, el) => {
     res.status(404).json({ message: `${el} not found`, statusCode: 404 });
+}
+
+const notAuthToView = (res, prop) {
+    res.status(401).json({ message: `You are not authorized to view this ${prop}`, statusCode: 401 })
 }
 
 const notAuthToEdit = (res, prop) => {
@@ -25,6 +29,7 @@ const nextError = (next, msg, status) => {
 module.exports = {
     internalServerError,
     notFoundError,
+    notAuthToView,
     notAuthToEdit,
     notAuthToDelete,
     nextError,

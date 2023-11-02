@@ -8,7 +8,6 @@ const forbidden = () => {
     return error
 }
 
-
 const isAdmin = function (req, res, next) {
     const user = req.user
 

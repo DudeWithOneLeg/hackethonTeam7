@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, Payment } = require("../../db/models");
-const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { internalServerError, notFoundError, notAuthToEdit, notAuthToView, notAuthToDelete } = require('../../utils/errorFunc');
 const { isAdmin, authPayment, checkUser } = require('../../utils/authorization');
 
 // Get all payments
@@ -20,12 +20,16 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
 
 
 // get a payment by id
-router.get("/id/:paymentId", restoreUser, requireAuth, authPayment, async (req, res) => {
+router.get("/:paymentId", restoreUser, requireAuth, async (req, res) => {
     try {
         const payment = await Payment.findByPk(req.params.paymentId)
 
         if (!payment) {
             return notFoundError(res, "Payment information")
+        }
+
+        if (payment.userId !== req.user.id && req.user.id !== 1) {
+            return notAuthToView(res, "payment")
         }
 
         return res.json({ data: payment })
@@ -52,13 +56,42 @@ router.get("/id/:paymentId", restoreUser, requireAuth, authPayment, async (req, 
 // create a new payment for a user
 
 
-// delete a payment
-router.delete("/id/:paymentId", restoreUser, requireAuth, authPayment, async (req, res) => {
+// edit a payment
+router.put("/:paymentId", restoreUser, requireAuth, async (req, res) => {
     try {
         const payment = await Payment.findByPk(req.params.paymentId)
+
+        if (!payment) {
+            return notFoundError(res, "Payment")
+        }
+
+        if (req.user.id !== payment.userId && req.user.id !== 1) {
+            return notAuthToEdit(res, "payment information")
+        }
+
+        payment.method = req.body.method || payment.method
+        payment.creditCardInformation = req.body.creditCardInformation || payment.creditCardInformation
+
+        await payment.save()
+        res.status(200).json({ data: payment })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
+})
+
+// delete a payment
+router.delete("/:paymentId", restoreUser, requireAuth, async (req, res) => {
+    try {
+        const payment = await Payment.findByPk(req.params.paymentId)
+
         if (!payment) {
             return notFoundError(res, "Payment information")
         }
+
+        if (req.user.id !== payment.userId && req.user.id !== 1) {
+            return notAuthToDelete(res, "payment information")
+        }
+
         await payment.destroy()
         res.status(200).json({ message: "Payment information successfully deleted", statusCode: 200 })
     } catch (err) {

@@ -20,7 +20,7 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
 })
 
 // get a discount by id
-router.get("/:discountId", restoreUser, requireAuth, isAdmin, async (req, res, next) => {
+router.get("/:discountId", restoreUser, requireAuth, async (req, res, next) => {
     try {
         const discount = await Discount.findByPk(req.params.discountId)
         if (!discount) {

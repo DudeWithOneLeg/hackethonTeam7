@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, Order } = require("../../db/models");
-const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { internalServerError, notFoundError, notAuthToView, notAuthToDelete } = require('../../utils/errorFunc');
 const { isAdmin, checkUser, forbidden } = require('../../utils/authorization');
 
 
@@ -38,8 +38,28 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
     }
 })
 
+
+// get order by id
+router.get('/:orderId', restoreUser, requireAuth, async (req, res) => {
+    try {
+        const order = await Order.findByPk(req.params.orderId)
+        if (!order) {
+            return notFoundError(res, "Order")
+        }
+
+        if (order.userId !== req.user.id && res.user.id !== 1) {
+            return notAuthToView(res, "order")
+        }
+
+        res.json({ data: order })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
+})
+
+
 // get all orders made on a particular date
-router.get("/date/:dateString", restoreUser, requireAuth, async (req, res, next) => {
+router.get("/date/:dateString", restoreUser, requireAuth, isAdmin, async (req, res, next) => {
     try {
         const orders = await Order.findAll({
             where: {
@@ -63,12 +83,16 @@ router.get("/date/:dateString", restoreUser, requireAuth, async (req, res, next)
 
 
 // delete a order
-router.delete('/:orderId', restoreUser, requireAuth, isAdmin, async (req, res, next) => {
+router.delete('/:orderId', restoreUser, requireAuth, async (req, res, next) => {
     try {
         const order = await Order.findByPk(req.params.orderId)
 
         if (!order) {
             return notFoundError(res, "Order")
+        }
+
+        if (order.userId !== req.user.id && req.user.id !== 1) {
+            return notAuthToDelete(res, "order")
         }
 
         await order.destroy()

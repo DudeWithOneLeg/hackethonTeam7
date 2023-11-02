@@ -10,8 +10,7 @@ const { isAdmin, authBilling, checkUser, forbidden } = require('../../utils/auth
 
 
 // Get all billing addresses
-// router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
-router.get("/all", async (req, res) => {
+router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const billingAddresses = await BillingAddress.findAll();
         res.json({ data: billingAddresses });
@@ -23,7 +22,6 @@ router.get("/all", async (req, res) => {
 
 // get a billing address by id
 router.get("/id/:billingAddressId", restoreUser, requireAuth, authBilling, async (req, res) => {
-    // router.get("/id/:billingAddressId", async (req, res) => {
     try {
         const billingAddress = await BillingAddress.findByPk(req.params.billingAddressId)
         if (!billingAddress) {
@@ -38,7 +36,6 @@ router.get("/id/:billingAddressId", restoreUser, requireAuth, authBilling, async
 
 // Get a billing address of a user
 router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
-    // router.get("/user/:userId", async (req, res) => {
     try {
         const billingAddress = await BillingAddress.findAll({
             where: {
@@ -58,7 +55,7 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
 
 
 // User creates a billing address
-router.post("/", restoreUser, requireAuth, checkUser, async (req, res) => {
+router.post("/", restoreUser, requireAuth, async (req, res) => {
     const { billingAddress, billingState, billingZipCode } = req.body;
 
     try {
@@ -110,7 +107,7 @@ router.delete("/:billingAddressId", restoreUser, requireAuth, async (req, res) =
             return notFoundError(res, "Billing Address")
         }
 
-        if (req.user.id !== billingAddress.userId || req.user.id !== 1) {
+        if (req.user.id !== billingAddress.userId && req.user.id !== 1) {
             return notAuthToDelete(res, "billing address")
         }
 
