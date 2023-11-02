@@ -47,6 +47,7 @@ function ProfileButton({ user }) {
             </li> */}
             <li>{user.email}</li>
             <li>
+              
               <button className="user-btn">
                 Profile
               </button>

@@ -21,7 +21,7 @@ const paymentRouter = require('./payments.js')
 router.use(restoreUser);
 
 router.use('/session', sessionRouter);
-router.use('/user', usersRouter);
+router.use('/users', usersRouter);
 router.use('/discount', discountRouter);
 router.use('/product', productRouter);
 router.use('/productcategory', productCategoryRouter);
