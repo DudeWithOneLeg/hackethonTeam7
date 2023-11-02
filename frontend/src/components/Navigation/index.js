@@ -31,10 +31,9 @@ function Navigation({ isLoaded }) {
             to="/"
             className={`home-btn ${isActive("/") ? "active" : ""}`}
           >
-           <i class='bx bxs-home' ></i>
+            <i class="bx bxs-home"></i>
           </NavLink>
-      {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen}/>}
-
+          {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
         <li>
           <ProfileButton user={sessionUser} />
@@ -45,7 +44,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <li>
-          <button onClick={toggleSidebar}>
+          <button onClick={toggleSidebar} className="toggle">
             <i class="bx bx-menu"></i>
           </button>
           <NavLink
@@ -53,8 +52,9 @@ function Navigation({ isLoaded }) {
             to="/"
             className={`home-btn ${isActive("/") ? "active" : ""}`}
           >
-            Home
+            <i class="bx bxs-home"></i>
           </NavLink>
+          {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
         <li>
           <NavLink to="/login">
