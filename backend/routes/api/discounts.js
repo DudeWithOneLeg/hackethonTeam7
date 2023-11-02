@@ -14,8 +14,8 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const discounts = await Discount.findAll()
         res.json({ data: discounts })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -28,8 +28,8 @@ router.get("/:discountId", restoreUser, requireAuth, isAdmin, async (req, res, n
         }
 
         res.json({ data: discount })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -47,8 +47,8 @@ router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
         })
 
         res.status(201).json({ data: newDiscount })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 
@@ -62,8 +62,8 @@ router.delete('/:discountId', restoreUser, requireAuth, isAdmin, async (req, res
 
         await discount.destroy()
         res.status(200).json({ message: "Discount successfully deleted", statusCode: 200 })
-    } catch (error) {
-        return internalServerError(res)
+    } catch (err) {
+        return internalServerError(res, err)
     }
 })
 

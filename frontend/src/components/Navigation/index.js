@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./index.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import SideBar from "../SideBar";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -12,38 +13,28 @@ function Navigation({ isLoaded }) {
 
   const isActive = (path) => path === currentPath;
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
         <li>
-          <NavLink to="/gallery">
-            <button
-              className={`nav-btn ${isActive("/gallery") ? "active" : ""}`}
-            >
-              Gallery
-            </button>
+          <button onClick={toggleSidebar} className="toggle">
+            <i class="bx bx-menu"></i>
+          </button>
+          <NavLink
+            exact
+            to="/"
+            className={`home-btn ${isActive("/") ? "active" : ""}`}
+          >
+           <i class='bx bxs-home' ></i>
           </NavLink>
-          <NavLink to="/models">
-            <button
-              className={`nav-btn ${isActive("/models") ? "active" : ""}`}
-            >
-              Models
-            </button>
-          </NavLink>
-          <NavLink to="/orders">
-            <button
-              className={`nav-btn ${isActive("/orders") ? "active" : ""}`}
-            >
-              Orders
-            </button>
-          </NavLink>
-          <NavLink to="/cart">
-            <button className={`nav-btn ${isActive("/cart") ? "active" : ""}`}>
-            <i class='bx bx-cart'></i>
-              Cart
-            </button>
-          </NavLink>
+      {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen}/>}
+
         </li>
         <li>
           <ProfileButton user={sessionUser} />
@@ -52,24 +43,35 @@ function Navigation({ isLoaded }) {
     );
   } else {
     sessionLinks = (
-      <li>
-        <NavLink to="/login">
-          <button className="auth-btn">Log In</button>
-        </NavLink>
-        <NavLink to="/signup">
-          <button className="auth-btn signup">Sign Up</button>
-        </NavLink>
-      </li>
+      <>
+        <li>
+          <button onClick={toggleSidebar}>
+            <i class="bx bx-menu"></i>
+          </button>
+          <NavLink
+            exact
+            to="/"
+            className={`home-btn ${isActive("/") ? "active" : ""}`}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/login">
+            <button className="auth-btn">Log In</button>
+          </NavLink>
+          <NavLink to="/signup">
+            <button className="auth-btn signup">Sign Up</button>
+          </NavLink>
+        </li>
+      </>
     );
   }
 
   return (
-    <ul id="nav">
-        <NavLink exact to="/" className={`home-btn ${isActive("/") ? "active" : ""}`}>
-          Home
-        </NavLink>
-      {isLoaded && sessionLinks}
-    </ul>
+    <>
+      <div id="nav">{isLoaded && sessionLinks}</div>
+    </>
   );
 }
 
