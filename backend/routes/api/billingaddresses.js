@@ -21,7 +21,7 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
 
 
 // get a billing address by id
-router.get("/id/:billingAddressId", restoreUser, requireAuth, authBilling, async (req, res) => {
+router.get("/:billingAddressId", restoreUser, requireAuth, authBilling, async (req, res) => {
     try {
         const billingAddress = await BillingAddress.findByPk(req.params.billingAddressId)
         if (!billingAddress) {

@@ -25,7 +25,7 @@ export const loadBillings = (billingAddresses) => {
 //thunk action to get a billing address by id
 export const loadOneBillingThunk = (billingId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/billing/id/${billingId}`)
+        const res = await csrfFetch(`/api/billing/${billingId}`)
         if (res.ok) {
             const billingAddress = await res.json()
             dispatch(loadBilling(billingAddress))
@@ -101,9 +101,9 @@ export const editBilling = (billingAddress) => {
     }
 }
 
-export const editBillingThunk = (editBilling) => async (dispatch) => {
+export const editBillingThunk = (billingId, editBilling) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/billing`, {
+        const res = await csrfFetch(`/api/billing/${billingId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -126,6 +126,22 @@ export const deleteBilling = (billingAddress) => {
     return {
         type: DELETE_BILLING,
         payload: billingAddress
+    }
+}
+
+export const deleteBillingThunk = (billingId) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/billing/${billingId}`, {
+            method: "DELETE"
+        })
+
+        if (res.ok) {
+            dispatch(deleteBilling(billingId))
+        } else {
+            console.error('Failed to delete billing address:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.log(`An error occured while deleting billing address:`, err)
     }
 }
 

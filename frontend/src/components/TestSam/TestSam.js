@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addBillingThunk, loadAllBillingsThunk, loadOneBillingThunk, loadUserBillingsThunk } from "../../store/billingaddress"
+import { addBillingThunk, deleteBilling, deleteBillingThunk, editBillingThunk, loadAllBillingsThunk, loadOneBillingThunk, loadUserBillingsThunk } from "../../store/billingaddress"
 import { login } from "../../store/session"
 
 function TestSam() {
@@ -15,9 +15,8 @@ function TestSam() {
     const [billingZipCode, setBillingZipCode] = useState("")
 
     useEffect(() => {
-        dispatch(loadAllBillingsThunk()).then(
-            setLoad(true)
-        )
+        dispatch(loadAllBillingsThunk())
+        setLoad(true)
     }, [dispatch, refresh])
 
     const billing = useSelector(state => state.billingAddress)
@@ -36,7 +35,23 @@ function TestSam() {
             billingZipCode
         }
 
-        dispatch(addBillingThunk(newBilling))
+        dispatch(addBillingThunk(newBilling)).then(
+            setRefresh(prevState => !prevState)
+        )
+    }
+
+    const handleEdit = (e) => {
+        e.preventDefault()
+
+        const editBilling = {
+            billingAddress: billingAddress,
+            billingState: billingState,
+            billingZipCode: billingZipCode
+        }
+
+        dispatch(editBillingThunk(1, editBilling)).then(
+            setRefresh(prevState => !prevState)
+        )
     }
 
     const handleSignIn = (e) => {
@@ -48,6 +63,15 @@ function TestSam() {
         }
 
         dispatch(login(user))
+    }
+
+    const handleDelete = (e, el) => {
+        e.preventDefault()
+
+        dispatch(deleteBillingThunk(el.id)).then(
+            setRefresh(prevState => !prevState)
+        )
+
     }
 
 
@@ -64,7 +88,7 @@ function TestSam() {
             <section>
                 {Object.values(billing).map((el, i) => {
                     return (
-                        <section>
+                        <section onClick={(e) => handleDelete(e, el)}>
                             {el.billingAddress}
                         </section>
                     )
