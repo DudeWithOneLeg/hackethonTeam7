@@ -8,6 +8,7 @@ import orderReducer from "./order";
 import reviewReducer from "./review";
 import billingReducer from "./billingaddress";
 import shippingReducer from "./shippingaddress";
+import discountReducer from "./discount";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   order: orderReducer,
   review: reviewReducer,
   billingAddress: billingReducer,
-  shippingAddress: shippingReducer
+  shippingAddress: shippingReducer,
+  discount: discountReducer
 });
 
 let enhancer;

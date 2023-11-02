@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addShippingThunk, deleteShipping, deleteShippingThunk, editShippingThunk, loadAllShippingsThunk, loadOneShippingThunk, loadUserShippingsThunk } from "../../store/shippingaddress"
+import { addDiscountThunk, deleteDiscount, deleteDiscountThunk, editDiscountThunk, loadAllDiscountsThunk  } from "../../store/discount"
 import { login } from "../../store/session"
 
 function TestSam() {
@@ -9,19 +9,23 @@ function TestSam() {
     const [load, setLoad] = useState(false)
 
 
-    // creating a new shipping address
-    const [shippingAddress, setShippingAddress] = useState("")
-    const [shippingState, setShippingState] = useState("")
-    const [shippingZipCode, setShippingZipCode] = useState("")
+    // creating a new discount address
+    const [codeName, setCodeName] = useState("")
+    const [applicableCategory, setApplicableCategory] = useState("")
+    const [discountType, setDiscountType] = useState("")
+    const [discountValue, setDiscountValue] = useState("")
+    const [expirationDate, setExpirationDate] = useState("")
 
     useEffect(() => {
-        dispatch(loadAllShippingsThunk())
+        dispatch(loadAllDiscountsThunk())
         setLoad(true)
     }, [dispatch, refresh])
 
-    const shipping = useSelector(state => state.shippingAddress)
+    const discount = useSelector(state => state.discount)
 
-    const getShipping = async (e) => {
+    console.log('booba', discount)
+
+    const getDiscount = async (e) => {
         e.preventDefault()
         setRefresh(prevState => !prevState)
     }
@@ -29,13 +33,13 @@ function TestSam() {
     const handleCreateNew = (e) => {
         e.preventDefault()
 
-        const newShipping = {
-            shippingAddress,
-            shippingState,
-            shippingZipCode
+        const newDiscount = {
+            codeName,
+            applicableCategory,
+            discountType
         }
 
-        dispatch(addShippingThunk(newShipping)).then(
+        dispatch(addDiscountThunk(newDiscount)).then(
             setRefresh(prevState => !prevState)
         )
     }
@@ -43,13 +47,13 @@ function TestSam() {
     const handleEdit = (e) => {
         e.preventDefault()
 
-        const editShipping = {
-            shippingAddress: shippingAddress,
-            shippingState: shippingState,
-            shippingZipCode: shippingZipCode
+        const editDiscount = {
+            codeName: codeName,
+            applicableCategory: applicableCategory,
+            discountType: discountType
         }
 
-        dispatch(editShippingThunk(1, editShipping)).then(
+        dispatch(editDiscountThunk(1, editDiscount)).then(
             setRefresh(prevState => !prevState)
         )
     }
@@ -68,7 +72,7 @@ function TestSam() {
     const handleDelete = (e, el) => {
         e.preventDefault()
 
-        dispatch(deleteShippingThunk(el.id)).then(
+        dispatch(deleteDiscountThunk(el.id)).then(
             setRefresh(prevState => !prevState)
         )
 
@@ -81,15 +85,15 @@ function TestSam() {
                 <button onClick={(e) => handleSignIn(e)}>Sign in</button>
             </section>
             <section>
-                <button onClick={(e) => getShipping(e)}>
-                    <b>GET A SHIPPING ADDRESS</b>
+                <button onClick={(e) => getDiscount(e)}>
+                    <b>GET A DISCOUNT</b>
                 </button>
             </section>
             <section>
-                {Object.values(shipping).map((el, i) => {
+                {Object.values(discount).map((el, i) => {
                     return (
                         <section onClick={(e) => handleDelete(e, el)}>
-                            {el.shippingAddress}
+                            {el.codeName}
                         </section>
                     )
                 })}
@@ -97,20 +101,30 @@ function TestSam() {
             <form onSubmit={handleCreateNew}>
                 <input
                     type="text"
-                    value={shippingAddress}
-                    onChange={(e) => setShippingAddress(e.target.value)}
+                    value={codeName}
+                    onChange={(e) => setCodeName(e.target.value)}
                 />
                 <input
                     type="text"
-                    value={shippingState}
-                    onChange={(e) => setShippingState(e.target.value)}
+                    value={applicableCategory}
+                    onChange={(e) => setApplicableCategory(e.target.value)}
                 />
                 <input
                     type="text"
-                    value={shippingZipCode}
-                    onChange={(e) => setShippingZipCode(e.target.value)}
+                    value={discountType}
+                    onChange={(e) => setDiscountType(e.target.value)}
                 />
-                <button type="submit">create a new shipping</button>
+                <input
+                    type="number"
+                    value={discountValue}
+                    onChange={(e) => setDiscountValue(e.target.value)}
+                />
+                <input
+                    type="text"
+                    value={expirationDate}
+                    onChange={(e) => setExpirationDate(e.target.value)}
+                />
+                <button type="submit">create a new discount</button>
             </form>
         </div>
     ) : (
