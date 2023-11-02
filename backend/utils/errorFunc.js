@@ -6,7 +6,7 @@ const notFoundError = (res, el) => {
     res.status(404).json({ message: `${el} not found`, statusCode: 404 });
 }
 
-const notAuthToView = (res, prop) {
+const notAuthToView = (res, prop) => {
     res.status(401).json({ message: `You are not authorized to view this ${prop}`, statusCode: 401 })
 }
 
