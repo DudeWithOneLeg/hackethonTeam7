@@ -61,4 +61,21 @@ router.get("/date/:dateString", restoreUser, requireAuth, async (req, res, next)
     }
 });
 
+
+// delete a order
+router.delete('/:orderId', restoreUser, requireAuth, isAdmin, async (req, res, next) => {
+    try {
+        const order = await Order.findByPk(req.params.orderId)
+
+        if (!order) {
+            return notFoundError(res, "Order")
+        }
+
+        await order.destroy()
+        res.status(200).json({ message: "Order successfully deleted", statusCode: 200 })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
+})
+
 module.exports = router
