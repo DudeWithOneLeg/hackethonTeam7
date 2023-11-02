@@ -12,10 +12,11 @@ export default function ListScene({ setProduct, category, setShowProduct }) {
         <group position={position}>
 
             {
-                models.map((model) => {
+                models.map((model, i) => {
                     if (model.category === category) {
                         console.log(model)
                         return <Gltf
+                            key={i}
                             src={model.src}
                             position={position}
                             rotation={model.rotation}

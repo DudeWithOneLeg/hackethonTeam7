@@ -1,0 +1,10 @@
+.billing-details-form {
+    display: flex;
+    min-width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.street-address {
+    width: 100%;
+}

@@ -7,10 +7,11 @@ export default function SubScene({ setCategory, setList }) {
 
   return (
     <group position={position}>
-      {models.map((model) => {
+      {models.map((model, i) => {
         if (!model.category)
           return (
             <SubSceneSingleObject
+              key={i}
               src={model.src}
               position={model.position}
               rotation={model.rotation}
