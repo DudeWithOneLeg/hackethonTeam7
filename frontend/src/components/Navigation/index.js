@@ -45,16 +45,17 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <li>
-          <button onClick={toggleSidebar}>
+          <button onClick={toggleSidebar} className="toggle">
             <i class="bx bx-menu"></i>
           </button>
           <NavLink
             exact
             to="/"
-            className={`home-btn ${isActive("/") ? "active" : ""}`}
+            className={`home-btn ${isActive('/') ? 'active' : ''}`}
           >
-            Home
+            <i class="bx bxs-home"></i>
           </NavLink>
+          {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
         <li>
           <NavLink to="/login">
