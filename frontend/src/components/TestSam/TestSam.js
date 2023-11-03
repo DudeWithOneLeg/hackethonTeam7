@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addBillingThunk, loadAllBillingsThunk, loadOneBillingThunk, loadUserBillingsThunk } from "../../store/billingaddress"
+import { addDiscountThunk, deleteDiscount, deleteDiscountThunk, editDiscountThunk, loadAllDiscountsThunk } from "../../store/discount"
 import { login } from "../../store/session"
 
 function TestSam() {
@@ -8,86 +8,17 @@ function TestSam() {
     const [refresh, setRefresh] = useState(false)
     const [load, setLoad] = useState(false)
 
-
-    // creating a new billing address
-    const [billingAddress, setBillingAddress] = useState("")
-    const [billingState, setBillingState] = useState("")
-    const [billingZipCode, setBillingZipCode] = useState("")
+    // creating a new discount address
+    const [codeName, setCodeName] = useState("")
 
     useEffect(() => {
-        dispatch(loadAllBillingsThunk()).then(
-            setLoad(true)
-        )
+        dispatch(loadAllDiscountsThunk())
+        setLoad(true)
     }, [dispatch, refresh])
-
-    const billing = useSelector(state => state.billingAddress)
-
-    const getBilling = async (e) => {
-        e.preventDefault()
-        setRefresh(prevState => !prevState)
-    }
-
-    const handleCreateNew = (e) => {
-        e.preventDefault()
-
-        const newBilling = {
-            billingAddress,
-            billingState,
-            billingZipCode
-        }
-
-        dispatch(addBillingThunk(newBilling))
-    }
-
-    const handleSignIn = (e) => {
-        e.preventDefault()
-
-        const user = {
-            credential: "admin@aa.io",
-            password: "password"
-        }
-
-        dispatch(login(user))
-    }
-
 
     return load ? (
         <div>
-            <section>
-                <button onClick={(e) => handleSignIn(e)}>Sign in</button>
-            </section>
-            <section>
-                <button onClick={(e) => getBilling(e)}>
-                    <b>GET A BILLING ADDRESS</b>
-                </button>
-            </section>
-            <section>
-                {Object.values(billing).map((el, i) => {
-                    return (
-                        <section>
-                            {el.billingAddress}
-                        </section>
-                    )
-                })}
-            </section>
-            <form onSubmit={handleCreateNew}>
-                <input
-                    type="text"
-                    value={billingAddress}
-                    onChange={(e) => setBillingAddress(e.target.value)}
-                />
-                <input
-                    type="text"
-                    value={billingState}
-                    onChange={(e) => setBillingState(e.target.value)}
-                />
-                <input
-                    type="text"
-                    value={billingZipCode}
-                    onChange={(e) => setBillingZipCode(e.target.value)}
-                />
-                <button type="submit">create a new billing</button>
-            </form>
+            test
         </div>
     ) : (
         <div></div>

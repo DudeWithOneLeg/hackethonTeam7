@@ -122,7 +122,7 @@ export const editOrderThunk = (orderId, orderInfo) => async (dispatch) => {
             console.error('Failed to update order information:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log(`An error occurred while updating order ${orderId} information:`, err)
+        console.error(`An error occurred while updating order ${orderId} information:`, err)
     }
 }
 

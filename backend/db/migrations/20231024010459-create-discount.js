@@ -34,7 +34,7 @@ module.exports = {
         allowNull: false,
       },
       expirationDate: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
       createdAt: {

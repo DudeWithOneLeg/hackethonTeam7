@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
 import { Canvas, axesHelper } from "@react-three/fiber";
 import OrderPage from "./components/OrderPage";
+import TestSam from "./components/TestSam"
 
 function App() {
   const dispatch = useDispatch();
