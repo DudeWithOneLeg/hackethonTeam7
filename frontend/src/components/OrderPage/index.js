@@ -24,7 +24,6 @@ function OrderPage() {
 
   const orderObj = useSelector((state) => state.order);
   const orders = Object.values(orderObj);
-  console.log(orders);
 
   // Function to format the date
   const formatDate = (dateStr) => {

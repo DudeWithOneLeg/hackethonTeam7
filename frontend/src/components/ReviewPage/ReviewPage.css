@@ -1,0 +1,35 @@
+.review-container {
+     position: absolute;
+    top: 10%;
+    left: 30%;
+    z-index: 1;
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background for the blur effect */
+    border-radius: 10px;
+    /* text-align: center; */
+    max-width: 450px; /* Set your desired maximum width */
+    margin: 0 auto; /* Center the grid horizontally */
+    height: 600px;
+}
+
+.review-container h1 {
+    text-align: center;
+}
+
+.review {
+    height: 235px;
+    border-bottom: 1px solid gray;
+}
+
+.review-info {
+    padding: 10px 10px;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination button {
+    border-radius: 30px;
+    padding: 5px 5px;
+}

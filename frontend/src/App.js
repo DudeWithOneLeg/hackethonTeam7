@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
 import { Canvas, axesHelper } from "@react-three/fiber";
 import OrderPage from "./components/OrderPage";
-import TestSam from "./components/TestSam"
+import ReviewPage from "./components/ReviewPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +33,9 @@ function App() {
               </Route>
               <Route path="/orders">
                 <OrderPage />
+              </Route>
+              <Route path="/reviews">
+                <ReviewPage />
               </Route>
               <Canvas dpr={[1, 2]} shadows>
                 {/* <directionalLightHelper light={dirLight.current}/> */}

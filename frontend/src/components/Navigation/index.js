@@ -50,7 +50,7 @@ function Navigation({ isLoaded }) {
           <NavLink
             exact
             to="/"
-            className={`home-btn ${isActive("/") ? "active" : ""}`}
+            className={`home-btn ${isActive('/') ? 'active' : ''}`}
           >
             <i class="bx bxs-home"></i>
           </NavLink>
