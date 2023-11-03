@@ -22,17 +22,6 @@ module.exports = {
         },
         allowNull: false,
       },
-      productId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "Products"
-        },
-        allowNull: false,
-        onDelete: "CASCADE"
-      },
-      subtotal: {
-        type: Sequelize.DECIMAL
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

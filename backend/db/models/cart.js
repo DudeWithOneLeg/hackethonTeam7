@@ -7,16 +7,26 @@ module.exports = (sequelize, DataTypes) => {
             Cart.belongsTo(models.User, {
                 foreignKey: "userId"
             })
-            Cart.belongsTo(models.Product, {
-                foreignKey: "productId"
+            Cart.hasMany(models.ProductCart, {
+                foreignKey: "cartId",
+                onDelete: "CASCADE"
             })
+            Cart.belongsToMany(models.Product, {
+                through: models.ProductCart,
+                foreignKey: "cartId"
+            })
+        }
+
+        async getCartItems() {
+            return this.getProductCarts();
         }
     };
 
     Cart.init({
-        subtotal: {
-            type: DataTypes.DECIMAL
-        }
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true
+        },
     }, {
         sequelize,
         modelName: 'Cart'

@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { Discount } = require("../../db/models");
-const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { internalServerError, notFoundError, notAuthToEdit } = require('../../utils/errorFunc');
 const { isAdmin } = require('../../utils/authorization');
 
 
@@ -20,7 +20,7 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
 })
 
 // get a discount by id
-router.get("/:discountId", restoreUser, requireAuth, isAdmin, async (req, res, next) => {
+router.get("/:discountId", restoreUser, requireAuth, async (req, res, next) => {
     try {
         const discount = await Discount.findByPk(req.params.discountId)
         if (!discount) {
@@ -34,7 +34,7 @@ router.get("/:discountId", restoreUser, requireAuth, isAdmin, async (req, res, n
 })
 
 // Create a new discount
-router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.post("/", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const { codeName, applicableCategory, discountType, discountValue, expirationDate } = req.body
 
@@ -47,6 +47,28 @@ router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
         })
 
         res.status(201).json({ data: newDiscount })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
+})
+
+// edit a discount
+router.put('/:discountId', restoreUser, requireAuth, isAdmin, async (req, res) => {
+    try {
+        const discountToEdit = await Discount.findByPk(req.params.discountId)
+        if (!discountToEdit) {
+            return notFoundError(res, "Discount")
+        }
+
+        discountToEdit.codeName = req.body.codeName || discountToEdit.codeName
+        discountToEdit.applicableCategory = req.body.applicableCategory || discountToEdit.codeName
+        discountToEdit.discountType = req.body.discountType || discountToEdit.discountType
+        discountToEdit.discountValue = req.body.discountValue || discountToEdit.discountValue
+        discountToEdit.expirationDate = req.body.expirationDate || discountToEdit.expirationDate
+
+        await discountToEdit.save()
+
+        res.status(200).json({ date: discountToEdit })
     } catch (err) {
         return internalServerError(res, err)
     }

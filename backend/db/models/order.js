@@ -16,10 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE
     },
     status: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: "processing"
     },
     totalAmount: {
-      type: DataTypes.DECIMAL
+      type: DataTypes.DECIMAL(10, 2)
     }
   }, {
     sequelize,
