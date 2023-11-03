@@ -77,6 +77,32 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
 });
 
 
+// User edits their shipping address
+router.put('/:shippingAddressId', restoreUser, requireAuth, async (req, res) => {
+    try {
+        const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
+
+        if (!shippingAddress) {
+            return notFoundError(res, "Shipping Address")
+        }
+
+        if (req.user.id !== shippingAddress.userId && req.user.id !== 1) {
+            return notAuthToEdit(res, "shipping address")
+        }
+
+        shippingAddress.shippingAddress = req.body.shippingAddress || shippingAddress.shippingAddress;
+        shippingAddress.shippingState = req.body.shippingState || shippingAddress.shippingState;
+        shippingAddress.shippingZipCode = req.body.shippingZipCode || shippingAddress.shippingZipCode;
+
+        await shippingAddress.save();
+
+        res.status(200).json({ data: shippingAddress });
+    } catch (err) {
+        return internalServerError(res, err);
+    }
+})
+
+
 // Delete a shipping address for a user
 router.delete("/:shippingAddressId", restoreUser, requireAuth, async (req, res) => {
     try {

@@ -75,7 +75,7 @@ export const addBilling = (billingAddress) => {
 
 export const addBillingThunk = (newBilling) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/billing`, {
+        const res = await csrfFetch(`/api/billing/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

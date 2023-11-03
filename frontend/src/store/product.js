@@ -25,7 +25,7 @@ export const loadProducts = (products) => {
 // thunk action for one specific product
 export const loadOneProductThunk = (productId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/product/id/${productId}`)
+        const res = await csrfFetch(`/api/product/${productId}`)
         if (res.ok) {
             const product = await res.json()
             dispatch(loadProduct(product))
@@ -79,7 +79,7 @@ export const addProduct = (product) => {
 // thunk action for creating a new product
 export const addProductThunk = (newProduct) => async (dispatch) => {
     try {
-        const res = await csrfFetch("/api/product/new", {
+        const res = await csrfFetch("/api/product/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -166,7 +166,7 @@ export const deleteProduct = (product) => {
 
 export const deleteProductThunk = (productId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/product/${productId}`, {
+        const res = await csrfFetch(`/api/${productId}`, {
             method: "DELETE"
         })
 

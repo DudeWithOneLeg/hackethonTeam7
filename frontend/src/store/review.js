@@ -51,7 +51,7 @@ export const clearReview = () => {
 // thunk action for one specific review
 export const loadOneReviewThunk = (reviewId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/review/id/${reviewId}`)
+        const res = await csrfFetch(`/api/review/${reviewId}`)
         if (res.ok) {
             const review = await res.json()
             dispatch(loadReview(review))
@@ -82,7 +82,7 @@ export const loadAllReviewsThunk = () => async (dispatch) => {
 // thunk action for creating a new review
 export const addReviewThunk = (newReview) => async (dispatch) => {
     try {
-        const res = await csrfFetch("/api/review/new", {
+        const res = await csrfFetch(`/api/review`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export const addReviewThunk = (newReview) => async (dispatch) => {
 // thunk action for editing a review information
 export const editReviewThunk = (reviewId, reviewInfo) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/review/${reviewId}/info`, {
+        const res = await csrfFetch(`/api/review/${reviewId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

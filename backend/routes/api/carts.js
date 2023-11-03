@@ -9,7 +9,7 @@ const { User, Cart } = require("../../db/models")
 // I think storing a user's cart in their cache would be better
 
 // Get the cart for a particular user
-router.get("/user/:userId", async (req, res) => {
+router.get("/user/:userId", restoreUser, requireAuth, async (req, res) => {
     const cart = await Cart.findAll({
         where: {
             userId: req.params.userId
@@ -17,5 +17,7 @@ router.get("/user/:userId", async (req, res) => {
     })
     res.json(cart)
 })
+
+
 
 module.exports = router
