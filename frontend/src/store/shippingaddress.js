@@ -141,7 +141,7 @@ export const deleteShippingThunk = (shippingId) => async (dispatch) => {
             console.error('Failed to delete shipping address:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log(`An error occured while deleting shipping address:`, err)
+        console.error(`An error occured while deleting shipping address:`, err)
     }
 }
 

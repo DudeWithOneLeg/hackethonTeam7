@@ -141,7 +141,7 @@ export const deleteBillingThunk = (billingId) => async (dispatch) => {
             console.error('Failed to delete billing address:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log(`An error occured while deleting billing address:`, err)
+        console.error(`An error occured while deleting billing address:`, err)
     }
 }
 

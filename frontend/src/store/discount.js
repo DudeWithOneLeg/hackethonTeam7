@@ -128,7 +128,7 @@ export const deleteDiscountThunk = (discountId) => async (dispatch) => {
         }
 
     } catch (err) {
-        console.log(`An error occured while deleting discount:`, err)
+        console.error(`An error occured while deleting discount:`, err)
     }
 }
 

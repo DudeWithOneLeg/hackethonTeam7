@@ -122,7 +122,7 @@ export const editReviewThunk = (reviewId, reviewInfo) => async (dispatch) => {
             console.error('Failed to update review information:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log(`An error occurred while updating review ${reviewId} information:`, err)
+        console.error(`An error occurred while updating review ${reviewId} information:`, err)
     }
 }
 
