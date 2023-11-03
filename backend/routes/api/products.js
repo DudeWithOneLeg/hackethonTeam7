@@ -22,7 +22,7 @@ router.get("/all", async (req, res) => {
 
 
 // Get a product by id
-router.get("/id/:productId", async (req, res) => {
+router.get("/:productId", async (req, res) => {
     try {
         const product = await Product.findByPk(req.params.productId)
         if (!product) {
@@ -142,7 +142,7 @@ router.get("/filter", async (req, res) => {
 
 
 // create a new product to list
-router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.post("/", restoreUser, requireAuth, isAdmin, async (req, res) => {
     const { productName, productDescription, productPrice, quantity } = req.body
 
     try {
@@ -166,8 +166,6 @@ router.put("/:productId/quantity", restoreUser, requireAuth, async (req, res) =>
         const productId = req.params.productId
         const { quantity } = req.body.quantity
 
-        console.log('booba', quantity)
-
         const product = await Product.findByPk(productId)
 
         if (!product) {
@@ -190,11 +188,10 @@ router.put("/:productId/quantity", restoreUser, requireAuth, async (req, res) =>
 // update a product's information
 router.put("/:productId/info", restoreUser, requireAuth, isAdmin, async (req, res) => {
     const productId = req.params.productId
-    const { productName, productDescription, productPrice } = req.body.productInfo;
-
+    // const { productName, productDescription, productPrice } = req.body.productInfo;
+    const { productName, productDescription, productPrice } = req.body;
 
     try {
-        const { productName, productDescription, productPrice } = req.body;
 
         const product = await Product.findByPk(productId)
 
@@ -223,11 +220,7 @@ router.delete("/:productId", restoreUser, requireAuth, isAdmin, async (req, res)
             return notFoundError(res, "Product")
         }
 
-        try {
-            await product.destroy()
-        } catch (e) {
-            console.log('booba error', e)
-        }
+        await product.destroy()
 
         res.status(200).json({ message: "Product successfully deleted", statusCode: 200 })
     } catch (err) {

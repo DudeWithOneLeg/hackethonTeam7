@@ -69,12 +69,27 @@ router.get('/product/:productId/category/:categoryId', async (req, res) => {
     }
 })
 
+// get a productCategory based on productCategory id
+router.get('/:productCategoryId', async (req, res) => {
+    try {
+        const productCategory = await ProductCategory.findByPk(req.params.productCategoryId)
+
+        if(!productCategory) {
+            return notFoundError(res, "Product Category")
+        }
+
+        res.json({ data: productCategory })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
+})
+
 // create a new productCategory
 // will create a new product category between a product Id and for each category passed in
-router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.post("/", restoreUser, requireAuth, isAdmin, async (req, res) => {
     let { productId, categories } = req.body // categories is by default a string. Ex: "Black,Indoor"
 
-    // prep the categories. add "All" as a default category as every product will be counted under the "All"
+    // prep the categories. add "All" as a category as every product will be counted under the "All" category
     if (categories.trim().length === 0) {
         categories = "All"
     } else {
@@ -111,7 +126,7 @@ router.post("/new", restoreUser, requireAuth, isAdmin, async (req, res) => {
 
 
 // edit the product categories of a product
-router.put('/update/:productId', restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.put('/:productId', restoreUser, requireAuth, isAdmin, async (req, res) => {
     const { categories } = req.body
     const productId = req.params.productId
 
@@ -152,7 +167,7 @@ router.put('/update/:productId', restoreUser, requireAuth, isAdmin, async (req, 
 })
 
 // delete a productCategory
-router.delete("/delete/:productCategoryId", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.delete("/:productCategoryId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const productCategory = await ProductCategory.findByPk(req.params.productCategoryId)
         if (!productCategory) {

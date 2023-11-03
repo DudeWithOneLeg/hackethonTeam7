@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User, ShippingAddress } = require("../../db/models");
-const { internalServerError, notFoundError } = require('../../utils/errorFunc');
+const { internalServerError, notFoundError, notAuthToView, notAuthToDelete } = require('../../utils/errorFunc');
 const { isAdmin, checkUser, authShipping } = require('../../utils/authorization');
 
 
@@ -21,17 +21,22 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
 
 
 // get a shipping address by id
-router.get("/id/:shippingAddressId", restoreUser, requireAuth, authShipping, async (req, res) => {
+router.get("/:shippingAddressId", restoreUser, requireAuth, async (req, res) => {
     try {
         const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
         if (!shippingAddress) {
             return notFoundError(res, "Shipping address")
+        }
+
+        if (req.user.id !== shippingAddress.userId && req.user.id !== 1) {
+            return notAuthToView(res, "shipping address")
         }
         res.json({ data: shippingAddress })
     } catch (err) {
         return internalServerError(res, err)
     }
 })
+
 
 // Get a shipping address of a user
 router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
@@ -54,12 +59,12 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
 
 
 // Create a shipping address for a user
-router.post("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
+router.post("/", restoreUser, requireAuth, async (req, res) => {
     const { shippingAddress, shippingState, shippingZipCode } = req.body;
 
     try {
         const newShippingAddress = await ShippingAddress.create({
-            userId: req.params.userId,
+            userId: req.user.id,
             shippingAddress: shippingAddress,
             shippingState: shippingState,
             shippingZipCode: shippingZipCode
@@ -72,12 +77,42 @@ router.post("/user/:userId", restoreUser, requireAuth, checkUser, async (req, re
 });
 
 
+// User edits their shipping address
+router.put('/:shippingAddressId', restoreUser, requireAuth, async (req, res) => {
+    try {
+        const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
+
+        if (!shippingAddress) {
+            return notFoundError(res, "Shipping Address")
+        }
+
+        if (req.user.id !== shippingAddress.userId && req.user.id !== 1) {
+            return notAuthToEdit(res, "shipping address")
+        }
+
+        shippingAddress.shippingAddress = req.body.shippingAddress || shippingAddress.shippingAddress;
+        shippingAddress.shippingState = req.body.shippingState || shippingAddress.shippingState;
+        shippingAddress.shippingZipCode = req.body.shippingZipCode || shippingAddress.shippingZipCode;
+
+        await shippingAddress.save();
+
+        res.status(200).json({ data: shippingAddress });
+    } catch (err) {
+        return internalServerError(res, err);
+    }
+})
+
+
 // Delete a shipping address for a user
-router.delete("/address/:shippingAddressId", restoreUser, requireAuth, checkUser, async (req, res) => {
+router.delete("/:shippingAddressId", restoreUser, requireAuth, async (req, res) => {
     try {
         const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
         if (!shippingAddress) {
             return notFoundError(res, "Shipping Address")
+        }
+
+        if (req.user.id !== shippingAddress.userId && req.user.id !== 1) {
+            return notAuthToDelete(res, "shipping address")
         }
 
         await shippingAddress.destroy()

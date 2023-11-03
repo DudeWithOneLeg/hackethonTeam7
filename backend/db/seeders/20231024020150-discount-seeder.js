@@ -16,21 +16,21 @@ module.exports = {
         applicableCategory: "All",
         discountType: "Percent",
         discountValue: 15,
-        expirationDate: new Date("9999-12-31T08:00:00Z")
+        expirationDate: new Date("9999-12-31")
       },
       {
         codeName: "CHAIR10",
         applicableCategory: "Chair",
         discountType: "Percent",
         discountValue: 10,
-        expirationDate: new Date("2023-12-31T12:00:00Z")
+        expirationDate: new Date("2023-12-31")
       },
       {
         codeName: "SUMMER30",
         applicableCategory: "Furniture",
         discountType: "Percent",
         discountValue: 30,
-        expirationDate: new Date("2024-8-31T12:00:00Z")
+        expirationDate: new Date("2024-8-31")
       }
       // another discount type could be a flat discount, like $100 dollars
     ]

@@ -79,6 +79,21 @@ export const loadAllOrdersThunk = () => async (dispatch) => {
     return []
 }
 
+// thunk action for one user's orders
+export const loadUserOrdersThunk = (userId) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/order/user/${userId}`)
+        if (res.ok) {
+            const order = await res.json()
+            dispatch(loadOrder(order))
+        } else {
+            console.error('Failed to load order:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error('An error occurred while loading order:', err);
+    }
+}
+
 // thunk action for creating a new order
 export const addOrderThunk = (newOrder) => async (dispatch) => {
     try {
@@ -122,7 +137,7 @@ export const editOrderThunk = (orderId, orderInfo) => async (dispatch) => {
             console.error('Failed to update order information:', res.status, res.statusText);
         }
     } catch (err) {
-        console.log(`An error occurred while updating order ${orderId} information:`, err)
+        console.error(`An error occurred while updating order ${orderId} information:`, err)
     }
 }
 
