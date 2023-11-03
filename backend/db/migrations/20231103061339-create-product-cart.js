@@ -15,6 +15,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+        },
+        allowNull: false,
+      },
       cartId: {
         type: Sequelize.INTEGER,
         references: {
@@ -37,6 +44,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 1,
+      },
+      pricePerUnit: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

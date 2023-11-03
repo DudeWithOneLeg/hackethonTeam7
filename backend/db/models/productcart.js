@@ -4,6 +4,10 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class ProductCart extends Model {
     static associate(models) {
+      ProductCart.belongsTo(models.User, {
+        foreignKey: "userId",
+        onDelete: "CASCADE"
+      })
       ProductCart.belongsTo(models.Cart, {
         foreignKey: "cartId",
         onDelete: "CASCADE",
@@ -15,14 +19,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   ProductCart.init({
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   primaryKey: true
-    // },
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 1,
+    },
+    pricePerUnit: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
     }
   }, {
     sequelize,

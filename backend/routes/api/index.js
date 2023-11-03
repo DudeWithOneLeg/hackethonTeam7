@@ -17,6 +17,7 @@ const billingRouter = require('./billingaddresses.js')
 const cartRouter = require('./carts.js')
 const orderRouter = require("./orders.js")
 const paymentRouter = require('./payments.js')
+const productCartRouter = require("./productcart.js")
 
 router.use(restoreUser);
 
@@ -25,6 +26,7 @@ router.use('/users', usersRouter);
 router.use('/discount', discountRouter);
 router.use('/product', productRouter);
 router.use('/productcategory', productCategoryRouter);
+router.use('/productcart', productCartRouter)
 router.use('/productimage', productImageRouter);
 router.use('/review', reviewRouter);
 router.use('/shipping', shippingRouter);

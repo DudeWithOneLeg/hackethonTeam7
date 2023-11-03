@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: "cartId"
             })
         }
+
+        async getCartItems() {
+            return this.getProductCarts();
+        }
     };
 
     Cart.init({

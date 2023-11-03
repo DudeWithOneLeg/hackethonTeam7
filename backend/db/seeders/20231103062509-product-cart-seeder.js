@@ -12,57 +12,77 @@ module.exports = {
     const validProductCarts = [
       // for User 2
       {
+        userId: 2,
         cartId: 2,
         productId: 1,
-        quantity: 2
+        quantity: 2,
+        pricePerUnit: 4499.99
       },
       {
+        userId: 2,
         cartId: 2,
         productId: 2,
-        quantity: 1
+        quantity: 1,
+        pricePerUnit: 3799.99
       },
       // for User 3
       {
+        userId: 3,
         cartId: 3,
         productId: 1,
-        quantity: 1
+        quantity: 1,
+        pricePerUnit: 4499.99
       },
       {
+        userId: 3,
         cartId: 3,
         productId: 3,
-        quantity: 1
+        quantity: 1,
+        pricePerUnit: 1499.99
       },
       {
+        userId: 3,
         cartId: 3,
         productId: 4,
-        quantity: 1
+        quantity: 1,
+        pricePerUnit: 1799.99
       },
       {
+        userId: 3,
         cartId: 3,
         productId: 9,
-        quantity: 1
+        quantity: 1,
+        pricePerUnit: 5499.99,
       },
       // For User 4
       {
+        userId: 4,
         cartId: 4,
         productId: 7,
-        quantity: 1
+        quantity: 1,
+        pricePerUnit: 1199.99
       },
       // For User 5
       {
+        userId: 4,
         cartId: 5,
         productId: 3,
-        quantity: 4
+        quantity: 4,
+        pricePerUnit: 1499.99
       },
       {
+        userId: 5,
         cartId: 5,
         productId: 4,
-        quantity: 2
+        quantity: 2,
+        pricePerUnit: 1799.99
       },
       {
+        userId: 5,
         cartId: 5,
         productId: 8,
-        quantity: 4
+        quantity: 4,
+        pricePerUnit: 599.99
       },
     ]
 

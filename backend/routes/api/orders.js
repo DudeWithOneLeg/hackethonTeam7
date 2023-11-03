@@ -10,7 +10,8 @@ const { isAdmin, checkUser, forbidden } = require('../../utils/authorization');
 
 
 // Get all orders made
-router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
+// router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
+router.get("/all", restoreUser, requireAuth, async (req, res) => {
     try {
         const orders = await Order.findAll()
         res.json({ data: orders })
