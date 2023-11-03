@@ -79,7 +79,7 @@ export const addProduct = (product) => {
 // thunk action for creating a new product
 export const addProductThunk = (newProduct) => async (dispatch) => {
     try {
-        const res = await csrfFetch("/api/product/", {
+        const res = await csrfFetch("/api/product", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
