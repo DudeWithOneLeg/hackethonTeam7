@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: "productId",
                 onDelete: "CASCADE"
             })
-            Product.hasMany(models.Cart, {
-                foreignKey: "productId",
-                onDelete: "CASCADE"
-            })
             Product.hasMany(models.ProductImage, {
                 foreignKey: "productId",
                 onDelete: "CASCADE"
@@ -23,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
 
             Product.belongsToMany(models.Category, {
                 through: models.ProductCategory,
+                foreignKey: "productId",
+            })
+            Product.belongsToMany(models.Cart, {
+                through: models.ProductCart,
                 foreignKey: "productId",
             })
         }
