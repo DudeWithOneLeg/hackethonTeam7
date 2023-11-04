@@ -50,14 +50,14 @@
     /* padding: 10px; */
 }
 
-.cart-btn {
+/* .cart-btn {
     cursor: pointer;
     border-radius: 20px;
     padding: 6px;
     width: 80%;
-    margin: 0 auto; /* Center the button horizontally */
-    display: block; /* Make it a block-level element */
-}
+    margin: 0 auto; 
+    display: block; 
+} */
 
 .cart-icon {
     height: 30px;
