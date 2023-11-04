@@ -112,12 +112,12 @@ const models = [
     rotation: [0, 76.92, 0],
     category: "Endtables",
   },
-  {
-    src: "../../../models/endtables/endtable-2.gltf",
-    position: [0, 0, 0],
-    rotation: [0, 76.92, 0],
-    category: "Endtables",
-  },
+  // {
+  //   src: "../../../models/endtables/endtable-2.gltf",
+  //   position: [0, 0, 0],
+  //   rotation: [0, 76.92, 0],
+  //   category: "Endtables",
+  // },
   {
     src: "../../../models/endtables/endtable-3.gltf",
     position: [0, 0, 0],

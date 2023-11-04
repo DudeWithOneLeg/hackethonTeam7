@@ -1914,7 +1914,7 @@
 			"name":"SM_Corner table  wood",
 			"translation":[
 				0,
-				0.38999998569488525,
+				0,
 				0
 			]
 		},
@@ -2189,7 +2189,7 @@
 			"name":"SM_Corner table  metal",
 			"translation":[
 				0,
-				1.5506775379180908,
+				-1.16067755222,
 				0
 			]
 		}

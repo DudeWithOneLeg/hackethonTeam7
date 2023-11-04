@@ -2156,8 +2156,8 @@
 			],
 			"translation":[
 				0,
-				1.5260467529296875,
-				-1.059295654296875
+				0,
+				0
 			]
 		}
 	],
@@ -2220,17 +2220,17 @@
 		{
 			"mimeType":"image/png",
 			"name":"Oak raw fine wood PBR texture seamless Normal",
-			"uri":"../textures/Oak%20raw%20fine%20wood%20PBR%20texture%20seamless%20Normal.png"
+			"uri":"../textures/Oak_raw_fine_wood_PBR_texture_seamless_Normal.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Oak raw fine wood PBR texture seamless Diffuse",
-			"uri":"../textures/Oak%20raw%20fine%20wood%20PBR%20texture%20seamless%20Diffuse.png"
+			"uri":"../textures/Oak_raw_fine_wood_PBR_texture_seamless_Diffuse.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Oak raw fine wood PBR texture seamless Roughness",
-			"uri":"../textures/Oak%20raw%20fine%20wood%20PBR%20texture%20seamless%20Roughness.png"
+			"uri":"../textures/Oak_raw_fine_wood_PBR_texture_seamless_Roughness.png"
 		}
 	],
 	"accessors":[
