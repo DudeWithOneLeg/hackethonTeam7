@@ -32,12 +32,7 @@ router.get('/current', restoreUser, requireAuth, async (req, res) => {
             attributes: { exclude: ["createdAt", "updatedAt"] },
         })
 
-        res.json({ data: productCart })
-
-        if (productCart.userId !== req.user.id && req.user.id !== 1) {
-            return notAuthToView(res, "product cart")
-        }
-
+        return res.json({ data: productCart })
 
     } catch (err) {
         return internalServerError(res, err)
@@ -72,9 +67,10 @@ router.get('/:cartId', restoreUser, requireAuth, async (req, res) => {
     }
 })
 
-// create a new product cart item // will create a new product product between a product Id and for each product passed in
+// create a new product cart item
 router.post("/", restoreUser, requireAuth, async (req, res) => {
-    let { productId, quantity, pricePerUnit } = req.body
+    let { productId, quantity } = req.body
+
 
     try {
         const cart = await Cart.findOne({
@@ -83,19 +79,18 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
             }
         })
 
+        const product = await Product.findByPk(productId)
+
         if (!cart) {
             return notFoundError(res, "Cart")
         }
 
-        if (cart.userId !== req.user.id && req.user.id !== 1) {
-            return notAuthToView(res, "cart")
-        }
-
         const newProductCart = await ProductCart.create({
+            userId: req.user.id,
             cartId: cart.id,
             productId: productId,
             quantity: quantity,
-            pricePerUnit: pricePerUnit
+            pricePerUnit: product.productPrice
         })
 
         res.status(201).json({ data: newProductCart });

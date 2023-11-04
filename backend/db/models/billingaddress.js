@@ -10,14 +10,25 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   BillingAddress.init({
+    billingFirstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    billingLastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     billingAddress: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     billingState: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     billingZipCode: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     sequelize,

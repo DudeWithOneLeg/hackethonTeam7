@@ -12,11 +12,22 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Payment.init({
-    method: {
-      type: DataTypes.STRING,
+    defaultPayment: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
-    creditCardInformation: {
-      type: DataTypes.STRING, // this is not ideal, will require more work
+    cardHolder: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    cardNumber: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    expirationDate: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     sequelize,
