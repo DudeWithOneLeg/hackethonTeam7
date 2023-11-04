@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./index.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-import SideBar from "../SideBar";
+import SideBar from "./SideBar";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -31,10 +31,9 @@ function Navigation({ isLoaded }) {
             to="/"
             className={`home-btn ${isActive("/") ? "active" : ""}`}
           >
-           <i class='bx bxs-home' ></i>
+            <i class="bx bxs-home"></i>
           </NavLink>
-      {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen}/>}
-
+          {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
         <li>
           <ProfileButton user={sessionUser} />
@@ -45,16 +44,17 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <li>
-          <button onClick={toggleSidebar}>
+          <button onClick={toggleSidebar} className="toggle">
             <i class="bx bx-menu"></i>
           </button>
           <NavLink
             exact
             to="/"
-            className={`home-btn ${isActive("/") ? "active" : ""}`}
+            className={`home-btn ${isActive('/') ? 'active' : ''}`}
           >
-            Home
+            <i class="bx bxs-home"></i>
           </NavLink>
+          {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
         <li>
           <NavLink to="/login">

@@ -30,7 +30,7 @@ li {
 } */
 
 .auth-btn {
-    border: none;
+    border: 1px solid black; /* Set the initial border to black */
     border-radius: 20px;
     padding: 8px 15px;
     margin: 0 5px;
@@ -38,26 +38,27 @@ li {
     color: white;
     font-weight: 700;
     cursor: pointer;
-  
+
     /* Create a color gradient border */
-    box-shadow: 0 0 0 1px violet, 0 0 0 1px purple;
+    /* box-shadow: 0 0 0 1px violet, 0 0 0 1px purple; */
     background-clip: content-box;
     transition: box-shadow 0.5s;
-  }
-  
-  .auth-btn:hover {
+}
+
+.auth-btn:hover {
     /* Rotate the gradient to opposite corners on hover */
     animation: rotateGradient 0.5s linear infinite alternate;
-  }
-  
-  @keyframes rotateGradient {
+    border: 1px solid transparent; /* Set the border to transparent on hover */
+}
+
+@keyframes rotateGradient {
     0% {
-      box-shadow: 0 0 0 1px pink, 0 0 0 1px purple;
+        box-shadow: 0 0 0 1px pink, 0 0 0 1px purple;
     }
     100% {
-      box-shadow: 0 0 0 1px purple, 0 0 0 1px pink;
+        box-shadow: 0 0 0 1px purple, 0 0 0 1px pink;
     }
-  }
+}
 
 
 
@@ -110,7 +111,7 @@ li {
 }
 
 .toggle {
-    margin-left: 75px;
+    margin-left: 115px;
     cursor: pointer;
     font-size: 30px;
     background-color: transparent;

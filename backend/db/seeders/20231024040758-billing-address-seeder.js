@@ -17,6 +17,12 @@ module.exports = {
         billingZipCode: "90210"
       },
       {
+        userId: 2,
+        billingAddress: "456 Side Street",
+        billingState: "New York",
+        billingZipCode: "10101"
+      },
+      {
         userId: 3,
         billingAddress: "456 Elm Avenue",
         billingState: "New York",

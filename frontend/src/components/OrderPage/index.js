@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadAllOrdersThunk } from "../../store/order";
+import { clearOrder, loadAllOrdersThunk, loadUserOrdersThunk } from "../../store/order";
 import "./OrderPage.css";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -10,13 +10,20 @@ function OrderPage() {
   const sessionUser = useSelector((state) => state.session.user);
 
 
+  console.log('booba', sessionUser)
+
   useEffect(() => {
-    dispatch(loadAllOrdersThunk());
+    if (sessionUser?.id === 1) {
+      dispatch(loadAllOrdersThunk());
+    } else {
+      dispatch(loadUserOrdersThunk(sessionUser?.id))
+    }
+
+    dispatch(clearOrder())
   }, [dispatch]);
 
   const orderObj = useSelector((state) => state.order);
   const orders = Object.values(orderObj);
-  console.log(orders);
 
   // Function to format the date
   const formatDate = (dateStr) => {
@@ -28,6 +35,9 @@ function OrderPage() {
     return `${month} ${day}, ${year}`;
   };
 
+  if (!sessionUser) {
+    return <Redirect to="/login" />
+  }
 
   return (
     <div className="order-table">

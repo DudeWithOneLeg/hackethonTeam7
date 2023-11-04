@@ -21,9 +21,9 @@ function SideBar({ isSidebarOpen }) {
                 Gallery
               </button>
             </NavLink>
-            <NavLink to="/models">
+            <NavLink to="/products">
               <button
-                className={`nav-btn ${isActive("/models") ? "active" : ""}`}
+                className={`nav-btn ${isActive("/products") ? "active" : ""}`}
               >
                 Models
               </button>
@@ -33,6 +33,13 @@ function SideBar({ isSidebarOpen }) {
                 className={`nav-btn ${isActive("/orders") ? "active" : ""}`}
               >
                 Orders
+              </button>
+            </NavLink>
+            <NavLink to="/reviews">
+              <button
+                className={`nav-btn ${isActive("/reviews") ? "active" : ""}`}
+              >
+                Reviews
               </button>
             </NavLink>
             <NavLink to="/cart">

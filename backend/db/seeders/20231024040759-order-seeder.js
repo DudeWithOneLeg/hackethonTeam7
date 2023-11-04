@@ -12,38 +12,38 @@ module.exports = {
     const validOrders = [
       {
         userId: 2,
-        orderDate: new Date("2023-01-14T21:05:50Z"),
-        status: "Complete",
+        orderDate: new Date("2023-01-14"),
+        status: "complete",
         totalAmount: 2199.97
       },
       {
         userId: 2,
-        orderDate: new Date("2023-02-02T15:36:05Z"),
-        status: "Complete",
+        orderDate: new Date("2023-02-02"),
+        status: "complete",
         totalAmount: 2799.98
       },
       {
         userId: 2,
-        orderDate: new Date("2023-03-24T10:27:15Z"),
-        status: "Complete",
+        orderDate: new Date("2023-03-24"),
+        status: "complete",
         totalAmount: 599.99,
       },
       {
         userId: 3,
-        orderDate: new Date("2023-05-12T13:45:25Z"),
-        status: "Complete",
+        orderDate: new Date("2023-05-12"),
+        status: "complete",
         totalAmount: 4499.99,
       },
       {
         userId: 3,
-        orderDate: new Date("2023-07-10T11:59:55Z"),
-        status: "Complete",
+        orderDate: new Date("2023-07-10"),
+        status: "complete",
         totalAmount: 3299.98,
       },
       {
         userId: 4,
-        orderDate: new Date("2023-10-15T14:32:45Z"),
-        status: "Pending",
+        orderDate: new Date("2023-10-15"),
+        status: "processing",
         totalAmount: 5499.99,
       },
     ]

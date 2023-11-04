@@ -77,7 +77,7 @@ export const addProductCategory = (productCategory) => {
 // thunk action to create a new product category based on product Id and a list of categories
 export const addProductCategoryThunk = (productId, categories) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/productcategory/new`, {
+        const res = await csrfFetch(`/api/productcategory/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export const editProductCategory = (productCategory) => {
 // thunk action to edit productCategories
 export const editProductCategoryThunk = (productId, newCategories) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/productcategory/update/${productId}`, {
+        const res = await csrfFetch(`/api/productcategory/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -141,7 +141,7 @@ export const deleteProductCategory = (productCategory) => {
 // delete product category thunk
 export const deleteProductCategoryThunk = (productCategoryId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/productcategory/delete/${productCategoryId}`, {
+        const res = await csrfFetch(`/api/productcategory/${productCategoryId}`, {
             method: "DELETE"
         })
 

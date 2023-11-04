@@ -8,16 +8,32 @@ if (process.env.NODE_ENV === 'production') {
 options.tableName = 'Carts'
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  async up(queryInterface, Sequelize) {
+    const validCarts = [
+      // 1
+      {
+        userId: 1,
+      },
+      // 2
+      {
+        userId: 2,
+      },
+      // 3
+      {
+        userId: 3,
+      },
+      // 4
+      {
+        userId: 4,
+      },
+      // 5
+      {
+        userId: 5,
+      },
+
+    ]
+
+    await queryInterface.bulkInsert(options, validCarts, {})
   },
 
   async down(queryInterface, Sequelize) {
