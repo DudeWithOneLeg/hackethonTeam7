@@ -133,6 +133,7 @@
     "statuses": "^2.0.1",
     "string-width": "^4.2.3",
     "strip-ansi": "^6.0.1",
+    "stripe": "^14.3.0",
     "timers-ext": "^0.1.7",
     "toidentifier": "^1.0.0",
     "toposort-class": "^1.0.1",

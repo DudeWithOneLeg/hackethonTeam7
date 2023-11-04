@@ -13,6 +13,7 @@ export const loadCart = (cart) => {
     }
 }
 
+<<<<<<< HEAD
 export const addCart = (cart) => {
     return {
         type: ADD_CART,
@@ -31,6 +32,70 @@ export const deleteCart = (cart) => {
     return {
         type: DELETE_CART,
         payload: cart
+=======
+export const loadUserCartThunk = () => async (dispatch) => {
+    try {
+        const res = await csrfFetch('/api/cart/current')
+        if (res.ok) {
+            const cart = await res.json()
+            dispatch(loadCart(cart))
+        } else {
+            console.error("Failed to load user's cart:", res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error("An error occurred while loading user's cart:", err);
+    }
+}
+
+
+export const addCart = (newCart) => {
+    return {
+        type: ADD_CART,
+        payload: newCart
+    }
+}
+
+export const addUserCartThunk = () => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/cart`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+
+        if (res.ok) {
+            const newCart = await res.json()
+            dispatch(addCart(newCart))
+        } else {
+            console.error('Failed to create a new user cart:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error('An error occurred while creating new user cart:', err);
+    }
+}
+
+export const deleteCart = (cartAddress) => {
+    return {
+        type: DELETE_CART,
+        payload: cartAddress
+    }
+}
+
+export const deleteCartThunk = () => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/cart/`, {
+            method: "DELETE"
+        })
+
+        if (res.ok) {
+            dispatch(deleteCart())
+        } else {
+            console.error('Failed to delete user cart:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error(`An error occured while deleting user cart:`, err)
+>>>>>>> routes-2-sam
     }
 }
 
@@ -40,6 +105,7 @@ export const clearCart = () => {
     }
 }
 
+<<<<<<< HEAD
 // thunk action for one specific cart
 export const loadOneCartThunk = (cartId) => async (dispatch) => {
     try {
@@ -148,6 +214,8 @@ export const deleteCartThunk = (cartId) => async (dispatch) => {
         console.error(`An error occured while deleting cart ${cartId}:`, err)
     }
 }
+=======
+>>>>>>> routes-2-sam
 
 const initialCart = {}
 
@@ -155,7 +223,11 @@ const cartReducer = (state = initialCart, action) => {
     const newState = { ...state }
     switch (action.type) {
         case LOAD_CART:
+<<<<<<< HEAD
             return action.payload
+=======
+            return action.payload.data
+>>>>>>> routes-2-sam
         case ADD_CART:
             newState[action.payload.id] = action.payload
             return newState;
@@ -168,8 +240,16 @@ const cartReducer = (state = initialCart, action) => {
         case CLEAR_CART:
             return initialCart
         default:
+<<<<<<< HEAD
             return newState;
     }
 }
 
 export default cartReducer;
+=======
+            return newState
+    }
+}
+
+export default cartReducer
+>>>>>>> routes-2-sam

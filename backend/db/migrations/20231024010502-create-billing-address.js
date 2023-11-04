@@ -22,6 +22,14 @@ module.exports = {
         },
         allowNull: false,
       },
+      billingFirstName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      billingLastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       billingAddress: {
         type: Sequelize.STRING,
         allowNull: false,

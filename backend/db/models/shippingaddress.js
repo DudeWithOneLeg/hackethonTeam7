@@ -12,14 +12,25 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   ShippingAddress.init({
+    shippingFirstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    shippingLastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     shippingAddress: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     shippingState: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     shippingZipCode: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   }, {
     sequelize,

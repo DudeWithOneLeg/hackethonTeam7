@@ -22,22 +22,22 @@ export const loadShippings = (shippingAddresses) => {
 }
 
 
-//thunk action to get a shipping address by id
-export const loadOneShippingThunk = (shippingId) => async (dispatch) => {
-    try {
-        const res = await csrfFetch(`/api/shipping/${shippingId}`)
-        if (res.ok) {
-            const shippingAddress = await res.json()
-            dispatch(loadShipping(shippingAddress))
-        } else {
-            console.error('Failed to load specific shipping address:', res.status, res.statusText);
-        }
-    } catch (err) {
-        console.error('An error occurred while loading specific shipping address:', err);
-    }
-}
+// //thunk action to get a shipping address by id
+// export const loadOneShippingThunk = (shippingId) => async (dispatch) => {
+//     try {
+//         const res = await csrfFetch(`/api/shipping/${shippingId}`)
+//         if (res.ok) {
+//             const shippingAddress = await res.json()
+//             dispatch(loadShipping(shippingAddress))
+//         } else {
+//             console.error('Failed to load specific shipping address:', res.status, res.statusText);
+//         }
+//     } catch (err) {
+//         console.error('An error occurred while loading specific shipping address:', err);
+//     }
+// }
 
-// thunk action to get all shipping addresses for a user
+// thunk action to get all shipping addresses for a specific user
 export const loadUserShippingsThunk = (userId) => async (dispatch) => {
     try {
         const res = await csrfFetch(`/api/shipping/user/${userId}`)
@@ -51,6 +51,22 @@ export const loadUserShippingsThunk = (userId) => async (dispatch) => {
         console.error("An error occurred while loading user's shipping addresses:", err);
     }
 }
+
+// thunk action to get all shipping addresses for current user
+export const loadCurrentShippingThunk = () => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/shipping/current`)
+        if (res.ok) {
+            const shippingAddresses = await res.json()
+            dispatch(loadShippings(shippingAddresses))
+        } else {
+            console.error("Failed to load user's shipping addresses:", res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error("An error occurred while loading user's shipping addresses:", err);
+    }
+}
+
 
 export const loadAllShippingsThunk = () => async (dispatch) => {
     try {

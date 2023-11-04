@@ -9,9 +9,6 @@ function OrderPage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
 
-
-  console.log('booba', sessionUser)
-
   useEffect(() => {
     if (sessionUser?.id === 1) {
       dispatch(loadAllOrdersThunk());
