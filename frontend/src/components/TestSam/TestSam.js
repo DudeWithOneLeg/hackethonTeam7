@@ -6,6 +6,7 @@ import { clearUser, login } from "../../store/session"
 import { loadAllProductCategoriesThunk } from "../../store/productcategory"
 import { clearProductCart, loadAllProductCartsThunk, loadUserProductCartThunk } from "../../store/productcart"
 import { csrfFetch } from "../../store/csrf";
+import { addUserCartThunk, clearCart, loadUserCartThunk } from "../../store/cart";
 
 function TestSam() {
     const dispatch = useDispatch()
@@ -19,12 +20,18 @@ function TestSam() {
     useEffect(() => {
         dispatch(loadUserProductCartThunk())
 
+        dispatch(loadUserCartThunk())
+
         dispatch(clearUser())
         dispatch(clearProductCart())
+        dispatch(clearCart())
         setLoad(true)
     }, [dispatch, refresh])
 
     const productCart = useSelector(state => state.productCart)
+    const userCart = useSelector(state => state.cart)
+
+    console.log('booba', Object.values(userCart))
 
     const demoSignIn = (e) => {
         e.preventDefault()
@@ -65,6 +72,11 @@ function TestSam() {
         }
     }
 
+    const createNewCart = (e) => {
+        e.preventDefault()
+        dispatch(addUserCartThunk())
+    }
+
     return load ? (
         <div>
             <section>
@@ -72,6 +84,17 @@ function TestSam() {
                 <button onClick={demoSignIn}>Demo Sign In</button>
             </section>
             <section>
+                <button onClick={(e) => createNewCart(e)}>create new cart</button>
+                <button>delete cart</button>
+            </section>
+            <section>
+                {Object.values(userCart).map(el => (
+                    <div>
+                        <p>{el.id}</p>
+                    </div>
+                ))}
+            </section>
+            {/* <section>
                 {Object.values(productCart).map(el => (
                     <div key={el.productId}>
                         <p>Product ID: {el.productId}</p>
@@ -80,7 +103,7 @@ function TestSam() {
                     </div>
                 ))}
             </section>
-            <button onClick={checkout}>Checkout</button>
+            <button onClick={checkout}>Checkout</button> */}
         </div>
     ) : (
         <div></div>

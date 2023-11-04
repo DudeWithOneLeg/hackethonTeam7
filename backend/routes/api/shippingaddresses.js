@@ -47,8 +47,6 @@ router.get("/current", restoreUser, requireAuth, async (req, res) => {
             }
         })
 
-        console.log("booba asdf")
-
         if (!shippingAddress.length) {
             return notFoundError(res, "Shipping address")
         }
