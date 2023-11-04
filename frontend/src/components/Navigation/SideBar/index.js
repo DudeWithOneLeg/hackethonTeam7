@@ -21,9 +21,9 @@ function SideBar({ isSidebarOpen }) {
                 Gallery
               </button>
             </NavLink>
-            <NavLink to="/models">
+            <NavLink to="/products">
               <button
-                className={`nav-btn ${isActive("/models") ? "active" : ""}`}
+                className={`nav-btn ${isActive("/products") ? "active" : ""}`}
               >
                 Models
               </button>

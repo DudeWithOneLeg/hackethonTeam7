@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadAllReviewsThunk } from '../../store/review';
-import './ReviewPage.css';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loadAllReviewsThunk } from "../../store/review";
+import "./ReviewPage.css";
 
 function ReviewPage() {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ function ReviewPage() {
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
-    const month = date.toLocaleString('default', { month: 'short' }); // 'short' gives the abbreviated month name
+    const month = date.toLocaleString("default", { month: "short" }); // 'short' gives the abbreviated month name
     const day = date.getDate();
     const year = date.getFullYear();
 
@@ -62,27 +62,31 @@ function ReviewPage() {
     <>
       <div className="review-container">
         <h1>Reviews</h1>
-        {displayedReviews.map((review) => (
-          <div key={review.id} className="review">
-            <div className="review-info">
-              <li>{renderStars(review.rating)}</li>
+        <div className="review-grid">
+          {displayedReviews.map((review) => (
+            <div key={review.id} className="review">
+              <div className="review-info">
+                <li>{renderStars(review.rating)}</li>
+              </div>
+              <div className="review-info">
+                <li>Product: {review.productId}</li>
+                <li>{review.review}</li>
+              </div>
+              <div className="review-info">
+                <li>Customer {review.userId}</li>
+                <li>{formatDate(review.createdAt)}</li>
+              </div>
+              {/* <hr></hr> */}
             </div>
-            <div className="review-info">
-              <li>{review.review}</li>
-            </div>
-            <div className="review-info">
-              <li>Customer {review.userId}</li>
-              <li>{formatDate(review.createdAt)}</li>
-            </div>
-            {/* <hr></hr> */}
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="pagination">
-          <button onClick={showPrevPage} disabled={currentPage === 0}>
+          <button className="arrow left" onClick={showPrevPage} disabled={currentPage === 0}>
             <i class="bx bxs-chevron-left"></i>
             {/* Previous */}
           </button>
           <button
+          className="arrow right"
             onClick={showNextPage}
             disabled={currentPage === totalPageCount - 1}
           >

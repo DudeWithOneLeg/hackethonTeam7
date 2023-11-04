@@ -13,10 +13,10 @@ function OrderPage() {
   console.log('booba', sessionUser)
 
   useEffect(() => {
-    if (sessionUser.id === 1) {
+    if (sessionUser?.id === 1) {
       dispatch(loadAllOrdersThunk());
     } else {
-      dispatch(loadUserOrdersThunk(sessionUser.id))
+      dispatch(loadUserOrdersThunk(sessionUser?.id))
     }
 
     dispatch(clearOrder())
@@ -35,6 +35,9 @@ function OrderPage() {
     return `${month} ${day}, ${year}`;
   };
 
+  if (!sessionUser) {
+    return <Redirect to="/login" />
+  }
 
   return (
     <div className="order-table">
