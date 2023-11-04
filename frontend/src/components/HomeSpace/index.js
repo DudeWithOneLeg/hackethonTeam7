@@ -11,6 +11,7 @@ import { useFrame } from "@react-three/fiber";
 import { Model } from "./Scene";
 import SubScene from "../SubScene";
 import ListScene from "../ListScene";
+import ProductScene from "../ProductScene";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Scene.css";
 
@@ -207,6 +208,9 @@ export default function Homespace() {
           setProduct={setProduct}
           setShowProduct={setShowProduct}
         />
+        {
+          showProduct && <ProductScene product={product}/>
+        }
         {/* </ScrollControls> */}
 
         <directionalLight
