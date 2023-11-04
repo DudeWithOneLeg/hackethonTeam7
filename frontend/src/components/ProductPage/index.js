@@ -39,7 +39,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <div className="product-container">
+      <div className="container">
         <h1>All Products</h1>
         <div className="product-grid">
           {displayedProducts.map((product) => (

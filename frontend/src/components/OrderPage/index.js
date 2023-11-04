@@ -40,7 +40,7 @@ function OrderPage() {
   }
 
   return (
-    <div className="order-table">
+    <div className="container order">
       <h1>Orders</h1>
       <div className="table-header">
         <div className="table-cell">Order #</div>

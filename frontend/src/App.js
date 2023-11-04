@@ -10,6 +10,7 @@ import { Canvas, axesHelper } from "@react-three/fiber";
 import OrderPage from "./components/OrderPage";
 import ReviewPage from "./components/ReviewPage";
 import ProductsPage from "./components/ProductPage";
+import CartPage from "./components/CartPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,9 @@ function App() {
               </Route>
               <Route path="/products">
                 <ProductsPage />
+              </Route>
+              <Route path="/cart">
+                <CartPage />
               </Route>
               <Canvas dpr={[1, 2]} shadows>
                 {/* <directionalLightHelper light={dirLight.current}/> */}

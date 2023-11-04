@@ -1,7 +1,7 @@
 .review-container {
      position: absolute;
     top: 10%;
-    left: 25%;
+    left: 20%;
     z-index: 1;
     backdrop-filter: blur(10px); /* Apply a blur effect to the background */
     background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background for the blur effect */
