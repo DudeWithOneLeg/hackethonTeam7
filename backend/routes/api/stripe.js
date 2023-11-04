@@ -2,6 +2,7 @@ const express = require('express');
 const { environment } = require('../../config');
 const { internalServerError } = require('../../utils/errorFunc');
 const { User, Cart, Product, ProductCart } = require("../../db/models");
+const { restoreUser, requireAuth } = require('../../utils/auth');
 const router = express.Router();
 
 let stripe
@@ -16,7 +17,7 @@ if (environment === "development") {
 
 
 // test route for processing stripe payment
-router.post("/payment", async (req, res) => {
+router.post("/", restoreUser, requireAuth, async (req, res) => {
     try {
         const productCart = await ProductCart.findAll({
             where: {
@@ -25,10 +26,7 @@ router.post("/payment", async (req, res) => {
             attributes: { exclude: ["createdAt", "updatedAt"] },
         })
 
-        let urlSuccess = environment === "development" ? process.env.DEV_URL_SUCCESS : process.env.PROD_URL_SUCCESS
-        let urlCancel = environment === "development" ? process.env.DEV_URL_CANCEL : process.env.PROD_URL_CANCEL
-
-        // return res.json(urlSuccess)
+        let url = environment === "development" ? "http://localhost:3000" : "INPUT LIVE URL"
 
         let cartItems = []
 
@@ -52,8 +50,8 @@ router.post("/payment", async (req, res) => {
             payment_method_types: ['card'],
             line_items: cartItems,
             mode: 'payment',
-            success_url: urlSuccess,
-            cancel_url: urlCancel
+            success_url: `${url}/payment/success`,
+            cancel_url: url
         })
 
         return res.json({ data: session })

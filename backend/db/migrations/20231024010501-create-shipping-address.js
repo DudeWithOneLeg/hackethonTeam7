@@ -22,6 +22,14 @@ module.exports = {
         },
         allowNull: false,
       },
+      shippingFirstName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      shippingLastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       shippingAddress: {
         type: Sequelize.STRING,
         allowNull: false,

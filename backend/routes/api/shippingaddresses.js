@@ -20,26 +20,48 @@ router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
 });
 
 
-// get a shipping address by id
-router.get("/:shippingAddressId", restoreUser, requireAuth, async (req, res) => {
+// // get a shipping address by id
+// router.get("/:shippingAddressId", restoreUser, requireAuth, async (req, res) => {
+//     try {
+//         const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
+//         if (!shippingAddress) {
+//             return notFoundError(res, "Shipping address")
+//         }
+
+//         if (req.user.id !== shippingAddress.userId && req.user.id !== 1) {
+//             return notAuthToView(res, "shipping address")
+//         }
+//         res.json({ data: shippingAddress })
+//     } catch (err) {
+//         return internalServerError(res, err)
+//     }
+// })
+
+
+// get shipping addresses of current user
+router.get("/current", restoreUser, requireAuth, async (req, res) => {
     try {
-        const shippingAddress = await ShippingAddress.findByPk(req.params.shippingAddressId)
-        if (!shippingAddress) {
+        const shippingAddress = await ShippingAddress.findAll({
+            where: {
+                userId: req.user.id
+            }
+        })
+
+        console.log("booba asdf")
+
+        if (!shippingAddress.length) {
             return notFoundError(res, "Shipping address")
         }
 
-        if (req.user.id !== shippingAddress.userId && req.user.id !== 1) {
-            return notAuthToView(res, "shipping address")
-        }
         res.json({ data: shippingAddress })
     } catch (err) {
-        return internalServerError(res, err)
+        return internalServerError(res, err);
     }
 })
 
 
-// Get a shipping address of a user
-router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
+// Get a shipping address of specific user
+router.get("/user/:userId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const shippingAddress = await ShippingAddress.findAll({
             where: {
@@ -60,11 +82,13 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
 
 // Create a shipping address for a user
 router.post("/", restoreUser, requireAuth, async (req, res) => {
-    const { shippingAddress, shippingState, shippingZipCode } = req.body;
+    const { shippingFirstName, shippingLastName, shippingAddress, shippingState, shippingZipCode } = req.body;
 
     try {
         const newShippingAddress = await ShippingAddress.create({
             userId: req.user.id,
+            shippingFirstName: shippingFirstName,
+            shippingLastName: shippingLastName,
             shippingAddress: shippingAddress,
             shippingState: shippingState,
             shippingZipCode: shippingZipCode
@@ -90,6 +114,8 @@ router.put('/:shippingAddressId', restoreUser, requireAuth, async (req, res) => 
             return notAuthToEdit(res, "shipping address")
         }
 
+        shippingAddress.shippingFirstName = req.body.shippingFirstName || shippingAddress.shippingFirstName;
+        shippingAddress.shippingLastName = req.body.shippingLastName || shippingAddress.shippingLastName;
         shippingAddress.shippingAddress = req.body.shippingAddress || shippingAddress.shippingAddress;
         shippingAddress.shippingState = req.body.shippingState || shippingAddress.shippingState;
         shippingAddress.shippingZipCode = req.body.shippingZipCode || shippingAddress.shippingZipCode;

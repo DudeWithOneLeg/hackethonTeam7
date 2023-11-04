@@ -12,24 +12,32 @@ module.exports = {
     const validBillingAddresses = [
       {
         userId: 2,
+        billingFirstName: "Demo",
+        billingLastName: "User",
         billingAddress: "123 Main Street",
         billingState: "California",
         billingZipCode: "90210"
       },
       {
         userId: 2,
+        billingFirstName: "Demo",
+        billingLastName: "User",
         billingAddress: "456 Side Street",
         billingState: "New York",
         billingZipCode: "10101"
       },
       {
         userId: 3,
+        billingFirstName: "User",
+        billingLastName: "Two",
         billingAddress: "456 Elm Avenue",
         billingState: "New York",
         billingZipCode: "10001"
       },
       {
         userId: 4,
+        billingFirstName: "User",
+        billingLastName: "Three",
         billingAddress: "789 Oak Lane",
         billingState: "Texas",
         billingZipCode: "77002"
