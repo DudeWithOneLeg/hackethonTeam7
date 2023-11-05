@@ -8,15 +8,9 @@ import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
 import { Canvas, axesHelper } from "@react-three/fiber";
 import OrderPage from "./components/OrderPage";
-<<<<<<< HEAD
 import ReviewPage from "./components/ReviewPage";
 import ProductsPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
-=======
-import CartPage from "./components/CartPage";
-import TestSam from "./components/TestSam"
-import TestSam2 from "./components/TestSam2";
->>>>>>> routes-2-sam
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +21,6 @@ function App() {
   //home position [-2, 4, 10]
   return (
     <>
-<<<<<<< HEAD
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -64,9 +57,6 @@ function App() {
           </Route>
         </Switch>
       )}
-=======
-      <TestSam />
->>>>>>> routes-2-sam
     </>
     // <>
     //   <Navigation isLoaded={isLoaded} />
