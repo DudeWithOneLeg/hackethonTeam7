@@ -11,19 +11,8 @@ import OrderPage from "./components/OrderPage";
 import ReviewPage from "./components/ReviewPage";
 import ProductsPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
-<<<<<<< HEAD
-=======
-import CartPage from "./components/CartPage";
-import TestSam from "./components/TestSam"
-<<<<<<< HEAD
-import TestSam2 from "./components/TestSam2";
->>>>>>> routes-2-sam
-=======
 import PaymentSuccess from "./components/StripePayment/PaymentSuccess";
 import PaymentCancel from "./components/StripePayment/PaymentCancel";
->>>>>>> routes-2-sam
-=======
->>>>>>> a6631bd5829a708614e37c9687f2a8cff2fc6e43
 
 function App() {
   const dispatch = useDispatch();
@@ -33,60 +22,6 @@ function App() {
   }, [dispatch]);
   //home position [-2, 4, 10]
   return (
-<<<<<<< HEAD
-    <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/">
-            <Suspense>
-              {/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
-              <Route path="/signup">
-                <SignupFormPage />
-              </Route>
-              <Route path="/login">
-                <LoginFormPage />
-              </Route>
-              <Route path="/orders">
-                <OrderPage />
-              </Route>
-              <Route path="/reviews">
-                <ReviewPage />
-              </Route>
-              <Route path="/products">
-                <ProductsPage />
-              </Route>
-              <Route path="/cart">
-                <CartPage />
-              </Route>
-              <Canvas dpr={[1, 2]} shadows>
-                {/* <directionalLightHelper light={dirLight.current}/> */}
-                {/* <axesHelper args={[2]}/>
-              <gridHelper /> */}
-                <color attach="background" args={["#213547"]} />
-                {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
-                <Homespace />
-              </Canvas>
-            </Suspense>
-          </Route>
-        </Switch>
-      )}
-    </>
-=======
->>>>>>> routes-2-sam
-    // <>
-    //   <Switch>
-    //     <Route path="/payment/success">
-    //       <PaymentSuccess />
-    //     </Route>
-    //     <Route path="/payment/cancel">
-    //       <PaymentCancel />
-    //     </Route>
-    //     <Route path="/">
-    //       <TestSam />
-    //     </Route>
-    //   </Switch>
-    // </>
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (

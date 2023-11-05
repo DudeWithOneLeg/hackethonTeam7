@@ -134,17 +134,9 @@ function CartPage() {
         <button onClick={(e) => { checkout(e) }} id="checkout-button">Checkout</button>
       </div>
     </div>
-<<<<<<< HEAD
-  );
-<<<<<<< HEAD
->>>>>>> routes-2-sam
-=======
   ) : (
     <div></div>
   )
->>>>>>> routes-2-sam
-=======
->>>>>>> a6631bd5829a708614e37c9687f2a8cff2fc6e43
 }
 
 export default CartPage;
