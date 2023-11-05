@@ -1,3 +1,5 @@
+import "./PaymentSuccess.css"
+
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,13 +60,15 @@ function StripePaymentSuccess() {
 
 
     return (
-        <div>
-            <section>
+        <div id="payment-success-container">
+            <section id="payment-success-header">
                 Payment Success! Thank you for shopping with us.
             </section>
-            <button onClick={() => history.push('/')}>
-                Go Back
-            </button>
+            <section>
+                <button id="back-button" onClick={() => history.push('/')}>
+                    Go Back
+                </button>
+            </section>
         </div>
     )
 }
