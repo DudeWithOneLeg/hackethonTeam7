@@ -7,7 +7,7 @@ export default function ListScene({ setProduct, category, setShowProduct }) {
   const rows = 2; // Reduce the number of rows to 2
   const cols = 3;
   const rowSpacing = [3, 2]; // Different row spacings for the two rows
-  const colSpacing = category === 'Sofas' ? [1.5, 1.5, 1.5] : [1, 1, 1];
+  const colSpacing = category === 'Sofas' || 'Tables' ? [1.5, 1.5, 1.5] : [1, 1, 1];
   const objects = [];
   const modelList = models.filter((model) => model.category === category);
 
@@ -26,7 +26,7 @@ export default function ListScene({ setProduct, category, setShowProduct }) {
             key={modelIndex}
             src={modelUrl}
             position={position}
-            scale={category === 'Sofas' ? .5 : 1}
+            scale={category === 'Sofas' || 'Tables' ? .6 : 1}
             onClick={() => {
                 setProduct(modelList[modelIndex])
                 setShowProduct(true)

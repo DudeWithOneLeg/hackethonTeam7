@@ -1,46 +1,55 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearOrder, loadAllOrdersThunk, loadUserOrdersThunk } from "../../store/order";
+import {
+  clearOrder,
+  loadAllOrdersThunk,
+  loadUserOrdersThunk,
+} from "../../store/order";
 import "./CartPage.css";
-import { Redirect, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { loadUserProductCartThunk } from "../../store/productcart";
+import {
+  Redirect,
+  useHistory,
+} from "react-router-dom/cjs/react-router-dom.min";
+import { addProductCartThunk, loadUserProductCartThunk } from "../../store/productcart";
 import { clearProduct, loadAllProductsThunk } from "../../store/product";
-import { clearShipping, loadCurrentShippingThunk } from "../../store/shippingaddress";
+import {
+  clearShipping,
+  loadCurrentShippingThunk,
+} from "../../store/shippingaddress";
 import { csrfFetch } from "../../store/csrf";
 import { loadUserCartThunk } from "../../store/cart";
 import { addStripeSessionThunk } from "../../store/stripesession";
 
 function CartPage() {
-  const history = useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
 
-  const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    dispatch(loadUserProductCartThunk())
-    dispatch(loadUserCartThunk())
-    dispatch(loadAllProductsThunk())
+    dispatch(loadUserProductCartThunk());
+    dispatch(loadUserCartThunk());
+    dispatch(loadAllProductsThunk());
     dispatch(loadCurrentShippingThunk()).then(() => {
-      setLoad(true)
-    })
+      setLoad(true);
+    });
 
-
-    dispatch(clearShipping())
-    dispatch(clearProduct())
-    dispatch(clearOrder())
-
+    dispatch(clearShipping());
+    dispatch(clearProduct());
+    dispatch(clearOrder());
   }, [dispatch]);
 
   const user = useSelector((state) => state.session.user);
-  const userCart = useSelector(state => state.cart)
-  const allProducts = useSelector(state => state.product)
-  const cartItems = useSelector(state => state.productCart)
-  const shippingAddress = useSelector(state => state.shippingAddress)
-  const preppedShippingAddress = Object.values(shippingAddress)[0]
+  const userCart = useSelector((state) => state.cart);
+  const allProducts = useSelector((state) => state.product);
+  const cartItems = useSelector((state) => state.productCart);
+  const shippingAddress = useSelector((state) => state.shippingAddress);
+  const preppedShippingAddress = Object.values(shippingAddress)[0];
 
-  console.log('booba', preppedShippingAddress)
+  console.log("cart items", cartItems)
+
+//   console.log("booba", preppedShippingAddress);
   // console.log('booba', cartItems)
-
 
   // Function to format the date
   const formatDate = (dateStr) => {
@@ -63,7 +72,7 @@ function CartPage() {
       });
 
       if (!sessionResponse.ok) {
-        history.push('/');
+        history.push("/");
         return;
       }
 
@@ -72,24 +81,36 @@ function CartPage() {
       const newStripeSession = {
         userId: user.id,
         sessionId: sessionData.data.id,
-        cartId: userCart[0].id
-      }
+        cartId: userCart[0].id,
+      };
 
-      await dispatch(addStripeSessionThunk(newStripeSession))
+      await dispatch(addStripeSessionThunk(newStripeSession));
 
       // Redirect the user to the Stripe checkout page
-      window.location.href = sessionData.data.url
+      window.location.href = sessionData.data.url;
     } catch (error) {
       // Handle any other errors that may occur
-      history.push('/');
+      history.push("/");
     }
+  };
+
+  const addQuantity = async (productId) => {
+
+    const quantity = 1; // You can adjust the quantity as needed
+    dispatch(addProductCartThunk(productId, quantity));
   }
 
+//   const subtractQuantity = async (e) => {
 
+//   }
+
+//   const clearProduct = async (e) => {
+
+//   }
 
   return load ? (
     <div className="cart-table">
-      <h1>Cart</h1>
+      <h1 className="container-header">Cart</h1>
       <div className="table-header">
         <div className="table-cell">Delete</div>
         <div className="table-cell">Name</div>
@@ -101,23 +122,27 @@ function CartPage() {
           <div className="cart-card" key={cart.id}>
             <div className="cart-info" id="cart-section">
               <section className="table-cell">
-                <i className='bx bxs-trash'></i>
+                <button>
+                  <i className="bx bxs-trash"></i>
+                </button>
               </section>
               <section className="table-cell">
-                {allProducts[cart.id].productName}
+                {allProducts[cart.id]?.productName}
               </section>
               <section className="table-cell">
                 ${cart.pricePerUnit / 100}
               </section>
               <section className="table-cell" id="cart-quantity">
                 <aside id="quantity-plus">
-                  <i className='bx bx-plus'></i>
+                  <button onClick={addQuantity}>
+                    <i className="bx bx-plus"></i>
+                  </button>
                 </aside>
-                <aside>
-                  {cart.quantity}
-                </aside>
+                <aside>{cart.quantity}</aside>
                 <aside id="quantity-minus">
-                  <i className='bx bx-minus'></i>
+                  <button>
+                    <i className="bx bx-minus"></i>
+                  </button>
                 </aside>
               </section>
             </div>
@@ -127,16 +152,25 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>
       </div>
-      <div className="table-cell">
+      {preppedShippingAddress && 
+        <div className="table-cell">
         {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
       </div>
+      }
       <div>
-        <button onClick={(e) => { checkout(e) }} id="checkout-button">Checkout</button>
+        <button
+          onClick={(e) => {
+            checkout(e);
+          }}
+          id="checkout-button"
+        >
+          Checkout
+        </button>
       </div>
     </div>
   ) : (
     <div></div>
-  )
+  );
 }
 
 export default CartPage;

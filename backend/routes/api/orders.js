@@ -21,7 +21,7 @@ router.get("/all", restoreUser, requireAuth, async (req, res) => {
 })
 
 // get all orders made by a user
-router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res) => {
+router.get("/user/:userId", restoreUser, requireAuth, async (req, res) => {
     try {
         const orders = await Order.findAll({
             where: {

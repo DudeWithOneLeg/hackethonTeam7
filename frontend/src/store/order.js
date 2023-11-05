@@ -85,7 +85,7 @@ export const loadUserOrdersThunk = (userId) => async (dispatch) => {
         const res = await csrfFetch(`/api/order/user/${userId}`)
         if (res.ok) {
             const order = await res.json()
-            dispatch(loadOrder(order))
+            dispatch(loadOrders(order))
         } else {
             console.error('Failed to load order:', res.status, res.statusText);
         }

@@ -18,12 +18,16 @@
 
 .review-grid {
     display: flex;
+    transition: transform 0.3s ease;
+    
 }
 
 .review {
     width: 45vw;
     height: 30vh;
-    border-bottom: 1px solid gray;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 0 3px;
+    border-radius: 10px;
 }
 
 .review-info {
@@ -42,4 +46,18 @@
 
 .arrow {
     margin: 10px ;
+}
+
+.bxs-star {
+    color: yellow;
+    font-size: larger;
+}
+
+.info {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.info.user {
+    font-size: large;
 }

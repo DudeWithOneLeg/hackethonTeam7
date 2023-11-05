@@ -10,6 +10,8 @@
     width: 55vw; /* Set your desired maximum width */
     margin: 0 auto; /* Center the grid horizontally */
 }
+
+
   
 .table-header {
     display: flex;
@@ -27,6 +29,8 @@
   .order-card {
     display: flex;
     border-bottom: 1px solid #000;
+    background: rgba(31, 31, 31, 0.6);
+    color: white;
   }
   
   .order-info {
@@ -37,4 +41,6 @@
 
   .order-card:last-child {
     border-bottom: none; /* Remove the line under the last order */
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px; 
   }

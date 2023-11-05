@@ -26,7 +26,7 @@ export default function SubSceneSingleObject({src, position, rotation, name, set
   return (
     <>
       {
-        name && hover ? <Html>
+        name && name !== 'Carpets' && hover ? <Html>
           <h1>{name}</h1>
         </Html> : <></>
       }
@@ -34,10 +34,18 @@ export default function SubSceneSingleObject({src, position, rotation, name, set
       src={src}
       position={objPosition}
       rotation={rotation}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
+      onPointerOver={() => {
+        if (name !== 'Carpets')
+        setHover(true)
+
+      }}
+      onPointerOut={() => {
+        if (name !== 'Carpets')
+        setHover(false)
+      }}
     ref={ref}
     onClick={() => {
+      if (name !== 'Carpets')
       setCategory(name)
       setList(true)
   }}

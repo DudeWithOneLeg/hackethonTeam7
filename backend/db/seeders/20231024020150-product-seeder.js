@@ -11,76 +11,150 @@ options.tableName = 'Products'
 module.exports = {
   async up(queryInterface, Sequelize) {
     const validProducts = [
-      // 1
       {
-        productName: 'Luxe Leather Sofa',
-        productDescription: "Indulge in unparalleled comfort and style with our Luxe Leather Sofa. Crafted with precision, its buttery-soft leather upholstery complements its clean, sleek lines. Perfectly balanced between modern and timeless, this sofa is the epitome of sophistication.",
-        productPrice: 449999,
-        quantity: 29
+        productName: "Simple Side Table",
+        productDescription: "A versatile addition to your living space, this Simple Side Table provides a clean and understated design. Its neutral appearance allows it to effortlessly complement any decor style. Crafted with quality materials, this table offers both form and function.",
+        productPrice: 7999,
+        quantity: 3
       },
-      // 2
       {
-        productName: 'Zenith Dining Table',
-        productDescription: 'Elevate your dining experience with the Zenith Dining Table. Impeccably crafted from premium materials, its minimalist design exudes a sense of Zen-like tranquility. The Zenith invites you to gather in luxury.',
-        productPrice: 379999,
-        quantity: 43
+        productName: "Minimalist Accent Table",
+        productDescription: "Enhance your living space with the Minimalist Accent Table. Its sleek and timeless design makes it an ideal addition to any room. Crafted for durability and style, this table effortlessly balances form and function.",
+        productPrice: 8999,
+        quantity: 7
       },
-      // 3
       {
-        productName: 'Aura Coffee Table',
-        productDescription: 'Discover pure elegance in simplicity with the Aura Coffee Table. Its minimalist design showcases a blend of form and function. The smooth surface and subtle lines create an ambiance of calm sophistication.',
-        productPrice: 149999,
-        quantity: 116
+        productName: "Functional End Table",
+        productDescription: "The Functional End Table is designed to meet your everyday needs. Its unassuming design ensures it fits seamlessly into any space. Crafted with quality materials, this table offers both utility and style.",
+        productPrice: 7499,
+        quantity: 5
       },
-      // 4
       {
-        productName: 'Sleek Glass Desk',
-        productDescription: 'Unleash your creativity at the Sleek Glass Desk. Designed for those who appreciate contemporary aesthetics, its transparent glass top and brushed metal accents seamlessly blend into your workspace, offering a place where ideas take flight.',
-        productPrice: 179999,
-        quantity: 87
+        productName: "Neutral Side Table",
+        productDescription: "The Neutral Side Table is the epitome of adaptability. Its timeless design effortlessly complements various decor styles. Crafted for both durability and aesthetic appeal, this table enhances your space.",
+        productPrice: 8499,
+        quantity: 9
       },
-      // 5
       {
-        productName: 'Minimalist Bookshelf',
-        productDescription: 'The Minimalist Bookshelf marries form and function effortlessly. Its clean lines and open shelving provide a canvas for your most cherished literature and artistic collectibles. Less is more with this modern marvel.',
-        productPrice: 99999,
-        quantity: 145
+        productName: "Contemporary Accent Table",
+        productDescription: "Upgrade your decor with the Contemporary Accent Table. Its modern yet versatile design ensures it can enhance any room. Crafted with precision and style in mind, this table offers both form and function.",
+        productPrice: 9999,
+        quantity: 2
       },
-      // 6
       {
-        productName: 'Contemporary Nightstand',
-        productDescription: 'Rest in the company of elegance with the Contemporary Nightstand. A harmonious blend of clean design and essential functionality, this nightstand complements your bedside with modern simplicity.',
-        productPrice: 79999,
-        quantity: 188
+        productName: "Basic Side Table",
+        productDescription: "The Basic Side Table serves as a simple and functional addition to your space. With a minimalist design, it can seamlessly blend into any room. This table fulfills its purpose without overshadowing your decor.",
+        productPrice: 7499,
+        quantity: 4
       },
-      // 7
       {
-        productName: 'Scandi Rocking Chair',
-        productDescription: 'Achieve balance and serenity in your living space with the Scandi Rocking Chair. Rooted in Scandinavian design principles, its ergonomic curves and soothing rocking motion offer the perfect blend of comfort and style.',
-        productPrice: 119999,
-        quantity: 87
+        productName: "Essential Coffee Table",
+        productDescription: "The Essential Coffee Table combines simplicity and practicality. Its timeless design fits seamlessly into any room, serving as the perfect centerpiece. Crafted for durability and style, this coffee table enhances your living area without overpowering it.",
+        productPrice: 14999,
+        quantity: 8
       },
-      // 8
       {
-        productName: 'Nuovo Ottoman',
-        productDescription: 'The Nuovo Ottoman brings modern chic to a new level. A statement of luxury and minimalist design, it adds a touch of refinement to your space. Rest your feet in style with this understated masterpiece.',
-        productPrice: 59999,
-        quantity: 65
+        productName: "Minimalist Center Table",
+        productDescription: "The Minimalist Center Table offers a clean and versatile focal point for your living space. Its understated design complements a wide range of decor styles. Crafted with quality materials, this table balances both form and function.",
+        productPrice: 13999,
+        quantity: 6
       },
-      // 9
       {
-        productName: 'French Rococo Dresser',
-        productDescription: 'Evoke the opulence of a bygone era with the French Rococo Dresser. Handcrafted with intricate detailing, this piece stands as a testament to timeless beauty and exquisite craftsmanship.',
-        productPrice: 549999,
-        quantity: 24
+        productName: "Functional Coffee Table",
+        productDescription: "The Functional Coffee Table is designed to meet your daily needs. Its unassuming design ensures it fits seamlessly into any room. Crafted for both durability and style, this table enhances your space without overwhelming it.",
+        productPrice: 12999,
+        quantity: 10
       },
-      // 10
       {
-        productName: 'Art Deco Bar Stools',
-        productDescription: 'Elevate your entertainment space with our Art Deco Bar Stools. Inspired by the glamour of the Jazz Age, these stools exude sophistication with their sleek lines, bold geometric patterns, and a hint of modernity.',
-        productPrice: 39999,
+        productName: "Neutral Coffee Table",
+        productDescription: "The Neutral Coffee Table is a versatile addition to your interior. Its timeless design effortlessly fits into various decor styles. Crafted with quality materials, this table offers both utility and aesthetic appeal.",
+        productPrice: 13999,
+        quantity: 7
+      },
+      {
+        productName: "Contemporary Center Table",
+        productDescription: "Elevate your living space with the Contemporary Center Table. Its modern and adaptable design makes it a suitable addition to any room. Crafted with precision and style in mind, this table seamlessly combines form and function.",
+        productPrice: 15999,
         quantity: 12
       },
+      {
+        productName: "Basic Coffee Table",
+        productDescription: "The Basic Coffee Table serves as a simple and effective centerpiece for your space. With a minimalist design, it blends effortlessly into any room. This table fulfills its primary purpose without dominating your decor.",
+        productPrice: 12999,
+        quantity: 9
+      },
+      {
+        productName: "Essential Sofa",
+        productDescription: "The Essential Sofa provides a comfortable and adaptable seating solution for your living area. Its design is neutral and versatile, making it suitable for various decor styles. Crafted for both comfort and aesthetics, this sofa complements your space.",
+        productPrice: 299999,
+        quantity: 15
+      },
+      {
+        productName: "Simple Sectional",
+        productDescription: "The Simple Sectional offers a straightforward and functional seating option for your space. Its timeless design effortlessly fits into any room. Crafted with quality materials, this sectional serves both practicality and style.",
+        productPrice: 349999,
+        quantity: 14
+      },
+      {
+        productName: "Functional Couch",
+        productDescription: "The Functional Couch is designed to meet your seating needs while maintaining a neutral appearance. Crafted for both durability and comfort, it seamlessly adapts to various living spaces and decor styles.",
+        productPrice: 329999,
+        quantity: 17
+      },
+      {
+        productName: "Neutral Sofa",
+        productDescription: "The Neutral Sofa offers an inviting and adaptable seating solution for your space. Its design is neutral and timeless, making it suitable for a range of decor styles. Crafted for both comfort and aesthetic appeal, this sofa enhances your interior.",
+        productPrice: 349999,
+        quantity: 12
+      },
+      {
+        productName: "Contemporary Sectional",
+        productDescription: "Elevate your seating with the Contemporary Sectional. Its modern design adapts seamlessly to various living spaces and decor styles. Crafted with precision and comfort in mind, this sectional seamlessly combines form and function.",
+        productPrice: 379999,
+        quantity: 18
+      },
+      {
+        productName: "Basic Loveseat",
+        productDescription: "The Basic Loveseat offers a simple and comfortable seating solution for your space. With a minimalist design, it can fit effortlessly into any room. This loveseat serves its primary purpose without overshadowing your decor.",
+        productPrice: 299999,
+        quantity: 13
+      },
+      {
+        productName: "Basic Floor Lamp",
+        productDescription: "The Basic Floor Lamp provides simple and effective lighting for your space. With a minimalist design, it can fit effortlessly into any room. This lamp serves its primary purpose without overshadowing your interior decor.",
+        productPrice: 7999,
+        quantity: 22
+      },
+      {
+        productName: "Essential Table Lamp",
+        productDescription: "The Essential Table Lamp offers straightforward and functional illumination for your space. With a timeless design, it fits seamlessly into any room. This lamp serves its purpose without overwhelming your interior decor.",
+        productPrice: 6999,
+        quantity: 20
+      },
+      {
+        productName: "Functional Chandelier Lamp",
+        productDescription: "The Functional Chandelier Lamp provides versatile and effective lighting for your space. With its neutral design, it effortlessly complements any room. Crafted for both durability and aesthetics, this lamp enhances your interior.",
+        productPrice: 12999,
+        quantity: 24
+      },
+      {
+        productName: "Neutral Desk Lamp",
+        productDescription: "The Neutral Desk Lamp offers simple and efficient lighting for your workspace. Its timeless design adapts to various interior settings. Crafted with quality materials, this lamp balances utility and style.",
+        productPrice: 8999,
+        quantity: 19
+      },
+      {
+        productName: "Contemporary Pendant Lamp",
+        productDescription: "Elevate your interior with the Contemporary Pendant Lamp. Its modern design blends effortlessly into various decor styles. Crafted with precision and aesthetics in mind, this pendant lamp combines both form and function.",
+        productPrice: 14999,
+        quantity: 21
+      },
+      {
+        productName: "Basic Lamp Fixture",
+        productDescription: "The Basic Lamp Fixture offers simple and effective lighting for your space. With a minimalist design, it can seamlessly fit into any room. This fixture fulfills its primary purpose without dominating your interior decor.",
+        productPrice: 8999,
+        quantity: 23
+      }
     ]
 
     await queryInterface.bulkInsert(options, validProducts, {})
