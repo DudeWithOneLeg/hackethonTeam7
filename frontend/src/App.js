@@ -11,6 +11,8 @@ import OrderPage from "./components/OrderPage";
 import ReviewPage from "./components/ReviewPage";
 import ProductsPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
+import PaymentSuccess from "./components/StripePayment/PaymentSuccess";
+import PaymentCancel from "./components/StripePayment/PaymentCancel";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,14 +38,14 @@ function App() {
               <Route path="/orders">
                 <OrderPage />
               </Route>
-              <Route path="/reviews">
-                <ReviewPage />
-              </Route>
-              <Route path="/products">
-                <ProductsPage />
-              </Route>
               <Route path="/cart">
                 <CartPage />
+              </Route>
+              <Route path="/payment/success">
+                <PaymentSuccess />
+              </Route>
+              <Route path="/payment/cancel">
+                <PaymentCancel />
               </Route>
               <Canvas dpr={[1, 2]} shadows>
                 {/* <directionalLightHelper light={dirLight.current}/> */}

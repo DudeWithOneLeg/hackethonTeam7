@@ -20,15 +20,26 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Users',
+          key: "id"
         },
+        onDelete: "CASCADE",
         allowNull: false,
       },
-      method: {
+      defaultPayment: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
+      cardHolder: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      creditCardInformation: {
-        type: Sequelize.STRING, // this will require some more work,
+      cardNumber: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      expirationDate: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       createdAt: {

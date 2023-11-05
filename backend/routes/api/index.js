@@ -18,6 +18,8 @@ const cartRouter = require('./carts.js')
 const orderRouter = require("./orders.js")
 const paymentRouter = require('./payments.js')
 const productCartRouter = require("./productcart.js")
+const stripeRouter = require('./stripe.js')
+const stripeSessionRouter = require('./stripesession.js')
 
 router.use(restoreUser);
 
@@ -34,6 +36,8 @@ router.use('/billing', billingRouter);
 router.use('/cart', cartRouter);
 router.use('/order', orderRouter);
 router.use('/payment', paymentRouter);
+router.use("/stripesession", stripeSessionRouter)
+router.use("/stripe", stripeRouter)
 
 
 router.get('/restore-user', (req, res) => {

@@ -56,11 +56,13 @@ router.get("/user/:userId", restoreUser, requireAuth, checkUser, async (req, res
 
 // User creates a billing address
 router.post("/", restoreUser, requireAuth, async (req, res) => {
-    const { billingAddress, billingState, billingZipCode } = req.body;
+    const { billingFirstName, billingLastName, billingAddress, billingState, billingZipCode } = req.body;
 
     try {
         const newBillingAddress = await BillingAddress.create({
             userId: req.user.id,
+            billingFirstName: billingFirstName,
+            billingLastName: billingLastName,
             billingAddress: billingAddress,
             billingState: billingState,
             billingZipCode: billingZipCode
@@ -86,6 +88,8 @@ router.put('/:billingAddressId', restoreUser, requireAuth, async (req, res) => {
             return notAuthToEdit(res, "billing address")
         }
 
+        billingAddress.billingFirstName = req.body.billingFirstName || billingAddress.billingFirstName
+        billingAddress.billingLastName = req.body.billingLastName || billingAddress.billingLastName
         billingAddress.billingAddress = req.body.billingAddress || billingAddress.billingAddress;
         billingAddress.billingState = req.body.billingState || billingAddress.billingState;
         billingAddress.billingZipCode = req.body.billingZipCode || billingAddress.billingZipCode;

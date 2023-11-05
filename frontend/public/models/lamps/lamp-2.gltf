@@ -19,7 +19,7 @@
 						0.9357615113258362,
 						1
 					],
-					"intensity":0,
+					"intensity":0.5,
 					"type":"point",
 					"name":"Point"
 				}
@@ -1730,8 +1730,7 @@
 			},
 			"name":"Scene",
 			"nodes":[
-				8,
-				9
+				8
 			]
 		}
 	],
@@ -1787,7 +1786,7 @@
 			"name":"Shade.001",
 			"translation":[
 				0,
-				1.33563232421875,
+				1.3356324434280396,
 				0
 			]
 		},
@@ -1931,7 +1930,7 @@
 			"name":"Tiered Square Lamp.002",
 			"translation":[
 				0,
-				0.030524611473083496,
+				0.030524617061018944,
 				0
 			]
 		},
@@ -2011,7 +2010,7 @@
 			"name":"Uprights",
 			"translation":[
 				0,
-				0.01692986488342285,
+				0.016929827630519867,
 				0
 			]
 		},
@@ -2277,332 +2276,8 @@
 			"name":"Tiered Square Lamp",
 			"translation":[
 				0,
-				1.9015378952026367,
-				0
-			]
-		},
-		{
-			"extras":{
-				"MM":{},
-				"ant_landscape":{},
-				"blenderkit":{
-					"thumbnail":"//Luxury Lamp.jpg",
-					"has_thumbnail":1,
-					"thumbnail_generating_state":"",
-					"name":"Luxury Lamp",
-					"name_changed":0,
-					"name_old":"Luxury Lamp",
-					"is_free":1,
-					"category":4,
-					"subcategory":9,
-					"subcategory1":1,
-					"tags":"floor, lamp, luxury, modern",
-					"work_hours":2.0,
-					"texture_resolution_max":4096,
-					"texture_resolution_min":4096,
-					"uv":1,
-					"texture_count":20,
-					"total_megapixels":335544320,
-					"node_count":219,
-					"engine":0,
-					"is_procedural":0,
-					"materials":"Metal scratched.002, Metal08 PBR, Steel, wet aluminium, Neon, Basic glass, Metal scratched.001, Metal scratched, Leather Fabric 01, Fabric Upholstery 001a, Old Wood procedural 2, porcelain white, ",
-					"shaders":"principled, glossy, mix shader, volume absorption, diffuse, emission, transparent, glass, ",
-					"dimensions":[
-						0.6797474026679993,
-						0.6639902591705322,
-						1.4924275875091553
-					],
-					"bbox_min":[
-						-0.3160046637058258,
-						-0.33200353384017944,
-						-0.00014154729433357716
-					],
-					"bbox_max":[
-						0.36374273896217346,
-						0.33198675513267517,
-						1.4922860860824585
-					],
-					"face_count":37252,
-					"face_count_render":49444,
-					"mesh_poly_type":1,
-					"manifold":0,
-					"modifiers":"subsurf,",
-					"object_count":13,
-					"upload_state":"preparing upload",
-					"report":"",
-					"asset_base_id":"9f7ebbd2-19cd-4120-944c-1bbc84a6f6c4",
-					"id":"6a32bd6c-8e91-43d4-a651-d7c8f7378a29",
-					"uploading":0,
-					"thumbnail_background_lightness":0.10000000149011612,
-					"thumbnail_samples":50,
-					"thumbnail_resolution":2,
-					"is_generating_thumbnail":0,
-					"description":""
-				},
-				"asset_data":{
-					"thumbnail":"thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.512x512_q85_crop-%2C.jpg.webp",
-					"thumbnail_small":"thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.256x256_q85_crop-%2C.jpg.webp",
-					"downloaded":0,
-					"bbox_min":[
-						-0.316,
-						-0.332,
-						-0.0001
-					],
-					"bbox_max":[
-						0.3637,
-						0.332,
-						1.4923
-					],
-					"pk":13926,
-					"url":"https://www.blenderkit.com/api/v1/assets/6a32bd6c-8e91-43d4-a651-d7c8f7378a29/",
-					"id":"6a32bd6c-8e91-43d4-a651-d7c8f7378a29",
-					"assetBaseId":"9f7ebbd2-19cd-4120-944c-1bbc84a6f6c4",
-					"versionNumber":1,
-					"author":{
-						"id":"42913",
-						"firstName":"Nobody",
-						"lastName":"",
-						"gravatarHash":"823d05a61b2fa0dd7c17a66de7198da5",
-						"avatar128":"/avatar-redirect/b8598a7e-0182-40e5-8f82-b6cfa582af85/128/",
-						"aboutMe":"Mostly i do interior stuff\r\n\r\nYou can contact me here: lukaspistek666@gmail.com",
-						"aboutMeUrl":"https://www.deviantart.com/relev4nt",
-						"fullName":"Nobody "
-					},
-					"name":"Luxury Lamp",
-					"displayName":"Luxury Lamp",
-					"description":"",
-					"assetType":"model",
-					"category":"lighting",
-					"adult":false,
-					"isFree":true,
-					"tags":[
-						"floor",
-						"lamp",
-						"luxury",
-						"modern"
-					],
-					"license":"royalty_free",
-					"sourceAppName":"blender",
-					"sourceAppVersion":"2.90.0",
-					"addonVersion":"1.0.31",
-					"created":"2021-03-21T16:34:24.883917+01:00",
-					"lastUserInteraction":"2021-03-21T16:46:52.082387+01:00",
-					"verificationStatus":"validated",
-					"isPrivate":false,
-					"files":[
-						{
-							"fileType":"blend",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/49218/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2021-03-21T16:46:48.607853+01:00",
-							"modified":"2021-03-22T12:35:26.848639+01:00",
-							"mimeType":null,
-							"resolution":null
-						},
-						{
-							"fileType":"resolution_0_5K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/49827/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2021-03-26T18:21:17.267334+01:00",
-							"modified":"2022-04-14T23:51:23.730795+02:00",
-							"mimeType":null,
-							"resolution":null
-						},
-						{
-							"fileType":"resolution_1K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/49826/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2021-03-26T18:21:09.232764+01:00",
-							"modified":"2022-04-14T23:51:24.301504+02:00",
-							"mimeType":null,
-							"resolution":null
-						},
-						{
-							"fileType":"resolution_2K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/49825/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2021-03-26T18:21:01.695651+01:00",
-							"modified":"2022-04-14T23:51:25.075785+02:00",
-							"mimeType":null,
-							"resolution":null,
-							"url":"https://public.blenderkit.com/public-assets/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/resolution_2K_84b6ffb6-87c0-4aa3-aad9-fc0eb548b20e.blend",
-							"file_name":"resolution_2K_84b6ffb6-87c0-4aa3-aad9-fc0eb548b20e.blend"
-						},
-						{
-							"fileType":"resolution_4K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/49824/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2021-03-26T18:20:49.681960+01:00",
-							"modified":"2022-04-14T23:51:26.587374+02:00",
-							"mimeType":null,
-							"resolution":null
-						},
-						{
-							"fileType":"thumbnail",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/49217/",
-							"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.96x96_q85_crop-%2C.jpg",
-							"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.1024x1024_q85_crop-%2C.jpg",
-							"created":"2021-03-21T16:34:57.526086+01:00",
-							"modified":"2021-03-22T12:35:26.906536+01:00",
-							"mimeType":null,
-							"resolution":null
-						}
-					],
-					"filesSize":271739,
-					"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.256x256_q85_crop-%2C.jpg",
-					"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.512x512_q85_crop-%2C.jpg",
-					"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.1024x1024_q85_crop-%2C.jpg",
-					"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.2048x2048_q85_crop-%2C.jpg",
-					"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.256x256_q85.jpg",
-					"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.512x512_q85.jpg",
-					"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.1024x1024_q85.jpg",
-					"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.2048x2048_q85.jpg",
-					"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.256x256_q85_crop-%2C.jpg.webp?webp_generated=1616415236",
-					"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.512x512_q85_crop-%2C.jpg.webp?webp_generated=1616415236",
-					"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.1024x1024_q85_crop-%2C.jpg.webp?webp_generated=1616415236",
-					"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.2048x2048_q85_crop-%2C.jpg.webp?webp_generated=1616415236",
-					"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.256x256_q85.jpg.webp?webp_generated=1616415236",
-					"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.512x512_q85.jpg.webp?webp_generated=1616415236",
-					"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.1024x1024_q85.jpg.webp?webp_generated=1616415236",
-					"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/6a32bd6c8e9143d4a651d7c8f7378a29/files/thumbnail_f89715df-76e9-48c3-9dd3-06e30d67f5a7.jpg.2048x2048_q85.jpg.webp?webp_generated=1616415236",
-					"showMarketingLabels":true,
-					"webpGeneratedTimestamp":1616415236,
-					"score":180.0,
-					"ratingsMedian":{
-						"virtualPrice":null,
-						"score":null,
-						"bookmarks":1.0,
-						"workingHours":2.0,
-						"quality":10.0,
-						"competition-2022-votes":null,
-						"assetCount":null,
-						"created":null
-					},
-					"ratingsAverage":{
-						"virtualPrice":null,
-						"score":null,
-						"bookmarks":1.0,
-						"workingHours":2.0,
-						"quality":9.0,
-						"competition-2022-votes":null,
-						"assetCount":null,
-						"created":null
-					},
-					"ratingsCount":{
-						"virtualPrice":0,
-						"score":0,
-						"bookmarks":18,
-						"workingHours":7,
-						"quality":3,
-						"competition-2022-votes":0,
-						"assetCount":0,
-						"created":0
-					},
-					"ratingsSum":{
-						"virtualPrice":null,
-						"score":null,
-						"bookmarks":18.0,
-						"workingHours":217.5,
-						"quality":27.0,
-						"competition-2022-votes":null,
-						"assetCount":null,
-						"created":null
-					},
-					"lastBlendUpload":"2021-03-21T15:46:48.607853+00:00",
-					"lastGltfUpload":null,
-					"lastZipFileUpload":null,
-					"lastThumbnailUpload":"2021-03-21T15:34:57.526086+00:00",
-					"lastVideoUpload":null,
-					"lastResolutionUpload":"2021-03-26T17:21:17.267334+00:00",
-					"dictParameters":{
-						"faceCount":37252,
-						"textureResolutionMax":4096,
-						"productionLevel":"finished",
-						"procedural":false,
-						"modelStyle":"realistic",
-						"purePbr":false,
-						"shaders":[
-							"principled",
-							"glossy",
-							"mix shader",
-							"volume absorption",
-							"diffuse",
-							"emission",
-							"transparent",
-							"glass"
-						],
-						"animated":false,
-						"uv":true,
-						"textureResolutionMin":4096,
-						"engines":[
-							"cycles"
-						],
-						"modifiers":[
-							"subsurf"
-						],
-						"materials":[
-							"Metal scratched.002",
-							"Metal08 PBR",
-							"Steel",
-							"wet aluminium",
-							"Neon",
-							"Basic glass",
-							"Metal scratched.001",
-							"Metal scratched",
-							"Leather Fabric 01",
-							"Fabric Upholstery 001a",
-							"Old Wood procedural 2",
-							"porcelain white"
-						],
-						"rig":false,
-						"simulation":false,
-						"dimensionX":0.6797,
-						"dimensionY":0.664,
-						"dimensionZ":1.4924,
-						"boundBoxMinX":-0.316,
-						"boundBoxMinY":-0.332,
-						"boundBoxMinZ":-0.0001,
-						"boundBoxMaxX":0.3637,
-						"boundBoxMaxY":0.332,
-						"boundBoxMaxZ":1.4923,
-						"faceCountRender":49444,
-						"meshPolyType":"quad_dominant",
-						"manifold":false,
-						"objectCount":13,
-						"nodeCount":219,
-						"textureCount":20,
-						"megapixels":336
-					},
-					"canDownload":true,
-					"canDownloadError":true,
-					"available_resolutions":[
-						512,
-						1024,
-						2048,
-						4096
-					],
-					"max_resolution":4096,
-					"tooltip_data":{
-						"aname":"Luxury Lamp",
-						"author_text":"by Nobody ",
-						"quality":"9"
-					},
-					"resolution":"resolution_2K"
-				},
-				"bkit_ratings":{},
-				"pov":{}
-			},
-			"name":"Luxury Lamp",
-			"translation":[
-				0,
-				1.917356252670288,
-				1.0112444162368774
+				0.0006866455078125,
+				0.004193305969238281
 			]
 		}
 	],

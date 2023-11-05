@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
             to="/"
             className={`home-btn ${isActive("/") ? "active" : ""}`}
           >
-            <i class="bx bxs-home"></i>
+           <i className='bx bxs-home' ></i>
           </NavLink>
           {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>

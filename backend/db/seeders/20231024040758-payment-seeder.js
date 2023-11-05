@@ -10,22 +10,35 @@ options.tableName = 'Payments'
 module.exports = {
   async up(queryInterface, Sequelize) {
     // this is just a sample payment seeder, don't know how the table is actually going to look in the end
-      // will require future edits
+    // will require future edits
     const validPayments = [
       {
-        userId: "1",
-        method: "Visa",
-        creditCardInformation: "1234567891234567"
-      },
-      {
-        userId: "1",
-        method: "Visa",
-        creditCardInformation: "1111111111111111"
+        userId: "2",
+        cardHolder: "Demo User",
+        cardNumber: "4242424242424242",
+        expirationDate: "04/24",
+        defaultPayment: true
       },
       {
         userId: "2",
-        method: "Visa",
-        creditCardInformation: "9876543219876543"
+        cardHolder: "Demo User",
+        cardNumber: "1111111111111111",
+        expirationDate: "04/24",
+        defaultPayment: false
+      },
+      {
+        userId: "3",
+        cardHolder: "User One",
+        cardNumber: "4242424242424242",
+        expirationDate: "04/24",
+        defaultPayment: true
+      },
+      {
+        userId: "4",
+        cardHolder: "User Two",
+        cardNumber: "4242424242424242",
+        expirationDate: "04/24",
+        defaultPayment: true
       }
     ]
 

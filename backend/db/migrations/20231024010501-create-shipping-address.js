@@ -19,7 +19,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Users',
+          key: "id"
         },
+        onDelete: "CASCADE",
+        allowNull: false,
+      },
+      shippingFirstName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      shippingLastName: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       shippingAddress: {

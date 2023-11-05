@@ -11,6 +11,7 @@ import { useFrame } from "@react-three/fiber";
 import { Model } from "./Scene";
 import SubScene from "../SubScene";
 import ListScene from "../ListScene";
+import ProductScene from "../ProductScene";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Scene.css";
 
@@ -127,8 +128,8 @@ export default function Homespace() {
     }
 
     if (list) {
-      setPosition([-7.5, -5, 11]);
-      setRotation([0.1, 0.1, 0]);
+      setPosition([-8.5, -5, 11]);
+      setRotation([0.1, 0, 0]);
       defaultPos(cameraRef, pX, pY, pZ, rX, rY, rZ);
     }
 
@@ -185,7 +186,7 @@ export default function Homespace() {
       <PerspectiveCamera
         position={[1, -4, 2]}
         rotation={[0.8, 0.5, 0]}
-        camera={{ fov: 40 }}
+        camera={{ fov: 50 }}
         ref={cameraRef}
       >
         <OrbitControls />
@@ -207,6 +208,9 @@ export default function Homespace() {
           setProduct={setProduct}
           setShowProduct={setShowProduct}
         />
+        {
+          showProduct && <ProductScene product={product}/>
+        }
         {/* </ScrollControls> */}
 
         <directionalLight

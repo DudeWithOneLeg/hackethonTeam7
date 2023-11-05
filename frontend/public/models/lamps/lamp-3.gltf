@@ -18,7 +18,7 @@
 						1,
 						1
 					],
-					"intensity":0,
+					"intensity":0.5,
 					"type":"point",
 					"name":"Point.001"
 				}
@@ -1729,8 +1729,7 @@
 			},
 			"name":"Scene",
 			"nodes":[
-				4,
-				5
+				4
 			]
 		}
 	],
@@ -1745,7 +1744,7 @@
 			"name":"Frame",
 			"translation":[
 				0,
-				0.01579749584197998,
+				0.015797574073076248,
 				0
 			]
 		},
@@ -1773,7 +1772,7 @@
 			],
 			"translation":[
 				0,
-				0.23857301473617554,
+				0.23857302963733673,
 				0
 			]
 		},
@@ -1787,7 +1786,7 @@
 			"name":"Shade",
 			"translation":[
 				0,
-				0.01579749584197998,
+				0.015797574073076248,
 				0
 			]
 		},
@@ -1808,7 +1807,7 @@
 			"translation":[
 				0,
 				0.5578297972679138,
-				0.27740973234176636
+				0.2774098217487335
 			]
 		},
 		{
@@ -2077,264 +2076,8 @@
 			],
 			"translation":[
 				0,
-				1.8998475074768066,
-				-1.016239881515503
-			]
-		},
-		{
-			"extras":{
-				"ant_landscape":{},
-				"blenderkit":{
-					"name":"Tiered Square Lamp",
-					"name_changed":0,
-					"name_old":"Tiered Square Lamp",
-					"thumbnail":"//Tiered Square Lamp.png",
-					"has_thumbnail":1,
-					"thumbnail_generating_state":"",
-					"description":"Tiered Square Lamp",
-					"tags":"lamp, light, lighting, decoration, archviz, visualization, interior",
-					"pbr":1,
-					"manufacturer":"Stavson3D",
-					"designer":"Christopher Schmidt",
-					"use_design_year":1,
-					"design_year":2021,
-					"work_hours":2.0,
-					"category":4,
-					"subcategory":9,
-					"texture_resolution_max":0,
-					"texture_resolution_min":0,
-					"uv":1,
-					"texture_count":0,
-					"total_megapixels":0,
-					"node_count":13,
-					"engine":0,
-					"materials":"Black, Shade, Material.001, ",
-					"shaders":"principled, emission, mix shader, ",
-					"dimensions":[
-						0.30480000376701355,
-						0.33085155487060547,
-						1.7706682682037354
-					],
-					"bbox_min":[
-						-0.15240000188350677,
-						-0.15240000188350677,
-						0.0
-					],
-					"bbox_max":[
-						0.15240000188350677,
-						0.1784515380859375,
-						1.7706682682037354
-					],
-					"face_count":4553,
-					"face_count_render":4687,
-					"mesh_poly_type":1,
-					"manifold":0,
-					"modifiers":"mirror,edge split,solidify,",
-					"object_count":9,
-					"upload_state":"preparing upload",
-					"report":"",
-					"asset_base_id":"492b321c-c3f0-414a-84f7-823c9d544f88",
-					"id":"5b39c1de-ef2a-4a73-9a48-a1ba2615b863",
-					"uploading":0
-				},
-				"hops":{},
-				"asset_data":{
-					"thumbnail":"thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.512x512_q85_crop-%2C.png.webp",
-					"thumbnail_small":"thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.256x256_q85_crop-%2C.png.webp",
-					"downloaded":0,
-					"bbox_min":[
-						-0.1524,
-						-0.1524,
-						0.0
-					],
-					"bbox_max":[
-						0.1524,
-						0.1785,
-						1.7707
-					],
-					"pk":12548,
-					"url":"https://www.blenderkit.com/api/v1/assets/5b39c1de-ef2a-4a73-9a48-a1ba2615b863/",
-					"id":"5b39c1de-ef2a-4a73-9a48-a1ba2615b863",
-					"assetBaseId":"492b321c-c3f0-414a-84f7-823c9d544f88",
-					"versionNumber":1,
-					"author":{
-						"id":"56242",
-						"firstName":"Stavson",
-						"lastName":"3D",
-						"gravatarHash":"5cc1733ba8c4e842a0d87876d0d7280b",
-						"avatar128":"/avatar-redirect/383b3991-4b3e-4327-a932-150c26ba195f/128/",
-						"aboutMe":null,
-						"aboutMeUrl":null,
-						"fullName":"Stavson 3D"
-					},
-					"name":"Tiered Square Lamp",
-					"displayName":"Tiered Square Lamp",
-					"description":"Tiered Square Lamp",
-					"assetType":"model",
-					"category":"lighting",
-					"adult":false,
-					"isFree":true,
-					"tags":[
-						"lamp",
-						"light",
-						"lighting",
-						"decoration",
-						"archviz",
-						"visualization",
-						"interior"
-					],
-					"license":"royalty_free",
-					"sourceAppName":"blender",
-					"sourceAppVersion":"2.90.0",
-					"addonVersion":"1.0.31",
-					"created":"2021-02-10T23:04:20.305794+01:00",
-					"lastUserInteraction":"2021-03-04T03:06:27.628390+01:00",
-					"verificationStatus":"validated",
-					"isPrivate":false,
-					"files":[
-						{
-							"fileType":"blend",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/45248/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2021-02-10T23:04:50.190266+01:00",
-							"modified":"2021-03-04T03:06:29.552265+01:00",
-							"mimeType":null,
-							"resolution":null,
-							"url":"https://public.blenderkit.com/public-assets/assets/5b39c1deef2a4a739a48a1ba2615b863/files/blend_bee41780-6c01-41ed-9089-3d1160f65996.blend",
-							"file_name":"blend_bee41780-6c01-41ed-9089-3d1160f65996.blend"
-						},
-						{
-							"fileType":"thumbnail",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/47557/",
-							"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.96x96_q85_crop-%2C.png",
-							"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.1024x1024_q85_crop-%2C.png",
-							"created":"2021-03-04T03:06:58.812609+01:00",
-							"modified":"2022-04-14T23:43:37.946058+02:00",
-							"mimeType":null,
-							"resolution":null
-						}
-					],
-					"filesSize":206,
-					"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.256x256_q85_crop-%2C.png",
-					"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.512x512_q85_crop-%2C.png",
-					"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.1024x1024_q85_crop-%2C.png",
-					"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.2048x2048_q85_crop-%2C.png",
-					"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.256x256_q85.png",
-					"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.512x512_q85.png",
-					"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.1024x1024_q85.png",
-					"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.2048x2048_q85.png",
-					"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.256x256_q85_crop-%2C.png.webp?webp_generated=1649972739",
-					"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.512x512_q85_crop-%2C.png.webp?webp_generated=1649972739",
-					"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.1024x1024_q85_crop-%2C.png.webp?webp_generated=1649972739",
-					"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.2048x2048_q85_crop-%2C.png.webp?webp_generated=1649972739",
-					"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.256x256_q85.png.webp?webp_generated=1649972739",
-					"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.512x512_q85.png.webp?webp_generated=1649972739",
-					"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.1024x1024_q85.png.webp?webp_generated=1649972739",
-					"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/5b39c1deef2a4a739a48a1ba2615b863/files/thumbnail_aff13d70-4565-4dec-8d7f-5f43faa9e6f0.png.2048x2048_q85.png.webp?webp_generated=1649972739",
-					"showMarketingLabels":true,
-					"webpGeneratedTimestamp":1649972739,
-					"score":280.0,
-					"ratingsMedian":{
-						"competition-2022-votes":null,
-						"quality":7.0,
-						"workingHours":4.0,
-						"virtualPrice":null,
-						"bookmarks":1.0
-					},
-					"ratingsAverage":{
-						"competition-2022-votes":null,
-						"quality":7.0,
-						"workingHours":4.0,
-						"virtualPrice":null,
-						"bookmarks":1.0
-					},
-					"ratingsCount":{
-						"competition-2022-votes":0,
-						"quality":2,
-						"workingHours":3,
-						"virtualPrice":0,
-						"bookmarks":5
-					},
-					"ratingsSum":{
-						"competition-2022-votes":null,
-						"quality":14.0,
-						"workingHours":17.0,
-						"virtualPrice":null,
-						"bookmarks":5.0
-					},
-					"lastBlendUpload":"2021-02-10T22:04:50.190266+00:00",
-					"lastGltfUpload":null,
-					"lastZipFileUpload":null,
-					"lastThumbnailUpload":"2021-03-04T02:06:58.812609+00:00",
-					"lastVideoUpload":null,
-					"lastResolutionUpload":null,
-					"dictParameters":{
-						"faceCount":4553,
-						"productionLevel":"finished",
-						"procedural":true,
-						"modelStyle":"realistic",
-						"designer":"Christopher Schmidt",
-						"manufacturer":"Stavson3D",
-						"designYear":2021,
-						"purePbr":true,
-						"shaders":[
-							"principled",
-							"emission",
-							"mix shader"
-						],
-						"animated":false,
-						"pbrType":"metallic",
-						"uv":true,
-						"engines":[
-							"cycles"
-						],
-						"modifiers":[
-							"mirror",
-							"edge split",
-							"solidify"
-						],
-						"materials":[
-							"Black",
-							"Shade",
-							"Material.001"
-						],
-						"rig":false,
-						"simulation":false,
-						"dimensionX":0.3048,
-						"dimensionY":0.3309,
-						"dimensionZ":1.7707,
-						"boundBoxMinX":-0.1524,
-						"boundBoxMinY":-0.1524,
-						"boundBoxMinZ":0.0,
-						"boundBoxMaxX":0.1524,
-						"boundBoxMaxY":0.1785,
-						"boundBoxMaxZ":1.7707,
-						"faceCountRender":4687,
-						"meshPolyType":"quad_dominant",
-						"manifold":false,
-						"objectCount":9,
-						"nodeCount":13,
-						"textureCount":0,
-						"megapixels":0
-					},
-					"canDownload":true,
-					"canDownloadError":true,
-					"available_resolutions":[],
-					"max_resolution":0,
-					"tooltip_data":{
-						"aname":"Tiered Square Lamp",
-						"author_text":"by Stavson 3D",
-						"quality":"7"
-					},
-					"resolution":"blend"
-				}
-			},
-			"name":"Tiered Square Lamp",
-			"translation":[
-				0,
-				1.9015378952026367,
-				0
+				0.00014019012451171875,
+				0.001878976821899414
 			]
 		}
 	],

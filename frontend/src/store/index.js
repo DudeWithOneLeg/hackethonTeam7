@@ -9,6 +9,9 @@ import reviewReducer from "./review";
 import billingReducer from "./billingaddress";
 import shippingReducer from "./shippingaddress";
 import discountReducer from "./discount";
+import productCartReducer from "./productcart"
+import cartReducer from "./cart";
+import stripeSessionReducer from "./stripesession";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -18,7 +21,10 @@ const rootReducer = combineReducers({
   review: reviewReducer,
   billingAddress: billingReducer,
   shippingAddress: shippingReducer,
-  discount: discountReducer
+  discount: discountReducer,
+  productCart: productCartReducer,
+  cart: cartReducer,
+  stripeSession: stripeSessionReducer,
 });
 
 let enhancer;

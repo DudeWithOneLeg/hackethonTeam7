@@ -21,7 +21,9 @@ module.exports = (sequelize, DataTypes) => {
   ProductCart.init({
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
     },
     quantity: {
       type: DataTypes.INTEGER,
@@ -29,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 1,
     },
     pricePerUnit: {
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.INTEGER,
       allowNull: false,
     }
   }, {

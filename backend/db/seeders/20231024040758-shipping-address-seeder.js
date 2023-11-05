@@ -12,18 +12,24 @@ module.exports = {
     const validShippingAddresses = [
       {
         userId: 2,
+        shippingFirstName: "Demo",
+        shippingLastName: "User",
         shippingAddress: "567 Palm Boulevard",
         shippingState: "California",
         shippingZipCode: "94102"
       },
       {
         userId: 3,
+        shippingFirstName: "User",
+        shippingLastName: "Two",
         shippingAddress: "456 Elm Avenue",
         shippingState: "New York",
         shippingZipCode: "10001"
       },
       {
         userId: 4,
+        shippingFirstName: "User",
+        shippingLastName: "Three",
         shippingAddress: "789 Oak Lane",
         shippingState: "Texas",
         shippingZipCode: "77002"
