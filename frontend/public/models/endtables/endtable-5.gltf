@@ -2147,7 +2147,7 @@
 			"name":"IKEA Lack Side Table 55x55x45",
 			"translation":[
 				0,
-				0.7542322874069214,
+				0,
 				0
 			]
 		}
@@ -2211,17 +2211,17 @@
 		{
 			"mimeType":"image/png",
 			"name":"Cherry wood fine PBR texture seamless Normal",
-			"uri":"../textures/Cherry%20wood%20fine%20PBR%20texture%20seamless%20Normal.png"
+			"uri":"../textures/Cherry_wood_fine_PBR_texture_seamless_Normal.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Cherry wood fine PBR texture seamless Diffuse",
-			"uri":"../textures/Cherry%20wood%20fine%20PBR%20texture%20seamless%20Diffuse.png"
+			"uri":"../textures/Cherry_wood_fine_PBR_texture_seamless_Diffuse.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Cherry wood fine PBR texture seamless Roughness",
-			"uri":"../textures/Cherry%20wood%20fine%20PBR%20texture%20seamless%20Roughness.png"
+			"uri":"../textures/Cherry_wood_fine_PBR_texture_seamless_Roughness.png"
 		}
 	],
 	"accessors":[

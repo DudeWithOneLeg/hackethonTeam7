@@ -8,10 +8,10 @@ import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
 import { Canvas, axesHelper } from "@react-three/fiber";
 import OrderPage from "./components/OrderPage";
-<<<<<<< HEAD
 import ReviewPage from "./components/ReviewPage";
 import ProductsPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
+<<<<<<< HEAD
 =======
 import CartPage from "./components/CartPage";
 import TestSam from "./components/TestSam"
@@ -22,6 +22,8 @@ import TestSam2 from "./components/TestSam2";
 import PaymentSuccess from "./components/StripePayment/PaymentSuccess";
 import PaymentCancel from "./components/StripePayment/PaymentCancel";
 >>>>>>> routes-2-sam
+=======
+>>>>>>> a6631bd5829a708614e37c9687f2a8cff2fc6e43
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +35,6 @@ function App() {
   return (
 <<<<<<< HEAD
     <>
-<<<<<<< HEAD
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -70,9 +71,6 @@ function App() {
           </Route>
         </Switch>
       )}
-=======
-      <TestSam />
->>>>>>> routes-2-sam
     </>
 =======
 >>>>>>> routes-2-sam

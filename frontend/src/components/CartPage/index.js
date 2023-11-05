@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-import { useState } from "react";
-
-
-function CartPage() {
-
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [postalCode, setPostalCode] = useState("");
-    const [streetAddress, setStreetAddress] = useState("");
-    const [country, setCountry] = useState("");
-    
-    return (
-        <>
-            <div className="container cart">
-                <h1>Cart</h1>
-                <div className="table-header">
-                    <div className="table-cell">Product</div>
-                    <div className="table-cell">Quantity</div>
-                    <div className="table-cell">Price</div>
-                </div>
-                <div className="table-header right">
-                    <form>
-
-                    </form>
-                </div>
-            </div>
-        </>
-    )
-=======
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearOrder, loadAllOrdersThunk, loadUserOrdersThunk } from "../../store/order";
@@ -167,12 +136,15 @@ function CartPage() {
     </div>
 <<<<<<< HEAD
   );
+<<<<<<< HEAD
 >>>>>>> routes-2-sam
 =======
   ) : (
     <div></div>
   )
 >>>>>>> routes-2-sam
+=======
+>>>>>>> a6631bd5829a708614e37c9687f2a8cff2fc6e43
 }
 
 export default CartPage;

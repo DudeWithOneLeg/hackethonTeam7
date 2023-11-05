@@ -2166,8 +2166,8 @@
 			],
 			"translation":[
 				0,
-				1.514371633529663,
-				1.0367374420166016
+				0,
+				0
 			]
 		}
 	],
@@ -2271,20 +2271,20 @@
 		{
 			"mimeType":"image/png",
 			"name":"Walnut light wood fine PBR texture seamless Normal",
-			"uri":"../textures/Walnut%20light%20wood%20fine%20PBR%20texture%20seamless%20Normal.png"
+			"uri":"../textures/Walnut_light_wood_fine_PBR_texture_seamless_Normal.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Walnut light wood fine PBR texture seamless Diffuse",
-			"uri":"../textures/Walnut%20light%20wood%20fine%20PBR%20texture%20seamless%20Diffuse.png"
+			"uri":"../textures/Walnut_light_wood_fine_PBR_texture_seamless_Diffuse.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Walnut light wood fine PBR texture seamless Roughness",
-			"uri":"../textures/Walnut%20light%20wood%20fine%20PBR%20texture%20seamless%20Roughness.png"
+			"uri":"../textures/Walnut_light_wood_fine_PBR_texture_seamless_Roughness.png"
 		},
 		{
-			"mimeType":"image/jpeg",
+			"mimeType":"image/jpeg" ,
 			"name":"sgzoeigc_2K_Normal",
 			"uri":"../textures/sgzoeigc_2K_Normal.jpg"
 		},

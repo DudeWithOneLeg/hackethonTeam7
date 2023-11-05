@@ -1,6 +1,12 @@
 import { Gltf, PresentationControls } from "@react-three/drei";
+import { useEffect } from "react";
 
 export default function ProductScene({ product }) {
+
+  useEffect(() => {
+    console.log(product)
+  },[])
+
   return (
     <group position={[15, 2.5, -8]}>
       <PresentationControls
