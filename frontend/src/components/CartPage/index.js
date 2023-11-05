@@ -152,11 +152,11 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>
       </div>
-      <div className="table-cell">
-        {preppedShippingAddress?.shippingAddress}{" "}
-        {preppedShippingAddress?.shippingState}{" "}
-        {preppedShippingAddress?.shippingZipCode}
+      {preppedShippingAddress && 
+        <div className="table-cell">
+        {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
       </div>
+      }
       <div>
         <button
           onClick={(e) => {
