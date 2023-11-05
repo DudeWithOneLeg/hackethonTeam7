@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
                 through: models.ProductCart,
                 foreignKey: "cartId"
             })
+            Cart.hasOne(models.StripeSession, {
+                foreignKey: "cartId",
+                onDelete: "CASCADE"
+            })
         }
 
         async getCartItems() {
@@ -26,8 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
-            allowNull: false,
+            autoIncrement: true
         },
     }, {
         sequelize,

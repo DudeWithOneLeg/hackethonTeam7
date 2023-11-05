@@ -5,20 +5,17 @@ const { User, Cart, Product, ProductCart } = require("../../db/models");
 const { restoreUser, requireAuth } = require('../../utils/auth');
 const router = express.Router();
 
-let stripe
-// set stripe key
-if (environment === "development") {
-    // if in development
-    stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-} else if (environment === "production") {
-    // if in production
-    stripe = require('stripe')(process.env.STRIPE_PUBLIC_KEY)
-}
+let stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
-
-// test route for processing stripe payment
+// route for processing stripe payment
 router.post("/", restoreUser, requireAuth, async (req, res) => {
     try {
+        const userCart = await Cart.findOne({
+            where: {
+                userId: req.user.id
+            }
+        })
+
         const productCart = await ProductCart.findAll({
             where: {
                 userId: req.user.id
@@ -26,7 +23,7 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
             attributes: { exclude: ["createdAt", "updatedAt"] },
         })
 
-        let url = environment === "development" ? "http://localhost:3000" : "INPUT LIVE URL"
+        let url = environment === "development" ? "http://localhost:3000" : "hackathonteam7.onrender.com"
 
         let cartItems = []
 
@@ -50,8 +47,8 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
             payment_method_types: ['card'],
             line_items: cartItems,
             mode: 'payment',
-            success_url: `${url}/payment/success`,
-            cancel_url: url
+            success_url: `${url}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${url}/payment/cancel?session_id={CHECKOUT_SESSION_ID}`
         })
 
         return res.json({ data: session })
@@ -60,6 +57,33 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
         return internalServerError(res, err)
     }
 })
+
+
+// // To get Stripe to work correctly, webhooks are necessary.
+// router.post('/stripe-webhook', bodyParser.raw({ type: 'application/json' }), async (req, res) => {
+//     const sigHeader = req.headers['stripe-signature'];
+//     try {
+//         const event = stripe.webhooks.constructEvent(req.body, sigHeader, process.env.STRIPE_PUBLIC_KEY);
+
+//         // Process the webhook event based on its type
+//         switch (event.type) {
+//             case 'checkout.session.completed':
+//                 // Handle the checkout success event (e.g., delete the user's cart)
+//                 // You can refer to the previous responses for handling this event.
+//                 break;
+
+//             // Add more cases to handle other webhook event types if needed.
+
+//             default:
+//                 console.log(`Unhandled webhook event type: ${event.type}`);
+//         }
+
+//         res.status(200).end();
+//     } catch (error) {
+//         console.error('Webhook signature verification failed:', error);
+//         res.status(400).send('Webhook Error: Invalid signature');
+//     }
+// });
 
 
 module.exports = router

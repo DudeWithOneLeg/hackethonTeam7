@@ -75,34 +75,12 @@ router.delete("/", restoreUser, requireAuth, async (req, res) => {
             }
         })
 
-
         if (!userCart) {
             return notFoundError(res, "Cart")
         }
 
-        const userProductCart = await ProductCart.findAll({
-            where: {
-                userId: req.user.id
-            }
-        })
-
-        let totalAmount = 0
-        for (let i = 0; i < userProductCart.length; i++) {
-            totalAmount += userProductCart[i].quantity * userProductCart[i].pricePerUnit
-        }
-
-        const currentDate = new Date().toISOString().slice(0, 10);
-
-        const newOrder = await Order.create({
-            userId: req.user.id,
-            orderDate: currentDate,
-            status: "processing",
-            totalAmount: totalAmount
-        })
-
-        await ProductCart.destroy({ where: { cartId: userCart.id } });
-
-        res.json({ data: newOrder })
+        await userCart.destroy()
+        res.status(200).json({ message: "Cart successfully deleted", statusCode: 200 });
     } catch (err) {
         return internalServerError(res, err)
     }

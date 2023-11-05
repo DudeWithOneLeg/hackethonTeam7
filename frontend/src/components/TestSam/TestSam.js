@@ -7,12 +7,14 @@ import { loadAllProductCategoriesThunk } from "../../store/productcategory"
 import { clearProductCart, loadAllProductCartsThunk, loadUserProductCartThunk } from "../../store/productcart"
 import { csrfFetch } from "../../store/csrf";
 import { addUserCartThunk, clearCart, loadUserCartThunk } from "../../store/cart";
+import { addStripeSessionThunk } from "../../store/stripesession";
 
 function TestSam() {
     const dispatch = useDispatch()
     const history = useHistory()
     const [refresh, setRefresh] = useState(false)
     const [load, setLoad] = useState(false)
+
 
     // creating a new discount address
     const [codeName, setCodeName] = useState("")
@@ -30,8 +32,7 @@ function TestSam() {
 
     const productCart = useSelector(state => state.productCart)
     const userCart = useSelector(state => state.cart)
-
-    console.log('booba', Object.values(userCart))
+    const user = useSelector(state => state.session.user)
 
     const demoSignIn = (e) => {
         e.preventDefault()
@@ -55,20 +56,35 @@ function TestSam() {
 
 
     const checkout = async (e) => {
-        e.preventDefault();
+        try {
+            // Create a Stripe session
+            const sessionResponse = await csrfFetch("/api/stripe", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
 
-        const res = await csrfFetch("/api/stripe", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
+            if (!sessionResponse.ok) {
+                history.push('/');
+                return;
+            }
 
-        if (res.ok) {
-            const response = await res.json()
-            window.open(response.data.url)
-        } else {
-            history.push('/')
+            const sessionData = await sessionResponse.json();
+
+            const newStripeSession = {
+                userId: user.id,
+                sessionId: sessionData.data.id,
+                cartId: userCart[0].id
+            }
+
+            await dispatch(addStripeSessionThunk(newStripeSession))
+
+            // Redirect the user to the Stripe checkout page
+            window.location.href = sessionData.data.url
+        } catch (error) {
+            // Handle any other errors that may occur
+            history.push('/');
         }
     }
 
@@ -94,7 +110,7 @@ function TestSam() {
                     </div>
                 ))}
             </section>
-            {/* <section>
+            <section>
                 {Object.values(productCart).map(el => (
                     <div key={el.productId}>
                         <p>Product ID: {el.productId}</p>
@@ -103,7 +119,7 @@ function TestSam() {
                     </div>
                 ))}
             </section>
-            <button onClick={checkout}>Checkout</button> */}
+            <button onClick={checkout}>Checkout</button>
         </div>
     ) : (
         <div></div>

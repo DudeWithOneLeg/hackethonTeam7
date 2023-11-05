@@ -12,12 +12,16 @@ function CartPage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
 
+  const [load, setLoad] = useState(false)
+
   useEffect(() => {
     dispatch(loadUserProductCartThunk())
     dispatch(loadAllProductsThunk())
     dispatch(loadCurrentShippingThunk())
 
     dispatch(clearOrder())
+
+    setLoad(true)
   }, [dispatch]);
 
   const allProducts = useSelector(state => state.product)
@@ -39,7 +43,7 @@ function CartPage() {
 
 
 
-  return (
+  return load ? (
     <div className="cart-table">
       <h1>Cart</h1>
       <div className="table-header">
@@ -69,7 +73,9 @@ function CartPage() {
         </div>
       ))}
     </div>
-  );
+  ) : (
+    <div></div>
+  )
 }
 
 export default CartPage;
