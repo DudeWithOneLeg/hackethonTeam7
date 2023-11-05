@@ -15,7 +15,12 @@ import CartPage from "./components/CartPage";
 =======
 import CartPage from "./components/CartPage";
 import TestSam from "./components/TestSam"
+<<<<<<< HEAD
 import TestSam2 from "./components/TestSam2";
+>>>>>>> routes-2-sam
+=======
+import PaymentSuccess from "./components/StripePayment/PaymentSuccess";
+import PaymentCancel from "./components/StripePayment/PaymentCancel";
 >>>>>>> routes-2-sam
 
 function App() {
@@ -26,6 +31,7 @@ function App() {
   }, [dispatch]);
   //home position [-2, 4, 10]
   return (
+<<<<<<< HEAD
     <>
 <<<<<<< HEAD
       <Navigation isLoaded={isLoaded} />
@@ -68,38 +74,59 @@ function App() {
       <TestSam />
 >>>>>>> routes-2-sam
     </>
+=======
+>>>>>>> routes-2-sam
     // <>
-    //   <Navigation isLoaded={isLoaded} />
-    //   {isLoaded && (
-    //     <Switch>
-    //       <Route path="/">
-    //         <Suspense>
-    //           {/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
-    //           <Route path="/signup">
-    //             <SignupFormPage />
-    //           </Route>
-    //           <Route path="/login">
-    //             <LoginFormPage />
-    //           </Route>
-    //           <Route path="/orders">
-    //             <OrderPage />
-    //           </Route>
-    //           <Route path="/cart">
-    //             <CartPage />
-    //           </Route>
-    //           <Canvas dpr={[1, 2]} shadows>
-    //             {/* <directionalLightHelper light={dirLight.current}/> */}
-    //             {/* <axesHelper args={[2]}/>
-    //           <gridHelper /> */}
-    //             <color attach="background" args={["#213547"]} />
-    //             {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
-    //             <Homespace />
-    //           </Canvas>
-    //         </Suspense>
-    //       </Route>
-    //     </Switch>
-    //   )}
+    //   <Switch>
+    //     <Route path="/payment/success">
+    //       <PaymentSuccess />
+    //     </Route>
+    //     <Route path="/payment/cancel">
+    //       <PaymentCancel />
+    //     </Route>
+    //     <Route path="/">
+    //       <TestSam />
+    //     </Route>
+    //   </Switch>
     // </>
+    <>
+      <Navigation isLoaded={isLoaded} />
+      {isLoaded && (
+        <Switch>
+          <Route path="/">
+            <Suspense>
+              {/* <directionalLight position={[8, 7, 1]} ref={dirLight} color={"#005F00"} castShadow intensity={20} shadow-mapSize={2048} shadow-bias={-0.001}/> */}
+              <Route path="/signup">
+                <SignupFormPage />
+              </Route>
+              <Route path="/login">
+                <LoginFormPage />
+              </Route>
+              <Route path="/orders">
+                <OrderPage />
+              </Route>
+              <Route path="/cart">
+                <CartPage />
+              </Route>
+              <Route path="/payment/success">
+                <PaymentSuccess />
+              </Route>
+              <Route path="/payment/cancel">
+                <PaymentCancel />
+              </Route>
+              <Canvas dpr={[1, 2]} shadows>
+                {/* <directionalLightHelper light={dirLight.current}/> */}
+                {/* <axesHelper args={[2]}/>
+              <gridHelper /> */}
+                <color attach="background" args={["#213547"]} />
+                {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
+                <Homespace />
+              </Canvas>
+            </Suspense>
+          </Route>
+        </Switch>
+      )}
+    </>
   );
 }
 

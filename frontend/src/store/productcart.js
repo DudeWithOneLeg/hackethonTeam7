@@ -1,22 +1,22 @@
 import { csrfFetch } from "./csrf";
 
-const LOAD_PRODUCTCART = "/product/setProductCart"
-const LOAD_PRODUCTCARTS = "/product/setProductCarts"
-const ADD_PRODUCTCART = "/product/addProductCart"
-const EDIT_PRODUCTCART = "/product/editProductCart"
-const DELETE_PRODUCTCART = "/product/deleteProductCart"
-const CLEAR_PRODUCTCART = "/product/clearProductCart"
+const LOAD_PRODUCT_CART = "/product/setProductCart"
+const LOAD_PRODUCT_CARTS = "/product/setProductCarts"
+const ADD_PRODUCT_CART = "/product/addProductCart"
+const EDIT_PRODUCT_CART = "/product/editProductCart"
+const DELETE_PRODUCT_CART = "/product/deleteProductCart"
+const CLEAR_PRODUCT_CART = "/product/clearProductCart"
 
 export const loadProductCart = (productCategory) => {
     return {
-        type: LOAD_PRODUCTCART,
+        type: LOAD_PRODUCT_CART,
         payload: productCategory
     }
 }
 
 export const loadProductCarts = (productCart) => {
     return {
-        type: LOAD_PRODUCTCARTS,
+        type: LOAD_PRODUCT_CARTS,
         payload: productCart,
     }
 }
@@ -54,7 +54,7 @@ export const loadUserProductCartThunk = () => async (dispatch) => {
 
 export const addProductCart = (productCategory) => {
     return {
-        type: ADD_PRODUCTCART,
+        type: ADD_PRODUCT_CART,
         payload: productCategory
     }
 }
@@ -86,7 +86,7 @@ export const addProductCartThunk = (productId, quantity) => async (dispatch) => 
 
 export const editProductCart = (productCategory) => {
     return {
-        type: EDIT_PRODUCTCART,
+        type: EDIT_PRODUCT_CART,
         payload: productCategory
     }
 }
@@ -118,7 +118,7 @@ export const editProductCartThunk = (productId, newCategories) => async (dispatc
 
 export const deleteProductCart = (productCategory) => {
     return {
-        type: DELETE_PRODUCTCART,
+        type: DELETE_PRODUCT_CART,
         payload: productCategory
     }
 }
@@ -143,7 +143,7 @@ export const deleteProductCartThunk = (productCategoryId) => async (dispatch) =>
 
 export const clearProductCart = () => {
     return {
-        type: CLEAR_PRODUCTCART
+        type: CLEAR_PRODUCT_CART
     }
 }
 
@@ -153,9 +153,9 @@ const initialProduct = {}
 const productCartReducer = (state = initialProduct, action) => {
     const newState = { ...state }
     switch (action.type) {
-        case LOAD_PRODUCTCART:
+        case LOAD_PRODUCT_CART:
             return action.payload.data
-        case LOAD_PRODUCTCARTS:
+        case LOAD_PRODUCT_CARTS:
             const productCart = {}
 
             if (!action.payload.data) {
@@ -168,16 +168,16 @@ const productCartReducer = (state = initialProduct, action) => {
             }
 
             return productCart
-        case ADD_PRODUCTCART:
+        case ADD_PRODUCT_CART:
             newState[action.payload.id] = action.payload.data
             return newState;
-        case EDIT_PRODUCTCART:
+        case EDIT_PRODUCT_CART:
             newState[action.payload.id] = action.payload.data;
             return newState;
-        case DELETE_PRODUCTCART:
+        case DELETE_PRODUCT_CART:
             delete newState[action.payload.id]
             return newState;
-        case CLEAR_PRODUCTCART:
+        case CLEAR_PRODUCT_CART:
             return initialProduct
         default:
             return newState;

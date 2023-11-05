@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Cart, {
         foreignKey: "userId"
       })
+      User.hasMany(models.StripeSession, {
+        foreignKey: "userId"
+      })
     }
   };
 

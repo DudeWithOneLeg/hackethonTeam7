@@ -175,7 +175,7 @@ router.put("/:productId/quantity", restoreUser, requireAuth, async (req, res) =>
             return res.status(400).json({ error: "Insufficient quantity of product." })
         }
 
-        product.quantity -= quantity;
+        product.quantity += quantity;
         await product.save()
 
         return res.json({ message: "Purchase successful" })

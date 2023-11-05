@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 let options = {};
@@ -7,26 +7,36 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("ProductImages", {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('StripeSessions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      productId: {
+      userId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Products',
+          model: "Users",
           key: "id"
         },
-        allowNull: false,
-        onDelete: "CASCADE"
+        allowNull: false
       },
-      image: {
+      cartId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Carts",
+          key: "id"
+        },
+        onDelete: "CASCADE",
+        allowNull: false,
+
+      },
+      sessionId: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       createdAt: {
         allowNull: false,
@@ -38,10 +48,10 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
-    }, options);
+    });
   },
-  down: async (queryInterface, Sequelize) => {
-    options.tableName = "ProductImages";
+  async down(queryInterface, Sequelize) {
+    options.tableName = "StripeSessions";
     return queryInterface.dropTable(options);
   }
 };

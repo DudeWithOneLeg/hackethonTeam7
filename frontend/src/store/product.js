@@ -94,7 +94,6 @@ export const addProductThunk = (newProduct) => async (dispatch) => {
         } else {
             console.error('Failed to create a new product:', res.status, res.statusText);
         }
-
     } catch (err) {
         console.error('An error occurred while creating new product:', err);
     }
@@ -194,7 +193,7 @@ const productReducer = (state = initialProduct, action) => {
     const newState = { ...state }
     switch (action.type) {
         case LOAD_PRODUCT:
-            return action.payload
+            return action.payload.data
         case LOAD_PRODUCTS:
             const product = {}
 
