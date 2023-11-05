@@ -23,9 +23,9 @@ export const loadProducts = (products) => {
 
 
 // thunk action for one specific product
-export const loadOneProductThunk = (productId) => async (dispatch) => {
+export const loadOneProductThunk = (productName) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/product/${productId}`)
+        const res = await csrfFetch(`/api/product/${productName}`)
         if (res.ok) {
             const product = await res.json()
             dispatch(loadProduct(product))

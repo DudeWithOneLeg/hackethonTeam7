@@ -21,10 +21,17 @@ router.get("/all", async (req, res) => {
 })
 
 
-// Get a product by id
-router.get("/:productId", async (req, res) => {
+// Get a product by name
+router.get("/:productName", async (req, res) => {
+    let { productName } = req.params
+    console.log(productName)
+    if (productName.includes('%20')) productName = productName.split('%20').join(' ')
     try {
-        const product = await Product.findByPk(req.params.productId)
+        const product = await Product.findOne({
+            where: {
+                productName: productName
+            }
+        })
         if (!product) {
             return notFoundError(res, "Product")
         }
