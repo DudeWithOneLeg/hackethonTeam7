@@ -1303,6 +1303,932 @@
 							"quality":"10"
 						},
 						"resolution":"resolution_2K"
+					},
+					"baab0191-a5fc-4a44-9dee-6af94a08fca6":{
+						"thumbnail":"thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.512x512_q85_crop-%2C.jpg.webp",
+						"thumbnail_small":"thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.256x256_q85_crop-%2C.jpg.webp",
+						"downloaded":0,
+						"bbox_min":[
+							-1.0,
+							-0.4418,
+							0.0
+						],
+						"bbox_max":[
+							1.0,
+							0.4797,
+							0.7934
+						],
+						"pk":62901,
+						"url":"https://www.blenderkit.com/api/v1/assets/158e8de2-8ae3-4a6c-acb4-7d4244e6f7dd/",
+						"id":"158e8de2-8ae3-4a6c-acb4-7d4244e6f7dd",
+						"assetBaseId":"baab0191-a5fc-4a44-9dee-6af94a08fca6",
+						"versionNumber":1,
+						"author":{
+							"id":"530359",
+							"firstName":"D",
+							"lastName":"love3D",
+							"gravatarHash":"55abe5eafe7339000aaae93cdf202392",
+							"avatar128":"/avatar-redirect/8468f314-644c-4bd0-9dfd-60e65a9dc16a/128/",
+							"aboutMe":"I'm an industrial design/3d artist\r\nHi. Please credit my name in the model if you need to upload it somewhere. Cheers!",
+							"aboutMeUrl":"https://www.linkedin.com/in/danny-ngo-399096158/",
+							"fullName":"D love3D"
+						},
+						"name":"Wanek Sofa",
+						"displayName":"Wanek Sofa",
+						"description":"A stationary sofa with leather and aluminium frame",
+						"assetType":"model",
+						"category":"sofa",
+						"adult":false,
+						"isFree":true,
+						"tags":[
+							"sofa",
+							"furniture",
+							"interior"
+						],
+						"license":"royalty_free",
+						"sourceAppName":"blender",
+						"sourceAppVersion":"3.3.0",
+						"addonVersion":"3.8.1",
+						"created":"2023-08-26T07:44:31.104881+02:00",
+						"lastUserInteraction":"2023-08-26T07:44:57.386715+02:00",
+						"verificationStatus":"validated",
+						"isPrivate":false,
+						"files":[
+							{
+								"fileType":"blend",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/227629/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2023-08-26T07:44:56.755810+02:00",
+								"modified":"2023-08-26T07:44:56.755831+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_0_5K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/227739/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2023-08-27T06:34:37.245849+02:00",
+								"modified":"2023-08-27T06:34:37.245864+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_1K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/227738/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2023-08-27T06:34:33.820063+02:00",
+								"modified":"2023-08-27T06:34:33.820080+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_2K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/227737/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2023-08-27T06:34:30.720304+02:00",
+								"modified":"2023-08-27T06:34:30.720319+02:00",
+								"mimeType":null,
+								"resolution":null,
+								"url":"https://public.blenderkit.com/public-assets/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/resolution_2K_a08eba72-5cc0-4240-977b-8e251fa3f429.blend",
+								"file_name":"resolution_2K_a08eba72-5cc0-4240-977b-8e251fa3f429.blend"
+							},
+							{
+								"fileType":"thumbnail",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/227628/",
+								"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.96x96_q85_crop-%2C.jpg",
+								"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.1024x1024_q85_crop-%2C.jpg",
+								"created":"2023-08-26T07:44:48.653095+02:00",
+								"modified":"2023-08-26T07:44:48.653118+02:00",
+								"mimeType":null,
+								"resolution":null
+							}
+						],
+						"filesSize":7464,
+						"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.256x256_q85_crop-%2C.jpg",
+						"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.512x512_q85_crop-%2C.jpg",
+						"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.1024x1024_q85_crop-%2C.jpg",
+						"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.2048x2048_q85_crop-%2C.jpg",
+						"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.256x256_q85.jpg",
+						"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.512x512_q85.jpg",
+						"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.1024x1024_q85.jpg",
+						"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.2048x2048_q85.jpg",
+						"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.256x256_q85_crop-%2C.jpg.webp?webp_generated=1693059664",
+						"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.512x512_q85_crop-%2C.jpg.webp?webp_generated=1693059664",
+						"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.1024x1024_q85_crop-%2C.jpg.webp?webp_generated=1693059664",
+						"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.2048x2048_q85_crop-%2C.jpg.webp?webp_generated=1693059664",
+						"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.256x256_q85.jpg.webp?webp_generated=1693059664",
+						"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.512x512_q85.jpg.webp?webp_generated=1693059664",
+						"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.1024x1024_q85.jpg.webp?webp_generated=1693059664",
+						"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/158e8de28ae34a6cacb47d4244e6f7dd/files/thumbnail_e15cb0fb-8245-4771-b186-dc6b1ae9bd11.png.2048x2048_q85.jpg.webp?webp_generated=1693059664",
+						"showMarketingLabels":true,
+						"webpGeneratedTimestamp":1693059664,
+						"score":700.0,
+						"ratingsMedian":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":7.5,
+							"quality":10.0,
+							"competition-2022-votes":null,
+							"assetCount":null
+						},
+						"ratingsAverage":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":7.5,
+							"quality":9.333333333333334,
+							"competition-2022-votes":null,
+							"assetCount":null
+						},
+						"ratingsCount":{
+							"virtualPrice":0,
+							"bookmarks":38,
+							"workingHours":2,
+							"quality":3,
+							"competition-2022-votes":0,
+							"assetCount":0
+						},
+						"ratingsSum":{
+							"virtualPrice":null,
+							"bookmarks":38.0,
+							"workingHours":15.0,
+							"quality":28.0,
+							"competition-2022-votes":null,
+							"assetCount":null
+						},
+						"lastBlendUpload":"2023-08-26T05:44:56.755810+00:00",
+						"lastGltfUpload":null,
+						"lastZipFileUpload":null,
+						"lastThumbnailUpload":"2023-08-26T05:44:48.653095+00:00",
+						"lastVideoUpload":null,
+						"lastResolutionUpload":"2023-08-27T04:34:37.245849+00:00",
+						"dictParameters":{
+							"faceCount":40477,
+							"textureResolutionMax":2048,
+							"productionLevel":"finished",
+							"procedural":false,
+							"modelStyle":"realistic",
+							"condition":"new",
+							"designer":"n/a",
+							"manufacturer":"n/a",
+							"designCollection":"n/a",
+							"designVariant":"n/a",
+							"purePbr":false,
+							"shaders":[
+								"principled"
+							],
+							"animated":false,
+							"uv":true,
+							"textureResolutionMin":640,
+							"engines":[
+								"cycles"
+							],
+							"modifiers":[
+								"bevel",
+								"mirror"
+							],
+							"materials":[
+								"Leather",
+								"Sandblasted black metal"
+							],
+							"rig":false,
+							"simulation":false,
+							"dimensionX":2.0,
+							"dimensionY":0.9215,
+							"dimensionZ":0.7934,
+							"boundBoxMinX":-1.0,
+							"boundBoxMinY":-0.4418,
+							"boundBoxMinZ":0.0,
+							"boundBoxMaxX":1.0,
+							"boundBoxMaxY":0.4797,
+							"boundBoxMaxZ":0.7934,
+							"faceCountRender":41322,
+							"meshPolyType":"quad_dominant",
+							"manifold":false,
+							"objectCount":3,
+							"nodeCount":29,
+							"textureCount":9,
+							"megapixels":22
+						},
+						"canDownload":true,
+						"canDownloadError":true,
+						"available_resolutions":[
+							512,
+							1024,
+							2048
+						],
+						"max_resolution":2048,
+						"tooltip_data":{
+							"aname":"Wanek Sofa",
+							"author_text":"by D love3D",
+							"quality":"9"
+						},
+						"resolution":"resolution_2K"
+					},
+					"ca989214-1b73-427f-a872-9af5d176c2a7":{
+						"thumbnail":"thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.512x512_q85_crop-%2C.jpg.webp",
+						"thumbnail_small":"thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.256x256_q85_crop-%2C.jpg.webp",
+						"downloaded":0,
+						"bbox_min":[
+							-1.0791,
+							-0.9899,
+							-0.0114
+						],
+						"bbox_max":[
+							1.0771,
+							0.0082,
+							0.9366
+						],
+						"pk":41765,
+						"url":"https://www.blenderkit.com/api/v1/assets/e6af48ee-988a-44ce-9f15-42523e58b8f7/",
+						"id":"e6af48ee-988a-44ce-9f15-42523e58b8f7",
+						"assetBaseId":"ca989214-1b73-427f-a872-9af5d176c2a7",
+						"versionNumber":1,
+						"author":{
+							"id":"218390",
+							"firstName":"Tomasz",
+							"lastName":"Bartkowiak-Ketzler",
+							"gravatarHash":"bef6e723241a96e0d0b8310968ec9f9a",
+							"avatar128":"/avatar-redirect/d401ae11-22e5-4d55-986b-4db0f1dcaea1/128/",
+							"aboutMe":"3D graphic designer,\r\n-texturing\r\n-3d models\r\n-archviz\r\n-animation",
+							"aboutMeUrl":"https://maszto.eu/portfolio",
+							"fullName":"Tomasz Bartkowiak-Ketzler",
+							"app_id":3860,
+							"tooltip":"Tomasz Bartkowiak-Ketzler\n\n3D graphic designer,\n-texturing\n-3d models\n-archviz\n-animation\n",
+							"gravatarImg":"C:\\Users\\Romeo\\AppData\\Local\\Temp\\bktemp_Romeo\\bkit_g\\218390.jpg"
+						},
+						"name":"Sofa Salvador",
+						"displayName":"Sofa Salvador",
+						"description":"Blue Sofa for all types of interiors.",
+						"assetType":"model",
+						"category":"sofa",
+						"adult":false,
+						"isFree":true,
+						"tags":[
+							"sofa",
+							"seat",
+							"chair",
+							"interior",
+							"scandi",
+							"blue",
+							"modern",
+							"salvador",
+							"seating",
+							"salon",
+							"lazy",
+							"relax",
+							"lounge",
+							"home",
+							"couch",
+							"cozy",
+							"livingroom"
+						],
+						"license":"cc_zero",
+						"sourceAppName":"blender",
+						"sourceAppVersion":"3.3.1",
+						"addonVersion":"3.3.0",
+						"created":"2022-11-16T18:13:51.076597+01:00",
+						"lastUserInteraction":"2022-11-16T18:14:05.006578+01:00",
+						"verificationStatus":"validated",
+						"isPrivate":false,
+						"files":[
+							{
+								"fileType":"blend",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/155941/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-11-16T18:14:04.134237+01:00",
+								"modified":"2022-11-24T10:06:39.253834+01:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_0_5K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/156251/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-11-18T16:01:26.656999+01:00",
+								"modified":"2022-11-24T10:06:39.731565+01:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_1K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/156250/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-11-18T16:01:24.274864+01:00",
+								"modified":"2022-11-24T10:06:40.212667+01:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_2K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/156249/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-11-18T16:01:21.918063+01:00",
+								"modified":"2022-11-24T10:06:40.674088+01:00",
+								"mimeType":null,
+								"resolution":null,
+								"url":"https://public.blenderkit.com/public-assets/assets/e6af48ee988a44ce9f1542523e58b8f7/files/resolution_2K_23a3a570-6a3d-4a5e-8a08-b8d268a861f7.blend",
+								"file_name":"resolution_2K_23a3a570-6a3d-4a5e-8a08-b8d268a861f7.blend"
+							},
+							{
+								"fileType":"resolution_4K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/156248/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-11-18T16:01:19.254709+01:00",
+								"modified":"2022-11-24T10:06:41.352480+01:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"thumbnail",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/155940/",
+								"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.96x96_q85_crop-%2C.jpg",
+								"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.1024x1024_q85_crop-%2C.jpg",
+								"created":"2022-11-16T18:13:56.859931+01:00",
+								"modified":"2022-11-24T10:06:41.569240+01:00",
+								"mimeType":null,
+								"resolution":null
+							}
+						],
+						"filesSize":22949,
+						"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.256x256_q85_crop-%2C.jpg",
+						"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.512x512_q85_crop-%2C.jpg",
+						"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.1024x1024_q85_crop-%2C.jpg",
+						"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.2048x2048_q85_crop-%2C.jpg",
+						"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.256x256_q85.jpg",
+						"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.512x512_q85.jpg",
+						"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.1024x1024_q85.jpg",
+						"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.2048x2048_q85.jpg",
+						"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.256x256_q85_crop-%2C.jpg.webp?webp_generated=1693299049",
+						"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.512x512_q85_crop-%2C.jpg.webp?webp_generated=1693299049",
+						"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.1024x1024_q85_crop-%2C.jpg.webp?webp_generated=1693299049",
+						"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.2048x2048_q85_crop-%2C.jpg.webp?webp_generated=1693299049",
+						"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.256x256_q85.jpg.webp?webp_generated=1693299049",
+						"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.512x512_q85.jpg.webp?webp_generated=1693299049",
+						"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.1024x1024_q85.jpg.webp?webp_generated=1693299049",
+						"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/e6af48ee988a44ce9f1542523e58b8f7/files/thumbnail_d6a76ed7-682a-4788-a548-18384435e6e0.jpg.2048x2048_q85.jpg.webp?webp_generated=1693299049",
+						"showMarketingLabels":true,
+						"webpGeneratedTimestamp":1693299049,
+						"score":528.0,
+						"ratingsMedian":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":6.0,
+							"quality":10.0,
+							"competition-2022-votes":null,
+							"assetCount":null
+						},
+						"ratingsAverage":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":6.0,
+							"quality":8.8,
+							"competition-2022-votes":null,
+							"assetCount":null
+						},
+						"ratingsCount":{
+							"virtualPrice":0,
+							"bookmarks":6,
+							"workingHours":5,
+							"quality":5,
+							"competition-2022-votes":0,
+							"assetCount":0
+						},
+						"ratingsSum":{
+							"virtualPrice":null,
+							"bookmarks":6.0,
+							"workingHours":32.0,
+							"quality":44.0,
+							"competition-2022-votes":null,
+							"assetCount":null
+						},
+						"lastBlendUpload":"2022-11-16T17:14:04.134237+00:00",
+						"lastGltfUpload":null,
+						"lastZipFileUpload":null,
+						"lastThumbnailUpload":"2022-11-16T17:13:56.859931+00:00",
+						"lastVideoUpload":null,
+						"lastResolutionUpload":"2022-11-18T15:01:26.656999+00:00",
+						"dictParameters":{
+							"faceCount":68076,
+							"textureResolutionMax":4000,
+							"productionLevel":"finished",
+							"procedural":false,
+							"modelStyle":"realistic",
+							"condition":"new",
+							"designer":"-",
+							"manufacturer":"-",
+							"designCollection":"-",
+							"designVariant":"-",
+							"shaders":[
+								"mix shader",
+								"velvet",
+								"principled"
+							],
+							"uv":true,
+							"textureResolutionMin":2667,
+							"engines":[
+								"cycles"
+							],
+							"modifiers":[
+								"subsurf"
+							],
+							"materials":[
+								"Velvet",
+								"black-semi-gloss"
+							],
+							"rig":false,
+							"simulation":false,
+							"dimensionX":2.1562,
+							"dimensionY":0.9981,
+							"dimensionZ":0.948,
+							"boundBoxMinX":-1.0791,
+							"boundBoxMinY":-0.9899,
+							"boundBoxMinZ":-0.0114,
+							"boundBoxMaxX":1.0771,
+							"boundBoxMaxY":0.0082,
+							"boundBoxMaxZ":0.9366,
+							"faceCountRender":126636,
+							"meshPolyType":"quad_dominant",
+							"manifold":false,
+							"objectCount":8,
+							"nodeCount":11,
+							"textureCount":2,
+							"megapixels":20,
+							"imageCaptionInterrogator":"arafed blue couch with a black legs and a blue cushion, fbx, 3/4 side view, nonbinary model, marquis cut, teal, felt, hd \u2014h 1024, three - quarter view, full product shot, orthographic front view, by Eden Box, sharp nose with rounded edges, pelt, chesterfield, quint",
+							"imageAltTextGen3":"\"Blue Sofa for Interiors - Salvador Model by Eden Box, in FBX file format for Blender 3D. Features black legs, a blue cushion, and a non-binary design with a quint chesterfield flair. High-definition 3/4 and orthographic views available.\""
+						},
+						"canDownload":true,
+						"canDownloadError":true,
+						"available_resolutions":[
+							512,
+							1024,
+							2048,
+							4096
+						],
+						"max_resolution":4096,
+						"tooltip_data":{
+							"aname":"Sofa Salvador",
+							"author_text":"by Tomasz Bartkowiak-Ketzler",
+							"quality":"9"
+						},
+						"resolution":"resolution_2K"
+					},
+					"81a0d370-97e6-4dae-b0ce-d441bf4cfa80":{
+						"thumbnail":"thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.512x512_q85_crop-%2C.png.webp",
+						"thumbnail_small":"thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.256x256_q85_crop-%2C.png.webp",
+						"downloaded":0,
+						"bbox_min":[
+							-1.1925,
+							-0.5091,
+							-0.0001
+						],
+						"bbox_max":[
+							1.2017,
+							0.5132,
+							0.9297
+						],
+						"pk":28712,
+						"url":"https://www.blenderkit.com/api/v1/assets/836bc496-1cc0-4f53-b66c-1a7339921495/",
+						"id":"836bc496-1cc0-4f53-b66c-1a7339921495",
+						"assetBaseId":"81a0d370-97e6-4dae-b0ce-d441bf4cfa80",
+						"versionNumber":1,
+						"author":{
+							"id":"43881",
+							"firstName":"Abdelrahman",
+							"lastName":"Mohamed",
+							"gravatarHash":"cdb26029dfa4bbe44428e86a2e1c52a2",
+							"avatar128":"/avatar-redirect/6bb894a9-dd91-4721-91b6-02a84a0aae24/128/",
+							"aboutMe":"3D Artist who likes 3d modeling and procedural Stuff.",
+							"aboutMeUrl":"https://www.artstation.com/abdlrhmanmohamed",
+							"fullName":"Abdelrahman Mohamed"
+						},
+						"name":"Taylor Sofa",
+						"displayName":"Taylor Sofa",
+						"description":"Modern Sofa 3D Model",
+						"assetType":"model",
+						"category":"sofa",
+						"adult":false,
+						"isFree":true,
+						"tags":[
+							"sofa",
+							"archviz",
+							"interior"
+						],
+						"license":"royalty_free",
+						"sourceAppName":"blender",
+						"sourceAppVersion":"3.0.0",
+						"addonVersion":"3.0.7",
+						"created":"2022-02-26T21:26:09.572140+01:00",
+						"lastUserInteraction":"2022-02-26T21:37:19.354769+01:00",
+						"verificationStatus":"validated",
+						"isPrivate":false,
+						"files":[
+							{
+								"fileType":"blend",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/105632/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-02-26T21:37:15.537170+01:00",
+								"modified":"2022-02-26T21:37:20.618669+01:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_0_5K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130547/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-07-23T09:45:11.073595+02:00",
+								"modified":"2022-07-23T09:45:11.825735+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_1K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130546/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-07-23T09:45:02.351826+02:00",
+								"modified":"2022-07-23T09:45:03.280177+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_2K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130545/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-07-23T09:44:55.843900+02:00",
+								"modified":"2022-07-23T09:44:57.165014+02:00",
+								"mimeType":null,
+								"resolution":null,
+								"url":"https://public.blenderkit.com/public-assets/assets/836bc4961cc04f53b66c1a7339921495/files/resolution_2K_e21de21a-eb8e-4b25-95f6-2e080324b829.blend",
+								"file_name":"resolution_2K_e21de21a-eb8e-4b25-95f6-2e080324b829.blend"
+							},
+							{
+								"fileType":"thumbnail",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/105631/",
+								"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.96x96_q85_crop-%2C.png",
+								"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.1024x1024_q85_crop-%2C.png",
+								"created":"2022-02-26T21:26:40.899188+01:00",
+								"modified":"2022-02-26T21:37:20.822905+01:00",
+								"mimeType":null,
+								"resolution":null
+							}
+						],
+						"filesSize":38434,
+						"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.256x256_q85_crop-%2C.png",
+						"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.512x512_q85_crop-%2C.png",
+						"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.1024x1024_q85_crop-%2C.png",
+						"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.2048x2048_q85_crop-%2C.png",
+						"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.256x256_q85.png",
+						"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.512x512_q85.png",
+						"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.1024x1024_q85.png",
+						"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.2048x2048_q85.png",
+						"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.256x256_q85_crop-%2C.png.webp?webp_generated=1658562340",
+						"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.512x512_q85_crop-%2C.png.webp?webp_generated=1658562340",
+						"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.1024x1024_q85_crop-%2C.png.webp?webp_generated=1658562340",
+						"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.2048x2048_q85_crop-%2C.png.webp?webp_generated=1658562340",
+						"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.256x256_q85.png.webp?webp_generated=1658562340",
+						"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.512x512_q85.png.webp?webp_generated=1658562340",
+						"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.1024x1024_q85.png.webp?webp_generated=1658562340",
+						"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/836bc4961cc04f53b66c1a7339921495/files/thumbnail_b0ec31d3-89a6-49a0-882f-6343caa0689a.png.2048x2048_q85.png.webp?webp_generated=1658562340",
+						"showMarketingLabels":true,
+						"webpGeneratedTimestamp":1658562340,
+						"score":706.6666666666667,
+						"ratingsMedian":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":8.0,
+							"quality":9.0,
+							"competition-2022-votes":1.0,
+							"assetCount":null
+						},
+						"ratingsAverage":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":8.0,
+							"quality":8.833333333333334,
+							"competition-2022-votes":1.0,
+							"assetCount":null
+						},
+						"ratingsCount":{
+							"virtualPrice":0,
+							"bookmarks":19,
+							"workingHours":5,
+							"quality":6,
+							"competition-2022-votes":4,
+							"assetCount":0
+						},
+						"ratingsSum":{
+							"virtualPrice":null,
+							"bookmarks":19.0,
+							"workingHours":38.0,
+							"quality":53.0,
+							"competition-2022-votes":4.0,
+							"assetCount":null
+						},
+						"lastBlendUpload":"2022-02-26T20:37:15.537170+00:00",
+						"lastGltfUpload":null,
+						"lastZipFileUpload":null,
+						"lastThumbnailUpload":"2022-02-26T20:26:40.899188+00:00",
+						"lastVideoUpload":null,
+						"lastResolutionUpload":"2022-07-23T07:45:11.073595+00:00",
+						"dictParameters":{
+							"faceCount":221868,
+							"textureResolutionMax":2048,
+							"productionLevel":"finished",
+							"procedural":false,
+							"modelStyle":"realistic",
+							"condition":"new",
+							"purePbr":true,
+							"shaders":[
+								"principled"
+							],
+							"animated":false,
+							"pbrType":"metallic",
+							"uv":true,
+							"textureResolutionMin":2048,
+							"engines":[
+								"cycles"
+							],
+							"modifiers":[
+								""
+							],
+							"materials":[
+								"Fabric.Gray",
+								"Wood.Brown"
+							],
+							"rig":false,
+							"simulation":false,
+							"dimensionX":2.3942,
+							"dimensionY":1.0223,
+							"dimensionZ":0.9298,
+							"boundBoxMinX":-1.1925,
+							"boundBoxMinY":-0.5091,
+							"boundBoxMinZ":-0.0001,
+							"boundBoxMaxX":1.2017,
+							"boundBoxMaxY":0.5132,
+							"boundBoxMaxZ":0.9297,
+							"faceCountRender":221868,
+							"meshPolyType":"quad",
+							"manifold":false,
+							"objectCount":1,
+							"nodeCount":25,
+							"textureCount":6,
+							"megapixels":25,
+							"apply-to-winter-contest-2021":true,
+							"imageCaptionInterrogator":"a close up of a couch with a gray background, 3d model, full extremely slim body, utilitarian, inspired by Morris Kestelman, images on the sales website, unshaded, centred position, skin : tjalf sparnaay, full width, 3/4 view realistic, model",
+							"imageAltTextGen3":"\"Taylor Sofa: A modern 3D model for Blender 3D software. This sleek and utilitarian couch, inspired by Morris Kestelman, features a slim body, gray background, and realistic 3/4 view. Perfect for your interior design projects.\""
+						},
+						"canDownload":true,
+						"canDownloadError":true,
+						"available_resolutions":[
+							512,
+							1024,
+							2048
+						],
+						"max_resolution":2048,
+						"tooltip_data":{
+							"aname":"Taylor Sofa",
+							"author_text":"by Abdelrahman Mohamed",
+							"quality":"9"
+						},
+						"resolution":"resolution_2K"
+					},
+					"9652e0f6-2fcc-46aa-b4dc-cc442e3b2fd2":{
+						"thumbnail":"thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85_crop-%2C.jpg.webp",
+						"thumbnail_small":"thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85_crop-%2C.jpg.webp",
+						"downloaded":0,
+						"bbox_min":[
+							-1.1947,
+							-0.4359,
+							0.0002
+						],
+						"bbox_max":[
+							1.1932,
+							0.3661,
+							0.7608
+						],
+						"pk":28788,
+						"url":"https://www.blenderkit.com/api/v1/assets/1c26bc48-a26a-48a6-b975-08fa44af3623/",
+						"id":"1c26bc48-a26a-48a6-b975-08fa44af3623",
+						"assetBaseId":"9652e0f6-2fcc-46aa-b4dc-cc442e3b2fd2",
+						"versionNumber":1,
+						"author":{
+							"id":"43881",
+							"firstName":"Abdelrahman",
+							"lastName":"Mohamed",
+							"gravatarHash":"cdb26029dfa4bbe44428e86a2e1c52a2",
+							"avatar128":"/avatar-redirect/6bb894a9-dd91-4721-91b6-02a84a0aae24/128/",
+							"aboutMe":"3D Artist who likes 3d modeling and procedural Stuff.",
+							"aboutMeUrl":"https://www.artstation.com/abdlrhmanmohamed",
+							"fullName":"Abdelrahman Mohamed"
+						},
+						"name":"Fly Sofa",
+						"displayName":"Fly Sofa",
+						"description":"Scandinavian Sofa 3D Model",
+						"assetType":"model",
+						"category":"sofa",
+						"adult":false,
+						"isFree":true,
+						"tags":[
+							"sofa",
+							"archviz",
+							"interior"
+						],
+						"license":"royalty_free",
+						"sourceAppName":"blender",
+						"sourceAppVersion":"3.0.0",
+						"addonVersion":"3.0.7",
+						"created":"2022-02-28T20:48:17.197875+01:00",
+						"lastUserInteraction":"2022-02-28T21:00:34.026956+01:00",
+						"verificationStatus":"validated",
+						"isPrivate":false,
+						"files":[
+							{
+								"fileType":"blend",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/105846/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-02-28T21:00:30.444247+01:00",
+								"modified":"2022-02-28T21:00:35.107663+01:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_0_5K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130479/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-07-23T09:19:07.879835+02:00",
+								"modified":"2022-07-23T09:19:08.788388+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_1K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130478/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-07-23T09:19:01.058281+02:00",
+								"modified":"2022-07-23T09:19:02.701571+02:00",
+								"mimeType":null,
+								"resolution":null
+							},
+							{
+								"fileType":"resolution_2K",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130477/",
+								"fileThumbnail":null,
+								"fileThumbnailLarge":null,
+								"created":"2022-07-23T09:18:51.932426+02:00",
+								"modified":"2022-07-23T09:18:52.915543+02:00",
+								"mimeType":null,
+								"resolution":null,
+								"url":"https://public.blenderkit.com/public-assets/assets/1c26bc48a26a48a6b97508fa44af3623/files/resolution_2K_2a72e7cf-a02c-4406-935c-01cd1bcc1d03.blend",
+								"file_name":"resolution_2K_2a72e7cf-a02c-4406-935c-01cd1bcc1d03.blend"
+							},
+							{
+								"fileType":"thumbnail",
+								"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/105849/",
+								"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.96x96_q85_crop-%2C.jpg",
+								"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85_crop-%2C.jpg",
+								"created":"2022-02-28T21:42:03.334758+01:00",
+								"modified":"2022-02-28T21:42:18.662119+01:00",
+								"mimeType":null,
+								"resolution":null
+							}
+						],
+						"filesSize":38344,
+						"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85_crop-%2C.jpg",
+						"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85_crop-%2C.jpg",
+						"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85_crop-%2C.jpg",
+						"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85_crop-%2C.jpg",
+						"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85.jpg",
+						"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85.jpg",
+						"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85.jpg",
+						"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85.jpg",
+						"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+						"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+						"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+						"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+						"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85.jpg.webp?webp_generated=1658560840",
+						"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85.jpg.webp?webp_generated=1658560840",
+						"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85.jpg.webp?webp_generated=1658560840",
+						"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85.jpg.webp?webp_generated=1658560840",
+						"showMarketingLabels":true,
+						"webpGeneratedTimestamp":1658560840,
+						"score":706.6666666666667,
+						"ratingsMedian":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":8.0,
+							"quality":9.0,
+							"competition-2022-votes":1.0,
+							"assetCount":null
+						},
+						"ratingsAverage":{
+							"virtualPrice":null,
+							"bookmarks":1.0,
+							"workingHours":8.0,
+							"quality":8.833333333333334,
+							"competition-2022-votes":1.0,
+							"assetCount":null
+						},
+						"ratingsCount":{
+							"virtualPrice":0,
+							"bookmarks":16,
+							"workingHours":3,
+							"quality":6,
+							"competition-2022-votes":6,
+							"assetCount":0
+						},
+						"ratingsSum":{
+							"virtualPrice":null,
+							"bookmarks":16.0,
+							"workingHours":22.0,
+							"quality":53.0,
+							"competition-2022-votes":6.0,
+							"assetCount":null
+						},
+						"lastBlendUpload":"2022-02-28T20:00:30.444247+00:00",
+						"lastGltfUpload":null,
+						"lastZipFileUpload":null,
+						"lastThumbnailUpload":"2022-02-28T20:42:03.334758+00:00",
+						"lastVideoUpload":null,
+						"lastResolutionUpload":"2022-07-23T07:19:07.879835+00:00",
+						"dictParameters":{
+							"faceCount":213258,
+							"textureResolutionMax":2048,
+							"productionLevel":"finished",
+							"procedural":false,
+							"modelStyle":"realistic",
+							"condition":"new",
+							"designer":"Space Copenhagen",
+							"manufacturer":"UAB BS Classic",
+							"designCollection":"Fly Series",
+							"purePbr":true,
+							"shaders":[
+								"principled"
+							],
+							"animated":false,
+							"pbrType":"metallic",
+							"uv":true,
+							"textureResolutionMin":2048,
+							"engines":[
+								"cycles"
+							],
+							"modifiers":[
+								""
+							],
+							"materials":[
+								"Fabric",
+								"Wood"
+							],
+							"rig":false,
+							"simulation":false,
+							"dimensionX":2.3879,
+							"dimensionY":0.802,
+							"dimensionZ":0.7605,
+							"boundBoxMinX":-1.1947,
+							"boundBoxMinY":-0.4359,
+							"boundBoxMinZ":0.0002,
+							"boundBoxMaxX":1.1932,
+							"boundBoxMaxY":0.3661,
+							"boundBoxMaxZ":0.7608,
+							"faceCountRender":213258,
+							"meshPolyType":"quad",
+							"manifold":false,
+							"objectCount":1,
+							"nodeCount":25,
+							"textureCount":6,
+							"megapixels":25,
+							"apply-to-winter-contest-2021":true,
+							"imageCaptionInterrogator":"a close up of a couch with pillows on a black background, lumion render, wireframe models, tian zi, made in 2019, teak table, full body single character, pierre pellegrini and ash thorp, with accurate features, willows, official render, round-cropped, kamwei fong",
+							"imageAltTextGen3":"\"Fly Sofa - A Scandinavian-style 3D model for Blender 3D. This high-quality couch features pillows, a teak table, and accurate details. Perfect for architectural visualizations and interior design projects.\""
+						},
+						"canDownload":true,
+						"canDownloadError":true,
+						"available_resolutions":[
+							512,
+							1024,
+							2048
+						],
+						"max_resolution":2048,
+						"tooltip_data":{
+							"aname":"Fly Sofa",
+							"author_text":"by Abdelrahman Mohamed",
+							"quality":"9"
+						},
+						"resolution":"resolution_2K"
 					}
 				},
 				"uuid":"4f65d417-f318-4e5d-8f98-fbc3f0174af7",
@@ -1310,280 +2236,249 @@
 			},
 			"name":"Scene",
 			"nodes":[
-				3
+				0
 			]
 		}
 	],
 	"nodes":[
 		{
-			"mesh":0,
-			"name":"Buttons",
-			"translation":[
-				0,
-				-0.001096487045288086,
-				0
-			]
-		},
-		{
-			"mesh":1,
-			"name":"Sofa frame",
-			"translation":[
-				0,
-				-0.001096487045288086,
-				0
-			]
-		},
-		{
-			"mesh":2,
-			"name":"Wood frame",
-			"translation":[
-				0,
-				-0.001096487045288086,
-				0
-			]
-		},
-		{
-			"children":[
-				0,
-				1,
-				2
-			],
 			"extras":{
+				"ant_landscape":{},
 				"blenderkit":{
-					"category":5,
-					"subcategory":18,
+					"category":4,
+					"subcategory":17,
 					"is_free":1,
-					"name":"Likestone Sofa",
+					"name":"Fly Sofa",
 					"name_changed":1,
-					"name_old":"Likestone Sofa",
-					"description":"Likestone Sofa combine fabric and wooden base",
-					"tags":"furniture, sofa",
-					"thumbnail":"//renders\\untitled.png",
+					"name_old":"Fly Sofa",
+					"description":"Scandinavian Sofa 3D Model",
+					"tags":"sofa, archviz, interior",
+					"thumbnail":"//preview2.png",
 					"has_thumbnail":1,
 					"thumbnail_generating_state":"",
-					"manufacturer":"N/A",
-					"designer":"N/A",
-					"design_collection":"N/A",
-					"design_variant":"N/A",
-					"work_hours":4.0,
-					"texture_resolution_max":4096,
-					"texture_resolution_min":1024,
+					"production_level":0,
+					"condition":1,
+					"pbr":1,
+					"manufacturer":"",
+					"designer":"Space Copenhagen",
+					"design_collection":"Fly Series",
+					"work_hours":8.0,
+					"texture_resolution_max":2048,
+					"texture_resolution_min":2048,
 					"uv":1,
-					"texture_count":8,
-					"total_megapixels":68,
-					"node_count":30,
+					"texture_count":6,
+					"total_megapixels":25165824,
+					"node_count":25,
 					"engine":0,
 					"is_procedural":0,
-					"materials":"Greasy wood, Fabric Upholstery 001a, Material.001, ",
+					"materials":"Fabric, Wood, ",
 					"shaders":"principled, ",
 					"dimensions":[
-						2.2114176750183105,
-						1.0095800161361694,
-						0.7506935000419617
+						2.3879122734069824,
+						0.8020450472831726,
+						0.7605268955230713
 					],
 					"bbox_min":[
-						-1.1056511402130127,
-						-0.45178651809692383,
-						0.0
+						-1.1947355270385742,
+						-0.4359232485294342,
+						0.0002243518829345703
 					],
 					"bbox_max":[
-						1.1057665348052979,
-						0.5577934980392456,
-						0.7506935000419617
+						1.1931767463684082,
+						0.3661217987537384,
+						0.7607512474060059
 					],
-					"face_count":75160,
-					"face_count_render":75160,
-					"mesh_poly_type":1,
+					"face_count":213258,
+					"face_count_render":213258,
+					"mesh_poly_type":0,
 					"manifold":0,
 					"modifiers":"",
-					"object_count":4,
+					"object_count":1,
+					"upload_state":"Starting upload. Please don't close Blender until upload finishes",
 					"report":"",
-					"asset_base_id":"37b88fd6-6566-43d7-9e9f-7943cca01947",
-					"id":"db5ec5c5-ddff-49c5-82c5-e8479fe8d00d",
+					"asset_base_id":"9652e0f6-2fcc-46aa-b4dc-cc442e3b2fd2",
+					"id":"1c26bc48-a26a-48a6-b975-08fa44af3623",
 					"uploading":0
 				},
 				"asset_data":{
-					"thumbnail":"thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.512x512_q85_crop-%2C.jpg.webp",
-					"thumbnail_small":"thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.256x256_q85_crop-%2C.jpg.webp",
+					"thumbnail":"thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85_crop-%2C.jpg.webp",
+					"thumbnail_small":"thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85_crop-%2C.jpg.webp",
 					"downloaded":0,
 					"bbox_min":[
-						-1.1057,
-						-0.4518,
-						0.0
+						-1.1947,
+						-0.4359,
+						0.0002
 					],
 					"bbox_max":[
-						1.1058,
-						0.5578,
-						0.7507
+						1.1932,
+						0.3661,
+						0.7608
 					],
-					"pk":54778,
-					"url":"https://www.blenderkit.com/api/v1/assets/db5ec5c5-ddff-49c5-82c5-e8479fe8d00d/",
-					"id":"db5ec5c5-ddff-49c5-82c5-e8479fe8d00d",
-					"assetBaseId":"37b88fd6-6566-43d7-9e9f-7943cca01947",
+					"pk":28788,
+					"url":"https://www.blenderkit.com/api/v1/assets/1c26bc48-a26a-48a6-b975-08fa44af3623/",
+					"id":"1c26bc48-a26a-48a6-b975-08fa44af3623",
+					"assetBaseId":"9652e0f6-2fcc-46aa-b4dc-cc442e3b2fd2",
 					"versionNumber":1,
 					"author":{
-						"id":"530359",
-						"firstName":"D",
-						"lastName":"love3D",
-						"gravatarHash":"55abe5eafe7339000aaae93cdf202392",
-						"avatar128":"/avatar-redirect/8468f314-644c-4bd0-9dfd-60e65a9dc16a/128/",
-						"aboutMe":"I'm an industrial design/3d artist\r\nHi. Please credit my name in the model if you need to upload it somewhere. Cheers!",
-						"aboutMeUrl":"https://www.linkedin.com/in/danny-ngo-399096158/",
-						"fullName":"D love3D"
+						"id":"43881",
+						"firstName":"Abdelrahman",
+						"lastName":"Mohamed",
+						"gravatarHash":"cdb26029dfa4bbe44428e86a2e1c52a2",
+						"avatar128":"/avatar-redirect/6bb894a9-dd91-4721-91b6-02a84a0aae24/128/",
+						"aboutMe":"3D Artist who likes 3d modeling and procedural Stuff.",
+						"aboutMeUrl":"https://www.artstation.com/abdlrhmanmohamed",
+						"fullName":"Abdelrahman Mohamed"
 					},
-					"name":"Likestone Sofa",
-					"displayName":"Likestone Sofa",
-					"description":"Likestone Sofa combine fabric and wooden base",
+					"name":"Fly Sofa",
+					"displayName":"Fly Sofa",
+					"description":"Scandinavian Sofa 3D Model",
 					"assetType":"model",
 					"category":"sofa",
 					"adult":false,
 					"isFree":true,
 					"tags":[
-						"furniture",
-						"sofa"
+						"sofa",
+						"archviz",
+						"interior"
 					],
 					"license":"royalty_free",
 					"sourceAppName":"blender",
-					"sourceAppVersion":"3.4.1",
-					"addonVersion":"3.6.1",
-					"created":"2023-05-29T10:04:50.721236+02:00",
-					"lastUserInteraction":"2023-05-29T10:09:25.004485+02:00",
+					"sourceAppVersion":"3.0.0",
+					"addonVersion":"3.0.7",
+					"created":"2022-02-28T20:48:17.197875+01:00",
+					"lastUserInteraction":"2022-02-28T21:00:34.026956+01:00",
 					"verificationStatus":"validated",
 					"isPrivate":false,
 					"files":[
 						{
 							"fileType":"blend",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/198786/",
+							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/105846/",
 							"fileThumbnail":null,
 							"fileThumbnailLarge":null,
-							"created":"2023-05-29T10:09:24.284362+02:00",
-							"modified":"2023-05-29T10:09:27.548050+02:00",
+							"created":"2022-02-28T21:00:30.444247+01:00",
+							"modified":"2022-02-28T21:00:35.107663+01:00",
 							"mimeType":null,
 							"resolution":null
 						},
 						{
 							"fileType":"resolution_0_5K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/243575/",
+							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130479/",
 							"fileThumbnail":null,
 							"fileThumbnailLarge":null,
-							"created":"2023-10-04T13:55:30.962486+02:00",
-							"modified":"2023-10-04T13:55:30.962524+02:00",
+							"created":"2022-07-23T09:19:07.879835+02:00",
+							"modified":"2022-07-23T09:19:08.788388+02:00",
 							"mimeType":null,
 							"resolution":null
 						},
 						{
 							"fileType":"resolution_1K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/243574/",
+							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130478/",
 							"fileThumbnail":null,
 							"fileThumbnailLarge":null,
-							"created":"2023-10-04T13:55:22.517038+02:00",
-							"modified":"2023-10-04T13:55:22.517075+02:00",
+							"created":"2022-07-23T09:19:01.058281+02:00",
+							"modified":"2022-07-23T09:19:02.701571+02:00",
 							"mimeType":null,
 							"resolution":null
 						},
 						{
 							"fileType":"resolution_2K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/243573/",
+							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/130477/",
 							"fileThumbnail":null,
 							"fileThumbnailLarge":null,
-							"created":"2023-10-04T13:55:12.100384+02:00",
-							"modified":"2023-10-04T13:55:12.100423+02:00",
+							"created":"2022-07-23T09:18:51.932426+02:00",
+							"modified":"2022-07-23T09:18:52.915543+02:00",
 							"mimeType":null,
 							"resolution":null,
-							"url":"https://public.blenderkit.com/public-assets/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/resolution_2K_6e6872ae-4c86-4258-9b8b-5130ee8b51bb.blend",
-							"file_name":"resolution_2K_6e6872ae-4c86-4258-9b8b-5130ee8b51bb.blend"
-						},
-						{
-							"fileType":"resolution_4K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/243570/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"created":"2023-10-04T13:54:53.388931+02:00",
-							"modified":"2023-10-04T13:54:53.388972+02:00",
-							"mimeType":null,
-							"resolution":null
+							"url":"https://public.blenderkit.com/public-assets/assets/1c26bc48a26a48a6b97508fa44af3623/files/resolution_2K_2a72e7cf-a02c-4406-935c-01cd1bcc1d03.blend",
+							"file_name":"resolution_2K_2a72e7cf-a02c-4406-935c-01cd1bcc1d03.blend"
 						},
 						{
 							"fileType":"thumbnail",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/198785/",
-							"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.96x96_q85_crop-%2C.jpg",
-							"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.1024x1024_q85_crop-%2C.jpg",
-							"created":"2023-05-29T10:05:12.036051+02:00",
-							"modified":"2023-05-29T10:09:28.269279+02:00",
+							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/105849/",
+							"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.96x96_q85_crop-%2C.jpg",
+							"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85_crop-%2C.jpg",
+							"created":"2022-02-28T21:42:03.334758+01:00",
+							"modified":"2022-02-28T21:42:18.662119+01:00",
 							"mimeType":null,
 							"resolution":null
 						}
 					],
-					"filesSize":146035,
-					"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.256x256_q85_crop-%2C.jpg",
-					"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.512x512_q85_crop-%2C.jpg",
-					"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.1024x1024_q85_crop-%2C.jpg",
-					"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.2048x2048_q85_crop-%2C.jpg",
-					"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.256x256_q85.jpg",
-					"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.512x512_q85.jpg",
-					"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.1024x1024_q85.jpg",
-					"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.2048x2048_q85.jpg",
-					"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.256x256_q85_crop-%2C.jpg.webp?webp_generated=1685541658",
-					"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.512x512_q85_crop-%2C.jpg.webp?webp_generated=1685541658",
-					"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.1024x1024_q85_crop-%2C.jpg.webp?webp_generated=1685541658",
-					"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.2048x2048_q85_crop-%2C.jpg.webp?webp_generated=1685541658",
-					"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.256x256_q85.jpg.webp?webp_generated=1685541658",
-					"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.512x512_q85.jpg.webp?webp_generated=1685541658",
-					"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.1024x1024_q85.jpg.webp?webp_generated=1685541658",
-					"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/db5ec5c5ddff49c582c5e8479fe8d00d/files/thumbnail_055a2cae-1c8f-4620-b4f6-3f05618ff1aa.png.2048x2048_q85.jpg.webp?webp_generated=1685541658",
+					"filesSize":38344,
+					"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85_crop-%2C.jpg",
+					"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85_crop-%2C.jpg",
+					"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85_crop-%2C.jpg",
+					"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85_crop-%2C.jpg",
+					"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85.jpg",
+					"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85.jpg",
+					"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85.jpg",
+					"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85.jpg",
+					"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+					"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+					"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+					"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85_crop-%2C.jpg.webp?webp_generated=1658560840",
+					"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.256x256_q85.jpg.webp?webp_generated=1658560840",
+					"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.512x512_q85.jpg.webp?webp_generated=1658560840",
+					"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.1024x1024_q85.jpg.webp?webp_generated=1658560840",
+					"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/1c26bc48a26a48a6b97508fa44af3623/files/thumbnail_59502d0d-b496-428a-836d-4db55aafe8a2.jpg.2048x2048_q85.jpg.webp?webp_generated=1658560840",
 					"showMarketingLabels":true,
-					"webpGeneratedTimestamp":1685541658,
-					"score":768.0,
+					"webpGeneratedTimestamp":1658560840,
+					"score":706.6666666666667,
 					"ratingsMedian":{
-						"competition-2022-votes":null,
-						"quality":10.0,
-						"workingHours":8.0,
 						"virtualPrice":null,
-						"bookmarks":1.0
+						"bookmarks":1.0,
+						"workingHours":8.0,
+						"quality":9.0,
+						"competition-2022-votes":1.0,
+						"assetCount":null
 					},
 					"ratingsAverage":{
-						"competition-2022-votes":null,
-						"quality":9.6,
-						"workingHours":8.0,
 						"virtualPrice":null,
-						"bookmarks":1.0
+						"bookmarks":1.0,
+						"workingHours":8.0,
+						"quality":8.833333333333334,
+						"competition-2022-votes":1.0,
+						"assetCount":null
 					},
 					"ratingsCount":{
-						"competition-2022-votes":0,
-						"quality":5,
-						"workingHours":4,
 						"virtualPrice":0,
-						"bookmarks":30
+						"bookmarks":16,
+						"workingHours":3,
+						"quality":6,
+						"competition-2022-votes":6,
+						"assetCount":0
 					},
 					"ratingsSum":{
-						"competition-2022-votes":null,
-						"quality":48.0,
-						"workingHours":32.0,
 						"virtualPrice":null,
-						"bookmarks":30.0
+						"bookmarks":16.0,
+						"workingHours":22.0,
+						"quality":53.0,
+						"competition-2022-votes":6.0,
+						"assetCount":null
 					},
-					"lastBlendUpload":"2023-05-29T08:09:24.284362+00:00",
+					"lastBlendUpload":"2022-02-28T20:00:30.444247+00:00",
 					"lastGltfUpload":null,
 					"lastZipFileUpload":null,
-					"lastThumbnailUpload":"2023-05-29T08:05:12.036051+00:00",
+					"lastThumbnailUpload":"2022-02-28T20:42:03.334758+00:00",
 					"lastVideoUpload":null,
-					"lastResolutionUpload":"2023-10-04T11:55:30.962486+00:00",
+					"lastResolutionUpload":"2022-07-23T07:19:07.879835+00:00",
 					"dictParameters":{
-						"faceCount":75160,
-						"textureResolutionMax":4096,
+						"faceCount":213258,
+						"textureResolutionMax":2048,
 						"productionLevel":"finished",
 						"procedural":false,
 						"modelStyle":"realistic",
 						"condition":"new",
-						"designer":"N/A",
-						"manufacturer":"N/A",
-						"designCollection":"Futurism",
-						"designVariant":"N/A",
+						"designer":"Space Copenhagen",
+						"manufacturer":"UAB BS Classic",
+						"designCollection":"Fly Series",
+						"purePbr":true,
 						"shaders":[
 							"principled"
 						],
+						"animated":false,
+						"pbrType":"metallic",
 						"uv":true,
-						"textureResolutionMin":1024,
+						"textureResolutionMin":2048,
 						"engines":[
 							"cycles"
 						],
@@ -1591,54 +2486,49 @@
 							""
 						],
 						"materials":[
-							"Greasy wood",
-							"Fabric Upholstery 001a",
-							"Material.001"
+							"Fabric",
+							"Wood"
 						],
 						"rig":false,
 						"simulation":false,
-						"dimensionX":2.2114,
-						"dimensionY":1.0096,
-						"dimensionZ":0.7507,
-						"boundBoxMinX":-1.1057,
-						"boundBoxMinY":-0.4518,
-						"boundBoxMinZ":0.0,
-						"boundBoxMaxX":1.1058,
-						"boundBoxMaxY":0.5578,
-						"boundBoxMaxZ":0.7507,
-						"faceCountRender":75160,
-						"meshPolyType":"quad_dominant",
+						"dimensionX":2.3879,
+						"dimensionY":0.802,
+						"dimensionZ":0.7605,
+						"boundBoxMinX":-1.1947,
+						"boundBoxMinY":-0.4359,
+						"boundBoxMinZ":0.0002,
+						"boundBoxMaxX":1.1932,
+						"boundBoxMaxY":0.3661,
+						"boundBoxMaxZ":0.7608,
+						"faceCountRender":213258,
+						"meshPolyType":"quad",
 						"manifold":false,
-						"objectCount":4,
-						"nodeCount":30,
-						"textureCount":8,
-						"megapixels":68,
-						"imageCaptionInterrogator":"there is a white couch with a wooden base on a white background, monochrome 3 d model, by Jesper Knudsen, made in 2019, refined nose, nathan fowkes, accurate boroque, without text, official render, floating detailes, iso 125, oak, simpsons style",
-						"imageAltTextGen3":"\"Experience the perfect blend of fabric and wood with the Likestone Sofa 3D model. Created in Blender 3D by Jesper Knudsen in 2019, this monochrome model features refined details and accurate baroque styling. Ideal for your 3D design projects.\""
+						"objectCount":1,
+						"nodeCount":25,
+						"textureCount":6,
+						"megapixels":25,
+						"apply-to-winter-contest-2021":true,
+						"imageCaptionInterrogator":"a close up of a couch with pillows on a black background, lumion render, wireframe models, tian zi, made in 2019, teak table, full body single character, pierre pellegrini and ash thorp, with accurate features, willows, official render, round-cropped, kamwei fong",
+						"imageAltTextGen3":"\"Fly Sofa - A Scandinavian-style 3D model for Blender 3D. This high-quality couch features pillows, a teak table, and accurate details. Perfect for architectural visualizations and interior design projects.\""
 					},
 					"canDownload":true,
 					"canDownloadError":true,
 					"available_resolutions":[
 						512,
 						1024,
-						2048,
-						4096
+						2048
 					],
-					"max_resolution":4096,
+					"max_resolution":2048,
 					"tooltip_data":{
-						"aname":"Likestone Sofa",
-						"author_text":"by D love3D",
-						"quality":"10"
+						"aname":"Fly Sofa",
+						"author_text":"by Abdelrahman Mohamed",
+						"quality":"9"
 					},
 					"resolution":"resolution_2K"
 				}
 			},
-			"name":"Likestone Sofa",
-			"translation":[
-				1.5103881359100342,
-				2.667339563369751,
-				-0.27581894397735596
-			]
+			"mesh":0,
+			"name":"Fly Sofa"
 		}
 	],
 	"materials":[
@@ -1647,9 +2537,9 @@
 			"extensions":{
 				"KHR_materials_specular":{
 					"specularColorFactor":[
-						0.8402448473864992,
-						0.8402448473864992,
-						0.8402448473864992
+						0.0538944928434855,
+						0.0538944928434855,
+						0.0538944928434855
 					]
 				},
 				"KHR_materials_ior":{
@@ -1657,413 +2547,23 @@
 				}
 			},
 			"extras":{
-				"blenderkit":{}
+				"pmc_matprops":{}
 			},
-			"name":"Material.001",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.1523248702287674,
-					0.04539444297552109,
-					0.03585034981369972,
-					1
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.3425196707248688
-			}
-		},
-		{
-			"doubleSided":true,
-			"extras":{
-				"blenderkit":{
-					"name":"Fabric Upholstery 001a",
-					"name_changed":0,
-					"name_old":"Fabric Upholstery 001a",
-					"category":6,
-					"description":"FabricUpholstery001a includes 4k textures for PBR (Color, Roughness, Normal and Displacement maps).",
-					"thumbnail":"//FabricUpholstery001a_Preview.png",
-					"has_thumbnail":1,
-					"thumbnail_generating_state":"",
-					"texture_resolution_max":4096,
-					"texture_resolution_min":4096,
-					"shaders":"principled, ",
-					"tags":"fabric, upholstery, cloth, towel, carpet",
-					"pbr":1,
-					"texture_size_meters":3.200000047683716,
-					"upload_state":"uploaded metadata",
-					"report":"",
-					"asset_base_id":"8d5d99a9-2a53-4102-86a1-fde0622925f9",
-					"id":"f0676a04-55bb-4ff6-8ac0-667acf720428",
-					"uploading":0
-				},
-				"DM":{},
-				"asset_data":{
-					"thumbnail":"thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.512x512_q85_crop-%2C.png.webp",
-					"thumbnail_small":"thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.256x256_q85_crop-%2C.png.webp",
-					"downloaded":0,
-					"texture_size_meters":3.200000047683716,
-					"url":"https://www.blenderkit.com/api/v1/assets/f0676a04-55bb-4ff6-8ac0-667acf720428/",
-					"id":"f0676a04-55bb-4ff6-8ac0-667acf720428",
-					"assetBaseId":"8d5d99a9-2a53-4102-86a1-fde0622925f9",
-					"versionNumber":1,
-					"author":{
-						"id":"11090",
-						"firstName":"George",
-						"lastName":"Mattingly",
-						"gravatarHash":"b396fd4572487ea21cf2638def3cd602",
-						"avatar128":"/avatar-redirect/da9ec64f-75fb-4f21-bf86-1c22e832cd7a/128/",
-						"aboutMe":"Generalist 3D artist.",
-						"aboutMeUrl":"https://www.artstation.com/georgemattingly"
-					},
-					"name":"Fabric Upholstery 001a",
-					"displayName":"Fabric Upholstery 001a",
-					"description":"FabricUpholstery001a includes 4k textures for PBR (Color, Roughness, Normal and Displacement maps).",
-					"assetType":"material",
-					"category":"fabric",
-					"adult":0,
-					"isFree":1,
-					"tags":[
-						"fabric",
-						"upholstery",
-						"cloth",
-						"towel",
-						"carpet"
-					],
-					"license":"royalty_free",
-					"sourceAppName":"blender",
-					"sourceAppVersion":"2.80.74",
-					"addonVersion":"1.0.26",
-					"created":"2019-07-21T17:03:21.196354+02:00",
-					"verificationStatus":"validated",
-					"isPrivate":0,
-					"files":[
-						{
-							"fileType":"blend",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/6370/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"url":"https://public.blenderkit.com/public-assets/assets/f0676a0455bb4ff68ac0667acf720428/files/blend_75fd99ee-0432-4db7-ad44-3b2c3ec32b04.blend",
-							"file_name":"blend_75fd99ee-0432-4db7-ad44-3b2c3ec32b04.blend"
-						},
-						{
-							"fileType":"thumbnail",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/6369/",
-							"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.96x96_q85_crop-%2C.png",
-							"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.1024x1024_q85_crop-%2C.png"
-						}
-					],
-					"filesSize":138267,
-					"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.256x256_q85_crop-%2C.png",
-					"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.512x512_q85_crop-%2C.png",
-					"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.1024x1024_q85_crop-%2C.png",
-					"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.2048x2048_q85_crop-%2C.png",
-					"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.256x256_q85.png",
-					"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.512x512_q85.png",
-					"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.1024x1024_q85.png",
-					"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.2048x2048_q85.png",
-					"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.256x256_q85_crop-%2C.png.webp?webp_generated=1608297584",
-					"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.512x512_q85_crop-%2C.png.webp?webp_generated=1608297584",
-					"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.1024x1024_q85_crop-%2C.png.webp?webp_generated=1608297584",
-					"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.2048x2048_q85_crop-%2C.png.webp?webp_generated=1608297584",
-					"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.256x256_q85.png.webp?webp_generated=1608297584",
-					"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.512x512_q85.png.webp?webp_generated=1608297584",
-					"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.1024x1024_q85.png.webp?webp_generated=1608297584",
-					"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/f0676a0455bb4ff68ac0667acf720428/files/thumbnail_169a0f21-36a8-4c87-9a64-f1baa3664960.png.2048x2048_q85.png.webp?webp_generated=1608297584",
-					"showMarketingLabels":1,
-					"webpGeneratedTimestamp":1608297584,
-					"score":366.78571428571433,
-					"ratingsMedian":{
-						"competition-2022-votes":null,
-						"quality":10.0,
-						"virtualPrice":null,
-						"complexity":null,
-						"virtualPriceAdmin":null,
-						"complexityAdmin":null,
-						"workingHours":3.95,
-						"bookmarks":null
-					},
-					"ratingsAverage":{
-						"competition-2022-votes":null,
-						"quality":9.285714285714286,
-						"virtualPrice":null,
-						"complexity":null,
-						"virtualPriceAdmin":null,
-						"complexityAdmin":null,
-						"workingHours":3.95,
-						"bookmarks":null
-					},
-					"ratingsCount":{
-						"competition-2022-votes":0,
-						"quality":21,
-						"virtualPrice":0,
-						"complexity":0,
-						"virtualPriceAdmin":0,
-						"complexityAdmin":0,
-						"workingHours":18,
-						"bookmarks":0
-					},
-					"ratingsSum":{
-						"competition-2022-votes":null,
-						"quality":195.0,
-						"virtualPrice":null,
-						"complexity":null,
-						"virtualPriceAdmin":null,
-						"complexityAdmin":null,
-						"workingHours":66.1,
-						"bookmarks":null
-					},
-					"dictParameters":{
-						"textureResolutionMax":4096,
-						"textureSizeMeters":3.200000047683716,
-						"materialStyle":"realistic",
-						"purePbr":1,
-						"engine":"cycles",
-						"shaders":[
-							"principled"
-						],
-						"animated":0,
-						"pbrType":"metallic",
-						"uv":0,
-						"textureResolutionMin":4096
-					},
-					"canDownload":1,
-					"canDownloadError":1,
-					"available_resolutions":[],
-					"max_resolution":0,
-					"tooltip_data":{
-						"aname":"Fabric Upholstery 001a",
-						"author_text":"by George Mattingly",
-						"quality":"9"
-					},
-					"resolution":"resolution_2K"
-				}
-			},
-			"name":"Fabric Upholstery 001a.001",
-			"normalTexture":{
-				"index":0,
-				"texCoord":4
-			},
-			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":1,
-					"texCoord":4
-				},
-				"metallicFactor":0,
-				"metallicRoughnessTexture":{
-					"index":2,
-					"texCoord":4
-				}
-			}
-		},
-		{
-			"doubleSided":true,
-			"extras":{
-				"blenderkit":{
-					"category":34,
-					"name":"Greasy wood",
-					"name_changed":1,
-					"name_old":"Greasy wood",
-					"description":"It is a large piece of old wood plank. Micro surface texture can be found as it is not a laminated wood and not a veneer. It is a natural solid wood.",
-					"pbr":1,
-					"uv":1,
-					"tags":"Wall, Dirt, Dirty, Brown, Floor, Architecture, Wood, Wooden, Bark",
-					"thumbnail_generator_type":1,
-					"thumbnail":"//greasy_wood.png",
-					"has_thumbnail":1,
-					"thumbnail_generating_state":"",
-					"is_generating_thumbnail":0,
-					"texture_resolution_max":2048,
-					"texture_resolution_min":2048,
-					"texture_count":4,
-					"node_count":21,
-					"total_megapixels":16,
-					"is_procedural":0,
-					"shaders":"principled, ",
-					"upload_state":"Starting upload. Please don't close Blender until upload finishes",
-					"report":"",
-					"asset_base_id":"e65d9c43-9172-450d-bca1-4619e8a1acdc",
-					"id":"64d3d7a8-4546-4190-b8d6-1f2957dcc193",
-					"uploading":0
-				},
-				"asset_data":{
-					"thumbnail":"thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.512x512_q85_crop-%2C.png.webp",
-					"thumbnail_small":"thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.256x256_q85_crop-%2C.png.webp",
-					"downloaded":0,
-					"texture_size_meters":1.0,
-					"url":"https://www.blenderkit.com/api/v1/assets/64d3d7a8-4546-4190-b8d6-1f2957dcc193/",
-					"id":"64d3d7a8-4546-4190-b8d6-1f2957dcc193",
-					"assetBaseId":"e65d9c43-9172-450d-bca1-4619e8a1acdc",
-					"versionNumber":1,
-					"author":{
-						"id":"309047",
-						"firstName":"Textures",
-						"lastName":"Can",
-						"gravatarHash":"a48a09f22dc7c5d9de5d0e0068b6da63",
-						"avatar128":"/avatar-redirect/18738664-0638-43c3-b26a-133bbd5f06ca/128/",
-						"aboutMe":"We  will publish 100% free high quality 3D assets cco (PUBLIC Domain license) If you want to support  work and help to keep making new assets \r\nVisit web\r\nhttps://www.texturecan.com/\r\nThanks stay connected with us contact at \r\ntexturescan@gmail.com",
-						"aboutMeUrl":"https://www.texturecan.com/"
-					},
-					"name":"Greasy wood",
-					"displayName":"Greasy wood",
-					"description":"It is a large piece of old wood plank. Micro surface texture can be found as it is not a laminated wood and not a veneer. It is a natural solid wood.",
-					"assetType":"material",
-					"category":"wood",
-					"adult":0,
-					"isFree":1,
-					"tags":[
-						"Wall",
-						"Dirt",
-						"Dirty",
-						"Brown",
-						"Floor",
-						"Architecture",
-						"Wood",
-						"Wooden",
-						"Bark"
-					],
-					"license":"royalty_free",
-					"sourceAppName":"blender",
-					"sourceAppVersion":"3.1.2",
-					"addonVersion":"3.1.4",
-					"created":"2022-06-19T13:50:49.793381+02:00",
-					"verificationStatus":"validated",
-					"isPrivate":0,
-					"files":[
-						{
-							"fileType":"blend",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/118571/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null
-						},
-						{
-							"fileType":"resolution_0_5K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/120270/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null
-						},
-						{
-							"fileType":"resolution_1K",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/120269/",
-							"fileThumbnail":null,
-							"fileThumbnailLarge":null,
-							"url":"https://public.blenderkit.com/public-assets/assets/64d3d7a845464190b8d61f2957dcc193/files/resolution_1K_de555ea6-3fba-4c93-b873-d5a417658329.blend",
-							"file_name":"resolution_1K_de555ea6-3fba-4c93-b873-d5a417658329.blend"
-						},
-						{
-							"fileType":"thumbnail",
-							"downloadUrl":"https://www.blenderkit.com/api/v1/downloads/118570/",
-							"fileThumbnail":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.96x96_q85_crop-%2C.png",
-							"fileThumbnailLarge":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.1024x1024_q85_crop-%2C.png"
-						}
-					],
-					"filesSize":1292,
-					"thumbnailSmallUrl":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.256x256_q85_crop-%2C.png",
-					"thumbnailMiddleUrl":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.512x512_q85_crop-%2C.png",
-					"thumbnailLargeUrl":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.1024x1024_q85_crop-%2C.png",
-					"thumbnailXlargeUrl":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.2048x2048_q85_crop-%2C.png",
-					"thumbnailSmallUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.256x256_q85.png",
-					"thumbnailMiddleUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.512x512_q85.png",
-					"thumbnailLargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.1024x1024_q85.png",
-					"thumbnailXlargeUrlNonsquared":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.2048x2048_q85.png",
-					"thumbnailSmallUrlWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.256x256_q85_crop-%2C.png.webp?webp_generated=1656338459",
-					"thumbnailMiddleUrlWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.512x512_q85_crop-%2C.png.webp?webp_generated=1656338459",
-					"thumbnailLargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.1024x1024_q85_crop-%2C.png.webp?webp_generated=1656338459",
-					"thumbnailXlargeUrlWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.2048x2048_q85_crop-%2C.png.webp?webp_generated=1656338459",
-					"thumbnailSmallUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.256x256_q85.png.webp?webp_generated=1656338459",
-					"thumbnailMiddleUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.512x512_q85.png.webp?webp_generated=1656338459",
-					"thumbnailLargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.1024x1024_q85.png.webp?webp_generated=1656338459",
-					"thumbnailXlargeUrlNonsquaredWebp":"https://public.blenderkit.com/thumbnails/assets/64d3d7a845464190b8d61f2957dcc193/files/thumbnail_705086c5-582b-43f6-8827-7c4704246d6b.png.2048x2048_q85.png.webp?webp_generated=1656338459",
-					"showMarketingLabels":1,
-					"webpGeneratedTimestamp":1656338459,
-					"score":115.0,
-					"ratingsMedian":{
-						"competition-2022-votes":null,
-						"quality":7.0,
-						"virtualPrice":null,
-						"complexity":null,
-						"virtualPriceAdmin":null,
-						"complexityAdmin":null,
-						"workingHours":1.5,
-						"bookmarks":null
-					},
-					"ratingsAverage":{
-						"competition-2022-votes":null,
-						"quality":7.666666666666667,
-						"virtualPrice":null,
-						"complexity":null,
-						"virtualPriceAdmin":null,
-						"complexityAdmin":null,
-						"workingHours":1.5,
-						"bookmarks":null
-					},
-					"ratingsCount":{
-						"competition-2022-votes":0,
-						"quality":3,
-						"virtualPrice":0,
-						"complexity":0,
-						"virtualPriceAdmin":0,
-						"complexityAdmin":0,
-						"workingHours":2,
-						"bookmarks":0
-					},
-					"ratingsSum":{
-						"competition-2022-votes":null,
-						"quality":23.0,
-						"virtualPrice":null,
-						"complexity":null,
-						"virtualPriceAdmin":null,
-						"complexityAdmin":null,
-						"workingHours":3.0,
-						"bookmarks":null
-					},
-					"dictParameters":{
-						"textureResolutionMax":2048,
-						"textureSizeMeters":1.0,
-						"procedural":0,
-						"materialStyle":"realistic",
-						"purePbr":1,
-						"engine":"cycles",
-						"shaders":[
-							"principled"
-						],
-						"animated":0,
-						"pbrType":"metallic",
-						"uv":1,
-						"textureResolutionMin":2048,
-						"nodeCount":21,
-						"textureCount":4,
-						"megapixels":16
-					},
-					"canDownload":1,
-					"canDownloadError":1,
-					"available_resolutions":[
-						512,
-						1024
-					],
-					"max_resolution":1024,
-					"tooltip_data":{
-						"aname":"Greasy wood",
-						"author_text":"by Textures Can",
-						"quality":"8"
-					},
-					"resolution":"resolution_2K"
-				}
-			},
-			"name":"Greasy wood",
+			"name":"Fabric.001",
 			"normalTexture":{
 				"extensions":{
 					"KHR_texture_transform":{
 						"offset":[
 							0,
-							-2
+							-9
 						],
 						"scale":[
-							3,
-							3
+							10,
+							10
 						]
 					}
 				},
-				"index":3,
-				"texCoord":4
+				"index":0
 			},
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
@@ -2071,16 +2571,15 @@
 						"KHR_texture_transform":{
 							"offset":[
 								0,
-								-2
+								-9
 							],
 							"scale":[
-								3,
-								3
+								10,
+								10
 							]
 						}
 					},
-					"index":4,
-					"texCoord":4
+					"index":1
 				},
 				"metallicFactor":0,
 				"metallicRoughnessTexture":{
@@ -2088,74 +2587,114 @@
 						"KHR_texture_transform":{
 							"offset":[
 								0,
-								-2
+								-9
 							],
 							"scale":[
-								3,
-								3
+								10,
+								10
 							]
 						}
 					},
-					"index":5,
-					"texCoord":4
+					"index":2
+				}
+			}
+		},
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularColorFactor":[
+						0.1659950337176175,
+						0.1659950337176175,
+						0.1659950337176175
+					]
+				},
+				"KHR_materials_ior":{
+					"ior":1.4500000476837158
+				}
+			},
+			"extras":{
+				"pmc_matprops":{},
+				"blenderkit":{
+					"has_thumbnail":1,
+					"thumbnail_generating_state":""
+				}
+			},
+			"name":"Wood",
+			"normalTexture":{
+				"extensions":{
+					"KHR_texture_transform":{
+						"offset":[
+							-9.99999999999999,
+							1.0000004371139
+						],
+						"rotation":1.5707963705062866,
+						"scale":[
+							10,
+							10
+						]
+					}
+				},
+				"index":3
+			},
+			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"extensions":{
+						"KHR_texture_transform":{
+							"offset":[
+								-9.99999999999999,
+								1.0000004371139
+							],
+							"rotation":1.5707963705062866,
+							"scale":[
+								10,
+								10
+							]
+						}
+					},
+					"index":4
+				},
+				"metallicFactor":0,
+				"metallicRoughnessTexture":{
+					"extensions":{
+						"KHR_texture_transform":{
+							"offset":[
+								-9.99999999999999,
+								1.0000004371139
+							],
+							"rotation":1.5707963705062866,
+							"scale":[
+								10,
+								10
+							]
+						}
+					},
+					"index":5
 				}
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube.013",
+			"name":"Cube.016",
 			"primitives":[
 				{
 					"attributes":{
-						"COLOR_0":0,
-						"POSITION":1,
-						"NORMAL":2,
-						"TEXCOORD_0":3,
-						"TEXCOORD_1":4,
-						"TEXCOORD_2":5,
-						"TEXCOORD_3":6
+						"POSITION":0,
+						"NORMAL":1,
+						"TEXCOORD_0":2
+					},
+					"indices":3,
+					"material":0
+				},
+				{
+					"attributes":{
+						"POSITION":4,
+						"NORMAL":5,
+						"TEXCOORD_0":6
 					},
 					"indices":7,
-					"material":0
-				}
-			]
-		},
-		{
-			"name":"Cube.012",
-			"primitives":[
-				{
-					"attributes":{
-						"COLOR_0":8,
-						"POSITION":9,
-						"NORMAL":10,
-						"TEXCOORD_0":11,
-						"TEXCOORD_1":12,
-						"TEXCOORD_2":13,
-						"TEXCOORD_3":14,
-						"TEXCOORD_4":15
-					},
-					"indices":16,
 					"material":1
-				}
-			]
-		},
-		{
-			"name":"Cube.011",
-			"primitives":[
-				{
-					"attributes":{
-						"COLOR_0":17,
-						"POSITION":18,
-						"NORMAL":19,
-						"TEXCOORD_0":20,
-						"TEXCOORD_1":21,
-						"TEXCOORD_2":22,
-						"TEXCOORD_3":23,
-						"TEXCOORD_4":24
-					},
-					"indices":25,
-					"material":2
 				}
 			]
 		}
@@ -2189,381 +2728,152 @@
 	"images":[
 		{
 			"mimeType":"image/jpeg",
-			"name":"FabricUpholstery001a_Normals",
-			"uri":"../textures/FabricUpholstery001a_Normals.jpg"
+			"name":"Fabric036_2K_NormalGL",
+			"uri":"../textures/Fabric036_2K_NormalGL.jpg"
 		},
 		{
 			"mimeType":"image/jpeg",
-			"name":"FabricUpholstery001a_Color",
-			"uri":"../textures/FabricUpholstery001a_Color.jpg"
+			"name":"Fabric036_2K_Color",
+			"uri":"../textures/Fabric036_2K_Color.jpg"
 		},
 		{
 			"mimeType":"image/png",
-			"name":"FabricUpholstery001a_Roughness",
-			"uri":"../textures/FabricUpholstery001a_Roughness.png"
+			"name":"Fabric036_2K_Roughness",
+			"uri":"../textures/Fabric036_2K_Roughness.png"
 		},
 		{
 			"mimeType":"image/jpeg",
-			"name":"Greasy_Wood_Normal",
-			"uri":"../textures/Greasy_Wood_Normal.jpg"
+			"name":"Wood049_2K_NormalGL",
+			"uri":"../textures/Wood049_2K_NormalGL.jpg"
 		},
 		{
 			"mimeType":"image/jpeg",
-			"name":"Greasy_Wood_Base_Color",
-			"uri":"../textures/Greasy_Wood_Base_Color.jpg"
+			"name":"Wood049_2K_Color",
+			"uri":"../textures/Wood049_2K_Color.jpg"
 		},
 		{
 			"mimeType":"image/png",
-			"name":"Greasy_Wood_Roughness",
-			"uri":"../textures/Greasy_Wood_Roughness.png"
+			"name":"Wood049_2K_Roughness",
+			"uri":"../textures/Wood049_2K_Roughness.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
-			"componentType":5123,
-			"count":9528,
-			"normalized":true,
-			"type":"VEC4"
+			"componentType":5126,
+			"count":213363,
+			"max":[
+				1.161527395248413,
+				0.7607512474060059,
+				0.4359232485294342
+			],
+			"min":[
+				-1.1863906383514404,
+				0.21965292096138,
+				-0.341635137796402
+			],
+			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":9528,
-			"max":[
-				0.9338207244873047,
-				0.00609641894698143,
-				0.3338678181171417
-			],
-			"min":[
-				-0.9338207244873047,
-				0.0010964013636112213,
-				-0.3338678181171417
-			],
+			"count":213363,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":9528,
-			"type":"VEC3"
+			"count":213363,
+			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
-			"componentType":5126,
-			"count":9528,
-			"type":"VEC2"
+			"componentType":5125,
+			"count":1238760,
+			"type":"SCALAR"
 		},
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":9528,
-			"type":"VEC2"
+			"count":8168,
+			"max":[
+				1.1931767463684082,
+				0.6827991008758545,
+				0.42610543966293335
+			],
+			"min":[
+				-1.1947355270385742,
+				0.0002243518829345703,
+				-0.3661217987537384
+			],
+			"type":"VEC3"
 		},
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":9528,
-			"type":"VEC2"
+			"count":8168,
+			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":9528,
+			"count":8168,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":7,
 			"componentType":5123,
-			"count":50688,
-			"type":"SCALAR"
-		},
-		{
-			"bufferView":8,
-			"componentType":5123,
-			"count":62098,
-			"normalized":true,
-			"type":"VEC4"
-		},
-		{
-			"bufferView":9,
-			"componentType":5126,
-			"count":62098,
-			"max":[
-				1.1057665348052979,
-				0.751789927482605,
-				0.45178651809692383
-			],
-			"min":[
-				-1.1056511402130127,
-				0.06147164851427078,
-				-0.5577934980392456
-			],
-			"type":"VEC3"
-		},
-		{
-			"bufferView":10,
-			"componentType":5126,
-			"count":62098,
-			"type":"VEC3"
-		},
-		{
-			"bufferView":11,
-			"componentType":5126,
-			"count":62098,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":12,
-			"componentType":5126,
-			"count":62098,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":13,
-			"componentType":5126,
-			"count":62098,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":14,
-			"componentType":5126,
-			"count":62098,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":15,
-			"componentType":5126,
-			"count":62098,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":16,
-			"componentType":5123,
-			"count":360768,
-			"type":"SCALAR"
-		},
-		{
-			"bufferView":17,
-			"componentType":5123,
-			"count":7398,
-			"normalized":true,
-			"type":"VEC4"
-		},
-		{
-			"bufferView":18,
-			"componentType":5126,
-			"count":7398,
-			"max":[
-				0.949807345867157,
-				0.061099689453840256,
-				0.3498212695121765
-			],
-			"min":[
-				-0.949807345867157,
-				0.006095670163631439,
-				-0.3498212695121765
-			],
-			"type":"VEC3"
-		},
-		{
-			"bufferView":19,
-			"componentType":5126,
-			"count":7398,
-			"type":"VEC3"
-		},
-		{
-			"bufferView":20,
-			"componentType":5126,
-			"count":7398,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":21,
-			"componentType":5126,
-			"count":7398,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":22,
-			"componentType":5126,
-			"count":7398,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":23,
-			"componentType":5126,
-			"count":7398,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":24,
-			"componentType":5126,
-			"count":7398,
-			"type":"VEC2"
-		},
-		{
-			"bufferView":25,
-			"componentType":5123,
-			"count":37200,
+			"count":40788,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":76224,
+			"byteLength":2560356,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":114336,
-			"byteOffset":76224,
+			"byteLength":2560356,
+			"byteOffset":2560356,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":114336,
-			"byteOffset":190560,
+			"byteLength":1706904,
+			"byteOffset":5120712,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":76224,
-			"byteOffset":304896,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":76224,
-			"byteOffset":381120,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":76224,
-			"byteOffset":457344,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":76224,
-			"byteOffset":533568,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":101376,
-			"byteOffset":609792,
+			"byteLength":4955040,
+			"byteOffset":6827616,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteLength":496784,
-			"byteOffset":711168,
+			"byteLength":98016,
+			"byteOffset":11782656,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":745176,
-			"byteOffset":1207952,
+			"byteLength":98016,
+			"byteOffset":11880672,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":745176,
-			"byteOffset":1953128,
+			"byteLength":65344,
+			"byteOffset":11978688,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":496784,
-			"byteOffset":2698304,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":496784,
-			"byteOffset":3195088,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":496784,
-			"byteOffset":3691872,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":496784,
-			"byteOffset":4188656,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":496784,
-			"byteOffset":4685440,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":721536,
-			"byteOffset":5182224,
-			"target":34963
-		},
-		{
-			"buffer":0,
-			"byteLength":59184,
-			"byteOffset":5903760,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":88776,
-			"byteOffset":5962944,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":88776,
-			"byteOffset":6051720,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":59184,
-			"byteOffset":6140496,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":59184,
-			"byteOffset":6199680,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":59184,
-			"byteOffset":6258864,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":59184,
-			"byteOffset":6318048,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":59184,
-			"byteOffset":6377232,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":74400,
-			"byteOffset":6436416,
+			"byteLength":81576,
+			"byteOffset":12044032,
 			"target":34963
 		}
 	],
@@ -2575,7 +2885,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":6510816,
+			"byteLength":12125608,
 			"uri":"sofa-1.bin"
 		}
 	]
