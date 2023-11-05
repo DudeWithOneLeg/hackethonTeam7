@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Gltf } from '@react-three/drei';
 import models from '../SubScene/models'
-import { group } from '@react-three/flex'; // Ensure you have the correct import for Flex
 
 export default function ListScene({ setProduct, category, setShowProduct }) {
   const [position] = useState([7.9, 2.8, -10]);
