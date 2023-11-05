@@ -2,17 +2,25 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadAllReviewsThunk } from "../../store/review";
 import "./ReviewPage.css";
+import { loadAllProductsThunk } from "../../store/product";
+import { loadAllUsersThunk } from "../../store/user";
 
 function ReviewPage() {
   const dispatch = useDispatch();
+  const [transform, setTransform] = useState(0);
 
   useEffect(() => {
     dispatch(loadAllReviewsThunk());
+    dispatch(loadAllProductsThunk())
+    dispatch(loadAllUsersThunk())
   }, [dispatch]);
 
   const reviewObj = useSelector((state) => state.review);
   const reviews = Object.values(reviewObj);
-  console.log(reviews);
+  const productObj = useSelector((state) => state.product);
+  const products = Object.values(productObj)
+  const userObj = useSelector((state) => state.user);
+  const users = Object.values(userObj)
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -27,11 +35,11 @@ function ReviewPage() {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        // Render a filled star
-        stars.push(<span key={i}>&#9733;</span>);
+        // Render a full star
+        stars.push(<i key={i} className="bx bxs-star"></i>);
       } else {
         // Render an empty star
-        stars.push(<span key={i}>&#9734;</span>);
+        stars.push(<i key={i} className="bx bx-star"></i>);
       }
     }
     return stars;
@@ -44,12 +52,14 @@ function ReviewPage() {
   const showNextPage = () => {
     if (currentPage < totalPageCount - 1) {
       setCurrentPage(currentPage + 1);
+      setTransform(transform - (45 / 100) * window.innerWidth + 6);
     }
   };
-
+  
   const showPrevPage = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
+      setTransform(transform + (45 / 100) * window.innerWidth + 6);
     }
   };
 
@@ -66,15 +76,15 @@ function ReviewPage() {
           {displayedReviews.map((review) => (
             <div key={review.id} className="review">
               <div className="review-info">
+                <li className="info product">{products.find(product => product.id === review.productId)?.productName}</li>
                 <li>{renderStars(review.rating)}</li>
               </div>
               <div className="review-info">
-                <li>Product: {review.productId}</li>
                 <li>{review.review}</li>
               </div>
               <div className="review-info">
-                <li>Customer {review.userId}</li>
-                <li>{formatDate(review.createdAt)}</li>
+                <li className="info user">{users.find(user => user.id === review.userId)?.username}</li>
+                <li> - {formatDate(review.createdAt)}</li>
               </div>
               {/* <hr></hr> */}
             </div>
