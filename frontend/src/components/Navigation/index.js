@@ -36,7 +36,7 @@ function Navigation({ isLoaded }) {
           </NavLink>
           {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
-        
+        <h3>Three-DEA</h3>
         <li>
           <ProfileButton user={sessionUser} />
         </li>
@@ -58,6 +58,7 @@ function Navigation({ isLoaded }) {
           </NavLink>
           {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
+        <h3>Three-DEA</h3>
         <li>
           <NavLink to="/login">
             <button className="auth-btn">Log In</button>

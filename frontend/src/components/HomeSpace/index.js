@@ -150,10 +150,10 @@ export default function Homespace() {
   //position 2 position={[8, -3, 16]} rotation={[0, -.7, 0]}
   return (
     <>
-  <mesh position={[0, 2, 0]}>
+  {/* <mesh position={[0, 2, 0]}>
     <textGeometry args={['Three-DEA', {font, size: .5, height: 1, bevelThickness: .1,}]}/>
     <meshPhysicalMaterial attach='material' color={'red'}/>
-  </mesh>
+  </mesh> */}
       <Html>
         {signup || list || showProduct ? (
           <h1
