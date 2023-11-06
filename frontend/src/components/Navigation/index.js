@@ -22,7 +22,7 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-        <li>
+        <li id="test">
           <button onClick={toggleSidebar} className="toggle">
             <i className="bx bx-menu"></i>
           </button>
@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
             to="/"
             className={`home-btn ${isActive("/") ? "active" : ""}`}
           >
-           <i className='bx bxs-home' ></i>
+            <i className='bx bxs-home' ></i>
           </NavLink>
           {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
@@ -43,7 +43,7 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <li>
+        <li id="test">
           <button onClick={toggleSidebar} className="toggle">
             <i className="bx bx-menu"></i>
           </button>
