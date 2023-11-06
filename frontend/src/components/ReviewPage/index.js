@@ -4,10 +4,12 @@ import { loadAllReviewsThunk } from "../../store/review";
 import "./ReviewPage.css";
 import { loadAllProductsThunk } from "../../store/product";
 import { loadAllUsersThunk } from "../../store/user";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function ReviewPage() {
   const dispatch = useDispatch();
   const [transform, setTransform] = useState(0);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(loadAllReviewsThunk());
@@ -71,6 +73,9 @@ function ReviewPage() {
   return (
     <>
       <div className="review-container">
+      <div className="order-back-button" onClick={() => history.push('/')}>
+        <i className='bx bx-x-circle'></i>
+      </div>
         <h1>Reviews</h1>
         <div className="review-grid">
           {displayedReviews.map((review) => (

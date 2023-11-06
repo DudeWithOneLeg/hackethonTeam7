@@ -10,7 +10,10 @@ import {
   Redirect,
   useHistory,
 } from "react-router-dom/cjs/react-router-dom.min";
-import { addProductCartThunk, loadUserProductCartThunk } from "../../store/productcart";
+import {
+  addProductCartThunk,
+  loadUserProductCartThunk,
+} from "../../store/productcart";
 import { clearProduct, loadAllProductsThunk } from "../../store/product";
 import {
   clearShipping,
@@ -47,9 +50,8 @@ function CartPage() {
   const preppedShippingAddress = Object.values(shippingAddress)[0];
 
   if (!user) {
-    return history.push('/login')
+    return history.push("/login");
   }
-
 
   const checkout = async (e) => {
     try {
@@ -85,10 +87,9 @@ function CartPage() {
   };
 
   const addQuantity = async (productId) => {
-
     const quantity = 1; // You can adjust the quantity as needed
     dispatch(addProductCartThunk(productId, quantity));
-  }
+  };
 
   //   const subtractQuantity = async (e) => {
 
@@ -100,8 +101,8 @@ function CartPage() {
 
   return load ? (
     <div className="cart-table">
-      <div className="cart-back-button" onClick={() => history.push('/')}>
-        <i className='bx bx-x-circle'></i>
+      <div className="cart-back-button" onClick={() => history.push("/")}>
+        <i className="bx bx-x-circle"></i>
       </div>
       <h1 className="container-header">Cart</h1>
       <div className="table-header">
@@ -145,11 +146,13 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>
       </div>
-      {preppedShippingAddress &&
+      {preppedShippingAddress && (
         <div className="table-cell">
-          {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
+          {preppedShippingAddress.shippingAddress}{" "}
+          {preppedShippingAddress.shippingState}{" "}
+          {preppedShippingAddress.shippingZipCode}
         </div>
-      }
+      )}
       <div>
         <button
           onClick={(e) => {

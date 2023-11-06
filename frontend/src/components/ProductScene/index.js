@@ -16,7 +16,6 @@ export default function ProductScene({ product }) {
   };
 
   useEffect(() => {
-    console.log(product.productName);
     dispatch(productActions.loadOneProductThunk(product.productName));
   }, [dispatch]);
 

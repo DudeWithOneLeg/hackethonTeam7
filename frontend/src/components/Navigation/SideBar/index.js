@@ -28,13 +28,6 @@ function SideBar({ isSidebarOpen }) {
                 Models
               </button>
             </NavLink> */}
-            <NavLink to="/orders">
-              <button
-                className={`nav-btn ${isActive("/orders") ? "active" : ""}`}
-              >
-                Orders
-              </button>
-            </NavLink>
             <NavLink to="/reviews">
               <button
                 className={`nav-btn ${isActive("/reviews") ? "active" : ""}`}

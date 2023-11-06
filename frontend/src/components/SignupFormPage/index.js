@@ -15,8 +15,8 @@ function SignupFormPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -31,8 +31,8 @@ function SignupFormPage() {
         sessionActions.signup({
           email,
           username,
-          firstName,
-          lastName,
+          // firstName,
+          // lastName,
           password,
         })
       ).catch(async (res) => {
@@ -82,7 +82,7 @@ function SignupFormPage() {
       <form onSubmit={handleSubmit}>
         <div className="form">
           <div className="field-group">
-            <div className="field">
+            {/* <div className="field">
               <label>First Name</label>
               <input
                 type="text"
@@ -101,7 +101,7 @@ function SignupFormPage() {
                 required
               />
               {errors.lastName && <p>{errors.lastName}</p>}
-            </div>
+            </div> */}
           </div>
           <div className="field">
             <label>Email</label>

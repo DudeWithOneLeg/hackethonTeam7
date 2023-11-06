@@ -24,7 +24,6 @@ router.get("/all", async (req, res) => {
 // Get a product by name
 router.get("/:productName", async (req, res) => {
     let { productName } = req.params
-    console.log(productName)
     if (productName.includes('%20')) productName = productName.split('%20').join(' ')
     try {
         const product = await Product.findOne({

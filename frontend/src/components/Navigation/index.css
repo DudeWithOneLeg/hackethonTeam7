@@ -86,12 +86,12 @@ li {
 .profile-container {
     padding: 5px 5px;
     width: 150px;
+    margin: 0;
 }
 
 .profile-container li {
     text-align: left;
     padding: 3px 0;
-    margin-left: 5px;
 }
 
 .user-btn {
