@@ -189,7 +189,7 @@ export default function Homespace() {
         camera={{ fov: 50 }}
         ref={cameraRef}
       >
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         <directionalLight
           position={[5, 5, -8]}
           castShadow

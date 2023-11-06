@@ -13,6 +13,7 @@ import ProductsPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
 import PaymentSuccess from "./components/StripePayment/PaymentSuccess";
 import PaymentCancel from "./components/StripePayment/PaymentCancel";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,9 @@ function App() {
               </Route>
               <Route path="/orders">
                 <OrderPage />
+              </Route>
+              <Route path="/profile">
+                <ProfilePage />
               </Route>
               <Route path="/cart">
                 <CartPage />

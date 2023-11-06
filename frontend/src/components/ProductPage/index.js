@@ -14,7 +14,6 @@ export default function ProductsPage() {
 
   const productObj = useSelector((state) => state.product);
   const products = Object.values(productObj);
-  console.log(products);
 
   const [currentPage, setCurrentPage] = useState(0);
   const productsPerPage = 9;

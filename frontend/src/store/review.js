@@ -63,6 +63,21 @@ export const loadOneReviewThunk = (reviewId) => async (dispatch) => {
     }
 }
 
+// thunk action for one user's reviews
+export const loadUserReviewsThunk = (userId) => async (dispatch) => {
+    try {
+        const res = await csrfFetch(`/api/review/user/${userId}`)
+        if (res.ok) {
+            const review = await res.json()
+            dispatch(loadReviews(review))
+        } else {
+            console.error('Failed to load review:', res.status, res.statusText);
+        }
+    } catch (err) {
+        console.error('An error occurred while loading review:', err);
+    }
+}
+
 // thunk action for all reviews
 export const loadAllReviewsThunk = () => async (dispatch) => {
     try {
@@ -82,7 +97,14 @@ export const loadAllReviewsThunk = () => async (dispatch) => {
 // thunk action for creating a new review
 export const addReviewThunk = (newReview) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/review`, {
+
+
+        // Log the URL and data being sent
+        console.log('Data:', newReview);
+
+
+
+        const res = await csrfFetch(`/api/review/new`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -93,7 +115,7 @@ export const addReviewThunk = (newReview) => async (dispatch) => {
         if (res.ok) {
             const review = await res.json()
             dispatch(addReview(review))
-            return review
+            return review;
         } else {
             console.error('Failed to create a new review:', res.status, res.statusText);
         }

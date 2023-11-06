@@ -14,7 +14,7 @@ function SideBar({ isSidebarOpen }) {
           id="collapseWidthExample"
         >
           <div className="sidebar-buttons">
-            <NavLink to="/gallery">
+            {/* <NavLink to="/gallery">
               <button
                 className={`nav-btn ${isActive("/gallery") ? "active" : ""}`}
               >
@@ -27,7 +27,7 @@ function SideBar({ isSidebarOpen }) {
               >
                 Models
               </button>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/reviews">
               <button
                 className={`nav-btn ${isActive("/reviews") ? "active" : ""}`}

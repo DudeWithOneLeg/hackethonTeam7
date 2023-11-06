@@ -85,7 +85,7 @@ router.get('/user/:userId', async (req, res) => {
 
 
 // create new review for a product
-router.post('/:productId', restoreUser, requireAuth, async (req, res) => {
+router.post('/', restoreUser, requireAuth, async (req, res) => {
     try {
         const { userId, review, rating } = req.body;
 
@@ -116,7 +116,7 @@ router.post('/:productId', restoreUser, requireAuth, async (req, res) => {
 
         res.json({ data: newReview })
     } catch (err) {
-        return internalServerError(res, err)
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 })
 

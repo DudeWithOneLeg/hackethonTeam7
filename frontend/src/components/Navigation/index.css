@@ -30,18 +30,19 @@ li {
 } */
 
 .auth-btn {
-    border: 1px solid black; /* Set the initial border to black */
+    border: 1px solid transparent;
     border-radius: 20px;
     padding: 8px 15px;
     margin: 0 5px;
-    background-color: transparent;
-    color: white;
+    color: rgb(59, 59, 59);
     font-weight: 700;
     cursor: pointer;
 
+
+    background: rgba(255, 255, 255, 0.6);
     /* Create a color gradient border */
     /* box-shadow: 0 0 0 1px violet, 0 0 0 1px purple; */
-    background-clip: content-box;
+    /* background-clip: content-box; */
     transition: box-shadow 0.5s;
 }
 
@@ -85,11 +86,12 @@ li {
 .profile-container {
     padding: 5px 5px;
     width: 150px;
+    margin: 0;
 }
 
 .profile-container li {
     text-align: left;
-    padding: 1px 0;
+    padding: 3px 0;
 }
 
 .user-btn {

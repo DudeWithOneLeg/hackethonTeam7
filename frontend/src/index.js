@@ -12,7 +12,6 @@ const store = configureStore();
 
 if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
-  console.log("yo");
   window.csrfFetch = csrfFetch;
   window.store = store;
 }
