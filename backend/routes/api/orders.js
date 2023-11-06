@@ -10,10 +10,11 @@ const { isAdmin, checkUser, forbidden } = require('../../utils/authorization');
 
 
 // Get all orders made
-// router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
-router.get("/all", restoreUser, requireAuth, async (req, res) => {
+router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
-        const orders = await Order.findAll()
+        const orders = await Order.findAll({
+            attributes: { exclude: ["createdAt", "updatedAt"] }
+        })
         res.json({ data: orders })
     } catch (err) {
         return internalServerError(res, err)
@@ -21,11 +22,30 @@ router.get("/all", restoreUser, requireAuth, async (req, res) => {
 })
 
 // get all orders made by a user
-router.get("/user/:userId", restoreUser, requireAuth, async (req, res) => {
+router.get("/user/:userId", restoreUser, requireAuth, isAdmin, async (req, res) => {
     try {
         const orders = await Order.findAll({
             where: {
                 userId: req.params.userId
+            }
+        })
+
+        if (!orders.length) {
+            return notFoundError(res, "Orders")
+        }
+
+        res.json({ data: orders })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
+})
+
+// get all orders made by current user
+router.get("/current", restoreUser, requireAuth, async (req, res) => {
+    try {
+        const orders = await Order.findAll({
+            where: {
+                userId: req.user.id
             }
         })
 
@@ -83,11 +103,23 @@ router.get("/date/:dateString", restoreUser, requireAuth, isAdmin, async (req, r
 });
 
 router.post("/", restoreUser, requireAuth, async (req, res) => {
-    // let {}
+    let { cartId, productId, productName, productDescription, quantity, pricePerUnit } = req.body
 
-    // try {
-    //     const newOrder
-    // }
+    try {
+        const newOrder = await Order.create({
+            userId: req.user.id,
+            cartId: cartId,
+            productId: productId,
+            productName: productName,
+            productDescription: productDescription,
+            quantity: quantity,
+            pricePerUnit: pricePerUnit,
+        })
+
+        res.status(201).json({ data: newOrder })
+    } catch (err) {
+        return internalServerError(res, err)
+    }
 })
 
 

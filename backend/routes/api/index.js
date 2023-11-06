@@ -15,7 +15,7 @@ const shippingRouter = require('./shippingaddresses.js')
 const billingRouter = require('./billingaddresses.js')
 const cartRouter = require('./carts.js')
 const orderRouter = require("./orders.js")
-// const orderCartRouter = require('./ordercart.js')
+const productCartBackup = require('./productcartbackup.js')
 const paymentRouter = require('./payments.js')
 const productCartRouter = require("./productcart.js")
 const stripeRouter = require('./stripe.js')
@@ -29,13 +29,13 @@ router.use('/discount', discountRouter);
 router.use('/product', productRouter);
 router.use('/productcategory', productCategoryRouter);
 router.use('/productcart', productCartRouter)
+router.use('/productcartbackup', productCartBackup)
 router.use('/productimage', productImageRouter);
 router.use('/review', reviewRouter);
 router.use('/shipping', shippingRouter);
 router.use('/billing', billingRouter);
 router.use('/cart', cartRouter);
 router.use('/order', orderRouter);
-// router.use('/ordercart', orderCartRouter)
 router.use('/payment', paymentRouter);
 router.use("/stripesession", stripeSessionRouter)
 router.use("/stripe", stripeRouter)

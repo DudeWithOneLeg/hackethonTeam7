@@ -104,8 +104,6 @@ const stripeSessionReducer = (state = initialStripeSession, action) => {
             newState[action.payload.data.id] = action.payload.data
             return newState;
         case DELETE_STRIPE_SESSION:
-            console.log("booba", action.payload.id)
-
             delete newState[action.payload.data.id]
             return newState;
         case CLEAR_STRIPE_SESSION:

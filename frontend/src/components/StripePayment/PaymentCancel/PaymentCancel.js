@@ -36,17 +36,13 @@ function StripePaymentCancel() {
     // provided that there is a stripe session id on the database that matches url session id, dispatch actions
     // useeffect to delete stripe session. Ideally, you'd use webhooks to confirm whether a customer paid for an order. this is just a stop gap
     useEffect(() => {
-
         if (load && dbSessionId !== undefined && dbSessionId.length > 0) {
-
             // delete the stripe session if stripe sessio wa canceled by user
             dispatch(deleteStripeSessionThunk(urlSessionId)).then(
                 history.push('/')
             )
         }
     }, [load, dbSessionId]);
-
-
 
     return (
         <div></div>

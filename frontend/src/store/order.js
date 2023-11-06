@@ -80,9 +80,9 @@ export const loadAllOrdersThunk = () => async (dispatch) => {
 }
 
 // thunk action for one user's orders
-export const loadUserOrdersThunk = (userId) => async (dispatch) => {
+export const loadUserOrdersThunk = () => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/order/user/${userId}`)
+        const res = await csrfFetch(`/api/order/current`)
         if (res.ok) {
             const order = await res.json()
             dispatch(loadOrders(order))
@@ -97,7 +97,7 @@ export const loadUserOrdersThunk = (userId) => async (dispatch) => {
 // thunk action for creating a new order
 export const addOrderThunk = (newOrder) => async (dispatch) => {
     try {
-        const res = await csrfFetch("/api/order/new", {
+        const res = await csrfFetch("/api/order", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -115,29 +115,6 @@ export const addOrderThunk = (newOrder) => async (dispatch) => {
 
     } catch (err) {
         console.error('An error occurred while creating new order:', err);
-    }
-}
-
-// thunk action for editing a order information
-export const editOrderThunk = (orderId, orderInfo) => async (dispatch) => {
-    try {
-        const res = await csrfFetch(`/api/order/${orderId}/info`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ orderInfo })
-        })
-
-        if (res.ok) {
-            const updatedOrder = await res.json()
-            dispatch(editOrder(updatedOrder))
-            return updatedOrder
-        } else {
-            console.error('Failed to update order information:', res.status, res.statusText);
-        }
-    } catch (err) {
-        console.error(`An error occurred while updating order ${orderId} information:`, err)
     }
 }
 
@@ -178,7 +155,7 @@ const orderReducer = (state = initialOrder, action) => {
 
             return order
         case ADD_ORDER:
-            newState[action.payload.id] = action.payload
+            newState[action.payload.data.id] = action.payload.data
             return newState;
         case EDIT_ORDER:
             newState[action.payload.id] = action.payload;

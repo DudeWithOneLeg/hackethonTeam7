@@ -20,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: "productId",
                 onDelete: "CASCADE"
             });
+            Product.hasMany(models.ProductCartBackup, {
+                foreignKey: "productId",
+            });
+            Product.hasMany(models.Order, {
+                foreignKey: "productId",
+                onDelete: "NO ACTION"
+            });
 
             Product.belongsToMany(models.Category, {
                 through: models.ProductCategory,
@@ -29,10 +36,6 @@ module.exports = (sequelize, DataTypes) => {
                 through: models.ProductCart,
                 foreignKey: "productId",
             });
-            // Product.belongsToMany(models.Order, {
-            //     through: models.OrderCart,
-            //     foreignKey: "productId",
-            // });
         }
     };
 

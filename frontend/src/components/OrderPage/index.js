@@ -51,29 +51,37 @@ function OrderPage() {
         <i className='bx bx-x-circle'></i>
       </div>
       <h1 className="container-header">Orders</h1>
-      <div className="table-header">
-        <div className="table-cell">Order #</div>
-        <div className="table-cell">Order Date</div>
-        <div className="table-cell">Status</div>
-        <div className="table-cell">Total Amount</div>
+      <div className="order-table-header">
+        <div className="order-table-cell">Order #</div>
+        <div className="order-table-cell">Order Date</div>
+        <div className="order-table-cell">Product Name</div>
+        <div className="order-table-cell">Quantity</div>
+        <div className="order-table-cell">Price Per Unit</div>
+        <div className="order-table-cell">Total</div>
+        <div className="order-table-cell">Status</div>
         {sessionUser?.id === 1 ? (
           <div className="table-cell">Customer</div>
         ) : <></>}
       </div>
-      {orders.map((order) => (
-        <div className="order-card" key={order._id}>
-          <div className="order-info">
-            <div className="table-cell">{order.id}</div>
-            <div className="table-cell">{formatDate(order.orderDate)}</div>
-            <div className="table-cell">{order.status}</div>
-            <div className="table-cell">${order.totalAmount}</div>
-            {sessionUser?.id === 1 ? (
-              <div className="table-cell">{users.find(user => user.id === order.userId)?.username}</div>
-            ) : (<></>)}
+      {
+        orders.map((order) => (
+          <div className="order-card" key={order._id}>
+            <div className="order-info">
+              <div className="order-table-cell">{order.cartId}</div>
+              <div className="order-table-cell">{formatDate(order.orderDate)}</div>
+              <div className="order-table-cell">{order.productName}</div>
+              <div className="order-table-cell">{order.quantity}</div>
+              <div className="order-table-cell">{order.pricePerUnit}</div>
+              <div className="order-table-cell">${order.totalAmount / 100}</div>
+              <div className="order-table-cell">{order.status.charAt(0).toUpperCase() + order.status.slice(1)}</div>
+              {sessionUser?.id === 1 ? (
+                <div className="table-cell">{users.find(user => user.id === order.userId)?.username}</div>
+              ) : (<></>)}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))
+      }
+    </div >
   );
 }
 

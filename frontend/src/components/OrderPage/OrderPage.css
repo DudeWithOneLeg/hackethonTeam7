@@ -10,24 +10,31 @@
   /* Semi-transparent white background for the blur effect */
   border-radius: 10px;
   text-align: center;
-  max-width: 800px;
+  max-width: fit-content;
   /* Set your desired maximum width */
   margin: 0 auto;
   /* Center the grid horizontally */
 }
 
-.table-header {
+.order-table * {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.order-table-header {
+  display: flex;
+  justify-content: center;
   background-color: #f5f5f5;
   border-bottom: 1px solid #000;
   font-weight: bold;
-  background-color: orange;
 }
 
-.table-cell {
+.order-table-cell {
   flex: 1;
   padding: 10px;
-  min-width: 125px;
+  /* min-width: 125px; */
+  width: 120px;
 }
 
 .order-card {
@@ -59,4 +66,9 @@
 
   border: none;
   font-size: 25px;
+}
+
+
+#col-1 {
+  width: 100px;
 }

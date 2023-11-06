@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
 let options = {};
@@ -7,8 +7,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Orders", {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('ProductCartBackups', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -19,19 +19,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Users',
-          key: "id"
+          key: 'id'
         },
         allowNull: false,
-        onDelete: "NO ACTION",
       },
       cartId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Carts',
+          model: "Carts",
           key: "id"
         },
-        allowNull: false,
-        onDelete: "NO ACTION",
+        allowNull: false
       },
       productId: {
         type: Sequelize.INTEGER,
@@ -40,35 +38,15 @@ module.exports = {
           key: "id"
         },
         allowNull: false,
-        onDelete: "NO ACTION",
-      },
-      productName:{
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      productDescription:{
-        type: Sequelize.STRING,
-        allowNull: false,
       },
       quantity: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        defaultValue: 1,
       },
-      pricePerUnit:{
+      pricePerUnit: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      orderDate: {
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-      status: {
-        type: Sequelize.STRING,
         allowNull: false
-      },
-      totalAmount: {
-        type: Sequelize.DECIMAL,
-        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -82,8 +60,8 @@ module.exports = {
       }
     }, options);
   },
-  down: async (queryInterface, Sequelize) => {
-    options.tableName = "Orders";
+  async down(queryInterface, Sequelize) {
+    options.tableName = "ProductCartBackups";
     return queryInterface.dropTable(options);
   }
 };
