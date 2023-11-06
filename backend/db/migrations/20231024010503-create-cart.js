@@ -23,13 +23,6 @@ module.exports = {
         },
         onDelete: "CASCADE"
       },
-      // productId: {
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: 'Products',
-      //     key: "id"
-      //   },
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -48,6 +48,8 @@
   display: flex;
   flex: 1;
   padding: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .order-card:last-child {
@@ -69,6 +71,6 @@
 }
 
 
-#col-1 {
-  width: 100px;
+#order-name {
+  min-width: 250px;
 }

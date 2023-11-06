@@ -57,30 +57,35 @@ function StripePaymentSuccess() {
 
 
     useEffect(() => {
+        let cartId;
+
         let productCartArr = Object.values(productCart)
         for (let i = 0; i < productCartArr.length; i++) {
-            let curr = productCartArr[i]
-
-            let orderItem = {
+            const curr = productCartArr[i]
+            cartId = curr.cartId
+            const orderItem = {
                 cartId: curr.cartId,
                 productId: curr.id,
                 productName: allProducts[curr.id]["productName"],
                 productDescription: allProducts[curr.id]["productDescription"],
                 quantity: curr.quantity,
                 pricePerUnit: curr.pricePerUnit,
-            }
+            };
 
-            dispatch(addOrderThunk(orderItem))
+            console.log('booba', orderItem)
+
+            dispatch(addOrderThunk(orderItem));
         }
 
-        // First, delete the stripe session
-        // dispatch(deleteStripeSessionThunk(urlSessionId))
+        // delete the stripe session
+        dispatch(deleteStripeSessionThunk(urlSessionId))
 
         // Once the stripe session is deleted, delete the cart and add a new one. will delete all associated productcart items
-        dispatch(deleteCartThunk()).then(() => {
-            // create new cart for user to use
-            dispatch(addUserCartThunk());
-        })
+        dispatch(deleteCartThunk(cartId))
+
+        // create new cart for user to use
+        dispatch(addUserCartThunk());
+
     }, [productCartLoaded])
 
     return (

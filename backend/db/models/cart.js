@@ -38,9 +38,6 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: "cartId",
                 onDelete: "CASCADE" // delete?
             })
-            Cart.hasMany(models.Order, {
-                foreignKey: "cartId",
-            })
             Cart.hasOne(models.StripeSession, {
                 foreignKey: "cartId",
             })

@@ -54,7 +54,7 @@ function OrderPage() {
       <div className="order-table-header">
         <div className="order-table-cell">Order #</div>
         <div className="order-table-cell">Order Date</div>
-        <div className="order-table-cell">Product Name</div>
+        <div className="order-table-cell" id="order-name">Product Name</div>
         <div className="order-table-cell">Quantity</div>
         <div className="order-table-cell">Price Per Unit</div>
         <div className="order-table-cell">Total</div>
@@ -69,9 +69,9 @@ function OrderPage() {
             <div className="order-info">
               <div className="order-table-cell">{order.cartId}</div>
               <div className="order-table-cell">{formatDate(order.orderDate)}</div>
-              <div className="order-table-cell">{order.productName}</div>
+              <div className="order-table-cell" id="order-name">{order.productName}</div>
               <div className="order-table-cell">{order.quantity}</div>
-              <div className="order-table-cell">{order.pricePerUnit}</div>
+              <div className="order-table-cell">${order.pricePerUnit / 100}</div>
               <div className="order-table-cell">${order.totalAmount / 100}</div>
               <div className="order-table-cell">{order.status.charAt(0).toUpperCase() + order.status.slice(1)}</div>
               {sessionUser?.id === 1 ? (

@@ -103,7 +103,7 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Delete</div>
         <div className="table-cell" id="cart-name">Name</div>
-        <div className="table-cell">Price</div>
+        <div className="table-cell">Price Per Unit</div>
         <div className="table-cell">Quantity</div>
       </div>
       <div>

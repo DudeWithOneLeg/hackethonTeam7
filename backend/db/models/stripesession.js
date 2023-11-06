@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
       })
       StripeSession.belongsTo(models.Cart, {
         foreignKey: "cartId",
-        onDelete: "CASCADE",
       })
     }
   }

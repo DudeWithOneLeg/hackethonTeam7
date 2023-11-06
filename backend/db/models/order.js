@@ -9,18 +9,16 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "userId",
         // onDelete: "NO ACTION"
       })
-      Order.belongsTo(models.Cart, {
-        foreignKey: "cartId",
-        // onDelete: "NO ACTION"
-      })
-      Order.belongsTo(models.Product, {
-        foreignKey: "productId",
-        // onDelete: "NO ACTION"
-      })
     }
   };
 
   Order.init({
+    cartId: {
+      type: DataTypes.INTEGER,
+    },
+    productId: {
+      type: DataTypes.INTEGER,
+    },
     productName: {
       type: DataTypes.STRING,
       allowNull: false,

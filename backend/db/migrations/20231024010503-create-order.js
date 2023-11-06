@@ -26,21 +26,9 @@ module.exports = {
       },
       cartId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Carts',
-          key: "id"
-        },
-        allowNull: false,
-        // onDelete: "NO ACTION",
       },
       productId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Products',
-          key: "id"
-        },
-        allowNull: false,
-        // onDelete: "NO ACTION",
       },
       productName:{
         type: Sequelize.STRING,
