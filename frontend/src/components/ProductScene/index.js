@@ -35,7 +35,7 @@ export default function ProductScene({ product }) {
         />
       </PresentationControls>
       <Html position={[13, 2.5, -8]} center>
-        <div className='product-info'>
+        {loadedProduct && <div className='product-info'>
           <h1>{loadedProduct.productName}</h1>
           <h3>$ {loadedProduct.productPrice / 100}</h3>
           <p>{loadedProduct.productDescription}</p>
@@ -45,7 +45,7 @@ export default function ProductScene({ product }) {
               >
               Add to cart
             </button>
-        </div>
+        </div>}
       </Html>
     </group>
   );
