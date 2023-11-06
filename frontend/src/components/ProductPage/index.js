@@ -52,7 +52,7 @@ export default function ProductsPage() {
                   <li>${product.productPrice}</li>
                 </div>
               </div>
-              <button className="cart-icon"><i class='bx bx-cart'></i></button>
+              <button className="cart-icon"><i className='bx bx-cart'></i></button>
             </div>
           ))}
         </div>
@@ -62,7 +62,7 @@ export default function ProductsPage() {
             onClick={showPrevPage}
             disabled={currentPage === 0}
           >
-            <i class="bx bxs-chevron-left"></i>
+            <i className="bx bxs-chevron-left"></i>
             {/* Previous */}
           </button>
           <button
@@ -71,7 +71,7 @@ export default function ProductsPage() {
             disabled={currentPage === totalPageCount - 1}
           >
             {/* Next */}
-            <i class="bx bxs-chevron-right"></i>
+            <i className="bx bxs-chevron-right"></i>
           </button>
         </div>
       </div>

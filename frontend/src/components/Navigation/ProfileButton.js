@@ -39,7 +39,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu} className="user-icon">
-        <i class="bx bxs-user-circle"></i>
+        <i className="bx bxs-user-circle"></i>
       </button>
       {showMenu && (
         <div className={ulClassName} ref={ulRef}>
@@ -50,7 +50,7 @@ function ProfileButton({ user }) {
             </li> */}
             <li>{user.email}</li>
             <li>
-              
+
               <button className="user-btn">
                 Profile
               </button>

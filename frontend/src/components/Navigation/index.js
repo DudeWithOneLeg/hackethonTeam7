@@ -24,7 +24,7 @@ function Navigation({ isLoaded }) {
       <>
         <li>
           <button onClick={toggleSidebar} className="toggle">
-            <i class="bx bx-menu"></i>
+            <i className="bx bx-menu"></i>
           </button>
           <NavLink
             exact
@@ -45,14 +45,14 @@ function Navigation({ isLoaded }) {
       <>
         <li>
           <button onClick={toggleSidebar} className="toggle">
-            <i class="bx bx-menu"></i>
+            <i className="bx bx-menu"></i>
           </button>
           <NavLink
             exact
             to="/"
             className={`home-btn ${isActive('/') ? 'active' : ''}`}
           >
-            <i class="bx bxs-home"></i>
+            <i className="bx bxs-home"></i>
           </NavLink>
           {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>

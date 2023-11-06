@@ -39,18 +39,20 @@ function StripePaymentSuccess() {
     // useeffect to delete stripe session. Ideally, you'd use webhooks to confirm whether a customer paid for an order. this is just a stop gap
     useEffect(() => {
         if (load && dbSessionId !== undefined && dbSessionId.length > 0) {
+            // first, store the cart order in the order table
+            dispatch()
+
             // First, delete the stripe session
-            dispatch(deleteStripeSessionThunk(urlSessionId)).then(() => {
-                // Once the stripe session is deleted, delete the cart and add a new one. will delete all associated productcart items
-                dispatch(deleteCartThunk()).then(() => {
-                    // create new cart for user to use
-                    dispatch(addUserCartThunk());
-                }).catch((error) => {
-                    console.error("Error:", error);
-                });
+            dispatch(deleteStripeSessionThunk(urlSessionId))
+
+            // Once the stripe session is deleted, delete the cart and add a new one. will delete all associated productcart items
+            dispatch(deleteCartThunk()).then(() => {
+                // create new cart for user to use
+                dispatch(addUserCartThunk());
             }).catch((error) => {
                 console.error("Error:", error);
             });
+
         }
         if (load && dbSessionId !== undefined && dbSessionId.length === 0) {
             history.push('/');

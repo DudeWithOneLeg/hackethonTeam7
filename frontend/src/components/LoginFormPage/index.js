@@ -1,11 +1,13 @@
+import "./LoginForm.css";
+
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-//import "./LoginForm.css";
+import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function LoginFormPage() {
+  const history = useHistory()
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [credential, setCredential] = useState("");
@@ -51,7 +53,7 @@ function LoginFormPage() {
 
   return (
     <>
-      <div className="form-container login">
+      <div className="form-container">
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>
           <div className="form">
@@ -78,33 +80,35 @@ function LoginFormPage() {
               Log In
             </button>
             <hr></hr>
-          <div>
-            <p>
-              Want to create an account?
-              <NavLink to={"/signup"}>
-                <button type="button" className="demo-button">
-                  Login
+            <div>
+              <p>
+                Want to create an account?
+                <NavLink to={"/signup"}>
+                  <button type="button" className="demo-button">
+                    Sign Up
+                  </button>
+                </NavLink>
+              </p>
+              <p>
+                <button
+                  type="button"
+                  className="demo-button"
+                  onClick={handleAdmin}
+                >
+                  Demo Admin
                 </button>
-              </NavLink>
-            </p>
-            <p>
-              Demo
-              <button
-                type="button"
-                className="demo-button"
-                onClick={handleAdmin}
-              >
-                Admin
-              </button>
-              <button
-                type="button"
-                className="demo-button"
-                onClick={handleCustomer}
-              >
-                Customer
-              </button>
-            </p>
-          </div>
+                <button
+                  type="button"
+                  className="demo-button"
+                  onClick={handleCustomer}
+                >
+                  Demo Customer
+                </button>
+              </p>
+            </div>
+            <div>
+              <button onClick={() => history.push('/')} id="cancel-button">Cancel</button>
+            </div>
           </div>
         </form>
       </div>

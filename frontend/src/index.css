@@ -64,6 +64,7 @@ html, body, #root {
     background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background for the blur effect */
     border-radius: 10px;
     text-align: center;
-    width: 55vw; /* Set your desired maximum width */
+    /* Set your desired maximum width */
+    /* width: 55vw;  */
     margin: 0 auto; /* Center the grid horizontally */
 }
