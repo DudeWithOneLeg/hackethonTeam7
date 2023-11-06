@@ -29,7 +29,6 @@ function OrderPage() {
     dispatch(loadAllUsersThunk());
   }, [dispatch]);
 
-
   // Function to format the date
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -43,6 +42,8 @@ function OrderPage() {
   if (!sessionUser) {
     return <Redirect to="/login" />
   }
+
+  console.log('booba', orderObj)
 
   return (
     <div className="order-table">

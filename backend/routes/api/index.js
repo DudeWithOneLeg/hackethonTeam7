@@ -2,8 +2,7 @@
 const router = require('express').Router();
 
 const { setTokenCookie } = require('../../utils/auth.js');
-const { User } = require('../../db/models');
-const { restoreUser, requireAuth } = require('../../utils/auth.js');
+const { restoreUser } = require('../../utils/auth.js');
 
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
@@ -16,6 +15,7 @@ const shippingRouter = require('./shippingaddresses.js')
 const billingRouter = require('./billingaddresses.js')
 const cartRouter = require('./carts.js')
 const orderRouter = require("./orders.js")
+// const orderCartRouter = require('./ordercart.js')
 const paymentRouter = require('./payments.js')
 const productCartRouter = require("./productcart.js")
 const stripeRouter = require('./stripe.js')
@@ -35,6 +35,7 @@ router.use('/shipping', shippingRouter);
 router.use('/billing', billingRouter);
 router.use('/cart', cartRouter);
 router.use('/order', orderRouter);
+// router.use('/ordercart', orderCartRouter)
 router.use('/payment', paymentRouter);
 router.use("/stripesession", stripeSessionRouter)
 router.use("/stripe", stripeRouter)

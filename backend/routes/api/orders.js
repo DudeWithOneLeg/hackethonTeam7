@@ -82,6 +82,14 @@ router.get("/date/:dateString", restoreUser, requireAuth, isAdmin, async (req, r
     }
 });
 
+router.post("/", restoreUser, requireAuth, async (req, res) => {
+    // let {}
+
+    // try {
+    //     const newOrder
+    // }
+})
+
 
 // delete a order
 router.delete('/:orderId', restoreUser, requireAuth, async (req, res, next) => {

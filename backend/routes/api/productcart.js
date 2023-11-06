@@ -1,14 +1,10 @@
 const express = require('express')
 const router = express.Router();
 
-const { check } = require('express-validator');
-
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Product, Cart, ProductCart } = require("../../db/models");
+const { Product, Cart, ProductCart } = require("../../db/models");
 const { internalServerError, notFoundError, notAuthToView, notAuthToDelete, notAuthToEdit } = require('../../utils/errorFunc');
 const { isAdmin } = require('../../utils/authorization');
-const { route } = require('./products');
-
 
 // Get all productCarts
 router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {

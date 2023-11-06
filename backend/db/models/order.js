@@ -8,13 +8,19 @@ module.exports = (sequelize, DataTypes) => {
       Order.belongsTo(models.User, {
         foreignKey: "userId"
       })
+      // Order.belongsToMany(models.Product, {
+      //   through: models.OrderCart,
+      //   foreignKey: "orderId"
+      // })
+
+      // Order.hasMany(models.OrderCart, {
+      //   foreignKey: "orderId",
+      //   onDelete: "CASCADE"
+      // })
     }
   };
 
   Order.init({
-    // orderProducts: {
-    //   type: DataTypes.
-    // },
     orderDate: {
       type: DataTypes.DATE,
       defaultValue: new DATEONLY()
@@ -24,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: "processing"
     },
     totalAmount: {
-      type: DataTypes.DECIMAL(10, 2)
+      type: DataTypes.INTEGER
     }
   }, {
     sequelize,

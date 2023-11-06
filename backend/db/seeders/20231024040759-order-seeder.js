@@ -14,37 +14,37 @@ module.exports = {
         userId: 2,
         orderDate: new Date("2023-01-14"),
         status: "complete",
-        totalAmount: 2199.97
+        totalAmount: 219997
       },
       {
         userId: 2,
         orderDate: new Date("2023-02-02"),
         status: "complete",
-        totalAmount: 2799.98
+        totalAmount: 279998
       },
       {
         userId: 2,
         orderDate: new Date("2023-03-24"),
         status: "complete",
-        totalAmount: 599.99,
+        totalAmount: 59999,
       },
       {
         userId: 3,
         orderDate: new Date("2023-05-12"),
         status: "complete",
-        totalAmount: 4499.99,
+        totalAmount: 449999,
       },
       {
         userId: 3,
         orderDate: new Date("2023-07-10"),
         status: "complete",
-        totalAmount: 3299.98,
+        totalAmount: 329998,
       },
       {
         userId: 4,
         orderDate: new Date("2023-10-15"),
         status: "processing",
-        totalAmount: 5499.99,
+        totalAmount: 549999,
       },
     ]
 

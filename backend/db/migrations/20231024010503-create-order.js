@@ -23,6 +23,11 @@ module.exports = {
         },
         allowNull: false,
       },
+      orderDate: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        allowNull: false
+      },
       status: {
         type: Sequelize.STRING,
         allowNull: false
@@ -30,11 +35,6 @@ module.exports = {
       totalAmount: {
         type: Sequelize.DECIMAL,
         allowNull: false,
-      },
-      orderDate: {
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-        allowNull: false
       },
       createdAt: {
         allowNull: false,
