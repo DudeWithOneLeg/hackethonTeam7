@@ -6,10 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       StripeSession.belongsTo(models.User, {
         foreignKey: "userId",
+        onDelete: "CASCADE",
       })
       StripeSession.belongsTo(models.Cart, {
         foreignKey: "cartId",
-        onDelete: "CASCADE"
+        onDelete: "CASCADE",
       })
     }
   }

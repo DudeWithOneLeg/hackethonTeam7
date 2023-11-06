@@ -22,7 +22,7 @@ module.exports = {
           key: "id"
         },
         allowNull: false,
-        onDelete: "NO ACTION",
+        // onDelete: "NO ACTION",
       },
       cartId: {
         type: Sequelize.INTEGER,
@@ -31,7 +31,7 @@ module.exports = {
           key: "id"
         },
         allowNull: false,
-        onDelete: "NO ACTION",
+        // onDelete: "NO ACTION",
       },
       productId: {
         type: Sequelize.INTEGER,
@@ -40,7 +40,7 @@ module.exports = {
           key: "id"
         },
         allowNull: false,
-        onDelete: "NO ACTION",
+        // onDelete: "NO ACTION",
       },
       productName:{
         type: Sequelize.STRING,

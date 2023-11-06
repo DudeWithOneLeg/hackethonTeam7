@@ -50,9 +50,9 @@ function StripePaymentSuccess() {
                 setProductCartLoaded(true)
             })
         }
-        if (load && dbSessionId !== undefined && dbSessionId.length === 0) {
-            history.push('/');
-        }
+        // if (load && dbSessionId !== undefined && dbSessionId.length === 0) {
+        //     history.push('/');
+        // }
     }, [load, dbSessionId]);
 
 
@@ -74,7 +74,7 @@ function StripePaymentSuccess() {
         }
 
         // First, delete the stripe session
-        dispatch(deleteStripeSessionThunk(urlSessionId))
+        // dispatch(deleteStripeSessionThunk(urlSessionId))
 
         // Once the stripe session is deleted, delete the cart and add a new one. will delete all associated productcart items
         dispatch(deleteCartThunk()).then(() => {

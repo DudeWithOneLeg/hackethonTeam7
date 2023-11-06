@@ -5,27 +5,22 @@ module.exports = (sequelize, DataTypes) => {
     class Cart extends Model {
         static associate(models) {
             Cart.belongsTo(models.User, {
-                foreignKey: "userId"
+                foreignKey: "userId",
+                onDelete: "CASCADE"
             })
-            Cart.belongsToMany(models.Product, {
-                through: models.ProductCart,
-                foreignKey: "cartId"
-            })
+            // Cart.belongsToMany(models.Product, {
+            //     through: models.ProductCart,
+            //     foreignKey: "cartId"
+            // })
 
             Cart.hasMany(models.ProductCart, {
                 foreignKey: "cartId",
-                onDelete: "CASCADE"
             })
             Cart.hasMany(models.Order, {
-                foreignKey: "cartId",
-                onDelete: "NO ACTION"
-            })
-            Cart.hasMany(models.ProductCartBackup, {
                 foreignKey: "cartId",
             })
             Cart.hasOne(models.StripeSession, {
                 foreignKey: "cartId",
-                onDelete: "CASCADE"
             })
         }
 

@@ -64,7 +64,7 @@ export const deleteCart = (cartAddress) => {
 
 export const deleteCartThunk = () => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/cart/`, {
+        const res = await csrfFetch(`/api/cart`, {
             method: "DELETE"
         })
 

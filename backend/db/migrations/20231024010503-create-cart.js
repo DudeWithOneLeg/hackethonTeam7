@@ -18,12 +18,18 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Users',
+          model: "Users",
           key: "id"
         },
-        onDelete: "CASCADE",
-        allowNull: false,
+        onDelete: "CASCADE"
       },
+      // productId: {
+      //   type: Sequelize.INTEGER,
+      //   references: {
+      //     model: 'Products',
+      //     key: "id"
+      //   },
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -7,15 +7,15 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Order.belongsTo(models.User, {
         foreignKey: "userId",
-        onDelete: "NO ACTION"
+        // onDelete: "NO ACTION"
       })
       Order.belongsTo(models.Cart, {
         foreignKey: "cartId",
-        onDelete: "NO ACTION"
+        // onDelete: "NO ACTION"
       })
       Order.belongsTo(models.Product, {
         foreignKey: "productId",
-        onDelete: "NO ACTION"
+        // onDelete: "NO ACTION"
       })
     }
   };

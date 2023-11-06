@@ -4,7 +4,7 @@ const router = express.Router();
 const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Cart, Order, ProductCart } = require("../../db/models");
+const { User, Cart } = require("../../db/models");
 const { isAdmin } = require('../../utils/authorization');
 const { notFoundError, notAuthToEdit, notAuthToDelete, internalServerError } = require('../../utils/errorFunc');
 
@@ -75,11 +75,14 @@ router.delete("/", restoreUser, requireAuth, async (req, res) => {
             }
         })
 
+
+
         if (!userCart) {
             return notFoundError(res, "Cart")
         }
 
         await userCart.destroy()
+
         res.status(200).json({ message: "Cart successfully deleted", statusCode: 200 });
     } catch (err) {
         return internalServerError(res, err)
