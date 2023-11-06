@@ -117,7 +117,11 @@ function CartPage() {
         <div className="table-cell">Quantity</div>
       </div>
       <div>
-        {Object.values(cartItems).map((cart) => (
+        {Object.values(cartItems).map((cart) => {
+          console.log(cart.id)
+
+          return (
+
           <div className="cart-card" key={cart.id}>
             <div className="cart-info" id="cart-section">
               <section className="table-cell">
@@ -142,7 +146,7 @@ function CartPage() {
               </section>
             </div>
           </div>
-        ))}
+        )})}
       </div>
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>

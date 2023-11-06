@@ -205,8 +205,9 @@ const productReducer = (state = initialProduct, action) => {
                 let curr = action.payload.data[i]
                 product[curr.id] = curr
             }
-            newState.all = product
-            return newState
+
+            console.log(product)
+            return {...newState, all: {...product}}
         case ADD_PRODUCT:
             newState[action.payload.id] = action.payload
             return newState;
