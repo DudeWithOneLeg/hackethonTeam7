@@ -6,6 +6,7 @@ import "./index.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import SideBar from "./SideBar";
 
+
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -35,6 +36,7 @@ function Navigation({ isLoaded }) {
           </NavLink>
           {isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen} />}
         </li>
+        
         <li>
           <ProfileButton user={sessionUser} />
         </li>

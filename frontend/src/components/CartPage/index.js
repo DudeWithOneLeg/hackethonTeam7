@@ -26,20 +26,30 @@ function CartPage() {
     });
 
     dispatch(clearShipping());
-    dispatch(clearProduct());
     dispatch(clearOrder());
   }, [dispatch]);
 
   const user = useSelector((state) => state.session.user);
   const userCart = useSelector((state) => state.cart);
-  const allProducts = useSelector((state) => state.product);
+  const allProducts = useSelector((state) => state.product.all);
   const cartItems = useSelector((state) => state.productCart);
   const shippingAddress = useSelector((state) => state.shippingAddress);
   const preppedShippingAddress = Object.values(shippingAddress)[0];
 
-  if (!user) {
-    return history.push("/login");
-  }
+  console.log("cart items", allProducts)
+
+//   console.log("booba", preppedShippingAddress);
+  // console.log('booba', cartItems)
+
+  // Function to format the date
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const month = date.toLocaleString("default", { month: "short" }); // 'short' gives the abbreviated month name
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return `${month} ${day}, ${year}`;
+  };
 
   const checkout = async (e) => {
     try {
@@ -137,13 +147,11 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>
       </div>
-      {preppedShippingAddress && (
+      {preppedShippingAddress &&
         <div className="table-cell">
-          {preppedShippingAddress.shippingAddress}{" "}
-          {preppedShippingAddress.shippingState}{" "}
-          {preppedShippingAddress.shippingZipCode}
-        </div>
-      )}
+        {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
+      </div>
+      }
       <div>
         <button
           onClick={(e) => {
@@ -151,7 +159,7 @@ function CartPage() {
           }}
           id="checkout-button"
         >
-          Proceed to Checkout
+          Checkout
         </button>
       </div>
     </div>
