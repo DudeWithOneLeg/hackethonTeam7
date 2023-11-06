@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearOrder } from "../../store/order";
 import { useHistory, } from "react-router-dom/cjs/react-router-dom.min";
-import { editProductCartThunk, loadUserProductCartThunk } from "../../store/productcart";
+import { deleteProductCartThunk, editProductCartThunk, loadUserProductCartThunk } from "../../store/productcart";
 import { clearProduct, loadAllProductsThunk } from "../../store/product";
 import { clearShipping, loadCurrentShippingThunk, } from "../../store/shippingaddress";
 import { csrfFetch } from "../../store/csrf";
@@ -19,10 +19,6 @@ function CartPage() {
 
   useEffect(() => {
     dispatch(loadUserProductCartThunk())
-  }, [])
-
-  useEffect(() => {
-    // dispatch(loadUserProductCartThunk());
     dispatch(loadUserCartThunk());
     dispatch(loadAllProductsThunk());
     dispatch(loadCurrentShippingThunk()).then(() => {
@@ -41,12 +37,9 @@ function CartPage() {
   const shippingAddress = useSelector((state) => state.shippingAddress);
   const preppedShippingAddress = Object.values(shippingAddress)[0];
 
-  // console.log('booba', cartItems)
-
   if (!user) {
     return history.push('/login')
   }
-
 
   const checkout = async (e) => {
     try {
@@ -83,23 +76,23 @@ function CartPage() {
 
   const addQuantity = async (e, cart) => {
     e.preventDefault()
-    const quantity = 1; // You can adjust the quantity as needed
+    const quantity = 1;
     dispatch(editProductCartThunk(cart.id, quantity));
   }
 
   const subtractQuantity = async (e, cart) => {
     e.preventDefault()
-    const quantity = -1; // You can adjust the quantity as needed
-
-    console.log("booba", cart)
+    const quantity = -1;
     if (cart.quantity > 0) {
       dispatch(editProductCartThunk(cart.id, quantity));
     }
   }
 
-  //   const clearProduct = async (e) => {
+  const deleteCartItem = async (e, cart) => {
+    e.preventDefault()
 
-  //   }
+    dispatch(deleteProductCartThunk(cart.id))
+  }
 
   return load ? (
     <div className="cart-table">
@@ -109,7 +102,7 @@ function CartPage() {
       <h1 className="container-header">Cart</h1>
       <div className="table-header">
         <div className="table-cell">Delete</div>
-        <div className="table-cell">Name</div>
+        <div className="table-cell" id="cart-name">Name</div>
         <div className="table-cell">Price</div>
         <div className="table-cell">Quantity</div>
       </div>
@@ -118,27 +111,23 @@ function CartPage() {
           <div className="cart-card" key={cart.id}>
             <div className="cart-info" id="cart-section">
               <section className="table-cell">
-                <button>
+                <button className="pointer" id="delete-cart-item-button" onClick={(e) => deleteCartItem(e, cart)}>
                   <i className="bx bxs-trash"></i>
                 </button>
               </section>
-              <section className="table-cell">
+              <section className="table-cell" id="cart-name">
                 {allProducts[cart.id]?.productName}
               </section>
               <section className="table-cell">
                 ${cart.pricePerUnit / 100}
               </section>
               <section className="table-cell" id="cart-quantity">
-                <aside id="quantity-plus">
-                  <button onClick={(e) => addQuantity(e, cart)}>
-                    <i className="bx bx-plus"></i>
-                  </button>
+                <aside className="pointer quantity-change" onClick={(e) => addQuantity(e, cart)}>
+                  <i className="bx bx-plus"></i>
                 </aside>
                 <aside>{cart.quantity}</aside>
-                <aside id="quantity-minus">
-                  <button onClick={(e) => subtractQuantity(e, cart)}>
-                    <i className="bx bx-minus"></i>
-                  </button>
+                <aside className="pointer quantity-change" onClick={(e) => subtractQuantity(e, cart)}>
+                  <i className="bx bx-minus"></i>
                 </aside>
               </section>
             </div>

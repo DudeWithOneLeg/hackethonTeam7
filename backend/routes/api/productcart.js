@@ -141,7 +141,7 @@ router.delete("/:productCartId", restoreUser, requireAuth, async (req, res) => {
         }
 
         await productCart.destroy()
-        res.status(200).json({ message: "Product Cart successfully deleted", statusCode: 200 })
+        res.status(200).json({ data: productCart })
     } catch (err) {
         return internalServerError(res, err)
     }
