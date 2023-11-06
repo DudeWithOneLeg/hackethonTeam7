@@ -10,12 +10,6 @@ let stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 // route for processing stripe payment
 router.post("/", restoreUser, requireAuth, async (req, res) => {
     try {
-        const userCart = await Cart.findOne({
-            where: {
-                userId: req.user.id
-            }
-        })
-
         const productCart = await ProductCart.findAll({
             where: {
                 userId: req.user.id

@@ -46,20 +46,10 @@ function CartPage() {
   const shippingAddress = useSelector((state) => state.shippingAddress);
   const preppedShippingAddress = Object.values(shippingAddress)[0];
 
-  console.log("cart items", cartItems)
+  if (!user) {
+    return history.push('/login')
+  }
 
-//   console.log("booba", preppedShippingAddress);
-  // console.log('booba', cartItems)
-
-  // Function to format the date
-  const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-    const month = date.toLocaleString("default", { month: "short" }); // 'short' gives the abbreviated month name
-    const day = date.getDate();
-    const year = date.getFullYear();
-
-    return `${month} ${day}, ${year}`;
-  };
 
   const checkout = async (e) => {
     try {
@@ -100,16 +90,19 @@ function CartPage() {
     dispatch(addProductCartThunk(productId, quantity));
   }
 
-//   const subtractQuantity = async (e) => {
+  //   const subtractQuantity = async (e) => {
 
-//   }
+  //   }
 
-//   const clearProduct = async (e) => {
+  //   const clearProduct = async (e) => {
 
-//   }
+  //   }
 
   return load ? (
     <div className="cart-table">
+      <div className="back-button" onClick={() => history.push('/')}>
+        <i className='bx bx-x-circle'></i>
+      </div>
       <h1 className="container-header">Cart</h1>
       <div className="table-header">
         <div className="table-cell">Delete</div>
@@ -152,10 +145,10 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>
       </div>
-      {preppedShippingAddress && 
+      {preppedShippingAddress &&
         <div className="table-cell">
-        {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
-      </div>
+          {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
+        </div>
       }
       <div>
         <button
@@ -164,7 +157,7 @@ function CartPage() {
           }}
           id="checkout-button"
         >
-          Checkout
+          Proceed to Checkout
         </button>
       </div>
     </div>

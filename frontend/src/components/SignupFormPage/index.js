@@ -5,12 +5,13 @@ import * as sessionActions from "../../store/session";
 import { Provider } from "react-redux";
 import configureStore from "../../store";
 import "./index.css";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const store = configureStore();
 
 function SignupFormPage() {
   const dispatch = useDispatch();
+  const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -170,6 +171,9 @@ function SignupFormPage() {
                 Customer
               </button>
             </p>
+          </div>
+          <div>
+            <button onClick={() => history.push('/')} id="cancel-button">Cancel</button>
           </div>
         </div>
       </form>
