@@ -65,8 +65,7 @@ router.post('/', restoreUser, requireAuth, async (req, res) => {
 
 
 
-// clear current user's cart for when an order is placed, then create a new cart for user
-// this route also functions as the POST for new Order
+// delete current user's cart
 router.delete("/", restoreUser, requireAuth, async (req, res) => {
     try {
         const userCart = await Cart.findOne({
