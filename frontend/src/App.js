@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
 import { Canvas, axesHelper } from "@react-three/fiber";
+import { Loader } from "@react-three/drei";
 import OrderPage from "./components/OrderPage";
 import ReviewPage from "./components/ReviewPage";
 import ProductsPage from "./components/ProductPage";
@@ -55,14 +56,11 @@ function App() {
                 <PaymentCancel />
               </Route>
               <Canvas dpr={[1, 2]} shadows>
-                {/* <directionalLightHelper light={dirLight.current}/> */}
-                {/* <axesHelper args={[2]}/>
-              <gridHelper /> */}
                 <color attach="background" args={["#213547"]} />
-                {/* <fog attach="fog" args={["#213547", 10, 20]} /> */}
                 <Homespace />
               </Canvas>
             </Suspense>
+              <Loader />
           </Route>
         </Switch>
       )}
