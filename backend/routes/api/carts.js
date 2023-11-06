@@ -4,7 +4,7 @@ const router = express.Router();
 const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Cart, Order, ProductCart } = require("../../db/models");
+const { User, Cart } = require("../../db/models");
 const { isAdmin } = require('../../utils/authorization');
 const { notFoundError, notAuthToEdit, notAuthToDelete, internalServerError } = require('../../utils/errorFunc');
 
@@ -67,16 +67,16 @@ router.post('/', restoreUser, requireAuth, async (req, res) => {
 
 // clear current user's cart for when an order is placed, then create a new cart for user
 // this route also functions as the POST for new Order
-router.delete("/", restoreUser, requireAuth, async (req, res) => {
+router.delete("/:cartId", restoreUser, requireAuth, async (req, res) => {
     try {
-        const userCart = await Cart.findOne({
-            where: {
-                userId: req.user.id
-            }
-        })
+        const userCart = await Cart.findByPk(req.params.cartId)
 
         if (!userCart) {
             return notFoundError(res, "Cart")
+        }
+
+        if (userCart.userId !== req.user.id && req.user.id !== 1) {
+            return notAuthToDelete(res, "cart")
         }
 
         await userCart.destroy()

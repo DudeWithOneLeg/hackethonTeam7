@@ -105,3 +105,13 @@ hr {
     padding: 10px 10px;
     border-radius: 10px;
 }
+
+.signup-back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+
+    border: none;
+    font-size: 25px;
+}

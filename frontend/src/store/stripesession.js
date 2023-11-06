@@ -99,12 +99,12 @@ const stripeSessionReducer = (state = initialStripeSession, action) => {
     const newState = { ...state }
     switch (action.type) {
         case LOAD_STRIPE_SESSION:
-            return action.payload
+            return action.payload.data
         case ADD_STRIPE_SESSION:
-            newState[action.payload.id] = action.payload
+            newState[action.payload.data.id] = action.payload.data
             return newState;
         case DELETE_STRIPE_SESSION:
-            delete newState[action.payload.id]
+            delete newState[action.payload.data.id]
             return newState;
         case CLEAR_STRIPE_SESSION:
             return initialStripeSession

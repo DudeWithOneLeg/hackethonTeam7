@@ -29,6 +29,10 @@
   min-width: 125px;
 }
 
+#cart-name {
+  min-width: 250px;
+}
+
 .cart-card {
   display: flex;
   border-bottom: 1px solid #000;
@@ -75,4 +79,22 @@
   margin: 20px;
   padding: 10px 10px;
   border-radius: 10px;
+}
+
+.quantity-change {
+  font-size: 20px;
+}
+
+.quantity-change:hover {
+  background-color: rgb(208, 208, 215);
+}
+
+#delete-cart-item-button {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+#delete-cart-item-button:hover {
+  background-color: rgb(208, 208, 215);
 }
