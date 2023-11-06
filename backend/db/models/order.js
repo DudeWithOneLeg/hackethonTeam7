@@ -1,6 +1,6 @@
 
 'use strict';
-const { Model } = require('sequelize');
+const { Model, DATEONLY } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
@@ -12,8 +12,12 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Order.init({
+    // orderProducts: {
+    //   type: DataTypes.
+    // },
     orderDate: {
-      type: DataTypes.DATE
+      type: DataTypes.DATE,
+      defaultValue: new DATEONLY()
     },
     status: {
       type: DataTypes.STRING,

@@ -42,11 +42,18 @@ function SideBar({ isSidebarOpen }) {
                 Reviews
               </button>
             </NavLink>
+            <NavLink to="/orders">
+              <button
+                className={`nav-btn ${isActive("/orders") ? "active" : ""}`}
+              >
+                Orders
+              </button>
+            </NavLink>
             <NavLink to="/cart">
               <button
                 className={`nav-btn ${isActive("/cart") ? "active" : ""}`}
               >
-                <i class="bx bx-cart"></i>
+                <i className="bx bx-cart"></i>
                 Cart
               </button>
             </NavLink>

@@ -65,19 +65,18 @@ export default function ProductScene({ product }) {
         />
       </PresentationControls>
       <Html position={[13, 2.5, -8]} center>
-        <div className="product-info">
+        {loadedProduct && <div className='product-info'>
           <h1>{loadedProduct.productName}</h1>
           <div className="product-btn">
             <h3>$ {loadedProduct.productPrice / 100}</h3>
             <h3>Quantity: {loadedProduct.quantity}</h3>
           </div>
           <p>{loadedProduct.productDescription}</p>
-          <div >
+          <div>
             <button onClick={addToCart} className="add-product-btn">
               Add to cart
             </button>
           </div>
-          {/* <CreateReview /> */}
           <div>
             <button
               onClick={toggleReviewTextarea}
@@ -119,7 +118,7 @@ export default function ProductScene({ product }) {
               </form>
             )}
           </div>
-        </div>
+        </div>}
       </Html>
     </group>
   );
