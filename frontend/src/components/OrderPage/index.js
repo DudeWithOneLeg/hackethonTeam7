@@ -3,11 +3,12 @@ import "./OrderPage.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearOrder, loadAllOrdersThunk, loadUserOrdersThunk } from "../../store/order";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { Redirect, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { loadAllUsersThunk } from "../../store/user";
 
 function OrderPage() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [isLoaded, setIsLoaded] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
   const orderObj = useSelector((state) => state.order);
@@ -44,7 +45,10 @@ function OrderPage() {
   }
 
   return (
-    <div className="container order">
+    <div className="order-table">
+      <div className="order-back-button" onClick={() => history.push('/')}>
+        <i className='bx bx-x-circle'></i>
+      </div>
       <h1 className="container-header">Orders</h1>
       <div className="table-header">
         <div className="table-cell">Order #</div>

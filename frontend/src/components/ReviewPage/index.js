@@ -55,7 +55,7 @@ function ReviewPage() {
       setTransform(transform - (45 / 100) * window.innerWidth + 6);
     }
   };
-  
+
   const showPrevPage = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
@@ -92,7 +92,7 @@ function ReviewPage() {
         </div>
         <div className="pagination">
           <button className="arrow left" onClick={showPrevPage} disabled={currentPage === 0}>
-            <i class="bx bxs-chevron-left"></i>
+            <i className="bx bxs-chevron-left"></i>
             {/* Previous */}
           </button>
           <button
@@ -101,7 +101,7 @@ function ReviewPage() {
             disabled={currentPage === totalPageCount - 1}
           >
             {/* Next */}
-            <i class="bx bxs-chevron-right"></i>
+            <i className="bx bxs-chevron-right"></i>
           </button>
         </div>
       </div>

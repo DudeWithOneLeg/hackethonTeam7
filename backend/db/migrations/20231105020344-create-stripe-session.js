@@ -18,10 +18,10 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Users",
+          model: 'Users',
           key: "id"
         },
-        allowNull: false
+        allowNull: false,
       },
       cartId: {
         type: Sequelize.INTEGER,
@@ -48,7 +48,7 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
-    });
+    }, options);
   },
   async down(queryInterface, Sequelize) {
     options.tableName = "StripeSessions";

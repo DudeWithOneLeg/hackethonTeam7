@@ -1,7 +1,8 @@
 .order-table {
   position: absolute;
-  top: 10%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   backdrop-filter: blur(10px);
   /* Apply a blur effect to the background */
@@ -9,7 +10,7 @@
   /* Semi-transparent white background for the blur effect */
   border-radius: 10px;
   text-align: center;
-  width: 55vw;
+  max-width: 800px;
   /* Set your desired maximum width */
   margin: 0 auto;
   /* Center the grid horizontally */
@@ -47,4 +48,15 @@
   /* Remove the line under the last order */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+
+.order-back-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+
+  border: none;
+  font-size: 25px;
 }

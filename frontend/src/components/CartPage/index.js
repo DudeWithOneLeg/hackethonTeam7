@@ -100,7 +100,7 @@ function CartPage() {
 
   return load ? (
     <div className="cart-table">
-      <div className="back-button" onClick={() => history.push('/')}>
+      <div className="cart-back-button" onClick={() => history.push('/')}>
         <i className='bx bx-x-circle'></i>
       </div>
       <h1 className="container-header">Cart</h1>
