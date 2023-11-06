@@ -91,27 +91,25 @@ export const editProductCart = (productCategory) => {
     }
 }
 
-
 // thunk action to edit productCart
-export const editProductCartThunk = (productId, newCategories) => async (dispatch) => {
+export const editProductCartThunk = (productCartId, quantity) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/productcart/${productId}`, {
+        const res = await csrfFetch(`/api/productcart/${productCartId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ categories: newCategories }),
+            body: JSON.stringify({ quantity }),
         });
 
         if (res.ok) {
-            const newProductCart = await res.json()
-            dispatch(editProductCart(newProductCart))
-            return newProductCart
+            const updatedPCQuantity = await res.json()
+            dispatch(editProductCart(updatedPCQuantity))
         } else {
-            console.error(`Failed to edit productCart of product ${productId}:`, res.status, res.statusText);
+            console.error(`Failed to edit productCart ${productCartId} quantity:`, res.status, res.statusText);
         }
     } catch (err) {
-        console.error('An error occurred while editing new productCategory:', err);
+        console.error(`An error occurred while productCart ${productCartId} quantity:`, err);
     }
 }
 
@@ -172,7 +170,7 @@ const productCartReducer = (state = initialProduct, action) => {
             newState[action.payload.id] = action.payload.data
             return newState;
         case EDIT_PRODUCT_CART:
-            newState[action.payload.id] = action.payload.data;
+            newState[action.payload.data.id] = action.payload.data;
             return newState;
         case DELETE_PRODUCT_CART:
             delete newState[action.payload.id]

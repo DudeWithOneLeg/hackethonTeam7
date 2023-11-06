@@ -68,3 +68,11 @@ html, body, #root {
     /* width: 55vw;  */
     margin: 0 auto; /* Center the grid horizontally */
 }
+
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* Mouse Stuff */
+
+.pointer:hover {
+    cursor: pointer;
+}

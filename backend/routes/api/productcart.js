@@ -100,13 +100,15 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
 })
 
 
-// edit a product cart. Only if the user owns that product cart row or the user is the Admin
+// edit a product cart quantity. Only if the user owns that product cart row or the user is the Admin
 router.put('/:productCartId', restoreUser, requireAuth, async (req, res) => {
-    const { quantity } = req.body
 
     try {
+        const productCartId = req.params.productCartId
+        const { quantity } = req.body
+
         // Find the ProductCart by its id
-        const productCart = await ProductCart.findByPk(req.params.productCartId);
+        const productCart = await ProductCart.findByPk(productCartId);
 
         if (!productCart) {
             return notFoundError(res, "Product Cart")
@@ -116,7 +118,7 @@ router.put('/:productCartId', restoreUser, requireAuth, async (req, res) => {
             return notAuthToEdit(res, "product cart")
         }
 
-        productCart.quantity = quantity;
+        productCart.quantity += quantity;
         await productCart.save();
 
         res.status(201).json({ data: productCart })

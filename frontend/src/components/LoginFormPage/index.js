@@ -54,6 +54,9 @@ function LoginFormPage() {
   return (
     <>
       <div className="form-container">
+        <div className="login-back-button pointer" onClick={() => history.push('/')}>
+          <i className='bx bx-x-circle'></i>
+        </div>
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>
           <div className="form">
@@ -105,9 +108,6 @@ function LoginFormPage() {
                   Demo Customer
                 </button>
               </p>
-            </div>
-            <div>
-              <button onClick={() => history.push('/')} id="cancel-button">Cancel</button>
             </div>
           </div>
         </form>

@@ -46,7 +46,7 @@ function OrderPage() {
 
   return (
     <div className="order-table">
-      <div className="order-back-button" onClick={() => history.push('/')}>
+      <div className="order-back-button pointer" onClick={() => history.push('/')}>
         <i className='bx bx-x-circle'></i>
       </div>
       <h1 className="container-header">Orders</h1>

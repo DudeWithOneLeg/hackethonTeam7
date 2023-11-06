@@ -78,6 +78,9 @@ function SignupFormPage() {
   return (
     <div className="form-container signup">
       {/* <h2>Project: Impossible</h2> */}
+      <div className="signup-back-button pointer" onClick={() => history.push('/')}>
+        <i className='bx bx-x-circle'></i>
+      </div>
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div className="form">
