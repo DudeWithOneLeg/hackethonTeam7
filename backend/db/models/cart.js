@@ -3,21 +3,43 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
     class Cart extends Model {
+        // static associate(models) {
+        //     Cart.belongsTo(models.User, {
+        //         foreignKey: "userId",
+        //         onDelete: "CASCADE"
+        //     })
+        //     // Cart.belongsToMany(models.Product, {
+        //     //     through: models.ProductCart,
+        //     //     foreignKey: "cartId"
+        //     // })
+
+        //     Cart.hasMany(models.ProductCart, {
+        //         foreignKey: "cartId",
+        //     })
+        //     Cart.hasMany(models.Order, {
+        //         foreignKey: "cartId",
+        //     })
+        //     Cart.hasOne(models.StripeSession, {
+        //         foreignKey: "cartId",
+        //     })
+        // }
+
         static associate(models) {
             Cart.belongsTo(models.User, {
-                foreignKey: "userId"
-            })
-            Cart.hasMany(models.ProductCart, {
-                foreignKey: "cartId",
+                foreignKey: "userId",
                 onDelete: "CASCADE"
             })
             Cart.belongsToMany(models.Product, {
                 through: models.ProductCart,
                 foreignKey: "cartId"
             })
+
+            Cart.hasMany(models.ProductCart, {
+                foreignKey: "cartId",
+                onDelete: "CASCADE" // delete?
+            })
             Cart.hasOne(models.StripeSession, {
                 foreignKey: "cartId",
-                onDelete: "CASCADE"
             })
         }
 

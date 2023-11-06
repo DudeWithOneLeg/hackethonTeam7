@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   class Payment extends Model {
     static associate(models) {
       Payment.belongsTo(models.User), {
-        foreignKey: "userId"
+        foreignKey: "userId",
+        onDelete: "CASCADE"
       }
     }
   };

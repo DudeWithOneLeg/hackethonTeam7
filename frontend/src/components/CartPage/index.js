@@ -1,24 +1,12 @@
+import "./CartPage.css";
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  clearOrder,
-  loadAllOrdersThunk,
-  loadUserOrdersThunk,
-} from "../../store/order";
-import "./CartPage.css";
-import {
-  Redirect,
-  useHistory,
-} from "react-router-dom/cjs/react-router-dom.min";
-import {
-  addProductCartThunk,
-  loadUserProductCartThunk,
-} from "../../store/productcart";
+import { clearOrder } from "../../store/order";
+import { useHistory, } from "react-router-dom/cjs/react-router-dom.min";
+import { deleteProductCartThunk, editProductCartThunk, loadUserProductCartThunk } from "../../store/productcart";
 import { clearProduct, loadAllProductsThunk } from "../../store/product";
-import {
-  clearShipping,
-  loadCurrentShippingThunk,
-} from "../../store/shippingaddress";
+import { clearShipping, loadCurrentShippingThunk, } from "../../store/shippingaddress";
 import { csrfFetch } from "../../store/csrf";
 import { loadUserCartThunk } from "../../store/cart";
 import { addStripeSessionThunk } from "../../store/stripesession";
@@ -30,7 +18,7 @@ function CartPage() {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    dispatch(loadUserProductCartThunk());
+    dispatch(loadUserProductCartThunk())
     dispatch(loadUserCartThunk());
     dispatch(loadAllProductsThunk());
     dispatch(loadCurrentShippingThunk()).then(() => {
@@ -38,20 +26,30 @@ function CartPage() {
     });
 
     dispatch(clearShipping());
-    dispatch(clearProduct());
     dispatch(clearOrder());
   }, [dispatch]);
 
   const user = useSelector((state) => state.session.user);
   const userCart = useSelector((state) => state.cart);
-  const allProducts = useSelector((state) => state.product);
+  const allProducts = useSelector((state) => state.product.all);
   const cartItems = useSelector((state) => state.productCart);
   const shippingAddress = useSelector((state) => state.shippingAddress);
   const preppedShippingAddress = Object.values(shippingAddress)[0];
 
-  if (!user) {
-    return history.push("/login");
-  }
+  console.log("cart items", allProducts)
+
+//   console.log("booba", preppedShippingAddress);
+  // console.log('booba', cartItems)
+
+  // Function to format the date
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const month = date.toLocaleString("default", { month: "short" }); // 'short' gives the abbreviated month name
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return `${month} ${day}, ${year}`;
+  };
 
   const checkout = async (e) => {
     try {
@@ -86,29 +84,36 @@ function CartPage() {
     }
   };
 
-  const addQuantity = async (productId) => {
-    const quantity = 1; // You can adjust the quantity as needed
-    dispatch(addProductCartThunk(productId, quantity));
-  };
+  const addQuantity = async (e, cart) => {
+    e.preventDefault()
+    const quantity = 1;
+    dispatch(editProductCartThunk(cart.id, quantity));
+  }
 
-  //   const subtractQuantity = async (e) => {
+  const subtractQuantity = async (e, cart) => {
+    e.preventDefault()
+    const quantity = -1;
+    if (cart.quantity > 0) {
+      dispatch(editProductCartThunk(cart.id, quantity));
+    }
+  }
 
-  //   }
+  const deleteCartItem = async (e, cart) => {
+    e.preventDefault()
 
-  //   const clearProduct = async (e) => {
-
-  //   }
+    dispatch(deleteProductCartThunk(cart.id))
+  }
 
   return load ? (
     <div className="cart-table">
-      <div className="cart-back-button" onClick={() => history.push("/")}>
-        <i className="bx bx-x-circle"></i>
+      <div className="cart-back-button pointer" onClick={() => history.push('/')}>
+        <i className='bx bx-x-circle'></i>
       </div>
       <h1 className="container-header">Cart</h1>
       <div className="table-header">
         <div className="table-cell">Delete</div>
-        <div className="table-cell">Name</div>
-        <div className="table-cell">Price</div>
+        <div className="table-cell" id="cart-name">Name</div>
+        <div className="table-cell">Price Per Unit</div>
         <div className="table-cell">Quantity</div>
       </div>
       <div>
@@ -116,27 +121,23 @@ function CartPage() {
           <div className="cart-card" key={cart.id}>
             <div className="cart-info" id="cart-section">
               <section className="table-cell">
-                <button>
+                <button className="pointer" id="delete-cart-item-button" onClick={(e) => deleteCartItem(e, cart)}>
                   <i className="bx bxs-trash"></i>
                 </button>
               </section>
-              <section className="table-cell">
+              <section className="table-cell" id="cart-name">
                 {allProducts[cart.id]?.productName}
               </section>
               <section className="table-cell">
                 ${cart.pricePerUnit / 100}
               </section>
               <section className="table-cell" id="cart-quantity">
-                <aside id="quantity-plus">
-                  <button onClick={addQuantity}>
-                    <i className="bx bx-plus"></i>
-                  </button>
+                <aside className="pointer quantity-change" onClick={(e) => addQuantity(e, cart)}>
+                  <i className="bx bx-plus"></i>
                 </aside>
                 <aside>{cart.quantity}</aside>
-                <aside id="quantity-minus">
-                  <button>
-                    <i className="bx bx-minus"></i>
-                  </button>
+                <aside className="pointer quantity-change" onClick={(e) => subtractQuantity(e, cart)}>
+                  <i className="bx bx-minus"></i>
                 </aside>
               </section>
             </div>
@@ -146,13 +147,11 @@ function CartPage() {
       <div className="table-header">
         <div className="table-cell">Shipping Address</div>
       </div>
-      {preppedShippingAddress && (
+      {preppedShippingAddress &&
         <div className="table-cell">
-          {preppedShippingAddress.shippingAddress}{" "}
-          {preppedShippingAddress.shippingState}{" "}
-          {preppedShippingAddress.shippingZipCode}
-        </div>
-      )}
+        {preppedShippingAddress.shippingAddress} {preppedShippingAddress.shippingState} {preppedShippingAddress.shippingZipCode}
+      </div>
+      }
       <div>
         <button
           onClick={(e) => {
@@ -160,7 +159,7 @@ function CartPage() {
           }}
           id="checkout-button"
         >
-          Proceed to Checkout
+          Checkout
         </button>
       </div>
     </div>

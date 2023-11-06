@@ -4,16 +4,21 @@ import {
   PerspectiveCamera,
   OrbitControls,
   Gltf,
-  Html,
+  Html
 } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-
+import { useFrame, extend } from "@react-three/fiber";
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
+import roboto from './fonts/Roboto_Bold.json'
 import { Model } from "./Scene";
 import SubScene from "../SubScene";
 import ListScene from "../ListScene";
 import ProductScene from "../ProductScene";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Scene.css";
+
+extend({ TextGeometry })
+
 
 export default function Homespace() {
   const [position, setPosition] = useState([1, -4, 2]);
@@ -140,11 +145,15 @@ export default function Homespace() {
     }
   });
 
-
+  const font = new FontLoader().parse(roboto)
   //signup [-2,-2, 5]
   //position 2 position={[8, -3, 16]} rotation={[0, -.7, 0]}
   return (
     <>
+  {/* <mesh position={[0, 2, 0]}>
+    <textGeometry args={['Three-DEA', {font, size: .5, height: 1, bevelThickness: .1,}]}/>
+    <meshPhysicalMaterial attach='material' color={'red'}/>
+  </mesh> */}
       <Html>
         {signup || list || showProduct ? (
           <h1
@@ -169,17 +178,6 @@ export default function Homespace() {
           </h1>
         ) : (
           <>
-            {/* <h1
-              style={{ color: "white" }}
-              onClick={() => {
-                setSignup(true);
-                setHome(false);
-                setList(false);
-                history.push("/signup"); // Change the URL to "/signup"
-              }}
-            >
-              Signup
-            </h1> */}
           </>
         )}
       </Html>
@@ -189,7 +187,6 @@ export default function Homespace() {
         camera={{ fov: 50 }}
         ref={cameraRef}
       >
-        {/* <OrbitControls /> */}
         <directionalLight
           position={[5, 5, -8]}
           castShadow
@@ -200,8 +197,6 @@ export default function Homespace() {
 
         <axesHelper />
         <Model />
-        {/* <ScrollControls> */}
-        {/* <SingleObject/> */}
         <SubScene setCategory={setCategory} setList={setList} />
         <ListScene
           category={category}

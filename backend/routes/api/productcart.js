@@ -1,14 +1,10 @@
 const express = require('express')
 const router = express.Router();
 
-const { check } = require('express-validator');
-
 const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
-const { User, Product, Cart, ProductCart } = require("../../db/models");
+const { Product, Cart, ProductCart } = require("../../db/models");
 const { internalServerError, notFoundError, notAuthToView, notAuthToDelete, notAuthToEdit } = require('../../utils/errorFunc');
 const { isAdmin } = require('../../utils/authorization');
-const { route } = require('./products');
-
 
 // Get all productCarts
 router.get("/all", restoreUser, requireAuth, isAdmin, async (req, res) => {
@@ -100,13 +96,15 @@ router.post("/", restoreUser, requireAuth, async (req, res) => {
 })
 
 
-// edit a product cart. Only if the user owns that product cart row or the user is the Admin
+// edit a product cart quantity. Only if the user owns that product cart row or the user is the Admin
 router.put('/:productCartId', restoreUser, requireAuth, async (req, res) => {
-    const { quantity } = req.body
 
     try {
+        const productCartId = req.params.productCartId
+        const { quantity } = req.body
+
         // Find the ProductCart by its id
-        const productCart = await ProductCart.findByPk(req.params.productCartId);
+        const productCart = await ProductCart.findByPk(productCartId);
 
         if (!productCart) {
             return notFoundError(res, "Product Cart")
@@ -116,7 +114,7 @@ router.put('/:productCartId', restoreUser, requireAuth, async (req, res) => {
             return notAuthToEdit(res, "product cart")
         }
 
-        productCart.quantity = quantity;
+        productCart.quantity += quantity;
         await productCart.save();
 
         res.status(201).json({ data: productCart })
@@ -139,7 +137,7 @@ router.delete("/:productCartId", restoreUser, requireAuth, async (req, res) => {
         }
 
         await productCart.destroy()
-        res.status(200).json({ message: "Product Cart successfully deleted", statusCode: 200 })
+        res.status(200).json({ data: productCart })
     } catch (err) {
         return internalServerError(res, err)
     }

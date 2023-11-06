@@ -10,6 +10,7 @@ export default function ProductScene({ product }) {
   const dispatch = useDispatch();
   const loadedProduct = useSelector((state) => state.product);
   const [isReviewTextareaVisible, setIsReviewTextareaVisible] = useState(false);
+  const location = window.location.pathname
 
   const toggleReviewTextarea = () => {
     setIsReviewTextareaVisible(!isReviewTextareaVisible);
@@ -63,7 +64,7 @@ export default function ProductScene({ product }) {
           // onLoad={(gltf) => handleModelLoad(gltf)}
         />
       </PresentationControls>
-      <Html position={[13, 2.5, -8]} center>
+      {location !== '/cart' && <Html position={[13, 2.5, -8]} center>
         {loadedProduct && <div className='product-info'>
           <h1>{loadedProduct.productName}</h1>
           <div className="product-btn">
@@ -118,7 +119,7 @@ export default function ProductScene({ product }) {
             )}
           </div>
         </div>}
-      </Html>
+      </Html>}
     </group>
   );
 }

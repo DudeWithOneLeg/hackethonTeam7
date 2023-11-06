@@ -7,17 +7,18 @@
     /* ... other sidebar styles ... */
 
   }
-  
+
   .sidebar.open {
     width: 250px; /* Display the sidebar when the "open" class is applied */
     /* ... additional styles for open sidebar ... */
     position: absolute;
-    height: 94vh;
-    top: 85%;
-    left: 1%
+    height: 100;
+    /* top: 85%; */
+    top: 67px;
+    /* left: 1% */
 
   }
-  
+
   .sidebar-buttons {
     display: flex;
     flex-direction: column;
@@ -29,14 +30,14 @@
 .button-label {
     display: none;
   }
-  
+
   /* When the sidebar is open, show the button labels */
   .sidebar.open .button-label {
     display: block;
     margin-left: 10px; /* Adjust the margin for spacing between icon and label */
     transition: opacity 0.3s; /* Add a transition for smooth reveal */
   }
-  
+
   .nav-btn {
     border: none;
     color: rgb(77, 77, 77);

@@ -75,7 +75,7 @@ router.delete("/:stripeSessionId", restoreUser, requireAuth, async (req, res) =>
         }
 
         await stripeSession.destroy()
-        res.status(200).json({ message: "Stripe Session successfully deleted", statusCode: 200 })
+        res.status(200).json({ data: stripeSession })
     } catch (err) {
         return internalServerError(res, err)
     }

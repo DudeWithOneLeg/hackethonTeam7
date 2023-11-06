@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   class ShippingAddress extends Model {
     static associate(models) {
       ShippingAddress.belongsTo(models.User), {
-        foreignKey: "userId"
+        foreignKey: "userId",
+        onDelete: "CASCADE",
       }
     }
   };

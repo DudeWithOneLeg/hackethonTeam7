@@ -7,10 +7,10 @@ const EDIT_PRODUCT_CART = "/product/editProductCart"
 const DELETE_PRODUCT_CART = "/product/deleteProductCart"
 const CLEAR_PRODUCT_CART = "/product/clearProductCart"
 
-export const loadProductCart = (productCategory) => {
+export const loadProductCart = (productCart) => {
     return {
         type: LOAD_PRODUCT_CART,
-        payload: productCategory
+        payload: productCart
     }
 }
 
@@ -52,10 +52,10 @@ export const loadUserProductCartThunk = () => async (dispatch) => {
     }
 }
 
-export const addProductCart = (productCategory) => {
+export const addProductCart = (productCart) => {
     return {
         type: ADD_PRODUCT_CART,
-        payload: productCategory
+        payload: productCart
     }
 }
 
@@ -71,73 +71,71 @@ export const addProductCartThunk = (productId, quantity) => async (dispatch) => 
         })
 
         if (res.ok) {
-            const productCategory = await res.json()
-            dispatch(addProductCart(productCategory))
-            return productCategory
+            const productCart = await res.json()
+            dispatch(addProductCart(productCart))
+            return productCart
         } else {
             console.error(`Failed to create a new productCatgory for product ${productId}:`, res.status, res.statusText);
         }
 
     } catch (err) {
-        console.error('An error occurred while creating new productCategory:', err);
+        console.error('An error occurred while creating new productCart:', err);
     }
 }
 
 
-export const editProductCart = (productCategory) => {
+export const editProductCart = (productCart) => {
     return {
         type: EDIT_PRODUCT_CART,
-        payload: productCategory
+        payload: productCart
     }
 }
 
-
 // thunk action to edit productCart
-export const editProductCartThunk = (productId, newCategories) => async (dispatch) => {
+export const editProductCartThunk = (productCartId, quantity) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/productcart/${productId}`, {
+        const res = await csrfFetch(`/api/productcart/${productCartId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ categories: newCategories }),
+            body: JSON.stringify({ quantity }),
         });
 
         if (res.ok) {
-            const newProductCart = await res.json()
-            dispatch(editProductCart(newProductCart))
-            return newProductCart
+            const updatedPCQuantity = await res.json()
+            dispatch(editProductCart(updatedPCQuantity))
         } else {
-            console.error(`Failed to edit productCart of product ${productId}:`, res.status, res.statusText);
+            console.error(`Failed to edit productCart ${productCartId} quantity:`, res.status, res.statusText);
         }
     } catch (err) {
-        console.error('An error occurred while editing new productCategory:', err);
+        console.error(`An error occurred while productCart ${productCartId} quantity:`, err);
     }
 }
 
 
-export const deleteProductCart = (productCategory) => {
+export const deleteProductCart = (productCart) => {
     return {
         type: DELETE_PRODUCT_CART,
-        payload: productCategory
+        payload: productCart
     }
 }
 
 // delete product category thunk
-export const deleteProductCartThunk = (productCategoryId) => async (dispatch) => {
+export const deleteProductCartThunk = (productCartId) => async (dispatch) => {
     try {
-        const res = await csrfFetch(`/api/productcart/${productCategoryId}`, {
+        const res = await csrfFetch(`/api/productcart/${productCartId}`, {
             method: "DELETE"
         })
 
         if (res.ok) {
-            const productCategory = await res.json()
-            dispatch(deleteProductCart(productCategory))
+            const productCart = await res.json()
+            dispatch(deleteProductCart(productCart))
         } else {
-            console.error(`Failed to delete productCategory ${productCategoryId}:`, res.status, res.statusText);
+            console.error(`Failed to delete productCart ${productCartId}:`, res.status, res.statusText);
         }
     } catch (err) {
-        console.error(`An error occurred while deleting productCategory ${productCategoryId}:`, err);
+        console.error(`An error occurred while deleting productCart ${productCartId}:`, err);
     }
 }
 
@@ -172,10 +170,10 @@ const productCartReducer = (state = initialProduct, action) => {
             newState[action.payload.id] = action.payload.data
             return newState;
         case EDIT_PRODUCT_CART:
-            newState[action.payload.id] = action.payload.data;
+            newState[action.payload.data.id] = action.payload.data;
             return newState;
         case DELETE_PRODUCT_CART:
-            delete newState[action.payload.id]
+            delete newState[action.payload.data.id]
             return newState;
         case CLEAR_PRODUCT_CART:
             return initialProduct

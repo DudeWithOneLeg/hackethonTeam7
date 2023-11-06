@@ -6,15 +6,15 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homespace from "./components/HomeSpace";
-import { Canvas, axesHelper } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { Loader } from "@react-three/drei";
 import OrderPage from "./components/OrderPage";
 import ReviewPage from "./components/ReviewPage";
-import ProductsPage from "./components/ProductPage";
 import CartPage from "./components/CartPage";
 import PaymentSuccess from "./components/StripePayment/PaymentSuccess";
 import PaymentCancel from "./components/StripePayment/PaymentCancel";
 import ProfilePage from "./components/ProfilePage";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -56,6 +56,7 @@ function App() {
                 <PaymentCancel />
               </Route>
               <Canvas dpr={[1, 2]} shadows>
+
                 <color attach="background" args={["#213547"]} />
                 <Homespace />
               </Canvas>
