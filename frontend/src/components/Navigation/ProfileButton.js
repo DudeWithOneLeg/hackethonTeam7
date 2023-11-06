@@ -44,22 +44,17 @@ function ProfileButton({ user }) {
       {showMenu && (
         <div className={ulClassName} ref={ulRef}>
           <ul className="profile-container">
-            <li>{user.username}</li>
+            <li className="profile-info">{user.username}</li>
             {/* <li>
               {user.firstName} {user.lastName}
             </li> */}
-            <li>{user.email}</li>
-            <li>
-              
-              <button className="user-btn">
-                Profile
-              </button>
-            </li>
-            <li>
-              <button onClick={logout} className="user-btn">
-                Log Out
-              </button>
-            </li>
+            <li className="profile-info">{user.email}</li>
+
+            <button className="user-btn">Profile</button>
+
+            <button onClick={logout} className="user-btn">
+              Log Out
+            </button>
           </ul>
         </div>
       )}
