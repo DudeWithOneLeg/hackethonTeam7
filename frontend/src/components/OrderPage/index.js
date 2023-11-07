@@ -43,8 +43,6 @@ function OrderPage() {
     return <Redirect to="/login" />
   }
 
-  console.log('booba', orderObj)
-
   return (
     <div className="order-table">
       <div className="order-back-button pointer" onClick={() => history.push('/')}>

@@ -36,11 +36,6 @@ function CartPage() {
   const shippingAddress = useSelector((state) => state.shippingAddress);
   const preppedShippingAddress = Object.values(shippingAddress)[0];
 
-  console.log("cart items", allProducts)
-
-//   console.log("booba", preppedShippingAddress);
-  // console.log('booba', cartItems)
-
   // Function to format the date
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);

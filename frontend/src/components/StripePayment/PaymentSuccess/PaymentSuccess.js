@@ -72,8 +72,6 @@ function StripePaymentSuccess() {
                 pricePerUnit: curr.pricePerUnit,
             };
 
-            console.log('booba', orderItem)
-
             dispatch(addOrderThunk(orderItem));
         }
 
